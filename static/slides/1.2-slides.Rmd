@@ -1,0 +1,710 @@
+---
+title: "1.2: Scarcity, Choice, and Cost"
+subtitle: "BUEC 311: Business Economics, Organization and Management"
+author: 'Andrew Leach<br> Associate Professor of Business Economics <br> <a href="mailto:aleach@ualberta.ca"><i class="fa fa-paper-plane fa-fw"></i> aleach@ualberta.ca</a> <br> <a href="https://github.com/leachandrew"><i class="fa fa-github fa-fw"></i> leachandrew</a><br><a href="https://twitter.com/andrew_leach"><i class="fa fa-twitter twitter"></i> @andrew_leach</a><br>'
+#date:
+output:
+  xaringan::moon_reader:
+    mathjax: "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_HTMLorMML" # rescales math with css changes https://github.com/yihui/xaringan/issues/143
+    lib_dir: libs
+    #seal: false
+    css: [custom.css, custom-fonts.css, "hygge"] #, metropolis, metropolis-fonts
+    nature:
+      beforeInit: ["macros.js", "https://platform.twitter.com/widgets.js"] # first is for rescaling images , second is for embedding tweets, https://github.com/yihui/xaringan/issues/100
+      highlightStyle: ocean #rainbow #monokai rainbow solarized-light #tomorrow-night -blue -eighties zenburn
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: "16:9"
+      slideNumberFormat: |
+        <div class="progress-bar-container">
+          <div class="progress-bar" style="width: calc(%current% / %total% * 100%);">
+          </div>
+        </div>
+    includes:
+      in_header: header.html # for font awesome, used in title  
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(echo=F,
+                      message=F,
+                      warning=F)
+
+knitr::opts_knit$set(dev.args = list(type = "cairo"))
+library(tidyverse)
+library(ggthemes)
+library(ggrepel)
+library(patchwork)
+
+blake_theme<-function(){
+  theme_hc(20)+
+    theme(plot.subtitle = element_text(color="grey10",size=rel(.7)),
+          plot.title = element_text(face="bold",size=rel(.8)),
+          plot.caption = element_text(color="grey50",size=rel(.5),hjust=0),
+          legend.title = element_text(color="grey10",size=rel(.5)),
+          legend.text = element_text(color="grey10",size=rel(.5)),
+          axis.title = element_text(size=rel(.8)),
+          axis.ticks = element_blank(),
+          panel.spacing = unit(2,"lines"),
+          #legend.position = "none",
+          plot.margin = margin(t = .5, r = 1, b = .25, l = 1,unit= "cm"),
+          axis.text.x = element_text(margin = margin(t = 10, r = 0, b = 0, l = 0))
+          
+    )
+}
+
+#u of a palette
+colors_ua10 <- function()
+{
+  #return(c("#007C41", "#FFDB05", "#7D9AAA", "#CA7700", "#165788", "#A8B400",
+  #         "#E0D760", "#404545", "#8D3C1E", "#004250"))
+  c("#007C41", "#FFDB05", "#7D9AAA","#165788","#404545","#8D3C1E","#3CB6CE")
+}
+
+#You really can only have one of c("#FFDB05", "#A8B400","#E0D760") 
+
+Mode <- function(x) {
+  ux <- unique(x)
+  ux[which.max(tabulate(match(x, ux)))]
+}
+
+theme_slides <- theme_classic() + 
+  theme(
+    text = element_text(family = "Fira Sans", size = 24)
+  )
+
+```
+
+class: inverse, center, middle
+
+# The Logic of Choice
+
+---
+
+```{r, echo=FALSE,include=FALSE}
+supply_1=function(x){x}
+mpc=function(x){x-2}
+demand_1=function(x){10-x}
+mr=function(x){10-2*x}
+
+knitr::opts_knit$set(dev.args = list(type = "cairo"))
+ce<-
+  ggplot(data.frame(x=c(0,10)), aes(x=x))+
+  stat_function(fun=demand_1, geom="line", size=2, color = "blue")+
+  geom_label(aes(x=10,y=demand_1(10),hjust=0.5), nudge_y = +rel(1.25), color = "blue", label=str_wrap("Demand = Marginal Benefit",10), size = rel(3.5))+
+  
+  stat_function(fun=supply_1, geom="line", size=2, color = "firebrick")+
+  geom_label(aes(x=10,y=supply_1(10),hjust=.5), nudge_y = -rel(1.25), color = "firebrick", label=str_wrap("Supply = Marginal Cost",10), size = rel(3.5))+
+
+
+  geom_segment(x=0, xend=5, y=5, yend=5, size=1, linetype="dotted")+
+  geom_segment(x=5, xend=5, y=0, yend=5, size=1, linetype="dotted")+
+
+  geom_label(aes(x=5,y=0,hjust=.5), nudge_y = -rel(.75), color = "black", label=str_wrap("Competitive Market Quantity",10), size = rel(3.5))+
+  geom_label(aes(x=0,y=5,hjust=.5), nudge_x = rel(.25), color = "black", label=str_wrap("Competitive Market Price",10), size = rel(3.5))+
+
+  
+  scale_x_continuous(breaks=seq(0,10,1))+
+  scale_y_continuous(breaks=seq(0,10,1),
+                     labels = function(x){paste("$", x, sep="")},
+                     limits = c(-1,10))+
+  expand_limits(x = c(0,10.5),y=c(0,10))+
+  labs(x = "Quantity (q)",
+       y = "Price (p)",
+       title="Competitve Equilibrium")+
+  blake_theme()+
+  theme(plot.margin = margin(t = .1, r = .1, b = .1, l = .1,unit= "cm"))+
+  NULL
+ce
+ggsave("ce.png")
+```
+
+# Graph Testing II
+
+.pull-left[
+.center[
+![:scale 85%](ce.png)
+]]
+.pull-right[
+
+.smallest[
+"Testing some text
+
+
+and here
+
+
+
+and."
+]
+]
+
+---
+
+# The Logic of Choice: Ends and Means
+
+.pull-left[
+- Each of us acts .hi-gold[purposefully]
+
+- We have .hi[ends], goals, desires, objectives, etc
+
+- We use .hi[means] in the world that we believe will achieve our ends
+
+]
+
+.pull-right[
+
+![](https://www.dropbox.com/s/030cbgu9gexgu7x/goal.png?raw=1)
+]
+
+---
+
+# The Logic of Choice: Purpose
+
+.pull-left[
+
+- Acting with .hi[purpose] distinguishes humans from everything else in the universe
+
+- Artificial intelligence researchers face .hi["the frame problem"]
+    - We thought: computation is hard, perception is easy
+    - We've found: computation is easy, perception is hard!
+
+]
+
+.pull-right[
+
+.center[
+![](https://www.dropbox.com/s/8rz0vrisywwmeun/ai.png?raw=1)
+]
+]
+
+---
+
+# Causal Inference I
+
+.pull-left[
+- Machine learning and artificial intelligence are "dumb"<sup>1</sup>
+- With the right models and research designs, we *can* say "X causes Y" and quantify it!
+- Economists are in a unique position to make *causal* claims that mere statistics cannot
+]
+
+.pull-right[
+![](https://www.dropbox.com/s/yw8t5xsa8dgei71/coding.jpeg?raw=1)
+]
+
+.footnote[<sup>1</sup> For more, see [my blog post](https://ryansafner.com/post/econometrics-data-science-and-causal-inference/), and Pearl & MacKenzie (2018), *The Book of Why*]
+---
+
+# Causal Inference II
+
+.pull-left[
+.center[
+![](https://www.dropbox.com/s/jrp67z1umll1urp/econtechcompanies.png?raw=1)
+[Harvard Business Review](https://hbr.org/2019/02/why-tech-companies-hire-so-many-economists)
+]
+]
+.pull-right[
+
+.smallest[
+"First, the field of economics has spent decades developing a toolkit aimed at investigating empirical relationships, focusing on techniques to help understand which correlations speak to a causal relationship and which do not. This comes up all the time — does Uber Express Pool grow the full Uber user base, or simply draw in users from other Uber products? Should eBay advertise on Google, or does this simply syphon off people who would have come through organic search anyway? Are African-American Airbnb users rejected on the basis of their race? These are just a few of the countless questions that tech companies are grappling with, investing heavily in understanding the extent of a causal relationship."
+]
+]
+
+---
+
+# Methodological Individualism
+
+.pull-left[
+
+- .hi[Only individual people act]
+
+- The individual is the base unit of all economic analysis
+
+- *"How will action/choice/policy/institution [X] affect each individual's well-being?"*
+]
+
+.pull-right[
+
+.center[
+![](https://www.dropbox.com/s/pjp9bpvqp54ldn4/individual1.png?raw=1)
+]
+]
+
+---
+
+# Goods and Services
+
+.pull-left[
+
+- Actions that satisfy human desires provide a .hi[service]
+
+- An object that can provide services is called an .hi[economic good] or a .hi[resource]
+
+]
+
+.pull-right[
+.center[
+![:scale 50%](https://www.dropbox.com/s/pndrxtzknby85be/veggies.png?raw=1)
+
+![](https://www.dropbox.com/s/psx9cfe3bo0lkft/service.png?raw=1)
+]
+
+]
+
+---
+
+# Consumption
+
+.pull-left[
+
+- Goods and services provide ".hi[utility]" (satisfaction of a desire) when we .hi[consume] them 
+
+]
+
+.pull-right[
+.center[
+![](https://www.dropbox.com/s/t09sg1a7kdsu18x/happiness.png?raw=1)
+]
+]
+
+---
+
+# Bads
+
+.pull-left[
+
+- An .hi[economic bad] is something that hinders our ability to satisfy our desires
+
+]
+
+.pull-right[
+.center[
+
+![](https://www.dropbox.com/s/81kvissy1njej61/pollution.png?raw=1)
+
+]
+]
+
+---
+
+class: inverse, center, middle
+
+# Scarcity and Its Economic Implications
+
+---
+
+# Scarcity
+
+.pull-left[
+
+- .hi[Scarcity]: human desires are practically unlimited, but our ability to satisfy them (with goods and services) is limited
+
+- How do we best *economize* limited resources to satisfy our unlimited desires "*efficiently*?"
+
+]
+
+.pull-right[
+
+.center[
+![](https://www.dropbox.com/s/raepzizfpbgnund/emptypockets.png?raw=1)
+]
+]
+
+---
+
+# Choice
+
+.pull-left[
+
+- We can only pursue one goal at a time
+
+- This implies that we must .hi[choose] to forgo all other alternatives when we pursue each goal
+
+]
+
+.pull-right[
+
+.center[
+![](https://www.dropbox.com/s/hy4j33pa0j7lwvy/choice.png?raw=1)
+]
+]
+
+---
+
+# Choice $\rightarrow$ Opportunity Cost
+
+.pull-left[
+
+- We can only pursue one goal at a time
+
+- This implies that we must .hi[choose] to forgo all other alternatives when we pursue each goal
+
+- The .hi[(opportunity) cost] of every choice is the next best alternative given up
+    - "You can't have your cake and eat it too"
+]
+
+.pull-right[
+
+.center[
+![](https://www.dropbox.com/s/hy4j33pa0j7lwvy/choice.png?raw=1)
+]
+]
+
+---
+
+# The Parable of the Broken Window
+
+.left-column[
+.center[
+![:scale 85%](https://www.dropbox.com/s/n0sufyh3dxw0esj/bastiat.png?raw=1)
+
+Frederic Bastiat
+
+1801-1850
+]
+]
+
+.right-column[
+
+- *That Which is Seen and That Which is Not Seen*
+
+]
+
+---
+
+# The Parable of the Broken Window
+
+.left-column[
+.center[
+![:scale 85%](https://www.dropbox.com/s/n0sufyh3dxw0esj/bastiat.png?raw=1)
+
+Frederic Bastiat
+
+1801-1850
+]
+]
+
+.right-column[
+
+- *That Which is Seen and That Which is Not Seen*
+
+- "That which is seen"
+    - The broken window
+    - Resources diverted into glassmaking
+
+]
+
+---
+
+# The Parable of the Broken Window
+
+.left-column[
+.center[
+![:scale 85%](https://www.dropbox.com/s/n0sufyh3dxw0esj/bastiat.png?raw=1)
+
+Frederic Bastiat
+
+1801-1850
+]
+]
+
+.right-column[
+
+- *That Which is Seen and That Which is Not Seen*
+
+- "That which is seen"
+    - The broken window
+    - Resources diverted into glassmaking
+
+- "That which is not seen"
+    - Opportunity cost of fixing the window
+    - Resources diverted *away* from other opportunities
+]
+
+---
+
+# Applying the Parable of the Broken Window
+
+.pull-left[
+
+- What does it mean to say that **"spending money 'stimulates' the economy"?**
+
+]
+
+.pull-right[
+
+.center[
+![:scale 100%](https://www.dropbox.com/s/mb9yaadujqe38fj/disappear.jpg?raw=1)
+]
+]
+
+---
+
+# Applying the Parable of the Broken Window
+
+.pull-left[
+
+- What does it mean to say that **"spending money 'stimulates' the economy"?** 
+
+- Scarce resources used in one industry can **not** be used in other industries
+
+- .hi[Every (visible) decision to spend on X yields more X, and destroys an (invisible) opportunity to spend on Y]
+
+]
+
+.pull-right[
+
+.center[
+![:scale 100%](https://www.dropbox.com/s/mb9yaadujqe38fj/disappear.jpg?raw=1)
+]
+]
+
+---
+
+class: inverse, middle, center
+
+# Where Do Goods Get Their Value? 
+
+---
+
+# A Theory of Value
+
+.pull-left[
+
+- .hi["Classical Economists" (c. 1776-1870)]
+
+- Goods have "*natural*" prices, determined *objectively* by cost of production (wages+rents+profits)
+    - *Labor* theory of value: prices of goods determined by amount of "labor hours" to make
+
+]
+
+.pull-right[
+
+.center[
+![](https://www.dropbox.com/s/9ac6mbgna940ifz/classicals.png?raw=1)
+]
+]
+
+---
+
+# A Paradox!
+
+.center[
+![:scale 60%](https://www.dropbox.com/s/l3gpx03hts0m8b8/waterdiamond.png?raw=1)
+]
+
+---
+
+# The Solution (1870s)
+
+.center[
+![:scale 90%](https://www.dropbox.com/s/j8goul3iu0ga3xz/marginalists.png?raw=1)
+]
+
+---
+
+# The Marginalist Revolution
+
+.pull-left[
+- All human choices are made "**on the margin**," considering a small change from the status quo
+
+- Buying, selling, consuming, or producing a discrete unit of a particular good at a time
+
+- Each unit of a good provides .hi[marginal utility]
+
+]
+
+.pull-right[
+
+.center[
+![](https://www.dropbox.com/s/nucmaubbeggp0mv/valueadd.jpg?raw=1)
+]
+]
+
+---
+
+# Marginalism
+
+.left-column[
+
+.center[
+![:scale 85%](https://www.dropbox.com/s/19e1x8nvq4zfeeu/menger.png?raw=1)
+
+Carl Menger
+
+1840-1921
+]
+]
+
+.right-column[
+
+> Value is thus nothing inherent in goods, no property of them, nor an independent thing existing by itself. It is a judgment economizing men make about the importance of the goods at their disposal for the maintenance of their lives and well-being. Hence, value does not exist outside the consciousness of men (pp. 120-121).
+
+]
+
+.source[Menger, Carl, 1871, *Principles of Economics*]
+
+---
+
+# Marginal Utility Determines Prices: A Demonstration
+
+.center[
+![](https://www.dropbox.com/s/zekxybyt08caarj/boxandkeyhole.jpg?raw=1)
+]
+
+---
+
+# Three Insights About Value
+
+.pull-left[
+
+- Value is .hi[subjective]
+    - Each of us has our own preferences that determine our ends or objectives
+    - Preferences are **not comparable** across individuals
+    - Only individuals know what alternatives they give up at the moment of choice
+]
+
+.pull-right[
+.center[
+![](https://www.dropbox.com/s/9tcmytu18hyxtl9/value2.png?raw=1)
+]
+]
+
+---
+
+# Three Insights About Value
+
+.pull-left[
+
+- Value is measured as an .hi[ordinal] concept 
+    - We can *rank* our objectives relative to each other (but cannot quantify further)
+    - We pursue highest-valued objectives (highest marginal utility) first
+    - Pursuing one objective means *not* pursuing others!
+]
+
+.pull-right[
+.center[
+![](https://www.dropbox.com/s/9tcmytu18hyxtl9/value2.png?raw=1)
+]
+]
+
+---
+
+# Three Insights About Value
+
+.pull-left[
+
+- Value inherently comes from the fact that we must make .hi-purple[tradeoffs]
+    - Pursuing one objective means *not* pursuing others!
+    - The objective we pursue at the moment must be worth the sacrifice of others! (i.e. highest marginal utility)
+]
+
+.pull-right[
+.center[
+![](https://www.dropbox.com/s/9tcmytu18hyxtl9/value2.png?raw=1)
+]
+]
+
+---
+
+# Value and the Margin I
+
+.pull-left[
+
+.hi[The Law of Diminishing Marginal Utility]: each marginal unit of a good consumed tends to provide less marginal utility than the previous unit, all else equal
+]
+
+.pull-right[
+
+.center[
+![:scale 40%](https://www.dropbox.com/s/4lbhj20mtacsoje/icecreams.jpg?raw=1)
+]
+]
+
+---
+
+# Value and the Margin II
+
+.pull-left[
+.hi-green[Example:] Suppose you have 5 uses for water by their value to you. Assume each use requires exactly 1 gallon of water:
+
+1. Drink water
+2. Take a shower
+3. Wash car
+4. Water plants 
+5. Change goldfish's water
+
+]
+
+.pull-right[
+.center[
+![](https://www.dropbox.com/s/xqnao3amplrjjkv/watergallon.jpg?raw=1)
+]
+]
+
+---
+
+# Value and the Margin II
+
+.pull-left[
+.hi-green[**Example**:] Suppose you have 5 uses for water by their value to you. Assume each use requires exactly 1 gallon of water:
+
+1. Drink water
+2. Take a shower
+3. Wash car
+4. Water plants 
+5. Change goldfish's water
+
+Suppose you have only **1** gallon of water, what will you do with it? 
+]
+
+.pull-right[
+.center[
+![](https://www.dropbox.com/s/xqnao3amplrjjkv/watergallon.jpg?raw=1)
+]
+]
+
+---
+
+# Value and the Margin II
+
+.pull-left[
+.hi-green[Example:] Suppose you have 5 uses for water by their value to you. Assume each use requires exactly 1 gallon of water:
+
+1. Drink water
+2. Take a shower
+3. Wash car
+4. Water plants 
+5. Change goldfish's water
+
+Suppose you have have **2** gallons of water, what will you do with them? 
+]
+
+
+.pull-right[
+.center[
+![](https://www.dropbox.com/s/xqnao3amplrjjkv/watergallon.jpg?raw=1)
+]
+]
+
+---
+
+# Value and the Margin II
+
+.pull-left[
+.hi-green[Example:] Suppose you have 5 uses for water by their value to you. Assume each use requires exactly 1 gallon of water:
+
+1. Drink water
+2. Take a shower
+3. Wash car
+4. Water plants 
+5. Change goldfish's water
+
+Suppose you had **5** gallons of water, but **spill one.** Which activity will you **stop** doing?
+]
+
+.pull-right[
+.center[
+![](https://www.dropbox.com/s/xqnao3amplrjjkv/watergallon.jpg?raw=1)
+]
+]

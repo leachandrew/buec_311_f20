@@ -1,0 +1,1611 @@
+---
+title: "Extras: External Economies"
+subtitle: "ECON 306 · Microeconomic Analysis · Spring 2020"
+author: 'Ryan Safner<br> Assistant Professor of Economics <br> <a href="mailto:safner@hood.edu"><i class="fa fa-paper-plane fa-fw"></i> safner@hood.edu</a> <br> <a href="https://github.com/ryansafner/microS20"><i class="fa fa-github fa-fw"></i> ryansafner/microS20</a><br> <a href="https://microS20.classes.ryansafner.com"> <i class="fa fa-globe fa-fw"></i> microS20.classes.ryansafner.com</a><br>'
+#date:
+output:
+  xaringan::moon_reader:
+    mathjax: "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_HTMLorMML" # rescales math with css changes https://github.com/yihui/xaringan/issues/143
+    lib_dir: libs
+    #seal: false
+    css: [custom.css, custom-fonts.css, "hygge"] #, metropolis, metropolis-fonts
+    nature:
+      beforeInit: ["macros.js", "https://platform.twitter.com/widgets.js"] # first is for rescaling images , second is for embedding tweets, https://github.com/yihui/xaringan/issues/100
+      highlightStyle: ocean #rainbow #monokai rainbow solarized-light #tomorrow-night -blue -eighties zenburn
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: "16:9"
+      slideNumberFormat: |
+        <div class="progress-bar-container">
+          <div class="progress-bar" style="width: calc(%current% / %total% * 100%);">
+          </div>
+        </div>
+    includes:
+      in_header: header.html # for font awesome, used in title  
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(echo=F,
+                      message=F,
+                      warning=F)
+library("tidyverse")
+library("mosaic")
+library("ggrepel")
+update_geom_defaults("label", list(family = "Fira Sans Condensed"))
+set.seed(256)
+```
+
+class: inverse, center, middle
+
+# Entry Effects & External Economies
+
+---
+
+# Entry/Exit Effects on Market Price
+
+- Firms entering or exiting an industry have an **effect on the new market price**
+
+- Think about basic supply & demand graphs:
+  - **Entry**: $\uparrow$ industry supply $\implies$ $\uparrow q, \downarrow p$
+  - **Exit**: $\downarrow$ industry supply $\implies$ $\downarrow q, \uparrow p$
+
+---
+
+# External Economies
+
+- How large this change in price will be from entry/exit depends on industry-wide costs and .shout[external economies]
+
+- **Economies of scale** are *internal* to the firm (a firm's own average cost curve)
+
+- *External* economies have to do with how the size of the *entire* industry affects *all individual firm's costs*
+  - These are **externalities** that spill over across all firms in an industry
+
+- Three possibilities
+
+---
+
+# Constant Cost Industry (No External Economies) I
+
+.pull-left[
+
+- .shout[Constant cost industry] has *no external economies*, no change in costs as industry output increases (firms enter & incumbents produce more)
+
+- A *perfectly elastic long-run industry supply curve*!
+
+- Determinants:
+  - Industry's purchases are not a large share of input markets
+  - Often constant marginal costs, insignificant fixed costs
+
+- Examples: toothpicks, domain name registration, waitstaff
+
+]
+
+.pull-right[
+.center[
+![:scale 40%](https://www.dropbox.com/s/tqfbn7lirlymhyk/tootpicks.jpg?raw=1)
+
+![:scale 50%](https://www.dropbox.com/s/1ejdv6lovob92zr/domainnames.jpg?raw=1)
+
+]
+]
+
+---
+
+# Constant Cost Industry (No External Economies) II
+
+.pull-left[
+```{r, fig.retina=3, fig.height=5}
+demand<-function(x){10-x}
+supply<-function(x){x}
+demand_firm<-function(x){10}
+mc_cc<-function(x){3*x^2-8*x+9}
+ac_cc<-function(x){x^2-4*x+10+10/x}
+
+ggplot(data.frame(x=c(0,10)), aes(x=x))+
+  stat_function(fun=demand_firm, geom="line", size=2, color = "blue")+
+  geom_label(aes(x=4.5,y=demand_firm(4.5)), color = "blue", label="Demand", size = 5)+
+    stat_function(fun=mc_cc, geom="line", size=2, color = "red")+
+  geom_label(aes(x=3.5,y=mc_cc(3.5)), color = "red", label="MC(q)", size = 5)+
+    stat_function(fun=ac_cc, geom="line", size=2, color = "orange")+
+  geom_label(aes(x=4.5,y=ac_cc(4.5)), color = "orange", label="MC(q)", size = 5)+
+  geom_segment(x=2.8, xend=2.8, y=0, yend=10, size=1, linetype="dotted")+
+    scale_x_continuous(breaks=NULL,
+                     limits=c(0,5),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  scale_y_continuous(breaks=NULL,
+                     limits=c(0,20),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  guides(fill=F)+
+  labs(title = "Representative Firm",
+       x = "Quantity",
+       y = "Price")+
+  theme_classic(base_family = "Fira Sans Condensed", base_size=20)
+```
+]
+
+.pull-right[
+```{r, fig.retina=3, fig.height=5}
+ggplot(data.frame(x=c(0,10)), aes(x=x))+
+  stat_function(fun=demand, geom="line", size=2, color = "blue")+
+    geom_label(aes(x=9,y=demand(9)), color = "blue", label="Demand", size = 5)+
+  stat_function(fun=supply, geom="line", size=2, color = "red")+
+    geom_label(aes(x=9,y=supply(9)), color = "red", label="Supply", size = 5)+
+  geom_segment(x=5, xend=5, y=0, yend=5, size=1, linetype="dotted")+
+  geom_segment(x=0, xend=5, y=5, yend=5, size=1, linetype="dotted")+
+  
+  # point A
+  geom_point(x = 5, y = 5, size=3)+
+  geom_text(x = 5, y = 5.5, label = "A", size=5)+
+  
+    scale_x_continuous(breaks=NULL,
+                     limits=c(0,10),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  scale_y_continuous(breaks=NULL,
+                     limits=c(0,10),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  guides(fill=F)+
+  labs(title = "Industry",
+       x = "Quantity",
+       y = "Price")+
+  theme_classic(base_family = "Fira Sans Condensed", base_size=20)
+```
+]
+
+- Industry equilibrium: firms earning normal $\pi=0, p=MC(q)=AC(q)$
+
+
+---
+
+# Constant Cost Industry (No External Economies) III
+
+.pull-left[
+```{r, fig.retina=3, fig.height=5}
+demand<-function(x){10-x}
+supply<-function(x){x}
+demand_firm<-function(x){10}
+mc_cc<-function(x){3*x^2-8*x+9}
+ac_cc<-function(x){x^2-4*x+10+10/x}
+
+ggplot(data.frame(x=c(0,10)), aes(x=x))+
+  stat_function(fun=demand_firm, geom="line", size=2, color = "blue")+
+  geom_label(aes(x=4.5,y=demand_firm(4.5)), color = "blue", label="Demand", size = 5)+
+    stat_function(fun=mc_cc, geom="line", size=2, color = "red")+
+  geom_label(aes(x=3.5,y=mc_cc(3.5)), color = "red", label="MC(q)", size = 5)+
+    stat_function(fun=ac_cc, geom="line", size=2, color = "orange")+
+  geom_label(aes(x=4.5,y=ac_cc(4.5)), color = "orange", label="MC(q)", size = 5)+
+  geom_segment(x=2.8, xend=2.8, y=0, yend=10, size=1, linetype="dotted")+
+    scale_x_continuous(breaks=NULL,
+                     limits=c(0,5),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  scale_y_continuous(breaks=NULL,
+                     limits=c(0,20),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  guides(fill=F)+
+  labs(title = "Representative Firm",
+       x = "Quantity",
+       y = "Price")+
+  theme_classic(base_family = "Fira Sans Condensed", base_size=20)
+```
+]
+
+.pull-right[
+```{r, fig.retina=3, fig.height=5}
+demand_new<-function(x){14-x}
+
+ggplot(data.frame(x=c(0,10)), aes(x=x))+
+  stat_function(fun=demand, geom="line", size=2, color = "blue")+
+    geom_label(aes(x=9,y=demand(9)), color = "blue", label="Demand", size = 5)+
+  stat_function(fun=demand_new, geom="line", size=2, color = "blue")+
+    geom_label(aes(x=5,y=demand_new(5)), color = "blue", label="New Demand", size = 5)+
+  stat_function(fun=supply, geom="line", size=2, color = "red")+
+    geom_label(aes(x=9,y=supply(9)), color = "red", label="Supply", size = 5)+
+  geom_segment(x=5, xend=5, y=0, yend=5, size=1, linetype="dotted")+
+  geom_segment(x=0, xend=5, y=5, yend=5, size=1, linetype="dotted")+
+  
+  # new lines
+  geom_segment(x=7, xend=7, y=0, yend=7, size=1, linetype="dotted")+
+  geom_segment(x=0, xend=7, y=7, yend=7, size=1, linetype="dotted")+
+  
+  # point A
+  geom_point(x = 5, y = 5, size=3)+
+  geom_text(x = 5, y = 5.5, label = "A", size=5)+
+  
+  # point B
+  geom_point(x = 7, y = 7, size=3)+
+  geom_text(x = 7, y = 7.5, label = "B", size=5)+
+    scale_x_continuous(breaks=NULL,
+                     limits=c(0,10),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  scale_y_continuous(breaks=NULL,
+                     limits=c(0,10),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  guides(fill=F)+
+  labs(title = "Industry",
+       x = "Quantity",
+       y = "Price")+
+  theme_classic(base_family = "Fira Sans Condensed", base_size=20)
+```
+]
+
+- Industry equilibrium: firms earning normal $\pi=0, p=MC(q)=AC(q)$
+
+- Exogenous increase in market demand
+
+---
+
+# Constant Cost Industry (No External Economies) IV
+
+.pull-left[
+```{r, fig.retina=3, fig.height=5}
+demand_firm_new=function(x){14}
+
+ggplot(data.frame(x=c(0,10)), aes(x=x))+
+  
+  # profit
+  geom_rect(xmin=0, xmax=3.225,ymin=10.75,ymax=14,fill="green",alpha=0.25)+
+
+  
+  stat_function(fun=demand_firm, geom="line", size=2, color = "blue")+
+  geom_label(aes(x=4.5,y=demand_firm(4.5)), color = "blue", label="Demand", size = 5)+
+  geom_segment(x=3.225, xend=3.225, y=0, yend=14, size=1, linetype="dotted")+
+
+  # new demand
+  stat_function(fun=demand_firm_new, geom="line", size=2, color = "blue")+
+  geom_label(aes(x=2,y=demand_firm_new(2)), color = "blue", label="New Demand", size = 5)+
+  geom_segment(x=2.8, xend=2.8, y=0, yend=10, size=1, linetype="dotted")+
+
+    stat_function(fun=mc_cc, geom="line", size=2, color = "red")+
+  geom_label(aes(x=3.5,y=mc_cc(3.5)), color = "red", label="MC(q)", size = 5)+
+    stat_function(fun=ac_cc, geom="line", size=2, color = "orange")+
+  geom_label(aes(x=4.5,y=ac_cc(4.5)), color = "orange", label="MC(q)", size = 5)+
+  annotate("segment", x = 2.8, xend = 3.225, y = 3, yend = 3, color = "purple", size=2, alpha=0.9, arrow=arrow(length=unit(0.5,"cm"), ends="last", type="closed"))+
+    scale_x_continuous(breaks=NULL,
+                     limits=c(0,5),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  scale_y_continuous(breaks=NULL,
+                     limits=c(0,20),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  guides(fill=F)+
+  labs(title = "Representative Firm",
+       x = "Quantity",
+       y = "Price")+
+  theme_classic(base_family = "Fira Sans Condensed", base_size=20)
+```
+]
+
+.pull-right[
+```{r, fig.retina=3, fig.height=5}
+ggplot(data.frame(x=c(0,10)), aes(x=x))+
+  stat_function(fun=demand, geom="line", size=2, color = "blue")+
+    geom_label(aes(x=9,y=demand(9)), color = "blue", label="Demand", size = 5)+
+  stat_function(fun=demand_new, geom="line", size=2, color = "blue")+
+    geom_label(aes(x=5,y=demand_new(5)), color = "blue", label="New Demand", size = 5)+
+  stat_function(fun=supply, geom="line", size=2, color = "red")+
+    geom_label(aes(x=9,y=supply(9)), color = "red", label="Supply", size = 5)+
+  geom_segment(x=5, xend=5, y=0, yend=5, size=1, linetype="dotted")+
+  geom_segment(x=0, xend=5, y=5, yend=5, size=1, linetype="dotted")+
+  
+  # new lines
+  geom_segment(x=7, xend=7, y=0, yend=7, size=1, linetype="dotted")+
+  geom_segment(x=0, xend=7, y=7, yend=7, size=1, linetype="dotted")+
+  
+  # point A
+  geom_point(x = 5, y = 5, size=3)+
+  geom_text(x = 5, y = 5.5, label = "A", size=5)+
+  
+  # point B
+  geom_point(x = 7, y = 7, size=3)+
+  geom_text(x = 7, y = 7.5, label = "B", size=5)+
+    scale_x_continuous(breaks=NULL,
+                     limits=c(0,10),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  scale_y_continuous(breaks=NULL,
+                     limits=c(0,10),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  guides(fill=F)+
+  labs(title = "Industry",
+       x = "Quantity",
+       y = "Price")+
+  theme_classic(base_family = "Fira Sans Condensed", base_size=20)
+```
+]
+
+- **Short run $(A \rightarrow B)$**: industry reaches new equilibrium
+
+- Firms charge higher $p^*$, produce more $q^*$, earn $\pi$
+
+---
+
+# Constant Cost Industry (No External Economies) V
+
+.pull-left[
+```{r, fig.retina=3, fig.height=5}
+demand_firm_new=function(x){14}
+
+ggplot(data.frame(x=c(0,10)), aes(x=x))+
+  
+  # profit
+  geom_rect(xmin=0, xmax=3.225,ymin=10.75,ymax=14,fill="green",alpha=0.25)+
+
+  
+  stat_function(fun=demand_firm, geom="line", size=2, color = "blue")+
+  geom_label(aes(x=4.5,y=demand_firm(4.5)), color = "blue", label="Demand", size = 5)+
+  geom_segment(x=3.225, xend=3.225, y=0, yend=14, size=1, linetype="dotted")+
+
+  # new demand
+  stat_function(fun=demand_firm_new, geom="line", size=2, color = "blue")+
+  geom_label(aes(x=2,y=demand_firm_new(2)), color = "blue", label="New Demand", size = 5)+
+  geom_segment(x=2.8, xend=2.8, y=0, yend=10, size=1, linetype="dotted")+
+  geom_segment(x=0, xend=3.225, y=10.75, yend=10.75, size=1, linetype="dotted")+
+  
+    stat_function(fun=mc_cc, geom="line", size=2, color = "red")+
+  geom_label(aes(x=3.5,y=mc_cc(3.5)), color = "red", label="MC(q)", size = 5)+
+    stat_function(fun=ac_cc, geom="line", size=2, color = "orange")+
+  geom_label(aes(x=4.5,y=ac_cc(4.5)), color = "orange", label="MC(q)", size = 5)+
+  annotate("segment", x = 3.225, xend = 2.8, y = 3, yend = 3, color = "purple", size=2, alpha=0.9, arrow=arrow(length=unit(0.5,"cm"), ends="last", type="closed"))+
+    scale_x_continuous(breaks=NULL,
+                     limits=c(0,5),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  scale_y_continuous(breaks=NULL,
+                     limits=c(0,20),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  guides(fill=F)+
+  labs(title = "Representative Firm",
+       x = "Quantity",
+       y = "Price")+
+  theme_classic(base_family = "Fira Sans Condensed", base_size=20)
+```
+]
+
+.pull-right[
+```{r, fig.retina=3, fig.height=5}
+supply_new=function(x){x-4}
+ggplot(data.frame(x=c(0,10)), aes(x=x))+
+  stat_function(fun=demand, geom="line", size=2, color = "blue")+
+    geom_label(aes(x=9,y=demand(9)), color = "blue", label="Demand", size = 5)+
+  stat_function(fun=demand_new, geom="line", size=2, color = "blue")+
+    geom_label(aes(x=5,y=demand_new(5)), color = "blue", label="New Demand", size = 5)+
+  stat_function(fun=supply, geom="line", size=2, color = "red")+
+    geom_label(aes(x=9,y=supply(9)), color = "red", label="Supply", size = 5)+
+  stat_function(fun=supply_new, geom="line", size=2, color = "red")+
+    geom_label(aes(x=8,y=supply_new(8)), color = "red", label="New Supply", size = 5)+
+  geom_segment(x=5, xend=5, y=0, yend=5, size=1, linetype="dotted")+
+  geom_segment(x=0, xend=5, y=5, yend=5, size=1, linetype="dotted")+
+  
+  # new lines
+  geom_segment(x=7, xend=7, y=0, yend=7, size=1, linetype="dotted")+
+  geom_segment(x=0, xend=7, y=7, yend=7, size=1, linetype="dotted")+
+  
+  # point A
+  geom_point(x = 5, y = 5, size=3)+
+  geom_text(x = 5, y = 5.5, label = "A", size=5)+
+  
+  # point B
+  geom_point(x = 7, y = 7, size=3)+
+  geom_text(x = 7, y = 7.5, label = "B", size=5)+
+  
+  # point C
+  geom_point(x = 9, y = 5, size=3)+
+  geom_text(x = 9, y = 5.5, label = "C", size=5)+
+  
+  # new lines C
+  geom_segment(x=9, xend=9, y=0, yend=5, size=1, linetype="dotted")+
+  geom_segment(x=0, xend=9, y=5, yend=5, size=1, linetype="dotted")+
+  
+    scale_x_continuous(breaks=NULL,
+                     limits=c(0,10),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  scale_y_continuous(breaks=NULL,
+                     limits=c(0,10),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  guides(fill=F)+
+  labs(title = "Industry",
+       x = "Quantity",
+       y = "Price")+
+  theme_classic(base_family = "Fira Sans Condensed", base_size=20)
+```
+]
+
+- **Long run $(B \rightarrow C)$**: profit attracts entry $\implies$ industry supply increases
+
+- No change in costs to firms in industry, firms enter until $\pi=0$ at $p=AC(q)$
+
+- Firms must charge original $p^*$, return to original $q^*$, earn $\pi=0$
+
+---
+
+# Constant Cost Industry (No External Economies) VI
+
+.pull-left[
+```{r, fig.retina=3, fig.height=5}
+demand_firm_new=function(x){14}
+
+ggplot(data.frame(x=c(0,10)), aes(x=x))+
+  
+  # profit
+  geom_rect(xmin=0, xmax=3.225,ymin=10.75,ymax=14,fill="green",alpha=0.25)+
+
+  
+  stat_function(fun=demand_firm, geom="line", size=2, color = "blue")+
+  geom_label(aes(x=4.5,y=demand_firm(4.5)), color = "blue", label="Demand", size = 5)+
+  geom_segment(x=3.225, xend=3.225, y=0, yend=14, size=1, linetype="dotted")+
+
+  # new demand
+  stat_function(fun=demand_firm_new, geom="line", size=2, color = "blue")+
+  geom_label(aes(x=2,y=demand_firm_new(2)), color = "blue", label="New Demand", size = 5)+
+  geom_segment(x=2.8, xend=2.8, y=0, yend=10, size=1, linetype="dotted")+
+  geom_segment(x=0, xend=3.225, y=10.75, yend=10.75, size=1, linetype="dotted")+
+  
+    stat_function(fun=mc_cc, geom="line", size=2, color = "red")+
+  geom_label(aes(x=3.5,y=mc_cc(3.5)), color = "red", label="MC(q)", size = 5)+
+    stat_function(fun=ac_cc, geom="line", size=2, color = "orange")+
+  geom_label(aes(x=4.5,y=ac_cc(4.5)), color = "orange", label="MC(q)", size = 5)+
+    scale_x_continuous(breaks=NULL,
+                     limits=c(0,5),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  scale_y_continuous(breaks=NULL,
+                     limits=c(0,20),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  guides(fill=F)+
+  labs(title = "Representative Firm",
+       x = "Quantity",
+       y = "Price")+
+  theme_classic(base_family = "Fira Sans Condensed", base_size=20)
+```
+]
+
+.pull-right[
+```{r, fig.retina=3, fig.height=5}
+supply_new=function(x){x-4}
+ggplot(data.frame(x=c(0,10)), aes(x=x))+
+  stat_function(fun=demand, geom="line", size=2, color = "blue")+
+    geom_label(aes(x=9,y=demand(9)), color = "blue", label="Demand", size = 5)+
+  stat_function(fun=demand_new, geom="line", size=2, color = "blue")+
+    geom_label(aes(x=5,y=demand_new(5)), color = "blue", label="New Demand", size = 5)+
+  stat_function(fun=supply, geom="line", size=2, color = "red")+
+    geom_label(aes(x=9,y=supply(9)), color = "red", label="Supply", size = 5)+
+  stat_function(fun=supply_new, geom="line", size=2, color = "red")+
+    geom_label(aes(x=8,y=supply_new(8)), color = "red", label="New Supply", size = 5)+
+  geom_segment(x=5, xend=5, y=0, yend=5, size=1, linetype="dotted")+
+  geom_segment(x=0, xend=5, y=5, yend=5, size=1, linetype="dotted")+
+  
+  # new lines
+  geom_segment(x=7, xend=7, y=0, yend=7, size=1, linetype="dotted")+
+  geom_segment(x=0, xend=7, y=7, yend=7, size=1, linetype="dotted")+
+  
+  # point A
+  geom_point(x = 5, y = 5, size=3)+
+  geom_text(x = 5, y = 5.5, label = "A", size=5)+
+  
+  # point B
+  geom_point(x = 7, y = 7, size=3)+
+  geom_text(x = 7, y = 7.5, label = "B", size=5)+
+  
+  # point C
+  geom_point(x = 9, y = 5, size=3)+
+  geom_text(x = 9, y = 5.5, label = "C", size=5)+
+  
+  # new lines C
+  geom_segment(x=9, xend=9, y=0, yend=5, size=1, linetype="dotted")+
+  geom_segment(x=0, xend=9, y=5, yend=5, size=1, linetype="dotted")+
+  
+  geom_hline(yintercept=5, size = 4, color = "red")+
+  geom_label(x=2,y=5, color="red", label = "Long Run Supply", size =5)+
+    scale_x_continuous(breaks=NULL,
+                     limits=c(0,10),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  scale_y_continuous(breaks=NULL,
+                     limits=c(0,10),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  guides(fill=F)+
+  labs(title = "Industry",
+       x = "Quantity",
+       y = "Price")+
+  theme_classic(base_family = "Fira Sans Condensed", base_size=20)
+```
+]
+
+- .red[Long Run Industry Supply] is perfectly elastic
+
+---
+
+# Increasing Cost Industry (External Diseconomies) I
+
+.pull-left[
+
+- .shout[Increasing cost industry] has *external _dis_economies*, costs rise for all firms in the industry as industry output increases (firms enter & incumbents produce more)
+
+- An *upward sloping long-run industry supply curve*!
+
+- Determinants:
+  - Finding more resources in harder-to-reach places
+  - Diminishing marginal products
+  - Greater complexity and administrative costs at larger scales
+
+- Examples: oil, mining, particle physics
+
+]
+
+.pull-right[
+.center[
+![:scale 50%](https://www.dropbox.com/s/vj3tv1cnz4z0f07/mining.jpg?raw=1)
+
+![:scale 50%](https://www.dropbox.com/s/y593zs2tkp7rz21/oilrig.jpg?raw=1)
+
+]
+]
+
+---
+
+# Increasing Cost Industry (External Diseconomies) II
+
+.pull-left[
+```{r, fig.retina=3, fig.height=5}
+demand<-function(x){10-x}
+supply<-function(x){x}
+demand_firm<-function(x){10}
+mc_cc<-function(x){3*x^2-8*x+9}
+ac_cc<-function(x){x^2-4*x+10+10/x}
+
+ggplot(data.frame(x=c(0,10)), aes(x=x))+
+  stat_function(fun=demand_firm, geom="line", size=2, color = "blue")+
+  geom_label(aes(x=4.5,y=demand_firm(4.5)), color = "blue", label="Demand", size = 5)+
+    stat_function(fun=mc_cc, geom="line", size=2, color = "red")+
+  geom_label(aes(x=3.5,y=mc_cc(3.5)), color = "red", label="MC(q)", size = 5)+
+    stat_function(fun=ac_cc, geom="line", size=2, color = "orange")+
+  geom_label(aes(x=4.5,y=ac_cc(4.5)), color = "orange", label="MC(q)", size = 5)+
+  geom_segment(x=2.8, xend=2.8, y=0, yend=10, size=1, linetype="dotted")+
+    scale_x_continuous(breaks=NULL,
+                     limits=c(0,5),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  scale_y_continuous(breaks=NULL,
+                     limits=c(0,20),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  guides(fill=F)+
+  labs(title = "Representative Firm",
+       x = "Quantity",
+       y = "Price")+
+  theme_classic(base_family = "Fira Sans Condensed", base_size=20)
+```
+]
+
+.pull-right[
+```{r, fig.retina=3, fig.height=5}
+ggplot(data.frame(x=c(0,10)), aes(x=x))+
+  stat_function(fun=demand, geom="line", size=2, color = "blue")+
+    geom_label(aes(x=9,y=demand(9)), color = "blue", label="Demand", size = 5)+
+  stat_function(fun=supply, geom="line", size=2, color = "red")+
+    geom_label(aes(x=9,y=supply(9)), color = "red", label="Supply", size = 5)+
+  geom_segment(x=5, xend=5, y=0, yend=5, size=1, linetype="dotted")+
+  geom_segment(x=0, xend=5, y=5, yend=5, size=1, linetype="dotted")+
+  
+  # point A
+  geom_point(x = 5, y = 5, size=3)+
+  geom_text(x = 5, y = 5.5, label = "A", size=5)+
+  
+    scale_x_continuous(breaks=NULL,
+                     limits=c(0,10),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  scale_y_continuous(breaks=NULL,
+                     limits=c(0,10),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  guides(fill=F)+
+  labs(title = "Industry",
+       x = "Quantity",
+       y = "Price")+
+  theme_classic(base_family = "Fira Sans Condensed", base_size=20)
+```
+]
+
+- Industry equilibrium: firms earning normal $\pi=0, p=MC(q)=AC(q)$
+
+
+---
+
+# Increasing Cost Industry (External Diseconomies) III
+
+.pull-left[
+```{r, fig.retina=3, fig.height=5}
+demand<-function(x){10-x}
+supply<-function(x){x}
+demand_firm<-function(x){10}
+mc_cc<-function(x){3*x^2-8*x+9}
+ac_cc<-function(x){x^2-4*x+10+10/x}
+
+ggplot(data.frame(x=c(0,10)), aes(x=x))+
+  stat_function(fun=demand_firm, geom="line", size=2, color = "blue")+
+  geom_label(aes(x=4.5,y=demand_firm(4.5)), color = "blue", label="Demand", size = 5)+
+    stat_function(fun=mc_cc, geom="line", size=2, color = "red")+
+  geom_label(aes(x=3.5,y=mc_cc(3.5)), color = "red", label="MC(q)", size = 5)+
+    stat_function(fun=ac_cc, geom="line", size=2, color = "orange")+
+  geom_label(aes(x=4.5,y=ac_cc(4.5)), color = "orange", label="MC(q)", size = 5)+
+  geom_segment(x=2.8, xend=2.8, y=0, yend=10, size=1, linetype="dotted")+
+    scale_x_continuous(breaks=NULL,
+                     limits=c(0,5),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  scale_y_continuous(breaks=NULL,
+                     limits=c(0,20),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  guides(fill=F)+
+  labs(title = "Representative Firm",
+       x = "Quantity",
+       y = "Price")+
+  theme_classic(base_family = "Fira Sans Condensed", base_size=20)
+```
+]
+
+.pull-right[
+```{r, fig.retina=3, fig.height=5}
+demand_new<-function(x){14-x}
+
+ggplot(data.frame(x=c(0,10)), aes(x=x))+
+  stat_function(fun=demand, geom="line", size=2, color = "blue")+
+    geom_label(aes(x=9,y=demand(9)), color = "blue", label="Demand", size = 5)+
+  stat_function(fun=demand_new, geom="line", size=2, color = "blue")+
+    geom_label(aes(x=5,y=demand_new(5)), color = "blue", label="New Demand", size = 5)+
+  stat_function(fun=supply, geom="line", size=2, color = "red")+
+    geom_label(aes(x=9,y=supply(9)), color = "red", label="Supply", size = 5)+
+  geom_segment(x=5, xend=5, y=0, yend=5, size=1, linetype="dotted")+
+  geom_segment(x=0, xend=5, y=5, yend=5, size=1, linetype="dotted")+
+  
+  # new lines
+  geom_segment(x=7, xend=7, y=0, yend=7, size=1, linetype="dotted")+
+  geom_segment(x=0, xend=7, y=7, yend=7, size=1, linetype="dotted")+
+  
+  # point A
+  geom_point(x = 5, y = 5, size=3)+
+  geom_text(x = 5, y = 5.5, label = "A", size=5)+
+  
+  # point B
+  geom_point(x = 7, y = 7, size=3)+
+  geom_text(x = 7, y = 7.5, label = "B", size=5)+
+    scale_x_continuous(breaks=NULL,
+                     limits=c(0,10),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  scale_y_continuous(breaks=NULL,
+                     limits=c(0,10),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  guides(fill=F)+
+  labs(title = "Industry",
+       x = "Quantity",
+       y = "Price")+
+  theme_classic(base_family = "Fira Sans Condensed", base_size=20)
+```
+]
+
+- Industry equilibrium: firms earning normal $\pi=0, p=MC(q)=AC(q)$
+
+- Exogenous increase in market demand
+
+---
+
+# Increasing Cost Industry (External Diseconomies) IV
+
+.pull-left[
+```{r, fig.retina=3, fig.height=5}
+demand_firm_new=function(x){14}
+
+ggplot(data.frame(x=c(0,10)), aes(x=x))+
+  
+  # profit
+  geom_rect(xmin=0, xmax=3.225,ymin=10.75,ymax=14,fill="green",alpha=0.25)+
+
+  
+  stat_function(fun=demand_firm, geom="line", size=2, color = "blue")+
+  geom_label(aes(x=4.5,y=demand_firm(4.5)), color = "blue", label="Demand", size = 5)+
+  geom_segment(x=3.225, xend=3.225, y=0, yend=14, size=1, linetype="dotted")+
+
+  # new demand
+  stat_function(fun=demand_firm_new, geom="line", size=2, color = "blue")+
+  geom_label(aes(x=2,y=demand_firm_new(2)), color = "blue", label="New Demand", size = 5)+
+  geom_segment(x=2.8, xend=2.8, y=0, yend=10, size=1, linetype="dotted")+
+
+    stat_function(fun=mc_cc, geom="line", size=2, color = "red")+
+  geom_label(aes(x=3.5,y=mc_cc(3.5)), color = "red", label="MC(q)", size = 5)+
+    stat_function(fun=ac_cc, geom="line", size=2, color = "orange")+
+  geom_label(aes(x=4.5,y=ac_cc(4.5)), color = "orange", label="MC(q)", size = 5)+
+  annotate("segment", x = 2.8, xend = 3.225, y = 3, yend = 3, color = "purple", size=2, alpha=0.9, arrow=arrow(length=unit(0.5,"cm"), ends="last", type="closed"))+
+    scale_x_continuous(breaks=NULL,
+                     limits=c(0,5),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  scale_y_continuous(breaks=NULL,
+                     limits=c(0,20),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  guides(fill=F)+
+  labs(title = "Representative Firm",
+       x = "Quantity",
+       y = "Price")+
+  theme_classic(base_family = "Fira Sans Condensed", base_size=20)
+```
+]
+
+.pull-right[
+```{r, fig.retina=3, fig.height=5}
+ggplot(data.frame(x=c(0,10)), aes(x=x))+
+  stat_function(fun=demand, geom="line", size=2, color = "blue")+
+    geom_label(aes(x=9,y=demand(9)), color = "blue", label="Demand", size = 5)+
+  stat_function(fun=demand_new, geom="line", size=2, color = "blue")+
+    geom_label(aes(x=5,y=demand_new(5)), color = "blue", label="New Demand", size = 5)+
+  stat_function(fun=supply, geom="line", size=2, color = "red")+
+    geom_label(aes(x=9,y=supply(9)), color = "red", label="Supply", size = 5)+
+  geom_segment(x=5, xend=5, y=0, yend=5, size=1, linetype="dotted")+
+  geom_segment(x=0, xend=5, y=5, yend=5, size=1, linetype="dotted")+
+  
+  # new lines
+  geom_segment(x=7, xend=7, y=0, yend=7, size=1, linetype="dotted")+
+  geom_segment(x=0, xend=7, y=7, yend=7, size=1, linetype="dotted")+
+  
+  # point A
+  geom_point(x = 5, y = 5, size=3)+
+  geom_text(x = 5, y = 5.5, label = "A", size=5)+
+  
+  # point B
+  geom_point(x = 7, y = 7, size=3)+
+  geom_text(x = 7, y = 7.5, label = "B", size=5)+
+    scale_x_continuous(breaks=NULL,
+                     limits=c(0,10),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  scale_y_continuous(breaks=NULL,
+                     limits=c(0,10),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  guides(fill=F)+
+  labs(title = "Industry",
+       x = "Quantity",
+       y = "Price")+
+  theme_classic(base_family = "Fira Sans Condensed", base_size=20)
+```
+]
+
+- **Short run $(A \rightarrow B)$**: industry reaches new equilibrium
+
+- Firms charge higher $p^*$, produce more $q^*$, earn $\pi$
+
+---
+
+# Increasing Cost Industry (External Diseconomies) V
+
+.pull-left[
+```{r, fig.retina=3, fig.height=5}
+increased_mc=function(x){3*x^2-8*x+12}
+increased_ac=function(x){x^2-4*x+12+10/x}
+
+ggplot(data.frame(x=c(0,10)), aes(x=x))+
+  
+  stat_function(fun=demand_firm, geom="line", size=2, color = "blue")+
+  geom_label(aes(x=4.5,y=demand_firm(4.5)), color = "blue", label="Demand", size = 5)+
+  geom_segment(x=3.225, xend=3.225, y=0, yend=14, size=1, linetype="dotted")+
+
+  # new demand
+  stat_function(fun=demand_firm_new, geom="line", size=2, color = "blue")+
+  geom_label(aes(x=2,y=demand_firm_new(2)), color = "blue", label="New Demand", size = 5)+
+  geom_segment(x=2.8, xend=2.8, y=0, yend=10, size=1, linetype="dotted")+
+  geom_segment(x=0, xend=3.225, y=10.75, yend=10.75, size=1, linetype="dotted")+
+  
+    stat_function(fun=mc_cc, geom="line", size=2, color = "red")+
+  geom_label(aes(x=3.5,y=mc_cc(3.5)), color = "red", label="MC(q)", size = 5)+
+    stat_function(fun=ac_cc, geom="line", size=2, color = "orange")+
+  geom_label(aes(x=4.5,y=ac_cc(4.5)), color = "orange", label="MC(q)", size = 5)+
+  
+  # increased costs
+    stat_function(fun=increased_mc, geom="line", size=2, color = "red", linetype="dashed")+
+    stat_function(fun=increased_ac, geom="line", size=2, color = "orange", linetype="dashed")+
+
+      scale_x_continuous(breaks=NULL,
+                     limits=c(0,5),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  scale_y_continuous(breaks=NULL,
+                     limits=c(0,20),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  guides(fill=F)+
+  labs(title = "Representative Firm",
+       x = "Quantity",
+       y = "Price")+
+  theme_classic(base_family = "Fira Sans Condensed", base_size=20)
+```
+]
+
+.pull-right[
+```{r, fig.retina=3, fig.height=5}
+supply_new=function(x){x-4}
+ggplot(data.frame(x=c(0,10)), aes(x=x))+
+  stat_function(fun=demand, geom="line", size=2, color = "blue")+
+    geom_label(aes(x=9,y=demand(9)), color = "blue", label="Demand", size = 5)+
+  stat_function(fun=demand_new, geom="line", size=2, color = "blue")+
+    geom_label(aes(x=5,y=demand_new(5)), color = "blue", label="New Demand", size = 5)+
+  stat_function(fun=supply, geom="line", size=2, color = "red")+
+    geom_label(aes(x=9,y=supply(9)), color = "red", label="Supply", size = 5)+
+  geom_segment(x=5, xend=5, y=0, yend=5, size=1, linetype="dotted")+
+  geom_segment(x=0, xend=5, y=5, yend=5, size=1, linetype="dotted")+
+  
+  # new lines
+  geom_segment(x=7, xend=7, y=0, yend=7, size=1, linetype="dotted")+
+  geom_segment(x=0, xend=7, y=7, yend=7, size=1, linetype="dotted")+
+  
+  # point A
+  geom_point(x = 5, y = 5, size=3)+
+  geom_text(x = 5, y = 5.5, label = "A", size=5)+
+  
+  # point B
+  geom_point(x = 7, y = 7, size=3)+
+  geom_text(x = 7, y = 7.5, label = "B", size=5)+
+  
+    scale_x_continuous(breaks=NULL,
+                     limits=c(0,10),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  scale_y_continuous(breaks=NULL,
+                     limits=c(0,10),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  guides(fill=F)+
+  labs(title = "Industry",
+       x = "Quantity",
+       y = "Price")+
+  theme_classic(base_family = "Fira Sans Condensed", base_size=20)
+```
+]
+
+- **Long run**: profit attracts entry $\implies$ industry supply will increase
+
+- **But more production increases costs $(MC, AC)$ for all firms in industry**
+
+---
+
+# Increasing Cost Industry (External Diseconomies) VI
+
+.pull-left[
+```{r, fig.retina=3, fig.height=5}
+increased_mc=function(x){3*x^2-8*x+12}
+increased_ac=function(x){x^2-4*x+12+10/x}
+final_demand=function(x){12}
+
+ggplot(data.frame(x=c(0,10)), aes(x=x))+
+  
+  stat_function(fun=demand_firm, geom="line", size=2, color = "blue")+
+  geom_label(aes(x=4.5,y=demand_firm(4.5)), color = "blue", label="Demand", size = 5)+
+  geom_segment(x=3.225, xend=3.225, y=0, yend=14, size=1, linetype="dotted")+
+
+  # new demand
+  stat_function(fun=demand_firm_new, geom="line", size=2, color = "blue")+
+  geom_label(aes(x=2,y=demand_firm_new(2)), color = "blue", label="New Demand", size = 5)+
+  geom_segment(x=2.8, xend=2.8, y=0, yend=10, size=1, linetype="dotted")+
+  geom_segment(x=0, xend=3.225, y=10.75, yend=10.75, size=1, linetype="dotted")+
+  
+    stat_function(fun=mc_cc, geom="line", size=2, color = "red")+
+  geom_label(aes(x=3.5,y=mc_cc(3.5)), color = "red", label="MC(q)", size = 5)+
+    stat_function(fun=ac_cc, geom="line", size=2, color = "orange")+
+  geom_label(aes(x=4.5,y=ac_cc(4.5)), color = "orange", label="MC(q)", size = 5)+
+  
+  # increased costs
+    stat_function(fun=increased_mc, geom="line", size=2, color = "red", linetype="dashed")+
+    stat_function(fun=increased_ac, geom="line", size=2, color = "orange", linetype="dashed")+
+
+  # final demand
+  stat_function(fun=final_demand, geom="line", size=2, color = "blue", linetype="dashed")+
+  geom_label(aes(x=1,y=final_demand(1)), color = "blue", label="Final Demand", size = 5)+
+  geom_segment(x=2.6, xend=2.6, y=0, yend=12, size=1, linetype="dotted")+
+  annotate("segment", x = 3.225, xend = 2.6, y = 3, yend = 3, color = "purple", size=2, alpha=0.9, arrow=arrow(length=unit(0.5,"cm"), ends="last", type="closed"))+
+      scale_x_continuous(breaks=NULL,
+                     limits=c(0,5),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  scale_y_continuous(breaks=NULL,
+                     limits=c(0,20),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  guides(fill=F)+
+  labs(title = "Representative Firm",
+       x = "Quantity",
+       y = "Price")+
+  theme_classic(base_family = "Fira Sans Condensed", base_size=20)
+```
+]
+
+.pull-right[
+```{r, fig.retina=3, fig.height=5}
+supply_new_inc=function(x){x-2}
+
+ggplot(data.frame(x=c(0,10)), aes(x=x))+
+  stat_function(fun=demand, geom="line", size=2, color = "blue")+
+    geom_label(aes(x=9,y=demand(9)), color = "blue", label="Demand", size = 5)+
+  stat_function(fun=demand_new, geom="line", size=2, color = "blue")+
+    geom_label(aes(x=5,y=demand_new(5)), color = "blue", label="New Demand", size = 5)+
+  stat_function(fun=supply, geom="line", size=2, color = "red")+
+    geom_label(aes(x=9,y=supply(9)), color = "red", label="Supply", size = 5)+
+  stat_function(fun=supply_new_inc, geom="line", size=2, color = "red")+
+    geom_label(aes(x=9,y=supply_new_inc(9)), color = "red", label="New Supply", size = 5)+
+  geom_segment(x=5, xend=5, y=0, yend=5, size=1, linetype="dotted")+
+  geom_segment(x=0, xend=5, y=5, yend=5, size=1, linetype="dotted")+
+  
+  # new lines
+  geom_segment(x=7, xend=7, y=0, yend=7, size=1, linetype="dotted")+
+  geom_segment(x=0, xend=7, y=7, yend=7, size=1, linetype="dotted")+
+  
+  # point A
+  geom_point(x = 5, y = 5, size=3)+
+  geom_text(x = 5, y = 5.5, label = "A", size=5)+
+  
+  # point B
+  geom_point(x = 7, y = 7, size=3)+
+  geom_text(x = 7, y = 7.5, label = "B", size=5)+
+  
+  # point C
+  geom_point(x = 8, y = 6, size=3)+
+  geom_text(x = 8, y = 6.5, label = "C", size=5)+
+  
+  # new lines C
+  geom_segment(x=8, xend=8, y=0, yend=6, size=1, linetype="dotted")+
+  geom_segment(x=0, xend=8, y=6, yend=6, size=1, linetype="dotted")+
+  
+    scale_x_continuous(breaks=NULL,
+                     limits=c(0,10),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  scale_y_continuous(breaks=NULL,
+                     limits=c(0,10),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  guides(fill=F)+
+  labs(title = "Industry",
+       x = "Quantity",
+       y = "Price")+
+  theme_classic(base_family = "Fira Sans Condensed", base_size=20)
+```
+]
+
+- **Long run $(B \rightarrow C)$**: firms enter until $\pi=0$ at $p=AC(q)$
+
+- Firms charge higher $p^*$, producer lower $q^*$, earn $\pi=0$
+
+---
+
+# Increasing Cost Industry (External Diseconomies) VII
+
+.pull-left[
+```{r, fig.retina=3, fig.height=5}
+increased_mc=function(x){3*x^2-8*x+12}
+increased_ac=function(x){x^2-4*x+12+10/x}
+final_demand=function(x){12}
+
+ggplot(data.frame(x=c(0,10)), aes(x=x))+
+  
+  stat_function(fun=demand_firm, geom="line", size=2, color = "blue")+
+  geom_label(aes(x=4.5,y=demand_firm(4.5)), color = "blue", label="Demand", size = 5)+
+  geom_segment(x=3.225, xend=3.225, y=0, yend=14, size=1, linetype="dotted")+
+
+  # new demand
+  stat_function(fun=demand_firm_new, geom="line", size=2, color = "blue")+
+  geom_label(aes(x=2,y=demand_firm_new(2)), color = "blue", label="New Demand", size = 5)+
+  geom_segment(x=2.8, xend=2.8, y=0, yend=10, size=1, linetype="dotted")+
+  geom_segment(x=0, xend=3.225, y=10.75, yend=10.75, size=1, linetype="dotted")+
+  
+    stat_function(fun=mc_cc, geom="line", size=2, color = "red")+
+  geom_label(aes(x=3.5,y=mc_cc(3.5)), color = "red", label="MC(q)", size = 5)+
+    stat_function(fun=ac_cc, geom="line", size=2, color = "orange")+
+  geom_label(aes(x=4.5,y=ac_cc(4.5)), color = "orange", label="MC(q)", size = 5)+
+  
+  # increased costs
+    stat_function(fun=increased_mc, geom="line", size=2, color = "red", linetype="dashed")+
+    stat_function(fun=increased_ac, geom="line", size=2, color = "orange", linetype="dashed")+
+
+  # final demand
+  stat_function(fun=final_demand, geom="line", size=2, color = "blue", linetype="dashed")+
+  geom_label(aes(x=1,y=final_demand(1)), color = "blue", label="Final Demand", size = 5)+
+  geom_segment(x=2.6, xend=2.6, y=0, yend=12, size=1, linetype="dotted")+
+  annotate("segment", x = 3.225, xend = 2.6, y = 3, yend = 3, color = "purple", size=2, alpha=0.9, arrow=arrow(length=unit(0.5,"cm"), ends="last", type="closed"))+
+      scale_x_continuous(breaks=NULL,
+                     limits=c(0,5),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  scale_y_continuous(breaks=NULL,
+                     limits=c(0,20),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  guides(fill=F)+
+  labs(title = "Representative Firm",
+       x = "Quantity",
+       y = "Price")+
+  theme_classic(base_family = "Fira Sans Condensed", base_size=20)
+```
+]
+
+.pull-right[
+```{r, fig.retina=3, fig.height=5}
+supply_new_inc=function(x){x-2}
+lrs_inc=function(x){3.333+0.333*x}
+
+ggplot(data.frame(x=c(0,10)), aes(x=x))+
+  stat_function(fun=demand, geom="line", size=2, color = "blue")+
+    geom_label(aes(x=9,y=demand(9)), color = "blue", label="Demand", size = 5)+
+  stat_function(fun=demand_new, geom="line", size=2, color = "blue")+
+    geom_label(aes(x=5,y=demand_new(5)), color = "blue", label="New Demand", size = 5)+
+  stat_function(fun=supply, geom="line", size=2, color = "red")+
+    geom_label(aes(x=9,y=supply(9)), color = "red", label="Supply", size = 5)+
+  stat_function(fun=supply_new_inc, geom="line", size=2, color = "red")+
+    geom_label(aes(x=9,y=supply_new_inc(9)), color = "red", label="New Supply", size = 5)+
+  geom_segment(x=5, xend=5, y=0, yend=5, size=1, linetype="dotted")+
+  geom_segment(x=0, xend=5, y=5, yend=5, size=1, linetype="dotted")+
+  
+  # new lines
+  geom_segment(x=7, xend=7, y=0, yend=7, size=1, linetype="dotted")+
+  geom_segment(x=0, xend=7, y=7, yend=7, size=1, linetype="dotted")+
+  
+  # point A
+  geom_point(x = 5, y = 5, size=3)+
+  geom_text(x = 5, y = 5.5, label = "A", size=5)+
+  
+  # point B
+  geom_point(x = 7, y = 7, size=3)+
+  geom_text(x = 7, y = 7.5, label = "B", size=5)+
+  
+  # point C
+  geom_point(x = 8, y = 6, size=3)+
+  geom_text(x = 8, y = 6.5, label = "C", size=5)+
+  
+  # new lines C
+  geom_segment(x=8, xend=8, y=0, yend=6, size=1, linetype="dotted")+
+  geom_segment(x=0, xend=8, y=6, yend=6, size=1, linetype="dotted")+
+  
+  stat_function(fun=lrs_inc, geom="line", size=4, color = "red")+
+  geom_label(aes(x=2,y=lrs_inc(2)), color = "red", label="Long Run Supply", size = 5)+
+  
+    scale_x_continuous(breaks=NULL,
+                     limits=c(0,10),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  scale_y_continuous(breaks=NULL,
+                     limits=c(0,10),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  guides(fill=F)+
+  labs(title = "Industry",
+       x = "Quantity",
+       y = "Price")+
+  theme_classic(base_family = "Fira Sans Condensed", base_size=20)
+```
+]
+
+- .red[Long run industry supply curve] is upward sloping
+
+
+---
+
+# Decreasing Cost Industry (External Economies) I
+
+.pull-left[
+
+- .shout[Decreasing cost industry] has *external economies*, costs fall for all firms in the industry as industry output increases (firms enter & incumbents produce more)
+
+- A *downward sloping long-run industry supply curve*!
+
+- Determinants:
+  - High fixed costs, low marginal costs
+  - Economies of scale
+
+- Examples: geographic clusters, public utilities, infrastructure, entertainment
+
+- **Tends towards "natural" monopoly**
+
+]
+
+.pull-right[
+.center[
+![:scale 50%](https://www.dropbox.com/s/pfxi4ay8q47m9v1/hollywood.png?raw=1)
+
+![:scale 50%](https://www.dropbox.com/s/9cgi6o9d5fzyntx/roads.png?raw=1)
+
+]
+]
+
+---
+
+# Decreasing Cost Industry (External Economies) II
+
+.pull-left[
+```{r, fig.retina=3, fig.height=5}
+demand<-function(x){10-x}
+supply<-function(x){x}
+demand_firm<-function(x){10}
+mc_cc<-function(x){3*x^2-8*x+9}
+ac_cc<-function(x){x^2-4*x+10+10/x}
+
+ggplot(data.frame(x=c(0,10)), aes(x=x))+
+  stat_function(fun=demand_firm, geom="line", size=2, color = "blue")+
+  geom_label(aes(x=4.5,y=demand_firm(4.5)), color = "blue", label="Demand", size = 5)+
+    stat_function(fun=mc_cc, geom="line", size=2, color = "red")+
+  geom_label(aes(x=3.5,y=mc_cc(3.5)), color = "red", label="MC(q)", size = 5)+
+    stat_function(fun=ac_cc, geom="line", size=2, color = "orange")+
+  geom_label(aes(x=4.5,y=ac_cc(4.5)), color = "orange", label="MC(q)", size = 5)+
+  geom_segment(x=2.8, xend=2.8, y=0, yend=10, size=1, linetype="dotted")+
+    scale_x_continuous(breaks=NULL,
+                     limits=c(0,5),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  scale_y_continuous(breaks=NULL,
+                     limits=c(0,20),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  guides(fill=F)+
+  labs(title = "Representative Firm",
+       x = "Quantity",
+       y = "Price")+
+  theme_classic(base_family = "Fira Sans Condensed", base_size=20)
+```
+]
+
+.pull-right[
+```{r, fig.retina=3, fig.height=5}
+ggplot(data.frame(x=c(0,10)), aes(x=x))+
+  stat_function(fun=demand, geom="line", size=2, color = "blue")+
+    geom_label(aes(x=9,y=demand(9)), color = "blue", label="Demand", size = 5)+
+  stat_function(fun=supply, geom="line", size=2, color = "red")+
+    geom_label(aes(x=9,y=supply(9)), color = "red", label="Supply", size = 5)+
+  geom_segment(x=5, xend=5, y=0, yend=5, size=1, linetype="dotted")+
+  geom_segment(x=0, xend=5, y=5, yend=5, size=1, linetype="dotted")+
+  
+  # point A
+  geom_point(x = 5, y = 5, size=3)+
+  geom_text(x = 5, y = 5.5, label = "A", size=5)+
+  
+    scale_x_continuous(breaks=NULL,
+                     limits=c(0,10),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  scale_y_continuous(breaks=NULL,
+                     limits=c(0,10),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  guides(fill=F)+
+  labs(title = "Industry",
+       x = "Quantity",
+       y = "Price")+
+  theme_classic(base_family = "Fira Sans Condensed", base_size=20)
+```
+]
+
+- Industry equilibrium: firms earning normal $\pi=0, p=MC(q)=AC(q)$
+
+
+---
+
+# Decreasing Cost Industry (External Economies) III
+
+.pull-left[
+```{r, fig.retina=3, fig.height=5}
+demand<-function(x){10-x}
+supply<-function(x){x}
+demand_firm<-function(x){10}
+mc_cc<-function(x){3*x^2-8*x+9}
+ac_cc<-function(x){x^2-4*x+10+10/x}
+
+ggplot(data.frame(x=c(0,10)), aes(x=x))+
+  stat_function(fun=demand_firm, geom="line", size=2, color = "blue")+
+  geom_label(aes(x=4.5,y=demand_firm(4.5)), color = "blue", label="Demand", size = 5)+
+    stat_function(fun=mc_cc, geom="line", size=2, color = "red")+
+  geom_label(aes(x=3.5,y=mc_cc(3.5)), color = "red", label="MC(q)", size = 5)+
+    stat_function(fun=ac_cc, geom="line", size=2, color = "orange")+
+  geom_label(aes(x=4.5,y=ac_cc(4.5)), color = "orange", label="MC(q)", size = 5)+
+  geom_segment(x=2.8, xend=2.8, y=0, yend=10, size=1, linetype="dotted")+
+    scale_x_continuous(breaks=NULL,
+                     limits=c(0,5),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  scale_y_continuous(breaks=NULL,
+                     limits=c(0,20),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  guides(fill=F)+
+  labs(title = "Representative Firm",
+       x = "Quantity",
+       y = "Price")+
+  theme_classic(base_family = "Fira Sans Condensed", base_size=20)
+```
+]
+
+.pull-right[
+```{r, fig.retina=3, fig.height=5}
+demand_new<-function(x){14-x}
+
+ggplot(data.frame(x=c(0,10)), aes(x=x))+
+  stat_function(fun=demand, geom="line", size=2, color = "blue")+
+    geom_label(aes(x=9,y=demand(9)), color = "blue", label="Demand", size = 5)+
+  stat_function(fun=demand_new, geom="line", size=2, color = "blue")+
+    geom_label(aes(x=5,y=demand_new(5)), color = "blue", label="New Demand", size = 5)+
+  stat_function(fun=supply, geom="line", size=2, color = "red")+
+    geom_label(aes(x=9,y=supply(9)), color = "red", label="Supply", size = 5)+
+  geom_segment(x=5, xend=5, y=0, yend=5, size=1, linetype="dotted")+
+  geom_segment(x=0, xend=5, y=5, yend=5, size=1, linetype="dotted")+
+  
+  # new lines
+  geom_segment(x=7, xend=7, y=0, yend=7, size=1, linetype="dotted")+
+  geom_segment(x=0, xend=7, y=7, yend=7, size=1, linetype="dotted")+
+  
+  # point A
+  geom_point(x = 5, y = 5, size=3)+
+  geom_text(x = 5, y = 5.5, label = "A", size=5)+
+  
+  # point B
+  geom_point(x = 7, y = 7, size=3)+
+  geom_text(x = 7, y = 7.5, label = "B", size=5)+
+    scale_x_continuous(breaks=NULL,
+                     limits=c(0,10),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  scale_y_continuous(breaks=NULL,
+                     limits=c(0,10),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  guides(fill=F)+
+  labs(title = "Industry",
+       x = "Quantity",
+       y = "Price")+
+  theme_classic(base_family = "Fira Sans Condensed", base_size=20)
+```
+]
+
+- Industry equilibrium: firms earning normal $\pi=0, p=MC(q)=AC(q)$
+
+- Exogenous increase in market demand
+
+---
+
+# Decreasing Cost Industry (External Economies) IV
+
+.pull-left[
+```{r, fig.retina=3, fig.height=5}
+demand_firm_new=function(x){14}
+
+ggplot(data.frame(x=c(0,10)), aes(x=x))+
+  
+  # profit
+  geom_rect(xmin=0, xmax=3.225,ymin=10.75,ymax=14,fill="green",alpha=0.25)+
+
+  
+  stat_function(fun=demand_firm, geom="line", size=2, color = "blue")+
+  geom_label(aes(x=4.5,y=demand_firm(4.5)), color = "blue", label="Demand", size = 5)+
+  geom_segment(x=3.225, xend=3.225, y=0, yend=14, size=1, linetype="dotted")+
+
+  # new demand
+  stat_function(fun=demand_firm_new, geom="line", size=2, color = "blue")+
+  geom_label(aes(x=2,y=demand_firm_new(2)), color = "blue", label="New Demand", size = 5)+
+  geom_segment(x=2.8, xend=2.8, y=0, yend=10, size=1, linetype="dotted")+
+
+    stat_function(fun=mc_cc, geom="line", size=2, color = "red")+
+  geom_label(aes(x=3.5,y=mc_cc(3.5)), color = "red", label="MC(q)", size = 5)+
+    stat_function(fun=ac_cc, geom="line", size=2, color = "orange")+
+  geom_label(aes(x=4.5,y=ac_cc(4.5)), color = "orange", label="MC(q)", size = 5)+
+  annotate("segment", x = 2.8, xend = 3.225, y = 3, yend = 3, color = "purple", size=2, alpha=0.9, arrow=arrow(length=unit(0.5,"cm"), ends="last", type="closed"))+
+    scale_x_continuous(breaks=NULL,
+                     limits=c(0,5),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  scale_y_continuous(breaks=NULL,
+                     limits=c(0,20),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  guides(fill=F)+
+  labs(title = "Representative Firm",
+       x = "Quantity",
+       y = "Price")+
+  theme_classic(base_family = "Fira Sans Condensed", base_size=20)
+```
+]
+
+.pull-right[
+```{r, fig.retina=3, fig.height=5}
+ggplot(data.frame(x=c(0,10)), aes(x=x))+
+  stat_function(fun=demand, geom="line", size=2, color = "blue")+
+    geom_label(aes(x=9,y=demand(9)), color = "blue", label="Demand", size = 5)+
+  stat_function(fun=demand_new, geom="line", size=2, color = "blue")+
+    geom_label(aes(x=5,y=demand_new(5)), color = "blue", label="New Demand", size = 5)+
+  stat_function(fun=supply, geom="line", size=2, color = "red")+
+    geom_label(aes(x=9,y=supply(9)), color = "red", label="Supply", size = 5)+
+  geom_segment(x=5, xend=5, y=0, yend=5, size=1, linetype="dotted")+
+  geom_segment(x=0, xend=5, y=5, yend=5, size=1, linetype="dotted")+
+  
+  # new lines
+  geom_segment(x=7, xend=7, y=0, yend=7, size=1, linetype="dotted")+
+  geom_segment(x=0, xend=7, y=7, yend=7, size=1, linetype="dotted")+
+  
+  # point A
+  geom_point(x = 5, y = 5, size=3)+
+  geom_text(x = 5, y = 5.5, label = "A", size=5)+
+  
+  # point B
+  geom_point(x = 7, y = 7, size=3)+
+  geom_text(x = 7, y = 7.5, label = "B", size=5)+
+    scale_x_continuous(breaks=NULL,
+                     limits=c(0,10),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  scale_y_continuous(breaks=NULL,
+                     limits=c(0,10),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  guides(fill=F)+
+  labs(title = "Industry",
+       x = "Quantity",
+       y = "Price")+
+  theme_classic(base_family = "Fira Sans Condensed", base_size=20)
+```
+]
+
+- **Short run $(A \rightarrow B)$**: industry reaches new equilibrium
+
+- Firms charge higher $p^*$, produce more $q^*$, earn $\pi$
+
+---
+
+# Decreasing Cost Industry (External Economies) V
+
+.pull-left[
+```{r, fig.retina=3, fig.height=5}
+lowered_mc=function(x){3*x^2-8*x+6}
+lowered_ac=function(x){x^2-4*x+8+10/x}
+final_demand_d=function(x){8}
+
+ggplot(data.frame(x=c(0,10)), aes(x=x))+
+  
+  stat_function(fun=demand_firm, geom="line", size=2, color = "blue")+
+  geom_label(aes(x=4.5,y=demand_firm(4.5)), color = "blue", label="Demand", size = 5)+
+  geom_segment(x=3.225, xend=3.225, y=0, yend=14, size=1, linetype="dotted")+
+
+  # new demand
+  stat_function(fun=demand_firm_new, geom="line", size=2, color = "blue")+
+  geom_label(aes(x=2,y=demand_firm_new(2)), color = "blue", label="New Demand", size = 5)+
+  geom_segment(x=2.8, xend=2.8, y=0, yend=10, size=1, linetype="dotted")+
+  geom_segment(x=0, xend=3.225, y=10.75, yend=10.75, size=1, linetype="dotted")+
+  
+    stat_function(fun=mc_cc, geom="line", size=2, color = "red")+
+  geom_label(aes(x=3.5,y=mc_cc(3.5)), color = "red", label="MC(q)", size = 5)+
+    stat_function(fun=ac_cc, geom="line", size=2, color = "orange")+
+  geom_label(aes(x=4.5,y=ac_cc(4.5)), color = "orange", label="MC(q)", size = 5)+
+  
+  # increased costs
+    stat_function(fun=lowered_mc, geom="line", size=2, color = "red", linetype="dashed")+
+    stat_function(fun=lowered_ac, geom="line", size=2, color = "orange", linetype="dashed")+
+
+      scale_x_continuous(breaks=NULL,
+                     limits=c(0,5),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  scale_y_continuous(breaks=NULL,
+                     limits=c(0,20),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  guides(fill=F)+
+  labs(title = "Representative Firm",
+       x = "Quantity",
+       y = "Price")+
+  theme_classic(base_family = "Fira Sans Condensed", base_size=20)
+```
+]
+
+.pull-right[
+```{r, fig.retina=3, fig.height=5}
+supply_new=function(x){x-4}
+ggplot(data.frame(x=c(0,10)), aes(x=x))+
+  stat_function(fun=demand, geom="line", size=2, color = "blue")+
+    geom_label(aes(x=9,y=demand(9)), color = "blue", label="Demand", size = 5)+
+  stat_function(fun=demand_new, geom="line", size=2, color = "blue")+
+    geom_label(aes(x=5,y=demand_new(5)), color = "blue", label="New Demand", size = 5)+
+  stat_function(fun=supply, geom="line", size=2, color = "red")+
+    geom_label(aes(x=9,y=supply(9)), color = "red", label="Supply", size = 5)+
+  geom_segment(x=5, xend=5, y=0, yend=5, size=1, linetype="dotted")+
+  geom_segment(x=0, xend=5, y=5, yend=5, size=1, linetype="dotted")+
+  
+  # new lines
+  geom_segment(x=7, xend=7, y=0, yend=7, size=1, linetype="dotted")+
+  geom_segment(x=0, xend=7, y=7, yend=7, size=1, linetype="dotted")+
+  
+  # point A
+  geom_point(x = 5, y = 5, size=3)+
+  geom_text(x = 5, y = 5.5, label = "A", size=5)+
+  
+  # point B
+  geom_point(x = 7, y = 7, size=3)+
+  geom_text(x = 7, y = 7.5, label = "B", size=5)+
+  
+    scale_x_continuous(breaks=NULL,
+                     limits=c(0,10),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  scale_y_continuous(breaks=NULL,
+                     limits=c(0,10),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  guides(fill=F)+
+  labs(title = "Industry",
+       x = "Quantity",
+       y = "Price")+
+  theme_classic(base_family = "Fira Sans Condensed", base_size=20)
+```
+]
+
+- **Long run**: profit attracts entry $\implies$ industry supply will increase
+
+- **But more production lowers costs $(MC, AC)$ for all firms in industry**
+
+---
+
+# Decreasing Cost Industry (External Economies) VI
+
+.pull-left[
+```{r, fig.retina=3, fig.height=5}
+lowered_mc=function(x){3*x^2-8*x+6}
+lowered_ac=function(x){x^2-4*x+8+10/x}
+final_demand_d=function(x){8}
+
+ggplot(data.frame(x=c(0,10)), aes(x=x))+
+  
+  stat_function(fun=demand_firm, geom="line", size=2, color = "blue")+
+  geom_label(aes(x=4.5,y=demand_firm(4.5)), color = "blue", label="Demand", size = 5)+
+  geom_segment(x=3.225, xend=3.225, y=0, yend=14, size=1, linetype="dotted")+
+
+  # new demand
+  stat_function(fun=demand_firm_new, geom="line", size=2, color = "blue")+
+  geom_label(aes(x=2,y=demand_firm_new(2)), color = "blue", label="New Demand", size = 5)+
+  geom_segment(x=2.8, xend=2.8, y=0, yend=10, size=1, linetype="dotted")+
+  geom_segment(x=0, xend=3.225, y=10.75, yend=10.75, size=1, linetype="dotted")+
+  
+    stat_function(fun=mc_cc, geom="line", size=2, color = "red")+
+  geom_label(aes(x=3.5,y=mc_cc(3.5)), color = "red", label="MC(q)", size = 5)+
+    stat_function(fun=ac_cc, geom="line", size=2, color = "orange")+
+  geom_label(aes(x=4.5,y=ac_cc(4.5)), color = "orange", label="MC(q)", size = 5)+
+  
+  # increased costs
+    stat_function(fun=lowered_mc, geom="line", size=2, color = "red", linetype="dashed")+
+    stat_function(fun=lowered_ac, geom="line", size=2, color = "orange", linetype="dashed")+
+
+  # final demand
+  stat_function(fun=final_demand_d, geom="line", size=2, color = "blue", linetype="dashed")+
+  geom_label(aes(x=1,y=final_demand_d(1)), color = "blue", label="Final Demand", size = 5)+
+  geom_segment(x=3, xend=3, y=0, yend=8, size=1, linetype="dotted")+
+  annotate("segment", x = 3.225, xend = 3, y = 3, yend = 3, color = "purple", size=2, alpha=0.9, arrow=arrow(length=unit(0.5,"cm"), ends="last", type="closed"))+
+      scale_x_continuous(breaks=NULL,
+                     limits=c(0,5),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  scale_y_continuous(breaks=NULL,
+                     limits=c(0,20),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  guides(fill=F)+
+  labs(title = "Representative Firm",
+       x = "Quantity",
+       y = "Price")+
+  theme_classic(base_family = "Fira Sans Condensed", base_size=20)
+```
+]
+
+.pull-right[
+```{r, fig.retina=3, fig.height=5}
+supply_new_dec=function(x){x-6}
+
+ggplot(data.frame(x=c(0,10)), aes(x=x))+
+  stat_function(fun=demand, geom="line", size=2, color = "blue")+
+    geom_label(aes(x=9,y=demand(9)), color = "blue", label="Demand", size = 5)+
+  stat_function(fun=demand_new, geom="line", size=2, color = "blue")+
+    geom_label(aes(x=5,y=demand_new(5)), color = "blue", label="New Demand", size = 5)+
+  stat_function(fun=supply, geom="line", size=2, color = "red")+
+    geom_label(aes(x=9,y=supply(9)), color = "red", label="Supply", size = 5)+
+  stat_function(fun=supply_new_dec, geom="line", size=2, color = "red")+
+    geom_label(aes(x=9,y=supply_new_dec(9)), color = "red", label="New Supply", size = 5)+
+  geom_segment(x=5, xend=5, y=0, yend=5, size=1, linetype="dotted")+
+  geom_segment(x=0, xend=5, y=5, yend=5, size=1, linetype="dotted")+
+  
+  # new lines
+  geom_segment(x=7, xend=7, y=0, yend=7, size=1, linetype="dotted")+
+  geom_segment(x=0, xend=7, y=7, yend=7, size=1, linetype="dotted")+
+  
+  # point A
+  geom_point(x = 5, y = 5, size=3)+
+  geom_text(x = 5, y = 5.5, label = "A", size=5)+
+  
+  # point B
+  geom_point(x = 7, y = 7, size=3)+
+  geom_text(x = 7, y = 7.5, label = "B", size=5)+
+  
+  # point C
+  geom_point(x = 10, y = 4, size=3)+
+  geom_text(x = 10, y = 4.5, label = "C", size=5)+
+  
+  # new lines C
+  geom_segment(x=10, xend=10, y=0, yend=4, size=1, linetype="dotted")+
+  geom_segment(x=0, xend=10, y=4, yend=4, size=1, linetype="dotted")+
+  
+    scale_x_continuous(breaks=NULL,
+                     limits=c(0,10),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  scale_y_continuous(breaks=NULL,
+                     limits=c(0,10),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  guides(fill=F)+
+  labs(title = "Industry",
+       x = "Quantity",
+       y = "Price")+
+  theme_classic(base_family = "Fira Sans Condensed", base_size=20)
+```
+]
+
+- **Long run $(B \rightarrow C)$**: firms enter until $\pi=0$ at $p=AC(q)$
+
+- Firms charge higher $p^*$, producer lower $q^*$, earn $\pi=0$
+
+---
+
+# Decreasing Cost Industry (External Economies) VII
+
+.pull-left[
+```{r, fig.retina=3, fig.height=5}
+lowered_mc=function(x){3*x^2-8*x+6}
+lowered_ac=function(x){x^2-4*x+8+10/x}
+final_demand_d=function(x){8}
+
+ggplot(data.frame(x=c(0,10)), aes(x=x))+
+  
+  stat_function(fun=demand_firm, geom="line", size=2, color = "blue")+
+  geom_label(aes(x=4.5,y=demand_firm(4.5)), color = "blue", label="Demand", size = 5)+
+  geom_segment(x=3.225, xend=3.225, y=0, yend=14, size=1, linetype="dotted")+
+
+  # new demand
+  stat_function(fun=demand_firm_new, geom="line", size=2, color = "blue")+
+  geom_label(aes(x=2,y=demand_firm_new(2)), color = "blue", label="New Demand", size = 5)+
+  geom_segment(x=2.8, xend=2.8, y=0, yend=10, size=1, linetype="dotted")+
+  geom_segment(x=0, xend=3.225, y=10.75, yend=10.75, size=1, linetype="dotted")+
+  
+    stat_function(fun=mc_cc, geom="line", size=2, color = "red")+
+  geom_label(aes(x=3.5,y=mc_cc(3.5)), color = "red", label="MC(q)", size = 5)+
+    stat_function(fun=ac_cc, geom="line", size=2, color = "orange")+
+  geom_label(aes(x=4.5,y=ac_cc(4.5)), color = "orange", label="MC(q)", size = 5)+
+  
+  # increased costs
+    stat_function(fun=lowered_mc, geom="line", size=2, color = "red", linetype="dashed")+
+    stat_function(fun=lowered_ac, geom="line", size=2, color = "orange", linetype="dashed")+
+
+  # final demand
+  stat_function(fun=final_demand_d, geom="line", size=2, color = "blue", linetype="dashed")+
+  geom_label(aes(x=1,y=final_demand_d(1)), color = "blue", label="Final Demand", size = 5)+
+  geom_segment(x=3, xend=3, y=0, yend=8, size=1, linetype="dotted")+
+  annotate("segment", x = 3.225, xend = 3, y = 3, yend = 3, color = "purple", size=2, alpha=0.9, arrow=arrow(length=unit(0.5,"cm"), ends="last", type="closed"))+
+      scale_x_continuous(breaks=NULL,
+                     limits=c(0,5),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  scale_y_continuous(breaks=NULL,
+                     limits=c(0,20),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  guides(fill=F)+
+  labs(title = "Representative Firm",
+       x = "Quantity",
+       y = "Price")+
+  theme_classic(base_family = "Fira Sans Condensed", base_size=20)
+```
+]
+
+.pull-right[
+```{r, fig.retina=3, fig.height=5}
+lrs_dec=function(x){6-0.2*x}
+
+ggplot(data.frame(x=c(0,10)), aes(x=x))+
+  stat_function(fun=demand, geom="line", size=2, color = "blue")+
+    geom_label(aes(x=9,y=demand(9)), color = "blue", label="Demand", size = 5)+
+  stat_function(fun=demand_new, geom="line", size=2, color = "blue")+
+    geom_label(aes(x=5,y=demand_new(5)), color = "blue", label="New Demand", size = 5)+
+  stat_function(fun=supply, geom="line", size=2, color = "red")+
+    geom_label(aes(x=9,y=supply(9)), color = "red", label="Supply", size = 5)+
+  stat_function(fun=supply_new_dec, geom="line", size=2, color = "red")+
+    geom_label(aes(x=9,y=supply_new_dec(9)), color = "red", label="New Supply", size = 5)+
+  geom_segment(x=5, xend=5, y=0, yend=5, size=1, linetype="dotted")+
+  geom_segment(x=0, xend=5, y=5, yend=5, size=1, linetype="dotted")+
+  
+  # new lines
+  geom_segment(x=7, xend=7, y=0, yend=7, size=1, linetype="dotted")+
+  geom_segment(x=0, xend=7, y=7, yend=7, size=1, linetype="dotted")+
+  
+  # point A
+  geom_point(x = 5, y = 5, size=3)+
+  geom_text(x = 5, y = 5.5, label = "A", size=5)+
+  
+  # point B
+  geom_point(x = 7, y = 7, size=3)+
+  geom_text(x = 7, y = 7.5, label = "B", size=5)+
+  
+  # point C
+  geom_point(x = 10, y = 4, size=3)+
+  geom_text(x = 10, y = 4.5, label = "C", size=5)+
+  
+  # new lines C
+  geom_segment(x=10, xend=10, y=0, yend=4, size=1, linetype="dotted")+
+  geom_segment(x=0, xend=10, y=4, yend=4, size=1, linetype="dotted")+
+  
+  stat_function(fun=lrs_dec, geom="line", size=4, color = "red")+
+  geom_label(aes(x=2,y=lrs_dec(2)), color = "red", label="Long Run Supply", size = 5)+
+
+    scale_x_continuous(breaks=NULL,
+                     limits=c(0,10),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  scale_y_continuous(breaks=NULL,
+                     limits=c(0,10),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  guides(fill=F)+
+  labs(title = "Industry",
+       x = "Quantity",
+       y = "Price")+
+  theme_classic(base_family = "Fira Sans Condensed", base_size=20)
+```
+]
+
+- .red[Long run industry supply curve] is downward sloping!

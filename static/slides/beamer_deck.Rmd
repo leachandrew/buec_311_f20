@@ -1,0 +1,199 @@
+---
+title: Supply and Demand Basics
+subtitle: Week 1 Slide Pack
+author: 
+  - Andrew Leach 
+institution: 
+- Alberta School of Business and CABREE
+class_name: Business Economics, Organization and Management
+class_number: BUEC 311
+fontsize: 10pt
+output:
+ beamer_presentation:
+   #template: "C:/Users/aleach/Google Drive/default_beamer.tex"
+   #Mac
+   template: "../ajl-latex-beamer.tex"
+    #PC
+   #template: "C:/Users/aleach/Google Drive/ajl-latex-beamer.tex"
+
+   
+   theme: "Darmstadt"  
+   incremental: false
+   slide_level: 2
+    #keep_tex: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(cache=TRUE)
+
+library(ggplot2)
+library(lubridate)
+library(dplyr)
+library(viridis)
+library(zoo)
+```
+
+# Introduction
+
+
+## The Demand Curve
+	
+\center
+\resizebox{!}{.6\linewidth}{
+\begin{tikzpicture}
+	% Draw axes
+	%Y
+	\draw[->] (0,0) -- (0,10) ;
+	\draw[] (0,8) -- node[rotate=90, above=30pt] {\textbf{$p$, \$ per kg}} (0,8);
+	%X
+	\draw[->] (0,0) -- (15,0);
+	\draw[] (14,0) -- node[below=30pt] {\textbf{$Q$, millions of kg per year}} (14,0);
+  
+	% Plot demand curve:
+	% Curve given by: Q = 13 - 2p + 0.1Y
+	% Assume Y= 10
+	% Inverse demand: p = 7-0.5*Q
+	\draw[color=black, thick, domain=0:14] plot (\x,{7-0.5*\x});
+	\node at (6,6) [below] {Demand Curve for Cheese, $D$};
+
+	%Plot illustrative lines
+	\draw[dashed] (0,5) -- (4,5) -- (4,0);
+	\draw[dashed] (0,3) -- (8,3) -- (8,0);
+	\draw[dashed] (0,1) -- (12,1) -- (12,0);
+
+	%Add axes labels
+	%Origin%
+	\node at (0,0) [left] {{0}};
+	%Y Axis
+	\node at (0,7) [left] {{7.00}};
+	\node at (0,5) [left] {{5.00}};
+	\node at (0,3) [left] {{3.00}};
+	\node at (0,1) [left] {{1.00}};
+	%X Axis
+	\node at (4,0) [below] {{4}};
+	\node at (8,0) [below] {{8}};
+	\node at (12,0) [below] {{12}};
+	\node at (14,0) [below] {{14}};
+
+\end{tikzpicture}
+}
+
+# test section 2
+
+## Why should electricity interest you?
+
+Price volatility:
+
+- Electricity prices are an order of magnitude more volatile than oil or gas prices
+
+- Both supply and demand in Alberta affect us more than global or regional supplies and demands in oil and gas markets
+
+New technology:
+
+- Electricity is, arguably, changing faster than any other energy market
+
+- Alberta's electricity market is entering a period of market- and regulatory-driven transition
+
+Economics 101 in action
+
+- Nowhere else will you see supply and demand curves actually mapped out in real time determining prices as clearly as in Alberta's power market
+
+
+
+# Learning Objectives
+
+## Test 1
+
+- Economics as a tool for decision making
+  - Are businesses only interested in profit?
+  - What do economists mean by profit?
+- All economic models are wrong
+  - Are economic models still useful?
+  - Why we make simplifying assumptions
+  - How models allow you to the theories and draw conclusions
+- Micro vs macro vs managerial economics
+
+
+## Test 2
+
+\vspace{0cm}
+	\resizebox{!}{.6\linewidth}{
+	\begin{tikzpicture}
+	% Draw axes
+	%Y
+	\draw[->] (0,0) -- (0,10) ;
+	\draw[] (0,8) -- node[rotate=90, above=30pt] {\textbf{$p$, \$ per kg}} (0,8);
+	%X
+	\draw[->] (0,0) -- (15,0);
+	\draw[] (14,0) -- node[below=30pt] {\textbf{$Q$, millions of kg per year}} (14,0);
+
+	% Plot demand curve:
+	% Curve given by: Q = 13 - 2p + 0.1Y
+	% Assume Y= 10
+	% Inverse demand: p = 7-0.5*Q
+	\draw[color=black, thick, domain=0:14] plot (\x,{7-0.5*\x});
+	\node at (6,6) [below] {Demand Curve for Cheese, $D$};
+
+	%Plot illustrative lines
+	\draw[dashed] (0,5) -- (4,5) -- (4,0);
+	\draw[dashed] (0,3) -- (8,3) -- (8,0);
+	\draw[dashed] (0,1) -- (12,1) -- (12,0);
+
+	%Add axes labels
+	%Origin%
+	\node at (0,0) [left] {{0}};
+	%Y Axis
+	\node at (0,7) [left] {{7.00}};
+	\node at (0,5) [left] {{5.00}};
+	\node at (0,3) [left] {{3.00}};
+	\node at (0,1) [left] {{1.00}};
+	%X Axis
+	\node at (4,0) [below] {{4}};
+	\node at (8,0) [below] {{8}};
+	\node at (12,0) [below] {{12}};
+	\node at (14,0) [below] {{14}};
+\end{tikzpicture}
+}
+
+
+## Test 3
+
+	
+\resizebox{!}{.6\linewidth}{
+\begin{tikzpicture}
+	% Draw axes
+	%Y
+	\draw[->] (0,0) -- (0,10) ;
+	\draw[] (0,8) -- node[rotate=90, above=30pt] {\textbf{$p$, \$ per kg}} (0,8);
+	%X
+	\draw[->] (0,0) -- (15,0);
+	\draw[] (14,0) -- node[below=30pt] {\textbf{$Q$, millions of kg per year}} (14,0);
+  
+	% Plot demand curve:
+	% Curve given by: Q = 13 - 2p + 0.1Y
+	% Assume Y= 10
+	% Inverse demand: p = 7-0.5*Q
+	\draw[color=black, thick, domain=0:14] plot (\x,{7-0.5*\x});
+	\node at (6,6) [below] {Demand Curve for Cheese, $D$};
+
+	%Plot illustrative lines
+	\draw[dashed] (0,5) -- (4,5) -- (4,0);
+	\draw[dashed] (0,3) -- (8,3) -- (8,0);
+	\draw[dashed] (0,1) -- (12,1) -- (12,0);
+
+	%Add axes labels
+	%Origin%
+	\node at (0,0) [left] {{0}};
+	%Y Axis
+	\node at (0,7) [left] {{7.00}};
+	\node at (0,5) [left] {{5.00}};
+	\node at (0,3) [left] {{3.00}};
+	\node at (0,1) [left] {{1.00}};
+	%X Axis
+	\node at (4,0) [below] {{4}};
+	\node at (8,0) [below] {{8}};
+	\node at (12,0) [below] {{12}};
+	\node at (14,0) [below] {{14}};
+
+\end{tikzpicture}
+}
