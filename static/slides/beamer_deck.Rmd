@@ -92,17 +92,13 @@ New technology:
 
 - Electricity is, arguably, changing faster than any other energy market
 
-- Alberta's electricity market is entering a period of market- and regulatory-driven transition
-
 Economics 101 in action
 
 - Nowhere else will you see supply and demand curves actually mapped out in real time determining prices as clearly as in Alberta's power market
 
-
-
 # Learning Objectives
 
-## Test 1
+## Test 2
 
 - Economics as a tool for decision making
   - Are businesses only interested in profit?
@@ -114,7 +110,7 @@ Economics 101 in action
 - Micro vs macro vs managerial economics
 
 
-## Test 2
+## TikZ 2
 
 \vspace{0cm}
 	\resizebox{!}{.6\linewidth}{
@@ -155,45 +151,3 @@ Economics 101 in action
 \end{tikzpicture}
 }
 
-
-## Test 3
-
-	
-\resizebox{!}{.6\linewidth}{
-\begin{tikzpicture}
-	% Draw axes
-	%Y
-	\draw[->] (0,0) -- (0,10) ;
-	\draw[] (0,8) -- node[rotate=90, above=30pt] {\textbf{$p$, \$ per kg}} (0,8);
-	%X
-	\draw[->] (0,0) -- (15,0);
-	\draw[] (14,0) -- node[below=30pt] {\textbf{$Q$, millions of kg per year}} (14,0);
-  
-	% Plot demand curve:
-	% Curve given by: Q = 13 - 2p + 0.1Y
-	% Assume Y= 10
-	% Inverse demand: p = 7-0.5*Q
-	\draw[color=black, thick, domain=0:14] plot (\x,{7-0.5*\x});
-	\node at (6,6) [below] {Demand Curve for Cheese, $D$};
-
-	%Plot illustrative lines
-	\draw[dashed] (0,5) -- (4,5) -- (4,0);
-	\draw[dashed] (0,3) -- (8,3) -- (8,0);
-	\draw[dashed] (0,1) -- (12,1) -- (12,0);
-
-	%Add axes labels
-	%Origin%
-	\node at (0,0) [left] {{0}};
-	%Y Axis
-	\node at (0,7) [left] {{7.00}};
-	\node at (0,5) [left] {{5.00}};
-	\node at (0,3) [left] {{3.00}};
-	\node at (0,1) [left] {{1.00}};
-	%X Axis
-	\node at (4,0) [below] {{4}};
-	\node at (8,0) [below] {{8}};
-	\node at (12,0) [below] {{12}};
-	\node at (14,0) [below] {{14}};
-
-\end{tikzpicture}
-}
