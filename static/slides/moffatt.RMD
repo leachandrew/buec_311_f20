@@ -1,0 +1,25 @@
+---
+title: "BUEC 311: Business Economics, Organization and Management"
+subtitle: "Evergreen Topic: Is Mike Moffatt Wrong About Everything?"
+author: 'Andrew Leach, Associate Professor of Business Economics <br> <a href="mailto:aleach@ualberta.ca"><i class="fa fa-paper-plane fa-fw"></i> aleach@ualberta.ca</a> <br> <a href="https://github.com/leachandrew"><i class="fa fa-github fa-fw"></i> leachandrew</a><br><a href="https://twitter.com/andrew_leach"><i class="fa fa-twitter twitter"></i> @andrew_leach</a><br>'
+#date:
+output:
+  xaringan::moon_reader:
+    mathjax: "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_HTMLorMML" # rescales math with css changes https://github.com/yihui/xaringan/issues/143
+    lib_dir: libs
+    #seal:  false
+    css: [custom.css, custom-fonts.css, "hygge"] #, metropolis, metropolis-fonts
+    nature:
+      beforeInit: ["macros.js", "https://platform.twitter.com/widgets.js"] # first is for rescaling images , second is for embedding tweets, https://github.com/yihui/xaringan/issues/100
+      highlightStyle: ocean #rainbow #monokai rainbow solarized-light #tomorrow-night -blue -eighties zenburn
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: "16:9"
+      slideNumberFormat: |
+        <div class="progress-bar-container">
+          <div class="progress-bar" style="width: calc(%current% / %total% * 100%);">
+          </div>
+        </div>
+    includes:
+      in_header: header.html # for font awesome, used in title  
+---
