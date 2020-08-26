@@ -1,0 +1,75 @@
+baseurl: ""
+languageCode: "en-us"
+title: "Managerial Economics"
+theme: "ath-tufte-hugo"
+googleAnalytics: ""
+# ignoreFiles:
+ # - \.Rmd$
+ # - \.Rmarkdown$
+ # - \.yaml$
+ # - _files$
+ # - _cache$
+ # - \.csl$
+#permalinks:
+#  post: "/:year/:month/:day/:slug/"
+buildFuture: true
+menu:
+  main:
+    - name: Syllabus
+      url: /syllabus-311.pdf
+      weight: 1
+    - name: Assignments
+      url: /assignments/
+      weight: 3
+    - name: Schedule
+      url: /schedule/
+      weight: 2
+    - name: Reference
+      url: /reference/
+      weight: 4
+    - name: Exams
+      url: /exams/
+      weight: 4
+      
+      
+ # Disable taxonomies
+taxonomies:
+  tag: ""
+  group: ""
+  category: ""
+params:
+  author: Andrew Leach
+  thumbnail: /images/UA-ASB-COLOUR.png
+  instructor: 
+    name: Professor Andrew Leach
+    email: aleach@ualberta.ca
+    url: "https://www.andrewleach.ca"
+    twitter: andrew_leach
+    github: leachandrew
+    office: 3-20D
+  course:
+    number: BUEC 311
+    semester: Fall 2020
+    twitter: andrew_leach
+    github: "leachandrew/buec_311_f20"
+    copyrightYear: "2020"
+    contactDetails: >-
+      Office hours: MW 3:30–5:00PM
+  school: 
+    name: University of Alberta
+    url: "https://www.ualberta.ca"
+  university:
+    name: Alberta School of Business
+    url: "https://www.ualberta.ca/business/index.html"
+  description: ""
+  primaryColor: "#007C41"
+  secondaryColor: "#FFDB05"
+  credits: >-
+    Course website based on those shared by [Ryan Safner](https://github.com/ryansafner) and [Andrew Heiss](https://econw19.classes.andrewheiss.com/).
+  logo:  
+    url: /images/UA-ASB-COLOUR.png
+    alt: Managerial Economics
+  meta:
+    twitterSite: "@andrew_leach"
+    twitterCreator: "@andrew_leach"
+

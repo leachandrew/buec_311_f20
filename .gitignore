@@ -31,6 +31,9 @@ vignettes/*.pdf
 *_cache/
 /cache/
 
+# web folders for netlify compatibility
+/public
+
 # Temporary files created by R markdown
 *.utf8.md
 *.knit.md
