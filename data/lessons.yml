@@ -1,0 +1,11 @@
+lessons:
+  - title: '<span class="fake-header-table">1. Rational Choice Theory</span>'
+    header: True
+
+  - title: "1.1 The Tools of Microeconomics"
+    class: "1.2-class"
+    slides: "1.2-slides"
+
+  - title: "1.2 Scarcity, Choice, and Cost"
+    class: "1.2-class"
+    slides: "1.2-slides"
