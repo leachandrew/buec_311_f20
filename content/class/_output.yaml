@@ -8,5 +8,4 @@ blogdown::html_page:
   pandoc_args: [
       "--highlight-style", "haddock",
       "--base-header-level=2",
-      "--filter", "pandoc-citeproc",
-    ]
+       ]

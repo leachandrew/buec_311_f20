@@ -11,6 +11,9 @@ editor_options:
   chunk_output_type: console
 ---
 
+
+*Monday, August 17, 2020*
+
 # Overview
 
 Before we jump into our optimization models to descibe and predict (changes in) individual choices and behavior, we cover the basic principles of choice and action in a world of scarcity. This is what motivates economics.

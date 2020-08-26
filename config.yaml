@@ -3,15 +3,13 @@ languageCode: "en-us"
 title: "Managerial Economics"
 theme: "ath-tufte-hugo"
 googleAnalytics: ""
-# ignoreFiles:
- # - \.Rmd$
- # - \.Rmarkdown$
- # - \.yaml$
- # - _files$
- # - _cache$
- # - \.csl$
-#permalinks:
-#  post: "/:year/:month/:day/:slug/"
+ignoreFiles:
+  - \.Rmd$
+  - \.Rmarkdown$
+  - \.yaml$
+  - _files$
+  - _cache$
+  - \.csl$
 buildFuture: true
 menu:
   main:
@@ -30,8 +28,6 @@ menu:
     - name: Exams
       url: /exams/
       weight: 6
-      
-      
  # Disable taxonomies
 taxonomies:
   tag: ""
