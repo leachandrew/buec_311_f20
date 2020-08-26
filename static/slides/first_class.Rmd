@@ -506,7 +506,7 @@ Source: [Ryan Safner](https://github.com/ryansafner)]
 
 .pull-right[
 .center[
-![](https://www.dropbox.com/s/n3qe9hnt7ewcmkg/maths.jpg?raw=1)
+![](../images/equations.jpg)
 ]
 ]
 
@@ -528,8 +528,9 @@ Source: [Ryan Safner](https://github.com/ryansafner)]
 
 .pull-right[
 .center[
-![:scale 70%](https://www.dropbox.com/s/z5axki7ufozcgyn/imagination.png?raw=1)
+![:scale 70%](../images/duflo.jpg)
 ]
+Esther Duflos, Nobel-prize-winning economist (Source: MIT)
 ]
 
 ---
