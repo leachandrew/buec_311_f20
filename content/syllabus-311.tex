@@ -1,0 +1,516 @@
+\documentclass[11pt,]{article}
+\usepackage[margin=1in]{geometry}
+\newcommand*{\authorfont}{\fontfamily{phv}\selectfont}
+\usepackage[]{mathpazo}
+\usepackage{tikz}
+\usepackage{abstract}
+\renewcommand{\abstractname}{}    % clear the title
+\renewcommand{\absnamepos}{empty} % originally center
+\newcommand{\blankline}{\quad\pagebreak[2]}
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{longtable,booktabs}
+
+\usepackage{parskip}
+\usepackage{titlesec}
+\titlespacing\section{0pt}{12pt plus 4pt minus 2pt}{6pt plus 2pt minus 2pt}
+\titlespacing\subsection{0pt}{12pt plus 4pt minus 2pt}{6pt plus 2pt minus 2pt}
+
+\titleformat*{\subsubsection}{\normalsize\itshape}
+
+\usepackage{titling}
+\setlength{\droptitle}{-.25cm}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable}
+\usepackage{threeparttablex}
+\usepackage[normalem]{ulem}
+\usepackage[normalem]{ulem}
+\usepackage[utf8]{inputenc}
+\usepackage{makecell}
+\usepackage{xcolor}
+
+%\setlength{\parindent}{0pt}
+%\setlength{\parskip}{6pt plus 2pt minus 1pt}
+%\setlength{\emergencystretch}{3em}  % prevent overfull lines
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage{lastpage}
+\renewcommand{\headrulewidth}{0.3pt}
+\renewcommand{\footrulewidth}{0.0pt}
+\lhead{}
+\chead{}
+\rhead{\footnotesize BUEC 311: Business Economics, Organization and Management -- Fall 2020}
+\lfoot{}
+\cfoot{\small \thepage/\pageref*{LastPage}}
+\rfoot{}
+
+\fancypagestyle{firststyle}
+{
+\renewcommand{\headrulewidth}{0pt}%
+   \fancyhf{}
+   \fancyfoot[C]{\small \thepage/\pageref*{LastPage}}
+}
+
+%\def\labelitemi{--}
+%\usepackage{enumitem}
+%\setitemize[0]{leftmargin=25pt}
+%\setenumerate[0]{leftmargin=25pt}
+
+
+
+
+\makeatletter
+\@ifpackageloaded{hyperref}{}{%
+\ifxetex
+  \usepackage[setpagesize=false, % page size defined by xetex
+              unicode=false, % unicode breaks when used with xetex
+              xetex]{hyperref}
+\else
+  \usepackage[unicode=true]{hyperref}
+\fi
+}
+\@ifpackageloaded{color}{
+    \PassOptionsToPackage{usenames,dvipsnames}{color}
+}{%
+    \usepackage[usenames,dvipsnames]{color}
+}
+\makeatother
+\hypersetup{breaklinks=true,
+            bookmarks=true,
+            pdfauthor={ ()},
+             pdfkeywords = {},
+            pdftitle={BUEC 311: Business Economics, Organization and Management},
+            colorlinks=true,
+            citecolor=blue,
+            urlcolor=blue,
+            linkcolor=magenta,
+            pdfborder={0 0 0}}
+\urlstyle{same}  % don't use monospace font for urls
+
+
+\setcounter{secnumdepth}{0}
+
+
+%
+\usepackage{array}
+
+
+
+
+\usepackage{setspace}
+
+\title{BUEC 311: Business Economics, Organization and Management}
+\author{Andrew Leach}
+\date{Fall 2020}
+
+
+
+\begin{document}
+
+\thispagestyle{firststyle}
+\vspace{-1.75cm}	
+\maketitle
+ \tikz [remember picture,overlay]
+    %\node[yshift=-1.65cm,xshift=0cm] at (current page.north)
+    %\node[yshift=-1.65cm,xshift=0cm] at (current page.north)
+        %or: (current page.center)
+        \node[yshift=-1cm,xshift=6.5cm] at (current page.north west)
+        %{\includegraphics[width=3in]{UA-ASB-COLOUR.png}};
+        {\includegraphics[width=.5\paperwidth]{UA-ASB-COLOUR.png}};
+\vspace{-.75cm}	
+	
+
+%	\thispagestyle{empty}
+
+\begin{center}
+\vspace{-.25cm}	
+\textbf{Contact Information}\medskip \\
+\begin{tabular*}{.8\textwidth}{ @{\extracolsep{\fill}} ll @{\extracolsep{\fill}}}
+E-mail: \texttt{\href{mailto:aleach@ualberta.ca}{\nolinkurl{aleach@ualberta.ca}}} & Web: \href{http://www.andrewleach.ca}{\tt www.andrewleach.ca}\\
+Office Hours: By appointment  &
+Office: Google Meet or Zoom  \\
+	\hline
+	\end{tabular*}
+	\end{center}
+	
+	
+\begin{center}
+\textbf{Section Schedule}\medskip\\
+\begin{tabular}{c}
+%\begin{tabular}{p{0.8\textwidth}>{\centering}}
+Section A1:  M W F 10:00 - 10:50 MT \\
+Section A2:  T R 14:00 - 15:20 MT\\
+Section A3:  T R 12:30 - 13:50 MT\\
+ 
+%	 \\%
+	%\hline
+	\hline
+	\end{tabular}
+\end{center}
+
+
+
+\begin{center}
+\textbf{Online Delivery Plan}\medskip\\
+\begin{tabular}{l}
+%\begin{tabular}{p{0.8\textwidth}>{\centering}}
+Section A1: Synchronous meetings in first two scheduled sessions of the week (50 mins x 2)\\
+Section A2: Synchronous meetings T R 14:00 - 14:50 MT (50 mins x 2)\\
+Section A3: Synchronous meetings T R 12:30 - 13:20 MT (50 mins x 2)\\
+All sections: Asynchronous problem solving and review class posted each week (50 mins x 1) \\%
+    \hline
+    \end{tabular}
+\end{center}
+
+\hypertarget{course-description}{%
+\section{Course Description}\label{course-description}}
+
+Economics is the study of human decision making, and the ways in which
+those decisions interact. In this course, through the application of
+economic theory, you will improve your understanding of complex decision
+making within organizations and learn to apply an economic lens to
+predict resultant outcomes. At the end of this course, you will have
+developed specific skills and knowledge of microeconomics, economic
+models of decision making, and the ability to apply these models in
+various settings.
+
+The course begins with revision and application of key economic concepts
+such as supply, demand, and elasticity. We'll delve deeper into consumer
+choice theory and introduce some concepts from behavioural economics.
+From the consumer, we'll next look at the organization of individual
+firms, including how firms make production decisions and how different
+types of costs affect these decisions. Armed with these tools, we'll
+study market structures. We'll start with perfect competition: the ideal
+outcome in a competitive market, at least from the point of view of
+social welfare. From there, we'll examine more realistic and challenging
+market structures, in particular monopolies and oligopolies, and compare
+market outcomes under these conditions with those under the ideal
+competitive market. We next look in detail at firm decision making in
+areas such as entry and exit from the market, as well as important
+business strategies such as pricing, advertising, and investing in new
+capital. Finally, we'll discuss other ways that markets fail, with a
+particular emphasis on the economics of pollution control and climate
+change. Time permitting, we'll expand some of these concepts to look at
+consumer and firm decision-making under risk and uncertainty.
+
+The prerequisites of this course are ECON 101, ECON 102, and MATH 113 or
+equivalent. Students may receive credit for only one of BUEC 301, BUEC
+311, MANEC 301 or ECON 383. The course is not open to students with
+previous credit in ECON 281.
+
+\hypertarget{course-material}{%
+\section{Course Material}\label{course-material}}
+
+While no textbook is explicitly required, the course will follow the
+treatment of topics in:
+
+\begin{center}
+\begin{minipage}{.8\linewidth}
+Perloff, Jeffrey M., and James A. Brander. \textit{Managerial Economics and Strategy}. 3rd ed. Hoboken, NJ: Pearson, 2020.
+\end{minipage}
+\end{center}
+
+I will only test you on my own notes and lecture content, and my goal is
+to build a course-pack that will replace the textbook in years to come.
+What this means is that, if you're not going to attend class and/or
+you're going to do other things during lectures, you should probably buy
+and use the book. If you think that you'll want extra problem sets, you
+should buy the book and the MyLab add-on. The 3rd edition is new this
+year, but if you want to use an older edition of the book, that's likely
+to be fine, although the examples provided may be different from the new
+edition. Problem sets from other intermediate microeconomics or
+managerial economics texts may help you as well. There is also an
+electronic version of the book available which you may consider. Please
+keep in mind that it is unlikely that reserve copies will be available
+from the library during the term.
+
+Beyond the textbook, any readings or other resources I use will be
+available freely online or available through the University of Alberta
+Libraries on-line access. You are also expected to remain up-to-date on
+economic policy issues in the news, in particular if you want to be
+successful in the \textit{Breakout Briefings}. The topics of discussion
+may change through the term depending on what's happening around us.
+
+Class content will be delivered on-line, via Zoom, as well as through
+the combined eClass site. I plan to make recordings of class delivery
+available, so please advise if you have objections to this approach so
+that I can explore alternatives.
+
+Please do not download all the course content immediately as I plan to
+update it through the term. All the links in eClass to lecture material
+will be done through Google Drive links so that eClass always links to
+the latest version of the material. I will advise you of any
+short-notice updates to the degree that I can.
+
+\hypertarget{assignments}{%
+\section{Assignments}\label{assignments}}
+
+\hypertarget{breakout-briefing---teams-20}{%
+\subsection{Breakout Briefing - Teams
+(20\%)}\label{breakout-briefing---teams-20}}
+
+Most weeks during term, I'll assign you to Zoom breakout rooms for a
+discussion of a class topic. Each time we do this, I'll ask one or two
+of the breakout rooms to give a quick presentation of their findings to
+the class, and these will be graded. Through the course of the term,
+each student will get a chance to present at least twice, with your top
+two grades making up your breakout briefing grade (i.e.~you can only
+benefit from being called-on more than twice).
+
+\textbf{Each student must complete at least two Breakout Briefings.  I'll make sure you get called on at least twice, and that you're not called on when you've advised me that you will be away. Alternatives will be possible for those who need them.}
+
+\hypertarget{quizzes-20}{%
+\subsection{Quizzes (20\%)}\label{quizzes-20}}
+
+I'll use two on-line quizzes through the term, one before the midterm
+and one before the final, to give you a preview of what I'm expecting
+from you and a chance for you to see how you're doing with the material.
+Quizzes will focus on the mechanical aspects of the course material,
+while midterms and finals will ask you to do more interpretation.
+
+\hypertarget{midterm-exam-20}{%
+\subsection{Midterm Exam (20\%)}\label{midterm-exam-20}}
+
+Midterm exam will be open-book, completed on-line, and will feature
+different permutations of questions for different groups (i.e.~you'll
+all get the same problem, but your problem might not have the same
+values in the equation, or you might be asked a slightly different
+question about the solution). Exact parameters TBD.
+
+\hypertarget{final-exam---40}{%
+\subsection{Final Exam - (40\%)}\label{final-exam---40}}
+
+Like the midterm, the final exam will be open-book, completed on-line,
+and will feature different permutations of questions for different
+groups. Exact parameters TBD. Currently, exams are scheduled as follows:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{cc}
+\toprule
+Section & Date\\
+\midrule
+A1 & Dec 18 @ 02:00 PM MT\\
+A2 & Dec 18 @ 09:00 AM MT\\
+A3 & Dec 17 @ 09:00 AM MT\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\hypertarget{grading}{%
+\section{Grading}\label{grading}}
+
+Percentage grades will be converted to letter grades as follows:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{ccc}
+\toprule
+Minimum & Maximum & Grade\\
+\midrule
+90 & 100.00 & A+\\
+85 & 89.99 & A\\
+80 & 84.99 & A-\\
+77 & 79.99 & B+\\
+73 & 76.99 & B\\
+70 & 72.99 & B-\\
+55 & 59.99 & D+\\
+67 & 69.99 & C+\\
+63 & 66.99 & C\\
+60 & 62.99 & C-\\
+55 & 59.99 & D+\\
+50 & 54.99 & D\\
+0 & 49.99 & F\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Letter grades may be increased, but not decreased from this benchmark if
+overall grades prove lower than expected.
+
+\hypertarget{section-coordination}{%
+\section{Section Coordination}\label{section-coordination}}
+
+The three fall sections of BUEC-311 will follow the same schedule with
+the same deliverables. Given the size of the sections, it is preferable
+that you attend your assigned section.
+
+\hypertarget{teaching-assistants}{%
+\section{Teaching Assistants}\label{teaching-assistants}}
+
+There will be teaching assistants for each section. Once these details
+are confirmed, I will update this outline. My expectation is that, in
+addition to assisting with grading, the teaching assistants will be
+available to help you with problem sets and course material at scheduled
+times.
+
+\hypertarget{communication}{%
+\section{Communication}\label{communication}}
+
+I'll generally use the ``Announcements'' tool in eClass to send you
+messages relating to class content. I'll handle office hours and other
+help requests via Google Meet or Zoom as the term progresses. You can
+always email me with questions, but please put BUEC-311 in the subject
+line as that will help me to make sure I don't miss your message.
+
+\hypertarget{covid-times}{%
+\section{COVID times}\label{covid-times}}
+
+It's a difficult time for all of us. My goal is to make this class as
+useful, rewarding, and engaging for you as I can during the term while
+also making sure there are significant returns to hard work and
+proficiency with the material. This is my first time teaching a course
+on-line, and my first time teaching this course, and it's (likely) your
+first full-semester on-line course. This means we've all got a lot to
+learn, and that we'll have to be patient with technology and with each
+other.
+
+I am willing to help accommodate your personal circumstances to the best
+of my abilities and within University policies. If you are in a position
+where you require special accommodation, please let me know sooner
+rather than later. If your circumstances change throughout the term, my
+goal is to help you continue to be successful in the class. In return, I
+ask that you keep in mind that faculty and staff at the university are
+also adjusting to difficult times, and so your patience is going to be
+required at times with new technology, new approaches, and (depending on
+how things go) perhaps my kids invading your lectures. We'll make it
+work.
+
+\hypertarget{class-schedule}{%
+\section{Class Schedule}\label{class-schedule}}
+
+This is a rough outline for the semester. Actual class content may vary
+over the course of the term and exam dates and deadlines to be finalized
+closer to dates, and subject to University guidelines. Textbook
+references are to the Perloff and Brander 3rd Edition text, although not
+all material in each chapter will be covered, and supplemental material
+will be added.
+
+\hypertarget{topic-1-introduction-to-the-class-topics-and-goals-as-well-as-a-summary-of-deliverables.}{%
+\subsection{Topic 1: Introduction to the class, topics and goals as well
+as a summary of
+deliverables.}\label{topic-1-introduction-to-the-class-topics-and-goals-as-well-as-a-summary-of-deliverables.}}
+
+\hypertarget{topic-2-supply-and-demand-ch.-2-and-3}{%
+\subsection{Topic 2: Supply and demand (Ch. 2 and
+3)}\label{topic-2-supply-and-demand-ch.-2-and-3}}
+
+\hypertarget{quiz-1-week-of-sept-26th-details-tba}{%
+\subsection{Quiz 1: Week of Sept 26th, details
+TBA}\label{quiz-1-week-of-sept-26th-details-tba}}
+
+\hypertarget{topic-3-the-consumer-parts-of-ch.-3-and-4}{%
+\subsection{Topic 3: The Consumer (Parts of Ch. 3 and
+4)}\label{topic-3-the-consumer-parts-of-ch.-3-and-4}}
+
+\hypertarget{topic-4-the-firm-ch.-5-6-7}{%
+\subsection{Topic 4: The Firm (Ch. 5, 6,
+7)}\label{topic-4-the-firm-ch.-5-6-7}}
+
+\hypertarget{midterm-week-of-october-26th-details-tba}{%
+\subsection{Midterm: Week of October 26th, details
+TBA}\label{midterm-week-of-october-26th-details-tba}}
+
+\hypertarget{topic-5-the-market-ch.-8-9-10}{%
+\subsection{Topic 5: The Market (Ch. 8, 9,
+10)}\label{topic-5-the-market-ch.-8-9-10}}
+
+\hypertarget{quiz-2-week-of-november-23-details-tba}{%
+\subsection{Quiz 2: Week of November 23, details
+TBA}\label{quiz-2-week-of-november-23-details-tba}}
+
+\hypertarget{topic-6-competition-strategic-behaviour-game-theory-ch.-11-12-13}{%
+\subsection{Topic 6: Competition, Strategic Behaviour, Game Theory (Ch.
+11, 12,
+13)}\label{topic-6-competition-strategic-behaviour-game-theory-ch.-11-12-13}}
+
+\hypertarget{topic-7-when-markets-fail-ch.-15-16}{%
+\subsection{Topic 7: When Markets Fail (Ch. 15,
+16)}\label{topic-7-when-markets-fail-ch.-15-16}}
+
+\hypertarget{final-exam-during-exam-period-details-tba.}{%
+\subsection{Final exam: During exam period, details
+TBA.}\label{final-exam-during-exam-period-details-tba.}}
+
+\newpage
+
+\hypertarget{academic-misconduct}{%
+\section{Academic Misconduct}\label{academic-misconduct}}
+
+``The University of Alberta is committed to the highest standards of
+academic integrity and honesty. Students are expected to be familiar
+with these standards regarding academic honesty and to uphold the
+policies of the University in this respect. Students are particularly
+urged to familiarize themselves with the provisions of the Code of
+Student Behavior (\url{http://www.ualberta.ca/secretariat/appeals.htm})
+and avoid any behavior which could potentially result in suspicions of
+cheating, plagiarism, misrepresentation of facts and/or participation in
+an offence. Academic dishonesty is a serious offence and can result in
+suspension or expulsion from the University." (GFC 29 Sep 2003)
+
+I will take any and all incidents of plagiarism seriously. It is your
+responsibility to ensure that you are familiar with the rules that
+govern academic misconduct, in particular the following section:
+
+30.3.2 Inappropriate Academic Behaviour, 30.3.2(1) Plagiarism
+
+``No Student shall submit the words, ideas, images or data of another
+person as the Student's own in any academic writing, essay, thesis,
+project, assignment, presentation or poster in a course or program of
+study."
+(\url{http://www.uofaweb.ualberta.ca/gfcpolicymanual/policymanualsection30-3-2.cfm}
+)
+
+More information is available at:
+\url{http://www.uofaweb.ualberta.ca/gfcpolicymanual/content.cfm?ID_page=37633}
+
+\hypertarget{grading-policies}{%
+\section{Grading policies}\label{grading-policies}}
+
+Grading policies for the University of Alberta may be found here:
+\url{https://policiesonline.ualberta.ca/PoliciesProcedures/Procedures/Grading-Procedure.pdf}
+
+\hypertarget{recording-of-audio-and-video}{%
+\section{Recording of audio and
+video}\label{recording-of-audio-and-video}}
+
+Audio or video recording, digital or otherwise, of lectures, labs,
+seminars or any other teaching environment by students is allowed only
+with the prior written consent of the instructor or as a part of an
+approved accommodation plan. Student or instructor content, digital or
+otherwise, created and/or used within the context of the course is to be
+used solely for personal study, and is not to be used or distributed for
+any other purpose without prior written consent from the content
+author(s).
+
+
+
+
+\end{document}
+
+\makeatletter
+\def\@maketitle{%
+  \newpage
+%  \null
+%  \vskip 2em%
+%  \begin{center}%
+  \let \footnote \thanks
+    {\fontsize{18}{20}\selectfont\raggedright  \setlength{\parindent}{0pt} \@title \par}%
+}
+%\fi
+\makeatother
