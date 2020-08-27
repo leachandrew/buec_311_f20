@@ -34,6 +34,10 @@ vignettes/*.pdf
 # web folders for netlify compatibility
 /public
 
+# folders for private course info
+/private
+
+
 # Temporary files created by R markdown
 *.utf8.md
 *.knit.md
