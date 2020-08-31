@@ -1,0 +1,254 @@
+---
+output: 
+  pdf_document:
+    keep_tex: true
+    fig_caption: yes
+    latex_engine: pdflatex
+    template: ajl_syllabus.tex
+    #template: ajl_syllabus_old.tex
+geometry: margin=1in
+
+title: "BUEC 311: Business Economics, Organization and Management"
+author: Andrew Leach
+date: "Fall 2020"
+
+bibliography: env.bibtex
+csl: chicago-fullnote-bibliography.csl
+
+
+email: "aleach@ualberta.ca"
+web: "www.andrewleach.ca"
+officehours: "By appointment"
+office: "Google Meet or Zoom"
+sec_1: "A1"
+sec_1_time: "M W F 10:00 - 10:50 MT"
+sec_2: "A2"
+sec_2_time: "T R 14:00 - 15:20 MT"
+sec_3: "A3"
+sec_3_time: "T R 12:30 - 13:50 MT"
+
+fontfamily: mathpazo
+fontsize: 11pt
+header-includes:
+   - \linespread{1.05}
+---
+
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(cache=FALSE, dev='pdf')
+mon <- as.Date("2019-01-07")
+# fri <- as.Date("2016-01-08")
+
+advdate <- function(obj, adv) {
+ tmon <- obj + 7*(adv-1)
+ ttues <- obj + 1+7*(adv-1)
+ tthurs <- obj + 3 + 7*(adv-1)
+ tfri <- obj + 4 + 7*(adv-1)
+ tmon <- format(tmon, format="%b %d")
+ tfri <- format(tfri, format="%d")
+ zadv <- sprintf("%02d", adv)
+ tmp <- paste("Week ",zadv,sep='',", ", tmon," - ",tfri)
+ return(tmp)
+}
+
+library(RefManageR)
+library(tidyverse)
+library(ggthemes)
+library(gridExtra)
+library(gt)
+library(grid)
+library(kableExtra)
+library(lubridate)
+
+
+# library(knitcitations)
+# library(rcrossref)
+#bib <- ReadBib("~/Dropbox/master.bib")
+#myopts <- BibOptions(bib.style = "authoryear", style="latex", first.inits=FALSE, max.names = 20)
+
+```
+
+```{=latex}
+\begin{center}
+\textbf{Online Delivery Plan}\medskip\\
+\begin{tabular}{l}
+%\begin{tabular}{p{0.8\textwidth}>{\centering}}
+Section A1: Synchronous meetings in first two scheduled sessions of the week (50 mins x 2)\\
+Section A2: Synchronous meetings T R 14:00 - 14:50 MT (50 mins x 2)\\
+Section A3: Synchronous meetings T R 12:30 - 13:20 MT (50 mins x 2)\\
+All sections: Asynchronous problem solving and review class posted each week (50 mins x 1) \\%
+	\hline
+	\end{tabular}
+\end{center}
+```
+
+# Course Description
+
+Economics is the study of human decision making, and the ways in which those decisions interact. In this course, through the application of economic theory, you will improve your understanding of complex decision making within organizations and learn to apply an economic lens to predict resultant outcomes. At the end of this course, you will have developed specific skills and knowledge of microeconomics, economic models of decision making, and the ability to apply these models in
+various settings.
+
+The course begins with revision and application of key economic concepts such as supply, demand, and elasticity. We'll delve deeper into consumer choice theory and introduce some concepts from behavioural economics. From the consumer, we'll next look at the organization of individual firms, including how firms make production decisions and how different types of costs affect these decisions. Armed with these tools, we'll study market structures. We'll start with perfect competition: the ideal outcome in a competitive market, at least from the point of view of social welfare. From there, we'll examine more realistic and challenging market structures, in particular monopolies and oligopolies, and compare market outcomes under these conditions with those under the ideal competitive market. We next look in detail at firm decision making in areas such as entry and exit from the market, as well as important business strategies such as pricing, advertising, and investing in new capital. Finally, we'll discuss other ways that markets fail, with a particular emphasis on the economics of pollution control and climate change. Time permitting, we'll expand some of these concepts to look at consumer and firm decision-making under risk and uncertainty. 
+
+The prerequisites of this course are ECON 101, ECON 102, and MATH 113 or equivalent. Students may receive credit for only one of BUEC 301, BUEC 311, MANEC 301 or ECON 383. The course is not open to students with previous credit in ECON 281.
+
+# Course Material
+
+While no textbook is explicitly required, the course will follow the treatment of topics in:
+
+\begin{center}
+\begin{minipage}{.8\linewidth}
+Perloff, Jeffrey M., and James A. Brander. \textit{Managerial Economics and Strategy}. 3rd ed. Hoboken, NJ: Pearson, 2020.
+\end{minipage}
+\end{center}
+
+I will only test you on my own notes and lecture content, and my goal is to build a course-pack that will replace the textbook in years to come. What this means is that, if you're not going to attend class and/or you're going to do other things during lectures, you should probably buy and use the book. If you think that you'll want extra problem sets, you should buy the book and the MyLab add-on. The 3rd edition is new this year, but if you want to use an older edition of the book, that's likely to be fine, although the examples provided may be different from the new edition. Problem sets from other intermediate microeconomics or managerial economics texts may help you as well. There is also an electronic version of the book available which you may consider. Please keep in mind that it is unlikely that reserve copies will be available from the library during the term.
+
+Beyond the textbook, any readings or other resources I use will be available freely online or available through the University of Alberta Libraries on-line access. You are also expected to remain up-to-date on economic policy issues in the news, in particular if you want to be successful in the \textit{Breakout Briefings}. The topics of discussion may change through the term depending on what's happening around us.
+
+Class content will be delivered on-line, via Zoom, as well as through the combined eClass site. I plan to make recordings of class delivery available, so please advise if you have objections to this approach so that I can explore alternatives.
+
+Please do not download all the course content immediately as I plan to update it through the term. All the links in eClass to lecture material will be done through Google Drive links so that eClass always links to the latest version of the material. I will advise you of any short-notice updates to the degree that I can.
+
+# Assignments
+
+## Breakout Briefing - Teams (20%)
+
+Most weeks during term, I'll assign you to Zoom breakout rooms for a discussion of a class topic. Each time we do this, I'll ask one or two of the breakout rooms to give a quick presentation of their findings to the class, and these will be graded. Through the course of the term, each student will get a chance to present at least twice, with your top two grades making up your breakout briefing grade (i.e. you can only benefit from being called-on more than twice).
+
+
+\textbf{Each student must complete at least two Breakout Briefings.  I'll make sure you get called on at least twice, and that you're not called on when you've advised me that you will be away. Alternatives will be possible for those who need them.}
+
+##	Quizzes (20%)
+
+I'll use two on-line quizzes through the term, one before the midterm and one before the final, to give you a preview of what I'm expecting from you and a chance for you to see how you're doing with the material. Quizzes will focus on the mechanical aspects of the course material, while midterms and finals will ask you to do more interpretation.
+
+##	Midterm Exam (20%)
+
+Midterm exam will be open-book, completed on-line, and will feature different permutations of questions for different groups (i.e. you'll all get the same problem, but your problem might not have the same values in the equation, or you might be asked a slightly different question about the solution). Exact parameters TBD.
+
+## Final Exam - (40%)
+
+Like the midterm, the final exam will be open-book, completed on-line, and will feature different permutations and order of questions among students. Exact parameters TBD. Subject to approval from Exams and Timetabling, a consolidated exam will be scheduled as follows:
+```{r exams_table,echo=FALSE,cache=FALSE}
+library(lubridate)
+exams_table<-tribble(
+  ~Section, ~Date,
+"All sections",format(ymd_hm("2020 Dec 12 0900"),"%b %d @ %I:%M %p MT"),
+"Conflicts",format(ymd_hm("2020 Dec 12 1400"),"%b %d @ %I:%M %p MT")
+)
+
+exams_table%>%kable(align=c(rep('c',times=2)),format = "latex", booktabs = T,linesep = "")%>%
+   kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
+
+```
+
+
+# Grading
+
+Percentage grades will be converted to letter grades as follows:
+
+```{r grade_table,echo=FALSE,cache=FALSE}
+
+grades_table<-tribble(
+  ~Minimum, ~Maximum, ~Grade,
+  #--|--|----
+  90,100,"A+",
+  85,89.99,"A",
+  80,84.99,"A-",
+  77,79.99,"B+",
+  73,76.99,"B",
+  70,72.99,"B-",
+  55,59.99,"D+",
+  67,69.99,"C+",
+  63,66.99,"C",
+  60,62.99,"C-",
+  55,59.99,"D+",
+  50,54.99,"D",
+  0,49.99,"F",
+  )
+
+grades_table%>%kable(align=c(rep('c',times=3)),format = "latex", booktabs = T,linesep = "")%>%
+   kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
+  
+```
+
+Letter grades may be increased, but not decreased from this benchmark if overall grades prove lower than expected.
+
+# Section Coordination
+
+The three fall sections of BUEC-311 will follow the same schedule with the same deliverables. Given the size of the sections, it is preferable that you attend your assigned section.
+
+
+# Teaching Assistants
+
+There will be teaching assistants for each section. Once these details are confirmed, I will update this outline. My expectation is that, in addition to assisting with grading, the teaching assistants will be available to help you with problem sets and course material at scheduled times.
+
+# Communication
+
+I'll generally use the "Announcements" tool in eClass to send you messages relating to class content. I'll handle office hours and other help requests via Google Meet or Zoom as the term progresses. You can always email me with questions, but please put BUEC-311 in the subject line as that will help me to make sure I don't miss your message. 
+
+# COVID times
+
+It's a difficult time for all of us.  My goal is to make this class as useful, rewarding, and engaging for you as I can during the term while also making sure there are significant returns to hard work and proficiency with the material. This is my first time teaching a course on-line, and my first time teaching this course, and it's (likely) your first full-semester on-line course. This means we've all got a lot to learn, and that we'll have to be patient with technology and with each other.
+
+I am willing to help accommodate your personal circumstances to the best of my abilities and within University policies. If you are in a position where you require special accommodation, please let me know sooner rather than later. If your circumstances change throughout the term, my goal is to help you continue to be successful in the class. In return, I ask that you keep in mind that faculty and staff at the university are also adjusting to difficult times, and so your patience is going to be required at times with new technology, new approaches, and (depending on how things go) perhaps my kids invading your lectures. We'll make it work.
+
+<!-- \newpage -->
+
+# Class Schedule
+
+This is a rough outline for the semester. Actual class content may vary over the course of the term and exam dates and deadlines to be finalized closer to dates, and subject to University guidelines. Textbook references are to the Perloff and Brander 3rd Edition text, although not all material in each chapter will be covered, and supplemental material will be added.
+
+## Topic 1: Introduction to the class, topics and goals as well as a summary of deliverables. 
+
+## Topic 2: Supply and demand (Ch. 2 and 3) 
+
+## Quiz 1: Week of Sept 26th, details TBA
+
+## Topic 3: The Consumer (Parts of Ch. 3 and 4) 
+
+## Topic 4: The Firm (Ch. 5, 6, 7) 
+
+## Midterm: Week of October 26th, details TBA
+
+## Topic 5: The Market (Ch. 8, 9, 10) 
+
+## Quiz 2: Week of November 23, details TBA
+
+## Topic 6: Competition, Strategic Behaviour, Game Theory (Ch. 11, 12, 13)
+
+## Topic 7: When Markets Fail (Ch. 15, 16)
+
+## Final exam: During exam period, details TBA.
+
+\newpage
+
+
+# Academic Misconduct
+
+``The University of Alberta is committed to the highest standards of academic integrity and honesty. Students are expected to be familiar with these standards regarding academic honesty and to uphold the policies of the University in this respect. Students are particularly urged to familiarize themselves with the provisions of the Code of Student Behavior (http://www.ualberta.ca/secretariat/appeals.htm) and avoid any behavior which could potentially result in suspicions of cheating, plagiarism, misrepresentation of facts and/or participation in an offence. Academic dishonesty is a serious offence and can result in suspension or expulsion from the University." (GFC 29 Sep 2003)
+
+I will take any and all incidents of plagiarism seriously. It is your responsibility to ensure that you are familiar with the rules that govern academic misconduct, in particular the following section:
+
+30.3.2 Inappropriate Academic Behaviour, 30.3.2(1) Plagiarism
+
+``No Student shall submit the words, ideas, images or data of another person as the Student's own in any academic writing, essay, thesis, project, assignment, presentation or poster in a course or  program of study."
+(http://www.uofaweb.ualberta.ca/gfcpolicymanual/policymanualsection30-3-2.cfm )
+
+More information is available at:
+http://www.uofaweb.ualberta.ca/gfcpolicymanual/content.cfm?ID_page=37633
+
+# Grading policies
+
+Grading policies for the University of Alberta may be found here:
+https://policiesonline.ualberta.ca/PoliciesProcedures/Procedures/Grading-Procedure.pdf
+
+# Recording of audio and video
+
+Audio or video recording, digital or otherwise, of lectures, labs, seminars or any other teaching environment by students is allowed only with the prior written consent of the instructor or as a part of an approved accommodation plan. Student or instructor content, digital or otherwise, created and/or used within the context of the course is to be used solely for personal study, and is not to be used or distributed for any other purpose without prior written consent from the content author(s).
+
+
+
+
+

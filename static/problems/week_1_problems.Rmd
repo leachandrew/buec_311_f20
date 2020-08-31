@@ -1,0 +1,181 @@
+---
+output: 
+  pdf_document:
+    keep_tex: true
+    fig_caption: yes
+    latex_engine: pdflatex
+    template: ../ajl_note_pack.tex
+    #template: ../svm-latex-syllabus.tex
+geometry: margin=1in
+
+course: "BUEC 311: Business Economics, Organization and Management"
+course_number: "BUEC 311"
+title: "Problem Set #1"
+subtitle: "Thinking like an economist"
+date: \today
+
+
+
+email: "aleach@ualberta.ca"
+web: "www.andrewleach.ca"
+officehours: "By appointment"
+office: "3-20D Business Building"
+classroom: "BUS 4-13 "
+classhours: "B2 TR 9:30-10:50, B1 TR 11:00-12:20"
+
+fontfamily: mathpazo
+fontsize: 11pt
+header-includes:
+   - \linespread{1.05}
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(echo=F,
+                      message=F,
+                      warning=F)
+
+knitr::opts_knit$set(dev.args = list(type = "cairo"))
+library(tidyverse)
+library(ggthemes)
+library(ggrepel)
+library(patchwork)
+
+blake_theme<-function(){
+  theme_hc(20)+
+    theme(plot.subtitle = element_text(color="grey10",size=rel(.7)),
+          plot.title = element_text(face="bold",size=rel(.8)),
+          plot.caption = element_text(color="grey50",size=rel(.5),hjust=0),
+          legend.title = element_text(color="grey10",size=rel(.5)),
+          legend.text = element_text(color="grey10",size=rel(.5)),
+          axis.title = element_text(size=rel(.8)),
+          axis.ticks = element_blank(),
+          panel.spacing = unit(2,"lines"),
+          #legend.position = "none",
+          plot.margin = margin(t = .5, r = 1, b = .25, l = 1,unit= "cm"),
+          axis.text.x = element_text(margin = margin(t = 10, r = 0, b = 0, l = 0))
+          
+    )
+}
+```
+This week's problems are meant to get you thinking about economics in everyday life, and exploring some of the topics and vocabulary we've addressed in the introductory classes. 
+
+1. Consider all of the course outlines for the classes you're taking this term incuding mine. You can also use examples from previous courses if you choose to do so.
+
+   a) Find one example of a professor using incentive response to drive behaviour in the design of their course.
+
+   b) Find an example (if you can) of what economists would call a perverse incentive, or a rule that likely leads to behaviours that the professor might prefer to avoid.
+
+   c) Consider some of the decisions you've made this Fall to prepare for classes. Which decisions would have changed, and how, if you'd had access to an extra $500? How would you have had to change your decisions if you received an unexpected bill for $500?
+
+2. Think of an example in your life in which you behave as though you were following a demand curve (i.e. when prices of good X drop, you buy more). 
+  
+```{tikz demand_1, fig.cap = "Demand curve", fig.ext = 'png',include=FALSE}
+\usetikzlibrary{arrows}
+\usetikzlibrary{patterns}
+\definecolor{zzffzz}{rgb}{0.6,1,0.6}
+\definecolor{ffcctt}{rgb}{1,0.8,0.2}
+\definecolor{yqyqdz}{rgb}{0.5019607843137255,0.5019607843137255,0.8509803921568627}
+\begin{tikzpicture}
+	% Draw axes
+	%Y
+	\draw[->] (0,0) -- (0,10) ;
+	\draw[] (0,8) -- node[rotate=90, above=30pt] {\textbf{$p$, \$ per unit}} (0,8);
+	%X
+	\draw[->] (0,0) -- (15,0);
+	\draw[] (14,0) -- node[below=30pt] {\textbf{$Q$, units per month}} (14,0);
+  
+	% Plot demand curve:
+	% Curve given by: Q = 13 - 2p + 0.1Y
+	% Assume Y= 10
+	% Inverse demand: p = 7-0.5*Q
+	\draw[color=black, thick, domain=0:14] plot (\x,{7-0.5*\x});
+	\node at (6,6) [below] {Demand Curve for X, $D$};
+
+	%Plot illustrative lines
+	\draw[dashed] (0,5) -- (4,5) -- (4,0);
+	\draw[dashed] (0,3) -- (8,3) -- (8,0);
+	\draw[dashed] (0,1) -- (12,1) -- (12,0);
+
+	%Add axes labels
+	%Origin%
+	\node at (0,0) [left] {{0}};
+	%Y Axis
+	\node at (0,7) [left] {{7.00}};
+	\node at (0,5) [left] {{5.00}};
+	\node at (0,3) [left] {{3.00}};
+	\node at (0,1) [left] {{1.00}};
+	%X Axis
+	\node at (4,0) [below] {{4}};
+	\node at (8,0) [below] {{8}};
+	\node at (12,0) [below] {{12}};
+	\node at (14,0) [below] {{14}};
+\end{tikzpicture}
+```
+\centering
+\includegraphics[width=0.65\textwidth]{week_1_problems_files/figure-latex/demand_1-1.png}
+
+
+3. Now, consider the opposite. Think of an example in your life in which your consumption of a product or service doesn't appear to be related to its price or to your income.
+
+
+\newpage
+
+
+4. Now, let's switch to the supply side. Can you think of a market or firm where you readily see a supply curve functioning like it does in an economics textbook?
+
+```{tikz supply_1, fig.cap = "Demand curve", fig.ext = 'png',include=FALSE}
+\usetikzlibrary{arrows}
+\usetikzlibrary{patterns}
+\definecolor{zzffzz}{rgb}{0.6,1,0.6}
+\definecolor{ffcctt}{rgb}{1,0.8,0.2}
+\definecolor{yqyqdz}{rgb}{0.5019607843137255,0.5019607843137255,0.8509803921568627}
+\begin{tikzpicture}
+
+% Draw axes
+	%Y
+	\draw[->] (0,0) -- (0,10) ;
+	\draw[] (0,8) -- node[rotate=90, above=30pt] {\textbf{$p$, \$ per unit}} (0,8);
+	%X
+	\draw[->] (0,0) -- (15,0);
+	\draw[] (14,0) -- node[below=30pt] {\textbf{$Q$, millions of units per year}} (14,0);
+
+	% Plot supply curve:
+	% Curve given by: Q = 1 + 2p - 0.5p_{y}
+	% Assume p_{y}= 2
+	% Inverse demand: p = 0.5*Q
+	\draw[color=black, thick, domain=0:14] plot (\x,{0.5*\x});
+	\node at (6.5,6) [right] {Supply Curve for Z, $S$};
+
+	%Plot illustrative lines
+	\draw[dashed] (0,5) -- (10,5) -- (10,0);
+	\draw[dashed] (0,3) -- (6,3) -- (6,0);
+	\draw[dashed] (0,1) -- (2,1) -- (2,0);
+
+	%Add axes labels
+	%Origin%
+	\node at (0,0) [left] {{0}};
+	%Y Axis
+%	\node at (0,7) [left] {{7.00}};
+	\node at (0,5) [left] {{5.00}};
+	\node at (0,3) [left] {{3.00}};
+	\node at (0,1) [left] {{1.00}};
+	%X Axis
+	\node at (2,0) [below] {{2}};
+	\node at (6,0) [below] {{6}};
+	\node at (10,0) [below] {{10}};
+%	\node at (14,0) [below] {{14}};
+\end{tikzpicture}
+
+```
+\centering
+\includegraphics[width=0.5\textwidth]{week_1_problems_files/figure-latex/supply_1-1.png}
+
+5. We often see discussion of supply and demand approached slightly differently in commodity and labour markets than how we approach the terms in microeconomics. For example, below is a graph of Energy Information Administration global oil demand, showing both historical demand and forecasts. 
+
+   a) When commodities analysts talk about demand increasing or decreasing over time, what do they mean?
+   b) What's different about this graphic compared to the demand graphs that we use in class?
+   c) [this is a tough question for week 1] Does an increase in demand as shown in the graph below, for example from 2018 through 2019, necessarily mean that there was an increase in demand (i.e. a shift to the right in the demand curve)?
+   
+   \centering
+\includegraphics[width=0.85\textwidth]{week_1_problems_files/figure-latex/demand_new.png}
