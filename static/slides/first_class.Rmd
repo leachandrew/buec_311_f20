@@ -599,6 +599,19 @@ coord_equal()
 
 
 ---
+# Positive and Normative Statements
+- Economics alone can't tell you the **right** decision 
+- A positive statement is a statement of what **is** or what **will happen** and describes reality.
+   - If you increase the costs of production, consumer prices will go up.
+- Positive statements can reflect **uncertainty** about outcomes
+- A normative statement concerns what somebody believes **should** happen:
+   - “The government should tax greenhouse gas emissions.”
+   - Normative statements cannot be tested because they imply value judgments which cannot be refuted by evidence.
+- Normative statements can inform objective functions
+   - A decision-maker might look for a policy which does not increase inequality
+   - Economists can provide constrained advice: this policy accomplishes your objective and **is unlikely to** increase inequality
+
+---
 
 class: inverse, middle, center
 # About This Course
