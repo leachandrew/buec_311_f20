@@ -536,7 +536,7 @@ quantity demanded is given by:
         \Delta Q &= D(p_{2})-D(p_{1}) = \frac{p_1}{5}-\frac{p_2}{5}\\
         \Delta Q &= D(p_{2})-D(p_{1}) = -\frac{1}{5}\Delta P,\,\Delta P=p_{2}-p_{1}
 		\end{align*}
-\item So, we know that for a given change in price $\Delta P$, the quantity consumed will change by 
+\item So, we know that for a given change in price $\Delta P$, the quantity consumed will change by
  $\Delta Q=-\frac{1}{5}\Delta P$
  	\end{itemize}	
 }
@@ -589,7 +589,7 @@ demand functions given by:
 \begin{center}
 \includegraphics[width=.4\textwidth]{../images/gas_demand.png}
 \end{center}
-\item What's the demand from one person at price p=100? It's 20. 
+\item What's the demand from one person at price p=100? It's 20.
 \item So, if the demand from one person at price p=100 is 20, what's the demand from 2 people?
  	\end{itemize}	
 }
@@ -623,7 +623,7 @@ demand functions given by:
 \frame{
 	\frametitle{Determining Market Demand}
 \begin{definition}[Horizontal Summation]
-		When summing demand for a \textit{private good}, you add up the quantity demanded of each individual at each price. 
+		When summing demand for a \textit{private good}, you add up the quantity demanded of each individual at each price.
 
 \textbf{Trap: don't look at the graph and add the curves vertically. Just remember, if no one person demands gasoline above price $p_max$, the market doesn't demand any at prices above $p_max$ either}.
 		\end{definition}
@@ -833,7 +833,7 @@ price, $p$, the price of other possible inputs or outputs $p_{y}$, and other fac
 	\begin{itemize}
 	\item The supply function allows us to think precisely about how price changes affect the
 quantity supplied, holding all other factors fixed.
-    \item Let's use a simpler example here of $Q=2p$ and let $p_{1}$ denote the initial price, and $p_{2}$ denote the new price. 
+    \item Let's use a simpler example here of $Q=2p$ and let $p_{1}$ denote the initial price, and $p_{2}$ denote the new price.
     \item The quantity supplied at $p_{1}$ is $Q_{1} = S(p_{1})=2p_1$, and the quantity supplied  at $p_{2}$ is $Q_{2} = S(p_{2})=2 p_2$
     \item The change in quantity supplied as price goes from $p_{1}$ to $p_{2}$ is $\Delta Q =
 Q_{2}-Q_{1} = S(p_{2})-S(p_{1})$.
@@ -889,7 +889,7 @@ supply functions given by:
 
 
 
-\end{document}
+
 
 \section{Equilibrium}
 
@@ -901,7 +901,7 @@ equilibrium}.
 	\end{itemize}
 	\begin{definition}[Market Equilibrium]
 	The market is in equilibrium when all market participants are able to buy or sell as much as they
-want; no participant wants to change its behaviour given what other market participants are doing.
+want; no participant wants to change their behaviour given what other market participants are doing.
 	\end{definition}
 }
 
@@ -914,52 +914,17 @@ want; no participant wants to change its behaviour given what other market parti
 
 \frame{
 	\frametitle{Market Equilibrium}
-	%	The demand for gasoline:
 	
-	\begin{figure}[t!]
-	\center
-	\resizebox{!}{.35\linewidth}{
-
-	\begin{tikzpicture}
-	% Draw axes
-	%Y
-	\draw[->] (0,0) -- (0,10) ;
-	\draw[] (0,8) -- node[rotate=90, above=30pt] {\textbf{$p$, \$ per kg}} (0,8);
-	%X
-	\draw[->] (0,0) -- (15,0);
-	\draw[] (14,0) -- node[below=30pt] {\textbf{$Q$, millions of kg per year}} (14,0);
-
-	% Plot demand curve:
-	% Curve given by: Q = 13 - 2p + 0.1Y
-	% Assume Y= 10
-	% Inverse demand: p = 7-0.5*Q
-	\draw[color=blue, thick, domain=0:14] plot (\x,{7-0.5*\x});
-	\node at (5.5,7.25) [left] {Demand Curve for Gasoline, $D$};
-
-	% Plot supply curve:
-	% Curve given by: Q = 1 + 2p - 0.5p_{y}
-	% Assume p_{y}= 2
-	% Inverse demand: p = 0.5*Q
-	\draw[color=red, thick, domain=0:14] plot (\x,{0.5*\x});
-	\node at (8,7) [right] {Supply Curve for Gasoline, $S$};
-
-	%Plot illustrative lines
-	\draw[dashed] (0,3.5) -- (7,3.5) -- (7,0);
-
-	%Add axes labels
-	%Origin%
-	\node at (0,0) [left] {{0}};
-	%Y Axis
-	\node at (0,3.5) [left] {{3.50}};
-	%X Axis
-	\node at (7,0) [below] {{7}};
-
-
-\end{tikzpicture}
+		\begin{figure}[t!]
+    \center
+	\resizebox{!}{.4\linewidth}{
+    \includegraphics[width=\textwidth]{../images/basic_equil.png}
 }
-\caption{Equilibrium in the market for gasoline}
+	
+\caption{Equilibrium in the market}
 \end{figure}
 }
+
 
 \frame{
 	\frametitle{Market Equilibrium}
@@ -972,6 +937,83 @@ sell as much as they want.
 	The equilibrium quantity is the $q$ such that the quantity demanded equals the quantity supplied.
 	\end{definition}
 }
+
+\frame{
+	\frametitle{Market Equilibrium}
+	
+		\begin{figure}[t!]
+    \center
+	\resizebox{!}{.4\linewidth}{
+    \includegraphics[width=\textwidth]{../images/nash.jpg}
+}
+	\caption{Our modern understanding of equilibrium in the market is largely due to this economist. Image: PBS}
+\end{figure}
+}
+
+\frame{
+	\frametitle{Market Equilibrium}
+	
+		\begin{figure}[t!]
+    \center
+	\resizebox{!}{.4\linewidth}{
+    \includegraphics[width=\textwidth]{../images/nash_2.jpg}
+}
+	\caption{They even made a movie about him: A Beautiful Mind (2001)}
+\end{figure}
+}
+
+
+\frame{
+	\frametitle{Market Equilibrium}
+	
+		\begin{figure}[t!]
+    \center
+	\resizebox{!}{.4\linewidth}{
+    \includegraphics[width=\textwidth]{../images/equil_expl_1.png}
+}
+\caption{Off-equilibrium points, and the rationale of equilibrium}
+\end{figure}
+}
+	
+
+\frame{
+	\frametitle{Market Equilibrium}
+	
+		\begin{figure}[t!]
+    \center
+	\resizebox{!}{.4\linewidth}{
+    \includegraphics[width=\textwidth]{../images/equil_expl_2.png}
+}
+\caption{Off-equilibrium points, and the rationale of equilibrium}
+\end{figure}
+}
+
+\frame{
+	\frametitle{Market Equilibrium}
+	
+		\begin{figure}[t!]
+    \center
+	\resizebox{!}{.4\linewidth}{
+    \includegraphics[width=\textwidth]{../images/equil_expl_3.png}
+}
+\caption{Off-equilibrium points, and the rationale of equilibrium}
+\end{figure}
+}
+
+
+\frame{
+	\frametitle{Market Equilibrium}
+	
+		\begin{figure}[t!]
+    \center
+	\resizebox{!}{.4\linewidth}{
+    \includegraphics[width=\textwidth]{../images/equil_expl_4.png}
+}
+\caption{Off-equilibrium points, and the rationale of equilibrium}
+\end{figure}
+}
+
+
 
 \frame{
 	\frametitle{Market Equilibrium}
@@ -991,138 +1033,12 @@ quantity of 7.
 	\end{itemize}
 }
 
-\frame{
-	\frametitle{Market Equilibrium}
-	\begin{itemize}
-	\item Why must $Q_{D}=Q_{S}$ in a market equilibrium?
-	\end{itemize}
-}
 
-\frame{
-	\frametitle{Market Equilibrium}
-	%	The demand for gasoline:
-	
-	\begin{figure}[t!]
-	\center
-	\resizebox{!}{.35\linewidth}{
+\end{document}
 
-	\begin{tikzpicture}
-	% Draw axes
-	%Y
-	\draw[->] (0,0) -- (0,10) ;
-	\draw[] (0,8) -- node[rotate=90, above=30pt] {\textbf{$p$, \$ per kg}} (0,8);
-	%X
-	\draw[->] (0,0) -- (15,0);
-	\draw[] (14,0) -- node[below=30pt] {\textbf{$Q$, millions of kg per year}} (14,0);
 
-	% Plot demand curve:
-	% Curve given by: Q = 13 - 2p + 0.1Y
-	% Assume Y= 10
-	% Inverse demand: p = 7-0.5*Q
-	\draw[color=blue, thick, domain=0:14] plot (\x,{7-0.5*\x});
-	\node at (3.5,7.25) [left] {Demand Curve, $D$};
 
-	% Plot supply curve:
-	% Curve given by: Q = 1 + 2p - 0.5p_{y}
-	% Assume p_{y}= 2
-	% Inverse demand: p = 0.5*Q
-	\draw[color=red, thick, domain=0:14] plot (\x,{0.5*\x});
-	\node at (10,7) [right] {Supply Curve, $S$};
 
-	%Plot illustrative lines
-	\draw[dashed] (0,5) -- (10,5) -- (10,0);
-	\draw[dashed] (4,5) -- (4,0);
-
-	%Add axes labels
-	%Origin%
-	\node at (0,0) [left] {{0}};
-	%Y Axis
-	\node at (0,5) [left] {{5.00}};
-	%X Axis
-	\node at (4,0) [below] {{$Q_{D}=4$}};
-	\node at (10,0) [below] {{$Q_{S}=10$}};
-	
-\end{tikzpicture}
-}
-\caption{Excess Supply}
-\end{figure}
-}
-
-\frame{
-	\frametitle{Market Equilibrium}
-	%	The demand for gasoline:
-	
-	\begin{figure}[t!]
-	\center
-	\resizebox{!}{.35\linewidth}{
-
-	\begin{tikzpicture}
-	% Draw axes
-	%Y
-	\draw[->] (0,0) -- (0,10) ;
-	\draw[] (0,8) -- node[rotate=90, above=30pt] {\textbf{$p$, \$ per kg}} (0,8);
-	%X
-	\draw[->] (0,0) -- (15,0);
-	\draw[] (14,0) -- node[below=30pt] {\textbf{$Q$, millions of kg per year}} (14,0);
-
-	% Plot demand curve:
-	% Curve given by: Q = 13 - 2p + 0.1Y
-	% Assume Y= 10
-	% Inverse demand: p = 7-0.5*Q
-	\draw[color=blue, thick, domain=0:14] plot (\x,{7-0.5*\x});
-	\node at (3.5,7.25) [left] {Demand Curve, $D$};
-
-	% Plot supply curve:
-	% Curve given by: Q = 1 + 2p - 0.5p_{y}
-	% Assume p_{y}= 2
-	% Inverse demand: p = 0.5*Q
-	\draw[color=red, thick, domain=0:14] plot (\x,{0.5*\x});
-	\node at (10,7) [right] {Supply Curve, $S$};
-
-	%Plot illustrative lines
-	\draw[dashed] (0,2) -- (10,2) -- (10,0);
-	\draw[dashed] (4,2) -- (4,0);
-
-	%Add axes labels
-	%Origin%
-	\node at (0,0) [left] {{0}};
-	%Y Axis
-	\node at (0,2) [left] {{2.00}};
-	%X Axis
-	\node at (4,0) [below] {{$Q_{S}=4$}};
-	\node at (10,0) [below] {{$Q_{D}=10$}};
-	
-\end{tikzpicture}
-}
-\caption{Excess Demand}
-\end{figure}
-}
-
-\frame{
-	\frametitle{Outline}
-	\begin{enumerate}
-%	\item Big Government Gasoline
-%	\item[]
-	\item The Supply-and-Demand Model
-		\begin{itemize}
-		\item Demand
-		\item Supply
-		\item Market Equilibrium
-		\end{itemize}
-	\item[]
-	\item \alert{Using the Model}
-		\begin{itemize}
-		\item Changing fundamentals.
-		\item The effects of government intervention.
-		\end{itemize}
-	\item[]
-	\item Applying the model in practice.
-		\begin{itemize}
-		\item When it works.
-		\item When if fails.
-		\end{itemize}
-	\end{enumerate}
-}
 
 \section{Using the Model}
 
