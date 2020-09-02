@@ -14,6 +14,7 @@
 \usepackage{siunitx}
 \usepackage{tikz}
 \usetikzlibrary{decorations.pathreplacing,angles,quotes}
+%\usepackage{enumitem}% http://ctan.org/pkg/enumitem
 
 %set up course and number
 
@@ -165,6 +166,15 @@
 }
 
 
+\newenvironment{itemize*}%
+  {\begin{itemize}%
+    \setlength{\itemsep}{0pt}%
+    \setlength{\parskip}{0pt}}%
+  {\end{itemize}}
+
+
+
+
 \title{Supply and Demand - The Basics}
 
 
@@ -183,7 +193,7 @@
    \vfill
 \end{frame}
 
-\section{Outline}
+\section{Introduction}
 
 \frame{
 	\frametitle{Outline}
@@ -232,11 +242,11 @@
 \vfill
 }
 
-\section{Supply and Demand}
+\section{Demand}
 
 
 \frame{
-	\frametitle{1. The Supply-and-Demand Model}
+	\frametitle{Demand}
 	\begin{itemize}
 	\item Supply and demand is the core of almost every economic model
 	\item[]
@@ -255,7 +265,7 @@ market outcomes.
 }
 
 \frame{
-	\frametitle{1. The Supply-and-Demand Model: Demand}
+	\frametitle{Demand}
 	\begin{itemize}
 	\item The first piece of the model: \textbf{Demand}
 	\item[]
@@ -266,7 +276,7 @@ market outcomes.
 }
 
 \frame{
-	\frametitle{1. The Supply-and-Demand Model: Demand}
+	\frametitle{Demand}
 	\begin{itemize}
 	\item While many factors can affect consumer's desire to purchase goods and services, economists
 primarily focus on how a good's \textit{own price} affects the quantity demanded.
@@ -279,7 +289,7 @@ at a given price, holding other factors constant.
 }
 
 \frame{
-	\frametitle{1. The Supply-and-Demand Model: Demand}
+	\frametitle{Demand}
 	\begin{itemize}
 	\item Empirical evidence suggests that the quantity demanded by consumers follows the \textit{Law
 of Demand}.
@@ -300,7 +310,7 @@ consumers want to consume constant}.
 }
 
 \frame{
-	\frametitle{1. The Supply-and-Demand Model: The Demand Curve}
+	\frametitle{The Demand Curve}
 	%	The demand for gasoline:
 	
 	\begin{figure}[t!]
@@ -314,7 +324,7 @@ consumers want to consume constant}.
 
 
 \frame{
-	\frametitle{1. The Supply-and-Demand Model: The Demand Curve}
+	\frametitle{The Demand Curve}
 	%	The demand for gasoline:
 	
 	\begin{figure}[t!]
@@ -328,7 +338,7 @@ consumers want to consume constant}.
 
 
 \frame{
-	\frametitle{1. The Supply-and-Demand Model: The Demand Curve}
+	\frametitle{The Demand Curve}
 	\begin{itemize}
 	\item The demand curve provides a concise answer to the question of what happens to the quantity
 demanded as price changes, holding all other factors constant.
@@ -345,7 +355,7 @@ decreases.
 }
 
 \frame{
-	\frametitle{1. The Supply-and-Demand Model: The Demand Curve}
+	\frametitle{The Demand Curve}
 	\begin{itemize}
 	\item The demand curve tells us how a change in the price of a good or service affects the
 quantity demanded.
@@ -363,7 +373,7 @@ quantity demanded.
 }
 
 \frame{
-	\frametitle{1. The Supply-and-Demand Model: The Demand Curve}
+	\frametitle{The Demand Curve}
 		%	The demand for gasoline:
 	
 	\begin{figure}[t!]
@@ -376,7 +386,7 @@ quantity demanded.
 }
 
 \frame{
-	\frametitle{1. The Supply-and-Demand Model: The Demand Curve}
+	\frametitle{The Demand Curve}
 		%	The demand for gasoline:
 	
 	\begin{figure}[t!]
@@ -390,7 +400,7 @@ quantity demanded.
 
 
 \frame{
-	\frametitle{1. The Supply-and-Demand Model: The Demand Curve}
+	\frametitle{The Demand Curve}
 	\begin{itemize}
 	\item How the demand curve shifts depends on the factor being considered.
 		\begin{itemize}
@@ -405,7 +415,7 @@ quantity demanded.
 }
 
 \frame{
-	\frametitle{1. The Supply-and-Demand Model: The Demand Curve}
+	\frametitle{The Demand Curve}
 	%	The demand for gasoline:
 	
 		\begin{figure}[t!]
@@ -418,7 +428,7 @@ quantity demanded.
 }
 
 \frame{
-	\frametitle{1. The Supply-and-Demand Model: The Demand Curve}
+	\frametitle{The Demand Curve}
 	%	The demand for gasoline:
 	
 		\begin{figure}[t!]
@@ -426,14 +436,14 @@ quantity demanded.
 	\resizebox{!}{.45\linewidth}{
 \includegraphics[width=\textwidth]{../images/gas_inc_comp2.png}
 }
-\caption{The effects of an increase in the price of tolls on the demand for gasoline}
+\caption{The effects of an increase in road tolls on the demand for gasoline}
 \end{figure}
 }
 
 
 
 \frame{
-	\frametitle{1. The Supply-and-Demand Model: The Demand Curve}
+	\frametitle{The Demand Curve}
 	\begin{itemize}
 	\item The demand curve gives us a precise relationship between price and quantity demanded.
 	\item We can also express this same relationship mathematically using a \textit{demand function}.
@@ -448,138 +458,198 @@ $p$, income, $Y$, and other factors, $X$.
 }
 
 \frame{
-	\frametitle{1. The Supply-and-Demand Model: The Demand Function}
+	\frametitle{The Demand Function}
 	\begin{itemize}
-	\item Suppose that the estimated demand function for gasoline is given by:
+	\item In the graphs above, I've used the equation
 		\begin{align*}
-		Q = 13 - 2p + 0.1Y
+		Q = 30 - \frac{p}{5} + 0.1 Y
 		\end{align*}
 	where $Q$ is the quantity of gasoline demanded, $p$ is the price of gasoline, and $Y$ is average
-household income.
+household income in thousands of dollars per year.
 	\item[]
-	\item Functional form reflects available evidence about the demand for cheesey:
+	\item Functional form reflects available evidence about the demand for gasoline:
 		\begin{itemize}
 		\item $p$ is negative.
 		\item $Y$ is positive.
-		\item Constant term ($13$) reflects all other factors.
+		\item Constant term ($30$) reflects all other factors.
 		\end{itemize}
+\item The parameters here ($30$,$\frac{1}{5}$, and $0.1$ aren't estimated, they are simply illustrative.
 	\end{itemize}
 }
 
 \frame{
-	\frametitle{1. The Supply-and-Demand Model: The Demand Function}
+	\frametitle{The Demand Function}
 	\begin{itemize}
 	\item We can obtain the demand curve for gasoline by substituting for income, $Y$.
-	\item[]
-	\item Suppose average household income is \$10,000. Then the demand for gasoline is given by:
+	\item If household income is \$100,000. the demand for gasoline is given by:
 		\begin{align*}
-		Q &= 13 - 2p + 0.1(10)\\
-			&= 14 - 2p
+		Q &= 30 - \frac{p}{5} + 0.1\times 100\\
+        Q &= 40 - \frac{p}{5}
 		\end{align*}
 	\item With some algebra we can obtain the \textit{inverse demand curve}:
 		\begin{align*}
-		p = 7 -\frac{1}{2}Q
+		Q &= 40 - \frac{p}{5}\\
+        5Q &= 200 - p\\
+        p &= 200 -5Q
 		\end{align*}
-	\item This is the same relationship depicted on the next slide.
 	\end{itemize}
 }
 
 \frame{
-	\frametitle{1. The Supply-and-Demand Model: The Demand Function}
+	\frametitle{The Demand Function}
 	%	The demand for gasoline:
-	
+
 	\begin{figure}[t!]
 	\center
-	\resizebox{!}{.35\linewidth}{
-
-	\begin{tikzpicture}
-	% Draw axes
-	%Y
-	\draw[->] (0,0) -- (0,10) ;
-	\draw[] (0,8) -- node[rotate=90, above=30pt] {\textbf{$p$, \$ per kg}} (0,8);
-	%X
-	\draw[->] (0,0) -- (15,0);
-	\draw[] (14,0) -- node[below=30pt] {\textbf{$Q$, millions of kg per year}} (14,0);
-
-	% Plot demand curve:
-	% Curve given by: Q = 13 - 2p + 0.1Y
-	% Assume Y= 10
-	% Inverse demand: p = 7-0.5*Q
-	\draw[color=black, thick, domain=0:14] plot (\x,{7-0.5*\x});
-	\node at (6,6) [below] {Demand Curve for Gasoline, $D$};
-
-	%Plot illustrative lines
-	\draw[dashed] (0,5) -- (4,5) -- (4,0);
-	\draw[dashed] (0,3) -- (8,3) -- (8,0);
-	\draw[dashed] (0,1) -- (12,1) -- (12,0);
-
-	%Add axes labels
-	%Origin%
-	\node at (0,0) [left] {{0}};
-	%Y Axis
-	\node at (0,7) [left] {{7.00}};
-	\node at (0,5) [left] {{5.00}};
-	\node at (0,3) [left] {{3.00}};
-	\node at (0,1) [left] {{1.00}};
-	%X Axis
-	\node at (4,0) [below] {{4}};
-	\node at (8,0) [below] {{8}};
-	\node at (12,0) [below] {{12}};
-	\node at (14,0) [below] {{14}};
-
-\end{tikzpicture}
+	\resizebox{!}{.45\linewidth}{
+\includegraphics[width=\textwidth]{../images/gas_demand.png}
 }
 \caption{The demand for gasoline}
 \end{figure}
 }
 
 \frame{
-	\frametitle{1. The Supply-and-Demand Model: The Demand Function}
+	\frametitle{The Demand Function}
 	\begin{itemize}
 	\item The demand function is useful because it allows us to think precisely about how the
 quantity demanded will respond to a change in price, holding income (and all other factors) fixed.
-	\item[]
-	\item To see this, let $p_{1}$ denote the initial price, and $p_{2}$ denote the new price. Then
-the quantity demanded at $p_{1}$ is $Q_{1}=D(p_{1})$, the quantity demanded at $p_{2}$ is
-$Q_{2}=D(p_{2})$, and the change in quantity demanded as price goes from $p_{1}$ to $p_{2}$ is
-$\Delta Q = Q_{2}-Q_{1} = D(p_{2})-D(p_{1})$.
-	\item[]
-	\item In our gasoline example, if the price changes from $p_{1}$ to $p_{2}$, the change in
-quantity demanded is given by:
-		\begin{align*}
-		\Delta Q &= D(p_{2})-D(p_{1}) = [14-2p_{2}]-[14-2p_{1}]\\
-			& = -2[p_{2}-p_{1}] = -2 \Delta p
-		\end{align*}
-	\end{itemize}	
+\item To see this, let's use two of the (price,quantity) pairs highlighted by the dotted lines in the figure:
+\begin{itemize}
+\item Let $p_{1}=100$ denote the initial price, and $p_{2}=50$ denote the new price.
+\item The quantity demanded at $p_{1}$ is $Q_{1}=D(p_{1})=40-\frac{p_1}{5}=40-\frac{100}{5}=20$ \medskip
+\item The quantity demanded at $p_{2}$ is $Q_{2}=D(p_{2})=40-\frac{p_2}{5}
+=40-\frac{50}{5}=30$
+\end{itemize}
+\item Next we can use these to start thinking about response to price changes
+\end{itemize}
 }
 
+
+
 \frame{
-	\frametitle{1. The Supply-and-Demand Model: Determining Market Demand}
+	\frametitle{The Demand Function}
+	\begin{itemize}
+\item In our gasoline example, if the price changes from $p_{1}$ to $p_{2}$, the change in
+quantity demanded is given by:
+		\begin{align*}
+		\Delta Q &= D(p_{2})-D(p_{1}) = [40-\frac{p_2}{5}]-[40-\frac{p_1}{5}]\\
+        \Delta Q &= D(p_{2})-D(p_{1}) = \frac{p_1}{5}-\frac{p_2}{5}\\
+        \Delta Q &= D(p_{2})-D(p_{1}) = -\frac{1}{5}\Delta P,\,\Delta P=p_{2}-p_{1}
+		\end{align*}
+\item So, we know that for a given change in price $\Delta P$, the quantity consumed will change by 
+ $\Delta Q=-\frac{1}{5}\Delta P$
+ 	\end{itemize}	
+}
+
+
+\frame{
+	\frametitle{The Demand Function}
+	\begin{itemize}
+\item How do we see this? Check the graph:
+\begin{center}
+\includegraphics[width=.4\textwidth]{../images/gas_demand.png}
+\end{center}
+\item Changing the price from 50 to 100 decreases Q from 30 to 20, so $\Delta Q=-10$
+\item From the previous slide, $\Delta Q=-\frac{1}{5}\Delta P=-\frac{50}{5}=-10$
+ 	\end{itemize}	
+}
+
+
+
+\frame{
+	\frametitle{Market Demand}
 	\begin{itemize}
 	\item In many cases we might have an estimate of the demand from all consumers in a market, but
 in some scenarios, we may only know the demands of individual consumers or groups of consumers.
 	\item[]
 	\item In these cases, we need to add up the demand from each consumer (or group).
 	\item[]
-	\item Key point: Total quantity demanded \textit{at a given price} is equal to the sum of
-individual consumer demands at that price.
+	\item \alert{Key point}: Total quantity demanded \textit{at a given price} is equal to the sum of
+individual consumer demands \alert{at that price}.
 	\end{itemize}
 }
 
 \frame{
-	\frametitle{1. The Supply-and-Demand Model: Determining Market Demand}
+	\frametitle{Determining Market Demand}
 	\begin{itemize}
 	\item As an example, suppose there are two people in the market for gasoline. They both have
 demand functions given by:
 		\begin{align*}
-		Q = 14-2p
+		Q=40-\frac{p}{5}
 		\end{align*}
 		What is the market demand for gasoline in this case?
 	\end{itemize}
 }
 
+
 \frame{
-	\frametitle{1. The Supply-and-Demand Model: Supply}
+	\frametitle{Determining Market Demand}
+	\begin{itemize}
+\item Again, check the graph to find yourself an easy anchor point:
+\begin{center}
+\includegraphics[width=.4\textwidth]{../images/gas_demand.png}
+\end{center}
+\item What's the demand from one person at price p=100? It's 20. 
+\item So, if the demand from one person at price p=100 is 20, what's the demand from 2 people?
+ 	\end{itemize}	
+}
+
+
+\frame{
+	\frametitle{Determining Market Demand}
+	\begin{itemize}
+\item Okay, now let's do the math
+\begin{center}
+\includegraphics[width=.4\textwidth]{../images/gas_demand.png}
+\end{center}
+\item If $Q=40-\frac{p}{5}$, adding both sides shows that $2Q=80-\frac{2\times p}{5}$.
+\item Now let's check. If $p = 100$, $Q=80-\frac{2\times p}{5}=80-\frac{2\times 100}{5}=40$.
+ 	\end{itemize}	
+}
+
+\frame{
+	\frametitle{Determining Market Demand}
+	%	The demand for gasoline:
+
+	\begin{figure}[t!]
+	\center
+	\resizebox{!}{.45\linewidth}{
+\includegraphics[width=\textwidth]{../images/gas_stack.png}
+}
+\caption{The demand for gasoline aggregated for 1, 2, 3 or 4 people}
+\end{figure}
+}
+
+\frame{
+	\frametitle{Determining Market Demand}
+\begin{definition}[Horizontal Summation]
+		When summing demand for a \textit{private good}, you add up the quantity demanded of each individual at each price. 
+
+\textbf{Trap: don't look at the graph and add the curves vertically. Just remember, if no one person demands gasoline above price $p_max$, the market doesn't demand any at prices above $p_max$ either}.
+		\end{definition}
+
+}
+
+\frame{
+	\frametitle{Determining Market Demand}
+Test yourself: what's the aggregate demand in this case?
+\begin{figure}[t!]
+	\center
+	\resizebox{!}{.4\linewidth}{
+\includegraphics[width=\textwidth]{../images/gas_stack2a.png}
+}
+\caption{The demand for gasoline}
+\end{figure}
+
+}
+
+
+%\end{document}
+
+\section{Supply}
+
+\frame{
+	\frametitle{Supply}
 	\begin{itemize}
 	\item The second piece of the model: \textbf{Supply}
 	\item[]
@@ -590,9 +660,9 @@ demand functions given by:
 }
 
 \frame{
-	\frametitle{1. The Supply-and-Demand Model: Supply}
+	\frametitle{Supply}
 	\begin{itemize}
-	\item As with demand, economist focus on how the \textit{price} of a good or service affects the
+	\item As with demand, economists focus on how the \textit{price} of a good or service affects the
 quantity supplied.
 	\end{itemize}
 	\begin{definition}[Quantity Supplied]
@@ -602,66 +672,28 @@ quantity supplied.
 }
 
 \frame{
-	\frametitle{1. The Supply-and-Demand Model: Supply}
+	\frametitle{Supply}
 	\begin{itemize}
 	\item Is there a Law of Supply?
 	\item[]
-	\item We can illustrate the relationship between the price of a good or service and the quantity
-producers want to sell via a \textit{supply curve}.
+	\item We can illustrate the relationship between the price of a good or service and the quantity producers want to sell via a \textit{supply curve}.
 	\end{itemize}
 }
 
 \frame{
-	\frametitle{1. The Supply-and-Demand Model: The Supply Curve}
+	\frametitle{The Supply Curve}
 	%	The demand for gasoline:
-	
 	\begin{figure}[t!]
 	\center
-	\resizebox{!}{.35\linewidth}{
-
-	\begin{tikzpicture}
-	% Draw axes
-	%Y
-	\draw[->] (0,0) -- (0,10) ;
-	\draw[] (0,8) -- node[rotate=90, above=30pt] {\textbf{$p$, \$ per kg}} (0,8);
-	%X
-	\draw[->] (0,0) -- (15,0);
-	\draw[] (14,0) -- node[below=30pt] {\textbf{$Q$, millions of kg per year}} (14,0);
-
-	% Plot supply curve:
-	% Curve given by: Q = 1 + 2p - 0.5p_{y}
-	% Assume p_{y}= 2
-	% Inverse demand: p = 0.5*Q
-	\draw[color=black, thick, domain=0:14] plot (\x,{0.5*\x});
-	\node at (8,7) [right] {Supply Curve for Gasoline, $S$};
-
-	%Plot illustrative lines
-	\draw[dashed] (0,5) -- (10,5) -- (10,0);
-	\draw[dashed] (0,3) -- (6,3) -- (6,0);
-	\draw[dashed] (0,1) -- (2,1) -- (2,0);
-
-	%Add axes labels
-	%Origin%
-	\node at (0,0) [left] {{0}};
-	%Y Axis
-%	\node at (0,7) [left] {{7.00}};
-	\node at (0,5) [left] {{5.00}};
-	\node at (0,3) [left] {{3.00}};
-	\node at (0,1) [left] {{1.00}};
-	%X Axis
-	\node at (2,0) [below] {{2}};
-	\node at (6,0) [below] {{6}};
-	\node at (10,0) [below] {{10}};
-%	\node at (14,0) [below] {{14}};
-
-\end{tikzpicture}
+	\resizebox{!}{.4\linewidth}{
+    \includegraphics[width=\textwidth]{../images/gas_supply.png}
 }
 \caption{The supply of gasoline}
 \end{figure}
 }
 
 \frame{
-	\frametitle{1. The Supply-and-Demand Model: The Supply Curve}
+	\frametitle{The Supply Curve}
 	\begin{itemize}
 	\item The supply curve provides us an answer to the question of what happens to the quantity
 supplied as price changes, holding all other factors fixed.
@@ -678,7 +710,7 @@ decreases.
 }
 
 \frame{
-	\frametitle{1. The Supply-and-Demand Model: The Supply Curve}
+	\frametitle{The Supply Curve}
 	\begin{itemize}
 	\item The supply curve tells us how a change in the price of a good or service affects the
 quantity supplied.
@@ -697,57 +729,20 @@ in price from \$2.00 per kg to \$4.00 per kg.
 }
 
 \frame{
-	\frametitle{1. The Supply-and-Demand Model: The Supply Curve}
+	\frametitle{The Supply Curve}
 	%	The demand for gasoline:
 	
 	\begin{figure}[t!]
 	\center
-	\resizebox{!}{.35\linewidth}{
-
-	\begin{tikzpicture}
-	% Draw axes
-	%Y
-	\draw[->] (0,0) -- (0,10) ;
-	\draw[] (0,8) -- node[rotate=90, above=30pt] {\textbf{$p$, \$ per kg}} (0,8);
-	%X
-	\draw[->] (0,0) -- (15,0);
-	\draw[] (14,0) -- node[below=30pt] {\textbf{$Q$, millions of kg per year}} (14,0);
-
-	% Plot supply curve:
-	% Curve given by: Q = 1 + 2p - 0.5p_{y}
-	% Assume p_{y}= 2
-	% Inverse demand: p = 0.5*Q
-	\draw[color=black, thick, domain=0:14] plot (\x,{0.5*\x});
-	\node at (11,5) [right] {Original Supply Curve, $S^{1}$};
-	\draw[->] (13,5.5) -- (12.5,6);
-
-	% Now p_{y} = 4, so Q = -1 + 2p
-	% Inverse demand: p =.5+ 0.5*Q
-	\draw[color=red, thick, domain=0:14] plot (\x,{0.5+0.5*\x});
-	\node at (7,7) [right] {New Supply Curve, $S^{2}$};
-	\draw[->] (9,6.5) -- (10,6);
-
-	%Plot illustrative lines
-	\draw[dashed] (0,3) -- (6,3) -- (6,0);
-	\draw[dashed] (5,3) -- (5,0);
-
-	%Add axes labels
-	%Origin%
-	\node at (0,0) [left] {{0}};
-	%Y Axis
-	\node at (0,3) [left] {{3.00}};
-	%X Axis
-	\node at (5,0) [below] {{5}};
-	\node at (6,0) [below] {{6}};
-
-\end{tikzpicture}
+	\resizebox{!}{.4\linewidth}{
+    \includegraphics[width=\textwidth]{../images/gas_sup_shift.png}
 }
-\caption{The effect of a yogurt price increase on the supply of gasoline}
+\caption{The effect of a crude oil price increase on the supply of gasoline}
 \end{figure}
 }
 
 \frame{
-	\frametitle{1. The Supply-and-Demand Model: The Supply Curve}
+	\frametitle{The Supply Curve}
 	\begin{itemize}
 	\item How the supply curve shifts depends on the factor being considered.
 		\begin{itemize}
@@ -757,177 +752,93 @@ in price from \$2.00 per kg to \$4.00 per kg.
 		\item Government regulation.
 		\end{itemize}
 	\item[]
-	\item As another example, let's consider the effects of a decrease in the price of milk.
+	\item As another example, let's consider the effects of a decrease in the price of blending components.
 	\end{itemize}
 
 }
 
 \frame{
-	\frametitle{1. The Supply-and-Demand Model: The Supply Curve}
+	\frametitle{The Supply Curve}
 	%	The demand for gasoline:
-	
-	\begin{figure}[t!]
+\begin{figure}[t!]
 	\center
-	\resizebox{!}{.35\linewidth}{
-
-	\begin{tikzpicture}
-	% Draw axes
-	%Y
-	\draw[->] (0,0) -- (0,10) ;
-	\draw[] (0,8) -- node[rotate=90, above=30pt] {\textbf{$p$, \$ per kg}} (0,8);
-	%X
-	\draw[->] (0,0) -- (15,0);
-	\draw[] (14,0) -- node[below=30pt] {\textbf{$Q$, millions of kg per year}} (14,0);
-
-	% Plot supply curve:
-	% Curve given by: Q = 1 + 2p - 0.5p_{y}
-	% Assume p_{y}= 2
-	% Inverse demand: p = 0.5*Q
-	\draw[color=black, thick, domain=0:14] plot (\x,{0.5*\x});
-	\node at (7,6) [right] {Original Supply Curve, $S^{1}$};
-	\draw[->] (9,5.5) -- (10,5.25);
-
-	% Now Q = 2+ 2p
-	% Inverse demand: p =-1+ 0.5*Q
-	\draw[color=red, thick, domain=2:14] plot (\x,{-1+0.5*\x});
-	\node at (11,4) [right] {New Supply Curve, $S^{2}$};
-	\draw[->] (13,4.5) -- (12.5,5);
-	
-	%Plot illustrative lines
-	\draw[dashed] (0,3) -- (6,3) -- (6,0);
-	\draw[dashed] (6,3) -- (8,3) -- (8,0);
-
-	%Add axes labels
-	%Origin%
-	\node at (0,0) [left] {{0}};
-	%Y Axis
-	\node at (0,3) [left] {{3.00}};
-	%X Axis
-	\node at (6,0) [below] {{6}};
-	\node at (8,0) [below] {{8}};
-
-\end{tikzpicture}
+	\resizebox{!}{.4\linewidth}{
+    \includegraphics[width=\textwidth]{../images/gas_sup_shift_2.png}
 }
-\caption{The effect of a decrease in the price of milk on the supply of gasoline}
+\caption{The effect of a blending component cost decreases on the supply of gasoline}
 \end{figure}
 }
 
 \frame{
-	\frametitle{The Supply-and-Demand Model: The Supply Curve}
+	\frametitle{The Supply Curve}
 	\begin{itemize}
-	\item The supply curve displays a precise relationship between price and quantity supplied.
-	\item[]
+	\item The supply curve displays the relationship between price and quantity supplied.
 	\item We can also express this same relationship mathematically using a \textit{supply function}.
-	\item[]
 	\item The supply function is given by:
 		\begin{align*}
 		Q = S(p,p_{y},X)
 		\end{align*}
 		where $Q$ is the quantity supplied, and $S(-)$ is the supply function that depends on the
-price, $p$, the price of other possible outputs $p_{y}$, and other factors, $X$.
-	\item[]
-	\item For simplicity, in what follows, we will hold other factors ($X$) constant.
+price, $p$, the price of other possible inputs or outputs $p_{y}$, and other factors, $X$.
+		\item For simplicity, in what follows, we will hold other factors ($X$) constant.
 	\end{itemize}
 }
 
 \frame{
-	\frametitle{The Supply-and-Demand Model: The Supply Function}
+	\frametitle{The Supply Function}
 	\begin{itemize}
 	\item Suppose that the estimated supply function for gasoline is given by:
 		\begin{align*}
-		Q =  1 + 2p - 0.5p_{y}
+		Q =  10 + \frac{p}{3} - 0.5 p_{y}
 		\end{align*}
-		where $Q$ is the quantity of gasoline supplied, $p$ is the price of gasoline, and $p_{y}$ is
-the price of alternative outputs (yoghurt).
-	\item[]
-	\item Functional form reflects available evidence about the supply of gasoline:
+		where $Q$ is the quantity of gasoline supplied, $p$ is the price of gasoline, and $p_{y}$ is the price of crude oil (these are just placeholder parameters).
 		\begin{itemize}
-		\item $p$ is positive.
-		\item $p_{y}$ is negative.
-		\item The constant term (1) reflects all other factors.
+		\item the own-price effect, $p$, is positive: higher p means higher Q.
+		\item the impact of crude price changes, $p_{y}$ is negative: higher crude prices means less gasoline supplied at a given price.
+		\item The constant term (10) reflects all other factors.
 		\end{itemize}
 	\end{itemize}
 }
 
 \frame{
-	\frametitle{The Supply-and-Demand Model: The Supply Function}
+	\frametitle{The Supply Function}
 	\begin{itemize}
-	\item We can obtain the supply curve by substituting for $p_{y}$.
+	\item We can obtain the supply curve by substituting for the price of crude oil, $p_{y}$.
 	\item[]
-	\item Suppose the price of yoghurt is \$2.00. Then the supply of gasoline is given by:
+	\item Suppose the price of oil is \$40 per barrel. Then the supply of gasoline is given by:
 		\begin{align*}
-		Q & = 1 + 2p - 0.5(2)\\
-		 & = 2 p
+		Q & = 10 + \frac{p}{3} - 0.5 p_{y}= 10 + \frac{p}{3} - 20\\
+		 & = \frac{p}{3} - 10
 		\end{align*}
-	\item Rearranging we can obtain the \textit{inverse supply curve}.
-		\begin{align*}
-		p= \frac{1}{2} Q
-		\end{align*}
+	\item Rearranging we can obtain the \textit{inverse supply curve}, $p= 30+ 3Q$
 	\item This is the same relationship depicted on the next slide.
 	\end{itemize}
 }
 
 \frame{
-	\frametitle{1. The Supply-and-Demand Model: The Supply Function}
+	\frametitle{The Supply Function}
 	%	The demand for gasoline:
 	
-	\begin{figure}[t!]
+		\begin{figure}[t!]
 	\center
-	\resizebox{!}{.35\linewidth}{
-
-	\begin{tikzpicture}
-	% Draw axes
-	%Y
-	\draw[->] (0,0) -- (0,10) ;
-	\draw[] (0,8) -- node[rotate=90, above=30pt] {\textbf{$p$, \$ per kg}} (0,8);
-	%X
-	\draw[->] (0,0) -- (15,0);
-	\draw[] (14,0) -- node[below=30pt] {\textbf{$Q$, millions of kg per year}} (14,0);
-
-	% Plot supply curve:
-	% Curve given by: Q = 1 + 2p - 0.5p_{y}
-	% Assume p_{y}= 2
-	% Inverse demand: p = 0.5*Q
-	\draw[color=black, thick, domain=0:14] plot (\x,{0.5*\x});
-	\node at (8,7) [right] {Supply Curve for Gasoline, $S$};
-
-	%Plot illustrative lines
-	\draw[dashed] (0,5) -- (10,5) -- (10,0);
-	\draw[dashed] (0,3) -- (6,3) -- (6,0);
-	\draw[dashed] (0,1) -- (2,1) -- (2,0);
-
-	%Add axes labels
-	%Origin%
-	\node at (0,0) [left] {{0}};
-	%Y Axis
-%	\node at (0,7) [left] {{7.00}};
-	\node at (0,5) [left] {{5.00}};
-	\node at (0,3) [left] {{3.00}};
-	\node at (0,1) [left] {{1.00}};
-	%X Axis
-	\node at (2,0) [below] {{2}};
-	\node at (6,0) [below] {{6}};
-	\node at (10,0) [below] {{10}};
-%	\node at (14,0) [below] {{14}};
-
-\end{tikzpicture}
+	\resizebox{!}{.4\linewidth}{
+    \includegraphics[width=\textwidth]{../images/gas_supply.png}
 }
 \caption{The supply of gasoline}
 \end{figure}
 }
 
 \frame{
-	\frametitle{1. The Supply-and-Demand Model: The Supply Function}
+	\frametitle{The Supply Function}
 	\begin{itemize}
 	\item The supply function allows us to think precisely about how price changes affect the
 quantity supplied, holding all other factors fixed.
-	\item[]
-	\item To see this let $p_{1}$ denote the initial price, and $p_{2}$ denote the new price. Then
-the quantity supplied at $p_{1}$ is $Q_{1} = S(p_{1})$, the quantity supplied  at $p_{2}$ is $Q_{2} =
-S(p_{2})$, and the change in quantity supplied as price goes from $p_{1}$ to $p_{2}$ is $\Delta Q =
+    \item Let's use a simpler example here of $Q=2p$ and let $p_{1}$ denote the initial price, and $p_{2}$ denote the new price. 
+    \item The quantity supplied at $p_{1}$ is $Q_{1} = S(p_{1})=2p_1$, and the quantity supplied  at $p_{2}$ is $Q_{2} = S(p_{2})=2 p_2$
+    \item The change in quantity supplied as price goes from $p_{1}$ to $p_{2}$ is $\Delta Q =
 Q_{2}-Q_{1} = S(p_{2})-S(p_{1})$.
-	\item[]
-	\item In our gasoline example, if the price changes from $p_{1}$ to $p_{2}$, the change in
+	
+	\item In our simplified example, if the price changes from $p_{1}$ to $p_{2}$, the change in
 quantity supplied is given by:
 		\begin{align*}
 		\Delta Q &= S(p_{2}) - S(p_{1}) = [2 p_{2}]- [2 p_{1}]\\
@@ -937,17 +848,20 @@ quantity supplied is given by:
 }
 
 \frame{
-	\frametitle{1. The Supply-and-Demand Model: Determining Market Supply}
+	\frametitle{Determining Market Supply}
 	\begin{itemize}
 	\item In some cases, we may not have an estimate of total market supply, but rather estimates of
 the supply curves of each producer in the market.
 	\item[]
 	\item To obtain total market supply, we need to add up the supply from each producer.
+	\item[]
+	\item Hint: Are you adding up prices or quantities?
+
 	\end{itemize}
 }	
 
 \frame{
-	\frametitle{1. The Supply-and-Demand Model: Determining Market Supply}
+	\frametitle{Determining Market Supply}
 	\begin{itemize}
 	\item As an example, suppose there are 3 producers in the market for gasoline. They both have
 supply functions given by:
@@ -958,8 +872,29 @@ supply functions given by:
 	\end{itemize}
 }
 
+
+
 \frame{
-	\frametitle{1. The Supply-and-Demand Model: Market Equilibrium}
+	\frametitle{Determining Market Supply}
+	%	The demand for gasoline:
+\begin{figure}[t!]
+	\center
+	\resizebox{!}{.4\linewidth}{
+    \includegraphics[width=\textwidth]{../images/gas_sup_stack.png}
+}
+\caption{The aggregate supply of gasoline using the same equations as above}
+\end{figure}
+}
+
+
+
+
+\end{document}
+
+\section{Equilibrium}
+
+\frame{
+	\frametitle{Market Equilibrium}
 	\begin{itemize}
 	\item Once we know supply and demand in the market, we can determine the \textit{market
 equilibrium}.
@@ -971,14 +906,14 @@ want; no participant wants to change its behaviour given what other market parti
 }
 
 \frame{
-	\frametitle{1. The Supply-and-Demand Model: Market Equilibrium}
+	\frametitle{Market Equilibrium}
 	\begin{itemize}
 	\item How can we determine the market equilibrium from the supply and demand curves?
 	\end{itemize}
 }
 
 \frame{
-	\frametitle{1. The Supply-and-Demand Model: Market Equilibrium}
+	\frametitle{Market Equilibrium}
 	%	The demand for gasoline:
 	
 	\begin{figure}[t!]
@@ -1027,7 +962,7 @@ want; no participant wants to change its behaviour given what other market parti
 }
 
 \frame{
-	\frametitle{1. The Supply-and-Demand Model: Market Equilibrium}
+	\frametitle{Market Equilibrium}
 	\begin{definition}[Equilibrium Price]
 	The equilibrium price is the $p$ at which consumers can by as much as they want, and sellers can
 sell as much as they want.
@@ -1039,7 +974,7 @@ sell as much as they want.
 }
 
 \frame{
-	\frametitle{1. The Supply-and-Demand Model: Market Equilibrium}
+	\frametitle{Market Equilibrium}
 	\begin{itemize}
 	\item We can also solve for the market equilibrium analytically using algebra. Recall:
 		\begin{align*}
@@ -1057,14 +992,14 @@ quantity of 7.
 }
 
 \frame{
-	\frametitle{1. The Supply-and-Demand Model: Market Equilibrium}
+	\frametitle{Market Equilibrium}
 	\begin{itemize}
 	\item Why must $Q_{D}=Q_{S}$ in a market equilibrium?
 	\end{itemize}
 }
 
 \frame{
-	\frametitle{1. The Supply-and-Demand Model: Market Equilibrium}
+	\frametitle{Market Equilibrium}
 	%	The demand for gasoline:
 	
 	\begin{figure}[t!]
@@ -1114,7 +1049,7 @@ quantity of 7.
 }
 
 \frame{
-	\frametitle{1. The Supply-and-Demand Model: Market Equilibrium}
+	\frametitle{Market Equilibrium}
 	%	The demand for gasoline:
 	
 	\begin{figure}[t!]
