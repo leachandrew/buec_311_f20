@@ -10,8 +10,8 @@ geometry: margin=1in
 
 course: "BUEC 311: Business Economics, Organization and Management"
 course_number: "BUEC 311"
-title: "Problem Set #1"
-subtitle: "Thinking like an economist"
+title: "Problem Set #2"
+subtitle: "Mechanics of Supply and Demand"
 date: \today
 
 
@@ -58,11 +58,13 @@ blake_theme<-function(){
     )
 }
 ```
-This week's problems are meant to get you thinking about economics in everyday life, and exploring some of the topics and vocabulary we've addressed in the introductory classes. 
+This week's problems are meant to give you some practice on the basic tricks you'll need to manipulate supply and demand curves and calculate equilibrium conditions. In this questions, I've given you multiple steps intentionally to build habits like checks and double-checks that you'll want to use. I won't always give these to you on exam questions, but best to build the habit now.
 
-1. Consider all of the course outlines for the classes you're taking this term incuding mine. You can also use examples from previous courses if you choose to do so.
+1. Suppose that my personal demand curve for coffee is given by $Q=4-\frac{2p}{3}$.
 
-   a) Find one example of a professor using incentive response to drive behaviour in the design of their course.
+   a) Draw the inverse demand curve for this function (i.e P as a function of Q).
+   
+   b) How many cups of coffee would you expect me to consume per day at a price of      $2 per cup?
 
    b) Find an example (if you can) of what economists would call a perverse incentive, or a rule that likely leads to behaviours that the professor might prefer to avoid.
 
