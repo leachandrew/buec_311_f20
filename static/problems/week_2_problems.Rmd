@@ -60,7 +60,7 @@ blake_theme<-function(){
 ```
 This week's problems are meant to get you thinking about economics in everyday life, and exploring some of the topics and vocabulary we've addressed in the introductory classes. 
 
-1. Consider all of the course outlines for the classes you're taking this term including mine. You can also use examples from previous courses if you choose to do so.
+1. Consider all of the course outlines for the classes you're taking this term incuding mine. You can also use examples from previous courses if you choose to do so.
 
    a) Find one example of a professor using incentive response to drive behaviour in the design of their course.
 
