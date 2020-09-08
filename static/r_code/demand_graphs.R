@@ -655,5 +655,13 @@ ggsave("static/images/equil_expl_4.png",width = 8,height = 6,dpi = 600)
 
 
 
+#working on problem set 2
+
+#solve for new x at price 100
+uniroot(function(z) z+3*3/2000 - (4000-2000*3/3),c(0,5000))[[1]]
+
+uniroot(function(z) (.5+z/1000) - (4000-2000*z/3),c(0,5000))[[1]]
+
+
 
 
