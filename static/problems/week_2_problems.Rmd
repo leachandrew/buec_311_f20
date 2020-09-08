@@ -77,7 +77,7 @@ This week's problems are meant to give you some practice on the basic tricks you
    b) Check your work: show me that your calculated market demand predicts 100 times the amount that I would consume at price p=3.
    
 
-3. Now, let's imagine you've got a market in the School of Business of 1000 people who each have the same preferences for coffee that I have. Let's also assume that the marginal cost of supplying coffee to the market is $Q=1000\,p$. 
+3. Now, let's imagine you've got a market in the School of Business of 1000 people who each have the same preferences for coffee that I have. Let's also assume that the marginal cost of supplying coffee to the market is $Q=\frac{2000\,p}{3}$. 
    a) Derive the market demand curve
    b) Check that your market demand is equal to 1000 times individual demand at price p=2.
    c) Find the equilibrium price and quantity of coffee in the market.
