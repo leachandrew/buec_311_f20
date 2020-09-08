@@ -90,6 +90,16 @@ Where are things likely to go wrong? When you're in a time-crunch, if you forget
 
 Can you spot what I've done wrong here?
 
+A couple of useful error checks you can do at this point are to check whether your inverse demand yields the same results as your original demand function by substituting in a price and then seeing if I can get the same price back at the end as follows:
+
+\begin{align*}
+  Q_d&=10-2p,\,\text{so it must be that at p=4, }Q_d=10-2(4)=2\\
+  &\text{Let's see if this works in my inverse demand curve}\\
+  p&=5-\frac{Q}{2}\,\text{, substituting in $Q_d=2$ yields:}\\
+  p&=5-\frac{2}{2}=4\,\text{, which is where I started, so I know I've done it correctly.}
+\end{align*}
+
+Before you even get that far, it's often helpful to see if price is decreasing in quantity. Since you know that the law of demand is such that higher price means lower quantity demanded, it must also be the case that higher quantity means lower willingness to pay, and so there should be a negative sign on the term with $Q$ in your function determining $p$. 
 
 2. The next skill we're going to use is solving two equations with two unknowns (supply and demand solved for p and Q). So, let's use our previous example of $Q_d=10-2p$ as demand, and use $Q_s=3\,p$ as a simple supply curve. Now, to solve for equilibrium, we'll need a few steps. 
 
@@ -112,8 +122,15 @@ Now, let's check this graphically. But, be careful! I need to convert my supply 
   p&=\frac{Q}{3}\,\text{, after rearranging terms}\\
 \end{align*}
 
+Here, again, we have an opportunity to check our work. 
 
-Then, let's graph the supply curve on the same set of axes.
+\begin{align*}
+  Q&=3p,\,\text{so at $p=3$, $Q_s=9$}\\
+  &\text{now, let's check that with our inverted supply function}\\
+  p&=\frac{9}{3}=3\,\text{, which is where we started. Excellent.}\\
+\end{align*}
+
+Now, let's graph the supply curve on the same set of axes.
 
 \begin{center}
 \includegraphics[width=0.65\textwidth]{../images/eg_supply.png}

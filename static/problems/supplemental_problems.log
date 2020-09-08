@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.10.31)  7 SEP 2020 21:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.10.31)  7 SEP 2020 22:01
 entering extended mode
 **./supplemental_problems.tex
 (supplemental_problems.tex
@@ -847,50 +847,50 @@ File: ../images/eq_wrong.png Graphic file (type png)
 <use ../images/eq_wrong.png>
 Package pdftex.def Info: ../images/eq_wrong.png  used on input line 187.
 (pdftex.def)             Requested size: 305.33789pt x 229.00368pt.
-
-Overfull \hbox (67.58104pt too wide) detected at line 213
-[]
- []
-
-LaTeX Font Info:    Try loading font information for OMS+ppl on input line 213.
+LaTeX Font Info:    Try loading font information for OMS+ppl on input line 202.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\omsppl.fd"
 File: omsppl.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ppl/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 213.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 202.
 [2 <../images/eq_1.png> <../images/eq_wrong.png>]
-<../images/eg_supply.png, id=30, 578.16pt x 433.62pt>
+Overfull \hbox (67.58104pt too wide) detected at line 232
+[]
+ []
+
+[3]
+<../images/eg_supply.png, id=34, 578.16pt x 433.62pt>
 File: ../images/eg_supply.png Graphic file (type png)
 <use ../images/eg_supply.png>
-Package pdftex.def Info: ../images/eg_supply.png  used on input line 227.
+Package pdftex.def Info: ../images/eg_supply.png  used on input line 254.
 (pdftex.def)             Requested size: 305.33789pt x 229.00368pt.
-<../images/eg_both.png, id=31, 578.16pt x 433.62pt>
+<../images/eg_both.png, id=35, 578.16pt x 433.62pt>
 File: ../images/eg_both.png Graphic file (type png)
 <use ../images/eg_both.png>
-Package pdftex.def Info: ../images/eg_both.png  used on input line 235.
+Package pdftex.def Info: ../images/eg_both.png  used on input line 262.
 (pdftex.def)             Requested size: 305.33789pt x 229.00368pt.
-[3 <../images/eg_supply.png>]
-<../images/eg_equil.png, id=37, 578.16pt x 433.62pt>
+[4 <../images/eg_supply.png> <../images/eg_both.png>]
+<../images/eg_equil.png, id=42, 578.16pt x 433.62pt>
 File: ../images/eg_equil.png Graphic file (type png)
 <use ../images/eg_equil.png>
-Package pdftex.def Info: ../images/eg_equil.png  used on input line 242.
+Package pdftex.def Info: ../images/eg_equil.png  used on input line 269.
 (pdftex.def)             Requested size: 305.33789pt x 229.00368pt.
 
 AED: lastpage setting LastPage
-[4 <../images/eg_both.png> <../images/eg_equil.png>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 253.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 253.
+[5 <../images/eg_equil.png>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 280.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 280.
 (supplemental_problems.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 253.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 253.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 280.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 280.
 Package rerunfilecheck Info: File `supplemental_problems.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 22101 strings out of 492970
- 397158 string characters out of 3135851
- 458779 words of memory out of 3000000
+ 22102 strings out of 492970
+ 397164 string characters out of 3135851
+ 461779 words of memory out of 3000000
  25586 multiletter control sequences out of 15000+200000
  34986 words of font info for 87 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -900,9 +900,9 @@ KTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/
 fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/ty
 pe1/urw/palatino/uplr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/palati
 no/uplri8a.pfb>
-Output written on supplemental_problems.pdf (4 pages, 400495 bytes).
+Output written on supplemental_problems.pdf (5 pages, 402714 bytes).
 PDF statistics:
- 62 PDF objects out of 1000 (max. 8388607)
- 7 named destinations out of 1000 (max. 500000)
+ 66 PDF objects out of 1000 (max. 8388607)
+ 8 named destinations out of 1000 (max. 500000)
  48 words of extra memory for PDF output out of 10000 (max. 10000000)
 
