@@ -1,0 +1,91 @@
+---
+output: 
+  pdf_document:
+    keep_tex: true
+    fig_caption: yes
+    latex_engine: pdflatex
+    template: ../ajl_note_pack.tex
+    #template: ../svm-latex-syllabus.tex
+geometry: margin=1in
+
+course: "BUEC 311: Business Economics, Organization and Management"
+course_number: "BUEC 311"
+title: "Problem Set #2"
+subtitle: "Mechanics of Supply and Demand"
+date: \today
+
+
+
+email: "aleach@ualberta.ca"
+web: "www.andrewleach.ca"
+officehours: "By appointment"
+office: "3-20D Business Building"
+classroom: "BUS 4-13 "
+classhours: "B2 TR 9:30-10:50, B1 TR 11:00-12:20"
+
+fontfamily: mathpazo
+fontsize: 11pt
+header-includes:
+   - \linespread{1.05}
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(echo=F,
+                      message=F,
+                      warning=F)
+
+knitr::opts_knit$set(dev.args = list(type = "cairo"))
+library(tidyverse)
+library(ggthemes)
+library(ggrepel)
+library(patchwork)
+
+blake_theme<-function(){
+  theme_hc(20)+
+    theme(plot.subtitle = element_text(color="grey10",size=rel(.7)),
+          plot.title = element_text(face="bold",size=rel(.8)),
+          plot.caption = element_text(color="grey50",size=rel(.5),hjust=0),
+          legend.title = element_text(color="grey10",size=rel(.5)),
+          legend.text = element_text(color="grey10",size=rel(.5)),
+          axis.title = element_text(size=rel(.8)),
+          axis.ticks = element_blank(),
+          panel.spacing = unit(2,"lines"),
+          #legend.position = "none",
+          plot.margin = margin(t = .5, r = 1, b = .25, l = 1,unit= "cm"),
+          axis.text.x = element_text(margin = margin(t = 10, r = 0, b = 0, l = 0))
+          
+    )
+}
+```
+This week's problems are meant to give you some practice on the basic tricks you'll need to manipulate supply and demand curves and calculate equilibrium conditions. In this questions, I've given you multiple steps intentionally to build habits like checks and double-checks that you'll want to use. I won't always give these to you on exam questions, but best to build the habit now. The questions here are intended to be more difficult as you progress through the problem set.
+
+1. Suppose that my personal demand curve for coffee is given by $Q=4-\frac{2p}{3}$.
+
+   a) Solve for and draw a graph of the inverse demand curve for this function (i.e p as a function of Q).
+   
+   b) Check your work. Use the demand curve to figure out the price at Q=2, and then show, both algebraically and graphically, that the same result is obtain from your inverse demand function.
+   
+   c) How many cups of coffee would you expect me to consume per day at a price of      $2 per cup? Assume that I can't buy fractions of a cup.
+
+   d) If I arrive in a meeting and there's free coffee, but I've already had 3 cups of coffee today, should I have another cup? Why or why not?
+
+
+
+2. Now, suppose there are 100 people with the same coffee demand as I have. 
+   a) What's the market demand curve for coffee?
+   b) Check your work: show me that your calculated market demand predicts 100 times the amount that I would consume at price p=3.
+   
+
+3. Now, let's imagine you've got a market in the School of Business of 1000 people who each have the same preferences for coffee that I have. Let's also assume that the marginal cost of supplying coffee to the market is $Q=\frac{2000\,p}{3}$. 
+   a) Derive the market demand curve
+   b) Check that your market demand is equal to 1000 times individual demand at price p=2.
+   c) Find the equilibrium price and quantity of coffee in the market.
+   d) Show that individual quantity demanded at the equilibrium price is 1/1000th of the total market quantity demanded.
+   e) Show that the quantity supplied at the equilibrium price is the equilibrium quantity.
+
+\newpage 
+
+4. In Episode 3 of the Think Like an Economist podcast, The Marginal Principle, from 5:48 to 9:45, we hear a discussion of hiring decisions framed around the marginal benefits and marginal costs of hiring workers in a coffee shop. The estimate of the marginal benefits of hiring a third barista includes an estimated benefit of $100, but also includes some other considerations.
+
+In your own words, describe why this dollar estimate doesn't accurately reflect the owner's assessment of the benefits of hiring of third worker as revealed through his own decisions, and how the assessment of marginal benefits might have been done from the outset. 

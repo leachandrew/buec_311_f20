@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.10.31)  7 SEP 2020 14:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.10.31)  7 SEP 2020 20:41
 entering extended mode
-**./week_1_problems.tex
-(week_1_problems.tex
+**./week_2_problems.tex
+(week_2_problems.tex
 LaTeX2e <2018-04-01> patch level 5
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\article.cls"
 Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
@@ -607,8 +607,8 @@ Package hyperref Warning: Option `bookmarks' has already been used,
 Package hyperref Info: Option `colorlinks' set `true' on input line 108.
 (C:\Users\aleach\AppData\Roaming\MiKTeX\2.9\tex\latex\setspace\setspace.sty
 Package: setspace 2011/12/19 v6.7a set line spacing
-) (week_1_problems.aux)
-\openout1 = `week_1_problems.aux'.
+) (week_2_problems.aux)
+\openout1 = `week_2_problems.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 129.
 LaTeX Font Info:    ... okay on input line 129.
@@ -706,9 +706,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 129.
 LaTeX Info: Redefining \pageref on input line 129.
 LaTeX Info: Redefining \nameref on input line 129.
-(week_1_problems.out) (week_1_problems.out)
+(week_2_problems.out) (week_2_problems.out)
 \@outlinefile=\write4
-\openout4 = `week_1_problems.out'.
+\openout4 = `week_2_problems.out'.
 
 LaTeX Font Info:    Try loading font information for OT1+ppl on input line 132.
 
@@ -743,67 +743,43 @@ File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
 Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 138.
 (pdftex.def)             Requested size: 307.14749pt x 36.90791pt.
-<week_1_problems_files/figure-latex/demand_1-1.png, id=8, 497.2176pt x 331.4784
-pt>
-File: week_1_problems_files/figure-latex/demand_1-1.png Graphic file (type png)
-
-<use week_1_problems_files/figure-latex/demand_1-1.png>
-Package pdftex.def Info: week_1_problems_files/figure-latex/demand_1-1.png  use
-d on input line 178.
-(pdftex.def)             Requested size: 305.33789pt x 203.56715pt.
 [1
 
 {C:/Users/aleach/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <../images/
-UA-ASB-COLOUR.png> <./week_1_problems_files/figure-latex/demand_1-1.png>]
-<week_1_problems_files/figure-latex/supply_1-1.png, id=22, 345.9324pt x 331.478
-4pt>
-File: week_1_problems_files/figure-latex/supply_1-1.png Graphic file (type png)
-
-<use week_1_problems_files/figure-latex/supply_1-1.png>
-Package pdftex.def Info: week_1_problems_files/figure-latex/supply_1-1.png  use
-d on input line 204.
-(pdftex.def)             Requested size: 234.8775pt x 225.06848pt.
-<week_1_problems_files/figure-latex/demand_new.png, id=23, 778.29231pt x 416.94
-23pt>
-File: week_1_problems_files/figure-latex/demand_new.png Graphic file (type png)
-
-<use week_1_problems_files/figure-latex/demand_new.png>
-Package pdftex.def Info: week_1_problems_files/figure-latex/demand_new.png  use
-d on input line 234.
-(pdftex.def)             Requested size: 399.29463pt x 213.91016pt.
-
+UA-ASB-COLOUR.png>] 
 AED: lastpage setting LastPage
-LaTeX Font Info:    Try loading font information for OMS+ppl on input line 240.
+LaTeX Font Info:    Try loading font information for OMS+ppl on input line 236.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\omsppl.fd"
 File: omsppl.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ppl/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 240.
-[2 <./week_1_problems_files/figure-latex/supply_1-1.png> <./week_1_problems_fil
-es/figure-latex/demand_new.png (PNG copy)>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 240.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 240.
-(week_1_problems.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 240.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 240.
-Package rerunfilecheck Info: File `week_1_problems.out' has not changed.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 236.
+[2]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 236.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 236.
+(week_2_problems.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 236.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 236.
+Package rerunfilecheck Info: File `week_2_problems.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 21206 strings out of 492970
- 387306 string characters out of 3135851
- 445467 words of memory out of 3000000
- 24721 multiletter control sequences out of 15000+200000
- 18665 words of font info for 41 fonts, out of 3000000 for 9000
+ 21219 strings out of 492970
+ 386902 string characters out of 3135851
+ 447502 words of memory out of 3000000
+ 24724 multiletter control sequences out of 15000+200000
+ 28378 words of font info for 66 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,15n,56p,1206b,589s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Program Files/Mi
-KTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9
-/fonts/type1/urw/palatino/uplr8a.pfb>
-Output written on week_1_problems.pdf (2 pages, 181357 bytes).
+KTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/
+fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/ty
+pe1/urw/palatino/uplr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/palati
+no/uplri8a.pfb>
+Output written on week_2_problems.pdf (2 pages, 80698 bytes).
 PDF statistics:
- 47 PDF objects out of 1000 (max. 8388607)
- 14 named destinations out of 1000 (max. 500000)
- 33 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 56 PDF objects out of 1000 (max. 8388607)
+ 18 named destinations out of 1000 (max. 500000)
+ 18 words of extra memory for PDF output out of 10000 (max. 10000000)
 
