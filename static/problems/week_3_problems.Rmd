@@ -1,0 +1,90 @@
+---
+output: 
+  pdf_document:
+    keep_tex: true
+    fig_caption: yes
+    latex_engine: pdflatex
+    template: ../ajl_note_pack.tex
+    #template: ../svm-latex-syllabus.tex
+geometry: margin=1in
+
+course: "BUEC 311: Business Economics, Organization and Management"
+course_number: "BUEC 311"
+title: "Problem Set #3"
+subtitle: "Shifting equilibria"
+date: \today
+
+
+
+email: "aleach@ualberta.ca"
+web: "www.andrewleach.ca"
+officehours: "By appointment"
+office: "3-20D Business Building"
+classroom: "BUS 4-13 "
+classhours: "B2 TR 9:30-10:50, B1 TR 11:00-12:20"
+
+fontfamily: mathpazo
+fontsize: 11pt
+header-includes:
+   - \linespread{1.05}
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(echo=F,
+                      message=F,
+                      warning=F)
+
+knitr::opts_knit$set(dev.args = list(type = "cairo"))
+library(tidyverse)
+library(ggthemes)
+library(ggrepel)
+library(patchwork)
+
+blake_theme<-function(){
+  theme_hc(20)+
+    theme(plot.subtitle = element_text(color="grey10",size=rel(.7)),
+          plot.title = element_text(face="bold",size=rel(.8)),
+          plot.caption = element_text(color="grey50",size=rel(.5),hjust=0),
+          legend.title = element_text(color="grey10",size=rel(.5)),
+          legend.text = element_text(color="grey10",size=rel(.5)),
+          axis.title = element_text(size=rel(.8)),
+          axis.ticks = element_blank(),
+          panel.spacing = unit(2,"lines"),
+          #legend.position = "none",
+          plot.margin = margin(t = .5, r = 1, b = .25, l = 1,unit= "cm"),
+          axis.text.x = element_text(margin = margin(t = 10, r = 0, b = 0, l = 0))
+          
+    )
+}
+```
+This week's problems are meant to give you more practice on the basic tricks you'll need to manipulate supply and demand curves and calculate equilibrium conditions, but these also involve shifts in equilibria. Be methodical about your calculations and your analysis. In these questions, I've again given you multiple steps intentionally to build habits like checks and double-checks that you'll want to use. I won't always give these to you on exam questions.
+
+1. Let's use the market demand curve for coffee we derived in the last problem set of $Q=4000-\frac{2000p}{3}$. Let's also assume that the marginal cost of supplying coffee to the market is $Q=\frac{2000\,p}{3}$. 
+   a) Calculate the equilibrium price and quantity (a repeat from last week)
+   b) Suppose that a drought reduces the coffee crop increasing the cost of supplying coffee leading to a reduction in the supply function to $Q=\frac{1000\,p}{3}$. Solve for the new equilibrium price and quantity in the market
+   c) Show, on a graph, the changes in the inverse supply and demand functions, and label the original and new equilibrium prices and quantities.
+   d) Is this a change in demand or a movement along the demand curve? Why?
+
+
+\newpage 
+
+2. Use the market demand curve for coffee we derived in the last problem set of $Q=4000-\frac{2000p}{3}$ along with the supply function of $Q=\frac{2000\,p}{3}$. 
+   a) Suppose a coffee tax of \$0.50 per cup is levied by the university in an attempt to recover some revenues lost to COVID-19. What's the impact on the market if you assume that the tax is charged to the coffee vendor based on the number of cups of coffee sold?
+   b) What happens if the same tax is added at the cash register and charged to patrons directly, with the proceeds of the tax remitted to the university?
+   c) Why does the equilibrium price of coffee not increase by the same amount as the tax?
+
+\newpage
+
+3. On slide 81 of the full supply and demand deck, I give you a graph of a concurrent shift in supply and demand due to a change in crude oil prices affecting both the input costs to produce gasoline and the income of consumers. Based on the remainder of the information in the deck:
+   a) Write out the initial supply and demand functions and solve for the initial equilibrium price and quantity (this is a freebie, as this is all in the deck)
+   b) Solve for the price and quantity at the new equilibrium (not in the deck)
+   c) Now, assume the government levies a 20c/l tax (\$0.20/l in the units in the deck) on gasoline payable by suppliers. Calculate a new equlibrium price and quantity.
+   d) Has the price increased by the cost of the tax? If not, why did the producers not simply \textit{pass the cost on} to consumers?
+   e) Now, assume the government levies a 20c/l tax (\$0.20/l in the units in the deck) on gasoline payable at the cash register by consumers. Calculate the new equlibrium price and quantity.
+   f) In the new equilibrium, what's the revenue per litre earned by producers and what is the price paid by consumers?  
+\newpage
+   
+4. In your own words and graphs (using the supply and demand functions from the class deck), describe the impact of a price ceiling on gasoline applied at a cost of \$0.80/l. What is likely to result from this price ceiling? (For now, assume the market is competitive. We'll abandon this in due course.)
+
+
