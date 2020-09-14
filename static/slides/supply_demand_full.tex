@@ -1060,16 +1060,11 @@ quantity of 21.25.
 }
 
 
-\end{document}
 
-
-
-
-
-\section{Using the Model}
+\section{Deriving Predictions from the Model}
 
 \frame{
-	\frametitle{2. Using the Model}
+	\frametitle{Shifts in Equilibrium}
 	\begin{itemize}
 	\item The supply-and-demand model tells us the price and quantity that will \textit{clear the
 market} holding all other factors fixed.
@@ -1079,84 +1074,58 @@ and demand curves (or both!).
 market equilibrium.
 	\item We will consider two sets of factors:
 		\begin{enumerate}
-		\item ``Market Fundamentals.''
+		\item \textit{Market fundamentals}, e.g. inputs, preferences, technology, etc.
 		\item Government intervention.
 		\end{enumerate}
 	\end{itemize}
 }
 
 \frame{
-	\frametitle{2. Using the Model: Shifting Demand}
+	\frametitle{Using the Model: Shifts in Demand}
 	\begin{itemize}
 	\item We will start by considering the effects of an increase in annual household income.
-	\item[]
-	\item Specifically, suppose that household income increases from \$10,000 to \$20,000.
-	\item[]
+	\item Specifically, suppose that household income increases from \$100,000 to \$120,000.
 	\item How does this affect equilibrium price and quantity?
+    \item Recall that our demand function was:
+		\begin{align*}
+		Q = 30 - \frac{p}{5} + 0.1 Y
+		\end{align*}
+where Y is income in thousands of dollars
 	\end{itemize}
 }
 
 \frame{
-	\frametitle{2. Using the Model: Shifting Demand}
+	\frametitle{Using the Model: Shifts in Demand}
+	\begin{itemize}
+	\item In the previous examples, we didn't invert demand with income left as a variable, but we can do so:
+		\begin{align*}
+		Q &= 30 - \frac{p}{5} + 0.1 Y\\
+        5Q &= 150 - p + 0.5 Y\\
+        p&=150+0.5Y-5Q
+		\end{align*}
+\item In the previous examples, we generally used $Y=100$, at which the inverse demand reduces to our familiar $p=200-5Q$. At income of $Y=120$, $p=210-5Q$
+	\end{itemize}
+}
+
+
+
+\frame{
+	\frametitle{Shifts in Equilibrium: Shifting Demand}
 	%	The demand for gasoline:
 	
 	\begin{figure}[t!]
-	\center
-	\resizebox{!}{.35\linewidth}{
-
-	\begin{tikzpicture}
-	% Draw axes
-	%Y
-	\draw[->] (0,0) -- (0,10) ;
-	\draw[] (0,8) -- node[rotate=90, above=30pt] {\textbf{$p$, \$ per kg}} (0,8);
-	%X
-	\draw[->] (0,0) -- (15,0);
-	\draw[] (14,0) -- node[below=30pt] {\textbf{$Q$, millions of kg per year}} (14,0);
-
-	% Plot demand curve:
-	% Curve given by: Q = 13 - 2p + 0.1Y
-	% Assume Y= 10
-	% Inverse demand: p = 7-0.5*Q
-	\draw[color=blue, thick, domain=0:14] plot (\x,{7-0.5*\x});
-	\node at (1,6.25) [left] {$D^{1}$};
-	% Assume Y = 20
-	% Inverse demand: p = 7.5-0.5*Q
-	\draw[color=blue, thick, dashed, domain=0:14] plot (\x,{7.5-0.5*\x});
-	\node at (1,7.75) [left] {$D^{2}$};
-
-	% Plot supply curve:
-	% Curve given by: Q = 1 + 2p - 0.5p_{y}
-	% Assume p_{y}= 2
-	% Inverse demand: p = 0.5*Q
-	\draw[color=red, thick, domain=0:14] plot (\x,{0.5*\x});
-	\node at (13.5,7.5) [right] {$S$};
-
-	%Plot illustrative lines
-	% Original Equilibrium
-	\draw[dashed] (0,3.5) -- (7,3.5) -- (7,0);
-	% New Equilibrium
-	\draw[dashed] (0,3.75) -- (7.5,3.75) -- (7.5,0);
-
-	%Add axes labels
-	%Origin%
-	\node at (0,0) [left] {{0}};
-	%Y Axis
-	\node at (0,3.45) [left] {{3.50}};
-	\node at (0,3.85) [left] {{3.75}};
-	%X Axis
-	\node at (7,0) [below] {{7}};
-	\node at (7.5,0) [below] {{7.5}};
-
-\end{tikzpicture}
+    \center
+	\resizebox{!}{.4\linewidth}{
+    \includegraphics[width=\textwidth]{../images/equil_shift_income.png}
 }
 \caption{The effects of an increase in income}
 \end{figure}
 }
 
 \frame{
-	\frametitle{2. Using the Model: Shifting Demand}
+	\frametitle{Shifts in Equilibrium: Shifting Demand}
 	\begin{itemize}
-	\item The increase in income shifts the demand curve to the right (from $D^{1}$ to $D^{2}$).
+	\item The increase in income shifts the demand curve to the right (from $D_{1}$ to $D_{2}$).
 	\item[]
 	\item This results in a \textit{movement along the supply curve}.
 	\item[]
@@ -1165,158 +1134,135 @@ market equilibrium.
 }
 
 \frame{
-	\frametitle{2. Using the Model: Shifting Demand}
+	\frametitle{Shifts in Equilibrium: Shifting Demand}
 	%	The demand for gasoline:
 	
 	\begin{figure}[t!]
-	\center
-	\resizebox{!}{.35\linewidth}{
-
-	\begin{tikzpicture}
-	% Draw axes
-	%Y
-	\draw[->] (0,0) -- (0,10) ;
-	\draw[] (0,8) -- node[rotate=90, above=30pt] {\textbf{$p$, \$ per kg}} (0,8);
-	%X
-	\draw[->] (0,0) -- (15,0);
-	\draw[] (14,0) -- node[below=30pt] {\textbf{$Q$, millions of kg per year}} (14,0);
-
-	% Plot demand curve:
-	% Curve given by: Q = 13 - 2p + 0.1Y
-	% Assume Y= 10
-	% Inverse demand: p = 7-0.5*Q
-	\draw[color=blue, thick, domain=0:14] plot (\x,{7-0.5*\x});
-	\node at (1,6.25) [left] {$D^{1}$};
-	% Assume Y = 20
-	% Inverse demand: p = 7.5-0.5*Q
-	\draw[color=blue, thick, dashed, domain=0:14] plot (\x,{7.5-0.5*\x});
-	\node at (1,7.75) [left] {$D^{2}$};
-
-	% Plot supply curve:
-	% Curve given by: Q = 1 + 2p - 0.5p_{y}
-	% Assume p_{y}= 2
-	% Inverse demand: p = 0.5*Q
-	\draw[color=red, thick, domain=0:14] plot (\x,{0.5*\x});
-	\node at (13.5,7.5) [right] {$S$};
-
-	%Plot illustrative lines
-	% Original Equilibrium
-	\draw[dashed] (0,3.5) -- (7,3.5) -- (7,0);
-	% New Equilibrium
-	\draw[dashed] (0,3.75) -- (7.5,3.75) -- (7.5,0);
-	% Excess Demand
-	\draw[dashed] (7,3.5) -- (8,3.5) -- (8,0);
-
-	%Add axes labels
-	%Origin%
-	\node at (0,0) [left] {{0}};
-	%Y Axis
-	\node at (0,3.45) [left] {{3.50}};
-%	\node at (0,3.85) [left] {{3.75}};
-	%X Axis
-	\node at (7,0) [below] {{7}};
-%	\node at (7.5,0) [below] {{7.5}};
-	\node at (8,0) [below] {{8}};
-
-\end{tikzpicture}
+    \center
+	\resizebox{!}{.4\linewidth}{
+    \includegraphics[width=\textwidth]{../images/equil_shift_income.png}
 }
 \caption{The effects of an increase in income}
 \end{figure}
 }
 
 \frame{
-	\frametitle{2. Using the Model: Shifting Demand}
+	\frametitle{Shifts in Equilibrium: Shifting Demand}
+	%	The demand for gasoline:
+	
+	\begin{figure}[t!]
+    \center
+	\resizebox{!}{.4\linewidth}{
+    \includegraphics[width=\textwidth]{../images/equil_shift_mvmt1.png}
+}
+\caption{The effects of an increase in income}
+\end{figure}
+}
+
+
+
+\frame{
+	\frametitle{Shifts in Equilibrium: Shifting Demand}
 	\begin{itemize}
-	\item We can also determine the effect of an income increase using algebra. Recall:
+	\item We can also solve for the change in market equilibrium prices and quantities analytically using algebra. Recall our initial calculations:
 		\begin{align*}
-		Q_{d} & = 13 - 2p + 0.1 Y\\
-		Q_{s} & = 2 p
+		Q_{D} = 40 - \frac{p}{5} \quad \text{and} \quad Q_{S} = \frac{p}{3}-10
 		\end{align*}
-	\item \underline{Step 1:} Solve for the initial equilibrium with $Y=10$.
+	\item In equilibrium $Q_{D}=Q_{S}$. Substituting yields:
 		\begin{align*}
-		Q_{d} = Q_{s} & \implies 13- 2p + 0.1(10) = 2p \\
-					& \implies p = 3.5 \text{ and } Q = 7.
+		40 - \frac{p}{5} &= \frac{p}{3}-10\\
+		\frac{8p}{15} &=50 \, \rightarrow	p &= 93.75
 		\end{align*}
-	\item \underline{Step 2:} Solve for the new equilibrium with $Y=20$.
+	\item Substituting $p=93.75$ into $Q_{D}$ or $Q_{S}$ yields $Q=21.25$.
+	\end{itemize}
+}
+
+
+\frame{
+	\frametitle{Shifts in Equilibrium: Shifting Demand}
+	\begin{itemize}
+	\item Recall that the underlying demand function was $Q = 30 - \frac{p}{5} + 0.1 Y$, so with income of \$120,000, or $Y=120$:
 		\begin{align*}
-		Q_{d} = Q_{s} & \implies 13- 2p + 0.1(20) = 2p \\
-					& \implies p = 3.75 \text{ and } Q = 7.5.
+		Q_{D} = 30 - \frac{p}{5} +.1(120) \quad \text{and} \quad Q_{S} = \frac{p}{3}-10
+		\end{align*}
+	\item In equilibrium $Q_{D}=Q_{S}$. Substituting yields:
+		\begin{align*}
+		42 - \frac{p}{5} &= \frac{p}{3}-10\\
+		\frac{8p}{15} &=52 \, \rightarrow  p = 97.5\\
+		\end{align*}
+	\item Substituting $p = 97.5$ into $Q_{D}$ or $Q_{S}$ yields $Q=22.5$.
+	\end{itemize}
+}
+
+
+
+
+
+
+\frame{
+	\frametitle{Shifts in Equilibrium: Shifting Demand}
+	\begin{itemize}
+	\item And now we can compare the impacts of a shift in demand caused by a change in income. In the initial equilibrium:
+		\begin{align*}
+		Q_{1}^* & = 21.25\\
+		p_{1}^* & = 93.75
+		\end{align*}
+	\item In the \underline{new} equilibrium after the shift in income.
+		\begin{align*}
+		Q_{2}^* & = 22.5\\
+		p_{2}^* & = 97.50
+		\end{align*}
+	\item The \underline{change} in income leads to a \underline{shift in demand}, and a \underline{movement along the supply curve} such that:
+		\begin{align*}
+		\Delta_p&=3.75\\
+        \Delta_Q&=1.25
 		\end{align*}
 	\end{itemize}
 }
 
 \frame{
-	\frametitle{2. Using the Model: Shifting Supply}
+	\frametitle{Shifts in Equilibrium: Shifting Demand}
+	%	The demand for gasoline:
+	
+	\begin{figure}[t!]
+    \center
+	\resizebox{!}{.4\linewidth}{
+    \includegraphics[width=\textwidth]{../images/equil_shift_mvmt1.png}
+}
+\caption{The effects of an increase in income}
+\end{figure}
+}
+
+
+
+\frame{
+	\frametitle{Shifts in Equilibrium: Shifting Supply}
 	\begin{itemize}
-	\item Suppose instead that the price of yoghurt increase from \$2.00 to \$4.00.
+	\item Suppose instead that the price of crude oil increases from \$40 to \$60 per barrel.
 	\item[]
 	\item How does this affect equilibrium price and quantity?
 	\end{itemize}
 }
 
 \frame{
-	\frametitle{2. Using the Model: Shifting Supply}
+	\frametitle{Shifts in Equilibrium: Shifting Supply}
 	%	The demand for gasoline:
-	
 	\begin{figure}[t!]
-	\center
-	\resizebox{!}{.35\linewidth}{
-
-	\begin{tikzpicture}
-	% Draw axes
-	%Y
-	\draw[->] (0,0) -- (0,10) ;
-	\draw[] (0,8) -- node[rotate=90, above=30pt] {\textbf{$p$, \$ per kg}} (0,8);
-	%X
-	\draw[->] (0,0) -- (15,0);
-	\draw[] (14,0) -- node[below=30pt] {\textbf{$Q$, millions of kg per year}} (14,0);
-
-	% Plot demand curve:
-	% Curve given by: Q = 13 - 2p + 0.1Y
-	% Assume Y= 10
-	% Inverse demand: p = 7-0.5*Q
-	\draw[color=blue, thick, domain=0:14] plot (\x,{7-0.5*\x});
-	\node at (1,7.25) [left] {$D$};
-
-	% Plot supply curve:
-	% Curve given by: Q = 1 + 2p - 0.5p_{y}
-	% Assume p_{y}= 2
-	% Inverse supply: p = 0.5*Q
-	\draw[color=red, thick, domain=0:14] plot (\x,{0.5*\x});
-	\node at (13.5,6.5) [right] {$S^{1}$};
-	
-	% Assume p_{y}=4
-	% Inverse supply: p = 0.5 + 0.5*Q
-	\draw[color=red, thick, dashed, domain=0:14] plot (\x,{0.5+0.5*\x});
-	\node at (13.5,7.75) [right] {$S^{2}$};
-
-	%Plot illustrative lines
-	% Original Equilibrium
-	\draw[dashed] (0,3.5) -- (7,3.5) -- (7,0);
-	% New Equilibrium
-	\draw[dashed] (0,3.75) -- (6.5,3.75) -- (6.5,0);
-
-	%Add axes labels
-	%Origin%
-	\node at (0,0) [left] {{0}};
-	%Y Axis
-	\node at (0,3.45) [left] {{3.50}};
-	\node at (0,3.85) [left] {{3.75}};
-	%X Axis
-	\node at (7,0) [below] {{7}};
-	\node at (6.5,0) [below] {{6.5}};
-
-\end{tikzpicture}
+    \center
+	\resizebox{!}{.4\linewidth}{
+    \includegraphics[width=\textwidth]{../images/equil_shift_crude.png}
 }
-\caption{The effects of an increase in the price of yoghurt}
+
+	
+\caption{The effects of an increase in the price of crude on gasoline market equilibrium}
 \end{figure}
 }
 
 \frame{
-	\frametitle{2. Using the Model: Shifting Supply}
+	\frametitle{Shifts in Equilibrium: Shifting Supply}
 	\begin{itemize}
-	\item The increase in the price of yoghurt shifts the supply cure to the left (from $S^{1}$ to
-$S^{2}$).
+	\item The increase in the price of crude oil (the key input to gasoline production) shifts the supply crude to the left (from $S_{1}$ to
+$S_{2}$).
 	\item[]
 	\item This results in a \textit{movement along the demand curve}.
 	\item[]
@@ -1325,102 +1271,152 @@ $S^{2}$).
 }
 
 \frame{
-	\frametitle{2. Using the Model: Shifting Supply}
+	\frametitle{Shifts in Equilibrium: Shifting Supply}
 	%	The demand for gasoline:
 	
 	\begin{figure}[t!]
-	\center
-	\resizebox{!}{.35\linewidth}{
-
-	\begin{tikzpicture}
-	% Draw axes
-	%Y
-	\draw[->] (0,0) -- (0,10) ;
-	\draw[] (0,8) -- node[rotate=90, above=30pt] {\textbf{$p$, \$ per kg}} (0,8);
-	%X
-	\draw[->] (0,0) -- (15,0);
-	\draw[] (14,0) -- node[below=30pt] {\textbf{$Q$, millions of kg per year}} (14,0);
-
-	% Plot demand curve:
-	% Curve given by: Q = 13 - 2p + 0.1Y
-	% Assume Y= 10
-	% Inverse demand: p = 7-0.5*Q
-	\draw[color=blue, thick, domain=0:14] plot (\x,{7-0.5*\x});
-	\node at (1,7.25) [left] {$D$};
-
-	% Plot supply curve:
-	% Curve given by: Q = 1 + 2p - 0.5p_{y}
-	% Assume p_{y}= 2
-	% Inverse supply: p = 0.5*Q
-	\draw[color=red, thick, domain=0:14] plot (\x,{0.5*\x});
-	\node at (13.5,6.5) [right] {$S^{1}$};
-	
-	% Assume p_{y}=4
-	% Inverse supply: p = 0.5 + 0.5*Q
-	\draw[color=red, thick, dashed, domain=0:14] plot (\x,{0.5+0.5*\x});
-	\node at (13.5,7.75) [right] {$S^{2}$};
-
-	%Plot illustrative lines
-	% Original Equilibrium
-	\draw[dashed] (0,3.5) -- (7,3.5) -- (7,0);
-	% New Equilibrium
-	\draw[dashed] (0,3.75) -- (6.5,3.75) -- (6.5,0);
-	% Excess Supply
-	\draw[dashed] (0,3.5) -- (6,3.5) -- (6,0);
-
-	%Add axes labels
-	%Origin%
-	\node at (0,0) [left] {{0}};
-	%Y Axis
-	\node at (0,3.45) [left] {{3.50}};
-%	\node at (0,3.85) [left] {{3.75}};
-	%X Axis
-	\node at (7,0) [below] {{7}};
-	\node at (6,0) [below] {{6}};
-
-
-\end{tikzpicture}
+    \center
+	\resizebox{!}{.4\linewidth}{
+    \includegraphics[width=\textwidth]{../images/equil_shift_crude.png}
 }
-\caption{The effects of an increase in the price of yoghurt}
+
+\caption{The effects of an increase in the price of an input (crude oil in this case)}
 \end{figure}
 }
 
 \frame{
-	\frametitle{2. Using the Model: Shifting Supply}
+	\frametitle{Shifts in Equilibrium: Shifting Supply}
+	%	The demand for gasoline:
+	
+	\begin{figure}[t!]
+    \center
+	\resizebox{!}{.4\linewidth}{
+    \includegraphics[width=\textwidth]{../images/equil_shift_mvmt.png}
+}
+
+\caption{The effects of an increase in the price of an input (crude oil in this case)}
+\end{figure}
+}
+
+
+
+
+\frame{
+	\frametitle{Shifts in Equilibrium: Shifting Supply}
+		\begin{itemize}
+	\item Recall that the original demand function was $Q_d = 40 - \frac{p}{5}$, with income of \$100,000, or $Y=100$. And the supply curve is $Q_s = 10 +   \frac{p}{3} - 0.5 p_{y}$. So, with crude at \$60 and income at \$100:
+		\begin{align*}
+		Q_{D} = 30 - \frac{p}{5} +.1(100) \quad \text{and} \quad Q_{S} = \frac{p}{3}-20
+		\end{align*}
+	\item In equilibrium $Q_{D}=Q_{S}$. Substituting yields:
+		\begin{align*}
+		40 - \frac{p}{5} &= \frac{p}{3}-20\\
+		\frac{8p}{15} &=60 \, \rightarrow  p = 112.5
+		\end{align*}
+	\item Substituting $p = 112.5$ into $Q_{D}$ or $Q_{S}$ yields $Q=17.5$.
+	\end{itemize}
+}
+
+
+\frame{
+	\frametitle{Shifts in Equilibrium: Shifting Supply}
 	\begin{itemize}
-	\item Again, we can also determine the effects of the price increase using algebra. Recall:
+	\item And now we can compare the impacts of a shift in supply caused by a change in crude costs. In the initial equilibrium:
 		\begin{align*}
-		Q_{d} & = 14 - 2p \\
-		Q_{s} & = 1 + 2 p - 0.5 p_{y}
+		Q_{1}^* & = 21.25\\
+		p_{1}^* & = 93.75
 		\end{align*}
-	\item \underline{Step 1:} Solve for the initial equilibrium with $p_{y} = 2.00$.
+	\item In the \underline{new} equilibrium after the shift in income.
 		\begin{align*}
-		Q_{d}=Q_{s} & \implies 14 - 2p = 1 + 2p - 0.5(2.00) \\
-			& \implies p =3.5 \text{ and } Q = 7.
+		Q_{2}^* & = 17.5\\
+		p_{2}^* & = 112.50
 		\end{align*}
-	\item \underline{Step 2:} Solve for the new equilibrium with $p_{y} = 4.00$.
+	\item The \underline{change} in the price of an input leads to a \underline{shift in supply}, and a \underline{movement along the demand curve} such that:
 		\begin{align*}
-		Q_{d}=Q_{s} & \implies 14 - 2p = 1 + 2p - 0.5(4.00) \\
-			& \implies p =3.75 \text{ and } Q = 6.5.
+		\Delta_p&=18.75\\
+        \Delta_Q&=-3.75
 		\end{align*}
 	\end{itemize}
 }
 
+
+
+
 \frame{
-	\frametitle{2. Using the Model: Concurrent Shifts}
+	\frametitle{Shifts in Equilibrium: Shifting Supply}
+	%	The demand for gasoline:
+	
+	\begin{figure}[t!]
+    \center
+	\resizebox{!}{.4\linewidth}{
+    \includegraphics[width=\textwidth]{../images/equil_shift_mvmt.png}
+}
+
+\caption{The effects of an increase in the price of an input (crude oil in this case)}
+\end{figure}
+}
+
+
+
+
+\frame{
+	\frametitle{Shifts in Equilibrium: Concurrent Shifts}
 	\begin{itemize}
 	\item Sometimes, demand and supply change at the same time.
 	\item[]
-	\item As an example, consider the effects of gasolinemakers switching to organic milk to produce
-gasoline.
+	\item Think of Alberta where increases in the oil price generally have substantial positive income effects (i.e. an increase in the oil price leads to an increase in household income, and vice versa). 
 	\item[]
-	\item What would the effects of this switch be on the equilibrium price and quantity in the
-market for gasoline?
+	\item What would the effects of the combination of the two shifts we've just seen be on the equilibrium price and quantity in the market for gasoline?
 	\end{itemize}
 }
 
 \frame{
-	\frametitle{2. Using the Model: Government Intervention}
+	\frametitle{Shifts in Equilibrium: Concurrent Shifts in Demand and Supply}
+	%	The demand for gasoline:
+	
+	\begin{figure}[t!]
+    \center
+	\resizebox{!}{.4\linewidth}{
+    \includegraphics[width=\textwidth]{../images/equil_shift_both.png}
+}
+
+\caption{Income (demand) and input cost (supply) effects of an increase in the price of crude oil}
+\end{figure}
+}
+
+\frame{
+	\frametitle{Shifts in Equilibrium: Concurrent Shifts}
+	\begin{itemize}
+	\item When demand and supply change at the same time, we may not be able to sign the effects on prices and quantities without further analysis:
+	\begin{itemize}
+	\item An increase in demand (right shift) and a decrease in supply (left shift) could lead to any combination of increases or decreases in $p$ and $Q$;
+	\item If demand and supply both increase, we know that equilibrium quantities will increase, but the effect on price is ambiguous;
+	\item If supply decreases and demand increases, we know that price will increase, but the effect on quantities is ambiguous.
+	\end{itemize}
+\end{itemize}
+}
+
+
+\frame{
+	\frametitle{Shifts in Equilibrium: Concurrent Shifts}
+	\begin{itemize}
+	\item When demand and supply change at the same time, the sizes of the shifts and the price elasticities of demand and supply determine the outcome.
+\item Recall that the price elasticity of demand is the percentage change in quantity demanded for a given percentage change in price;
+\begin{align*}
+  \epsilon=\frac{\text{percentage change in quantity demanded}}{\text{percentage change in price}}=\frac{\Delta Q/Q}{\Delta p/p}=\frac{\Delta Q}{\Delta p}\frac{p}{Q}
+\end{align*}
+	\item The elasticity of supply is calculated similarly as the percentage change in quantity supplied for a given percentage change in price;
+  	\item Hint: more \textit{elastic} is more responsive:
+\small{\begin{itemize}\item \textit{inelastic} demand or supply means an elasticity less than one (i.e. the relative magnitude of the quantity response is smaller than the price change)
+\item \textit{perfectly inelastic} demand has an elasticity of zero
+\item \textit{perfectly elastic} demand has undefined elasticity
+\end{itemize}}
+\end{itemize}
+}
+
+
+\frame{
+	\frametitle{Shifts in Equilibrium: Government Intervention}
 	\begin{itemize}
 	\item Government actions can also affect market outcomes.
 	\item[]
@@ -1434,20 +1430,19 @@ market for gasoline?
 }
 
 \frame{
-	\frametitle{2. Using the Model: Policies that Shift Curves}
+	\frametitle{Shifts in Equilibrium: Policies that Shift Curves}
 	\begin{itemize}
 	\item Governments use three main approaches to shift curves:
 		\begin{enumerate}
 		\item Limits on who can buy.
 			\begin{itemize}
 			\item Governments can restrict who can buy certain products (e.g. cigarettes to
-children). This decreases the quantity demanded, and shifts the demand curves for these products
-to the left.
+children). This shifts the demand curves for these products
+to the left by shrinking the market, and thus decreases the quantity demanded at any price.
 			\end{itemize}
-		\item Restrictions on imports.
+		\item Restrictions on imports or exports.
 			\begin{itemize}
-			\item Governments can restrict the flow of imports. This decreases the quantity
-supplied, and shifts the importing country's supply curve to the left.
+			\item Governments can restrict the flow of imports or exports. Import restrictions artificially shifts the importing country's supply curve to the left, while restrictions on exports shift the exporting country's demand curve to the left.
 			\end{itemize}
 		\item Government purchases.
 			\begin{itemize}
@@ -1455,13 +1450,12 @@ supplied, and shifts the importing country's supply curve to the left.
 price. This shifts the demand curve to the right.
 			\end{itemize}
 		\end{enumerate}
-	\item[]
 	\item Why would governments enact these policies?
 	\end{itemize}
 }
 
 \frame{
-	\frametitle{2. Using the Model: Price Controls}
+	\frametitle{Shifts in Equilibrium: Price Controls}
 	\begin{itemize}
 	\item Sometimes governments intervene by controlling prices in a market.
 	\item[]
@@ -1482,7 +1476,7 @@ prevail in the market.
 }
 
 \frame{
-	\frametitle{2. Using the Model: Price Controls}
+	\frametitle{Shifts in Equilibrium: Price Controls}
 	%	The demand for gasoline:
 	
 	\begin{figure}[t!]
@@ -1537,7 +1531,7 @@ prevail in the market.
 }
 
 \frame{
-	\frametitle{2. Using the Model: Price Controls}
+	\frametitle{Shifts in Equilibrium: Price Controls}
 	%	The demand for gasoline:
 	
 	\begin{figure}[t!]
@@ -1592,7 +1586,7 @@ prevail in the market.
 }
 
 \frame{
-	\frametitle{2. Using the Model: Price Controls}
+	\frametitle{Shifts in Equilibrium: Price Controls}
 	\begin{itemize}
 	\item Examples show that supply need not equal demand if the government intervenes in the market.
 	\item[]
@@ -1604,7 +1598,7 @@ the \underline{actual} quantity that is bought and sold.
 }
 
 \frame{
-	\frametitle{2. Using the Model: Taxes/Subsidies}
+	\frametitle{Shifts in Equilibrium: Taxes/Subsidies}
 	\begin{itemize}
 	\item Taxes may also affect equilibrium price and quantity.
 	\item[]
@@ -1617,132 +1611,32 @@ gasoline.
 }
 
 \frame{
-	\frametitle{2. Using the Model: Specific Tax}
+	\frametitle{Shifts in Equilibrium: Specific Tax Collected from Suppliers}
 	%	The demand for gasoline:
-	
-	\begin{figure}[t!]
-	\center
-	\resizebox{!}{.35\linewidth}{
-
-	\begin{tikzpicture}
-	% Draw axes
-	%Y
-	\draw[->] (0,0) -- (0,10) ;
-	\draw[] (0,8) -- node[rotate=90, above=30pt] {\textbf{$p$, \$ per kg}} (0,8);
-	%X
-	\draw[->] (0,0) -- (15,0);
-	\draw[] (14,0) -- node[below=30pt] {\textbf{$Q$, millions of kg per year}} (14,0);
-
-	% Plot demand curve:
-	% Curve given by: Q = 13 - 2p + 0.1Y
-	% Assume Y= 10
-	% Inverse demand: p = 7-0.5*Q
-	\draw[color=blue, thick, domain=0:14] plot (\x,{7-0.5*\x});
-	\node at (1,7.25) [left] {$D$};
-
-	% Plot supply curve:
-	% Curve given by: Q = 1 + 2p - 0.5p_{y}
-	% Assume p_{y}= 2
-	% Inverse supply: p = 0.5*Q
-	\draw[color=red, thick, domain=0:14] plot (\x,{0.5*\x});
-	\node at (13.5,6.5) [right] {$S^{1}$};
-	
-	% Assume t=2
-	% Inverse supply: p = 2 + 0.5*Q
-	\draw[color=red, thick, dashed, domain=0:14] plot (\x,{2+0.5*\x});
-	\node at (13.5,9.5) [right] {$S^{2}$};
-
-	%Plot illustrative lines
-	% Original Equilibrium
-	\draw[dashed] (0,3.5) -- (7,3.5) -- (7,0);
-	% New Equilibrium
-	\draw[dashed] (0,4.5) -- (5,4.5) -- (5,0);
-	\draw[dashed] (0,2.5) -- (5,2.5);
-	
-	\draw[fill=yellow, opacity=0.2]  (0,4.5) -- (5,4.5) -- (5,2.5) -- (0,2.5) -- cycle;
-	\node at (0,3) [right] {{$\text{Tax Revenue} = \$ 10 \text{million}$}};
-
-	%Add axes labels
-	%Origin%
-	\node at (0,0) [left] {{0}};
-	%Y Axis
-	\node at (0,3.45) [left] {{$p_{1}=3.50$}};
-	\node at (0,4.5) [left] {{$p_{2}=4.50$}};
-	\node at (0,2.5) [left] {{$p_{2}-t=2.50$}};
-	%X Axis
-	\node at (7,0) [below] {{7}};
-	\node at (5,0) [below] {{5}};
-
-\end{tikzpicture}
+\begin{figure}[t!]
+    \center
+	\resizebox{!}{.4\linewidth}{
+    \includegraphics[width=\textwidth]{../images/equil_shift_tax_supply.png}
 }
-\caption{The effects of a \$2.00/kg tax on gasoline producers}
+\caption{The effects of a 20c/l tax charged to gasoline producers}
 \end{figure}
 }
 
 \frame{
-	\frametitle{2. Using the Model: Specific Tax}
+	\frametitle{Shifts in Equilibrium: Specific Tax Collected from Suppliers}
 	%	The demand for gasoline:
-	
-	\begin{figure}[t!]
-	\center
-	\resizebox{!}{.35\linewidth}{
-
-	\begin{tikzpicture}
-	% Draw axes
-	%Y
-	\draw[->] (0,0) -- (0,10) ;
-	\draw[] (0,8) -- node[rotate=90, above=30pt] {\textbf{$p$, \$ per kg}} (0,8);
-	%X
-	\draw[->] (0,0) -- (15,0);
-	\draw[] (14,0) -- node[below=30pt] {\textbf{$Q$, millions of kg per year}} (14,0);
-
-	% Plot demand curve:
-	% Curve given by: Q = 13 - 2p + 0.1Y
-	% Assume Y= 10
-	% Inverse demand: p = 7-0.5*Q
-	\draw[color=blue, thick, domain=0:14] plot (\x,{7-0.5*\x});
-	\node at (1,7.25) [left] {$D^{1}$};
-
-	% Assume t = 2
-	\draw[color=blue, thick, dashed, domain=0:10] plot (\x,{5-0.5*\x});
-	\node at (1,5.25) [left] {$D^{2}$};
-
-	% Plot supply curve:
-	% Curve given by: Q = 1 + 2p - 0.5p_{y}
-	% Assume p_{y}= 2
-	% Inverse supply: p = 0.5*Q
-	\draw[color=red, thick, domain=0:14] plot (\x,{0.5*\x});
-	\node at (13.5,6.5) [right] {$S^{1}$};
-
-	%Plot illustrative lines
-	% Original Equilibrium
-	\draw[dashed] (0,3.5) -- (7,3.5) -- (7,0);
-	% New Equilibrium
-	\draw[dashed] (0,4.5) -- (5,4.5) -- (5,0);
-	\draw[dashed] (0,2.5) -- (5,2.5);
-	
-	\draw[fill=yellow, opacity=0.2]  (0,4.5) -- (5,4.5) -- (5,2.5) -- (0,2.5) -- cycle;
-	\node at (0,3) [right] {{$\text{Tax Revenue} = \$ 10 \text{million}$}};
-
-	%Add axes labels
-	%Origin%
-	\node at (0,0) [left] {{0}};
-	%Y Axis
-	\node at (0,3.45) [left] {{$p_{1}=3.50$}};
-	\node at (0,4.5) [left] {{$p_{2}+t=4.50$}};
-	\node at (0,2.5) [left] {{$p_{2}=2.50$}};
-	%X Axis
-	\node at (7,0) [below] {{7}};
-	\node at (5,0) [below] {{5}};
-
-\end{tikzpicture}
+\begin{figure}[t!]
+    \center
+	\resizebox{!}{.4\linewidth}{
+    \includegraphics[width=\textwidth]{../images/equil_shift_tax_demand.png}
 }
-\caption{The effects of a \$2.00/kg tax on gasoline consumers}
+\caption{The effects of a 20c/l tax charged to gasoline consumers}
 \end{figure}
 }
 
+
 \frame{
-	\frametitle{2. Using the Model: The Effects of A Specific Tax}
+	\frametitle{Shifts in Equilibrium: The Effects of A Specific Tax}
 	\begin{itemize}
 	\item Two key points:
 		\begin{enumerate}
@@ -1810,7 +1704,6 @@ affect demand and supply.
 	\begin{itemize}
 	\item The supply-and-demand model works well as a tool for understanding markets that are
 \textit{perfectly competitive}.
-	\item[]
 	\item Five characteristics of a perfectly competitive market:	
 		\begin{enumerate}
 		\item Many small buyers and sellers.
@@ -1820,7 +1713,6 @@ characteristics.
 		\item Transaction costs (expenses over and above the price) are negligible.
 		\item Firms can easily enter and exit the market, so competition is high.
 		\end{enumerate}
-	\item[]
 	\item The model does not work well in non-competitive markets where there are a few sellers that
 are price setters.
 		\begin{itemize}
@@ -1848,7 +1740,7 @@ are price setters.
 and other factors.
 	\item Using the model requires understanding how factors other than own price may shift demand
 and supply, and how government intervention may affect prices in the market.
-	\item The model works well for understanding markets that are competitive enough.
+	\item The model works well for understanding markets that are \textit{competitive enough}.
 	\end{enumerate}
 }
 
