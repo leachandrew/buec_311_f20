@@ -1,0 +1,243 @@
+\documentclass[12pt,xcolor=table,aspectratio=169]{beamer}
+\usetheme{Frankfurt}
+\usecolortheme{rose}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{bbm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[flushleft]{threeparttable}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{siunitx}
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathreplacing,angles,quotes}
+%\usepackage{enumitem}% http://ctan.org/pkg/enumitem
+
+%set up course and number
+
+\newcommand{\ClassName}{TBD}
+\newcommand{\ClassNumber}{TBD}
+\newcommand{\Topic}{TBD}
+
+% Some optional colors. Change or add as you see fit.
+%---------------------------------------------------
+ \definecolor{ualbertagreen}{HTML}{007C41}
+\definecolor{ualbertagold}{HTML}{FFDB05}
+
+\definecolor{calloutgrey}{HTML}{D9D9D9}
+
+
+%set fonts
+\setbeamerfont{subtitle}{size=\large,shape=\scshape,series=\bfseries}
+\setbeamerfont{title}{size=\Large,shape=\scshape,series=\bfseries}
+\setbeamerfont{author}{size=\large}
+\setbeamerfont{date}{size=\large}
+\setbeamerfont{caption}{size=\scriptsize}
+
+
+% Some optional color adjustments to Beamer. Change as you see fit.
+%------------------------------------------------------------------
+\setbeamercolor{frametitle}{fg=ualbertagreen,bg=white}
+\setbeamercolor{title}{fg=ualbertagreen,bg=white}
+\setbeamercolor{author}{fg=ualbertagreen,bg=white}
+\setbeamercolor{date}{fg=ualbertagreen,bg=white}
+\setbeamercolor{local structure}{fg=ualbertagreen}
+\setbeamercolor{section in toc}{fg=ualbertagreen,bg=white}
+% \setbeamercolor{subsection in toc}{fg=ualbertagreen,bg=white}
+\setbeamercolor{footline}{fg=ualbertagreen!50, bg=white}
+
+% definition boxes
+\setbeamercolor{block title}{bg=ualbertagreen,fg=white}
+\setbeamercolor{block body}{parent=normal text,use=block title,bg=calloutgrey}
+%\setbeamercolor{block body}{parent=normal text,use=block title,bg=block title.bg!30!bg}
+
+
+\setbeamercolor{upper separation line head}{bg=ualbertagreen}
+\setbeamercolor{lower separation line head}{bg=ualbertagold}
+\setbeamercolor{middle separation line head}{bg=ualbertagold}
+\setbeamercolor{frametitle}{fg=ualbertagreen,bg=white}
+
+
+
+\setbeamercolor{section in head/foot}{bg=white,fg=ualbertagreen}
+\setbeamercolor{author in head/foot}{bg=white,fg=ualbertagreen}
+\setbeamercolor{date in head/foot}{bg=white,,fg=ualbertagreen}
+\setbeamercolor{title in head/foot}{bg=white,fg=ualbertagreen}
+
+\setbeamercolor{headline}{bg=white,fg=ualbertagreen}
+
+
+
+
+\setbeamercolor*{middle separation line head}{bg=ualbertagreen}
+\setbeamercolor*{alerted text}{fg=ualbertagreen}
+\setbeamercolor*{example text}{fg=black}
+\setbeamercolor*{structure}{fg=black}
+
+
+\let\Tiny=\tiny
+
+
+
+\logo{
+   %\ifnum\insertpagenumber>1
+   \tikz [remember picture,overlay]
+    \node[yshift=.3cm,xshift=1.5cm] at (current page.south west)
+        %or: (current page.center)
+        {\includegraphics[width=1in]{../images/UA-ASB-COLOUR.png}};
+    %\fi
+%\includegraphics[height=0.8cm]{../images/UA-ASB-COLOUR.png}\vspace{220pt}
+}
+
+
+\setbeamertemplate{title page}{%
+  \vbox{}
+    \vspace{.5cm}% NEW
+  \begingroup
+    \centering
+    \begin{beamercolorbox}[sep=8pt,center]{title}
+      \usebeamerfont{title}\ClassNumber: \ClassName\par%
+      \usebeamerfont{title}\inserttitle\par%
+     \ifx\insertsubtitle\@empty%
+      \else%
+        \vskip0.05em%
+        {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
+      \fi%
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[sep=8pt,center]{author}
+      \usebeamerfont{author}\insertauthor
+    \end{beamercolorbox}
+    \begin{beamercolorbox}[sep=8pt,center]{institute}
+      \usebeamerfont{institute}\insertinstitute
+    \end{beamercolorbox}
+
+    \vspace{0.5cm}% NEW
+    \begin{beamercolorbox}[sep=8pt,center]{date}
+      \usebeamerfont{date}\insertdate
+    \end{beamercolorbox}\vskip0.05em
+
+      \endgroup
+  %\vfill
+}
+
+
+\setbeamertemplate{frametitle}{%
+    \insertframetitle\par\vskip-10pt
+}
+
+
+
+\renewcommand{\ClassName}{Business Economics, Organization and Management}
+\renewcommand{\ClassNumber}{BUEC 311}
+
+\setbeamertemplate{headline}{%
+\leavevmode%
+ \hbox{%
+    \begin{beamercolorbox}[wd=\paperwidth,ht=5ex,dp=0ex]{white}%
+    \usebeamerfont{headline}\hskip6pt\ClassNumber: \inserttitle\par%
+    \insertsectionnavigationhorizontal{\paperwidth}{}{\hskip0pt plus1filll}
+    \end{beamercolorbox}%
+  }
+}
+
+\defbeamertemplate*{footline}{my footline}{%
+    \ifnum\insertpagenumber=1
+        \Tiny{%
+            \hfill%
+		\vspace*{1pt}%
+            %\insertframenumber/\inserttotalframenumber \hspace*{0.1cm}%
+            \newline%
+            \color{ualbertagold}{\rule{\paperwidth}{0.4mm}}\newline%
+            \color{ualbertagold}{\rule{\paperwidth}{.4mm}}%
+        }
+  \else%
+        \Tiny{%
+            \hspace{.66\paperwidth}
+            %\vspace{25pt}
+            \insertframenumber/\inserttotalframenumber
+            \newline%
+            \color{ualbertagold}{\rule{\paperwidth}{0.4mm}}\newline%
+            \color{ualbertagold}{\rule{\paperwidth}{.4mm}}%
+        }%
+    \fi%
+}
+
+
+\newenvironment{itemize*}%
+  {\begin{itemize}%
+    \setlength{\itemsep}{0pt}%
+    \setlength{\parskip}{0pt}}%
+  {\end{itemize}}
+
+
+
+
+\title{Estimating Market Demand}
+
+
+\date{Fall 2020}
+
+\begin{document}
+\setcounter{subsection}{1}
+\begin{frame}
+   %\tikz [remember picture,overlay]
+    %\node[yshift=-1.05cm,xshift=0cm] at (current page.north)
+        %or: (current page.center)
+        %\node[yshift=-0.95cm,xshift=3.5cm] at (current page.north west)
+        %{\includegraphics[width=3in]{UA-ASB-COLOUR.png}};
+    %    {\includegraphics[width=.4\paperwidth]{../images/UA-ASB-COLOUR.png}}; \vspace{1cm}
+   \titlepage
+   \vfill
+\end{frame}
+
+\section{Introduction}
+
+\frame{
+	\frametitle{Outline}
+	\begin{enumerate}
+	\item Elasticity Refresher
+		\begin{itemize}
+		\item Own Price
+		\item Cross-Price
+		\item Income
+        \item Elasticities along the demand curve
+        \item Arc elasticity
+		\end{itemize}
+	\item Using regression analysis to estimate market behaviour
+		\begin{itemize}
+		\item Choosing explanatory variables
+		\item Sample selection
+        \item Bias, identification, causality
+        \item Using regressions to forecast
+		\end{itemize}
+	\item The identification problem in practice
+	\end{enumerate}
+\vfill
+}
+
+
+
+\frame{
+	\frametitle{Shifts in Equilibrium: Concurrent Shifts}
+	\begin{itemize}
+	\item When demand and supply change at the same time, the sizes of the shifts and the price elasticities of demand and supply determine the outcome.
+\item Recall that the price elasticity of demand is the percentage change in quantity demanded for a given percentage change in price;
+\begin{align*}
+  \epsilon=\frac{\text{percentage change in quantity demanded}}{\text{percentage change in price}}=\frac{\Delta Q/Q}{\Delta p/p}=\frac{\Delta Q}{\Delta p}\frac{p}{Q}
+\end{align*}
+	\item The elasticity of supply is calculated similarly as the percentage change in quantity supplied for a given percentage change in price;
+  	\item Hint: more \textit{elastic} is more responsive:
+\small{\begin{itemize}\item \textit{inelastic} demand or supply means an elasticity less than one (i.e. the relative magnitude of the quantity response is smaller than the price change)
+\item \textit{perfectly inelastic} demand has an elasticity of zero
+\item \textit{perfectly elastic} demand has undefined elasticity
+\end{itemize}}
+\end{itemize}
+}
+
+
+}
+
+\end{document}

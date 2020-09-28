@@ -1,0 +1,1028 @@
+---
+output: 
+  pdf_document:
+    keep_tex: true
+    fig_caption: yes
+    latex_engine: pdflatex
+    template: ../ajl_note_pack.tex
+    #template: ../svm-latex-syllabus.tex
+geometry: margin=1in
+
+course: "BUEC 311: Business Economics, Organization and Management"
+course_number: "BUEC 311"
+title: "Problem Set #3"
+subtitle: "Shifting equilibria"
+date: \today
+
+
+
+email: "aleach@ualberta.ca"
+web: "www.andrewleach.ca"
+officehours: "By appointment"
+office: "3-20D Business Building"
+classroom: "BUS 4-13 "
+classhours: "B2 TR 9:30-10:50, B1 TR 11:00-12:20"
+
+fontfamily: mathpazo
+fontsize: 11pt
+header-includes:
+   - \linespread{1.05}
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(echo=F,
+                      message=F,
+                      warning=F)
+
+knitr::opts_knit$set(dev.args = list(type = "cairo"))
+library(tidyverse)
+library(ggthemes)
+library(ggrepel)
+library(patchwork)
+
+blake_theme<-function(){
+  theme_hc(20)+
+    theme(plot.subtitle = element_text(color="grey10",size=rel(.7)),
+          plot.title = element_text(face="bold",size=rel(.8)),
+          plot.caption = element_text(color="grey50",size=rel(.5),hjust=0),
+          legend.title = element_text(color="grey10",size=rel(.5)),
+          legend.text = element_text(color="grey10",size=rel(.5)),
+          axis.title = element_text(size=rel(.8)),
+          axis.ticks = element_blank(),
+          panel.spacing = unit(2,"lines"),
+          #legend.position = "none",
+          plot.margin = margin(t = .5, r = 1, b = .25, l = 1,unit= "cm"),
+          axis.text.x = element_text(margin = margin(t = 10, r = 0, b = 0, l = 0))
+          
+    )
+}
+```
+
+```{r question_prelims, echo=FALSE, message=FALSE, warning=FALSE, results=FALSE}
+
+
+library(tidyverse)
+library(ggthemes)
+library(ggrepel)
+library(patchwork)
+library(scales)
+library(directlabels)
+library(exams)
+
+library(MASS)
+library(stringr)
+
+class_theme<-function(){
+  theme_classic()+
+    theme(
+      plot.subtitle = element_text(color="grey10",size=rel(.7)),
+      plot.title = element_text(face="bold",size=rel(.8)),
+      plot.caption = element_text(color="grey50",size=rel(.5),hjust=0),
+      legend.title = element_text(color="grey10",size=rel(.5)),
+      legend.text = element_text(color="grey10",size=rel(.5)),
+      axis.text = element_text(size=rel(1.5)),
+      axis.title = element_text(size=rel(1.5)),
+      panel.grid.major = element_line(size = .2,colour = "black"), 
+      #plot.margin = margin(t = .1, r = .1, b = .1, l = .1,unit= "cm"),
+      plot.margin = margin(t = .5, r = 1, b = .25, l = 1,unit= "cm"),
+      #axis.text.x = element_text(margin = margin(t = 10, r = 0, b = 0, l = 0)),
+      NULL)
+}
+
+
+
+class_clean<-function(){
+  theme_classic()+
+    theme(
+      plot.subtitle = element_text(color="grey10",size=rel(.7)),
+      plot.title = element_text(face="bold",size=rel(.8)),
+      plot.caption = element_text(color="grey50",size=rel(.5),hjust=0),
+      legend.title = element_text(color="grey10",size=rel(.5)),
+      legend.text = element_text(color="grey10",size=rel(.5)),
+      axis.text = element_text(size=rel(1.5)),
+      axis.title = element_text(size=rel(1.5)),
+      #panel.grid.major = element_line(size=0,colour = "black"), 
+      #plot.margin = margin(t = .1, r = .1, b = .1, l = .1,unit= "cm"),
+      plot.margin = margin(t = .5, r = 1, b = .25, l = 1,unit= "cm"),
+      #axis.text.x = element_text(margin = margin(t = 10, r = 0, b = 0, l = 0)),
+      NULL)
+}
+
+
+
+#u of a palette
+
+colors_ua10 <- function()
+{
+  #return(c("#007C41", "#FFDB05", "#7D9AAA", "#CA7700", "#165788", "#A8B400",
+  #         "#E0D760", "#404545", "#8D3C1E", "#004250"))
+  c("#007C41", "#FFDB05", "#7D9AAA","#165788","#404545","#8D3C1E","#3CB6CE")
+}
+
+p_demand<-function(q,d_int=200,d_slope=1){
+  ## Demand = Y - d_slope q
+  d_int-(d_slope*q)
+}
+
+p_supply<-function(q,s_int=0,s_slope=1){
+  ## Supply = s_slope q
+  (s_int+s_slope*q)
+}
+
+
+```
+
+This week's problems are meant to give you more practice on the basic tricks you'll need to manipulate supply and demand curves and calculate equilibrium conditions, but these also involve shifts in equilibria. Be methodical about your calculations and your analysis. In these questions, I've again given you multiple steps intentionally to build habits like checks and double-checks that you'll want to use. I won't always give these to you on exam questions.
+
+1. Let's use the market demand curve for coffee we derived in the last problem set of $Q=4000-\frac{2000p}{3}$. Let's also assume that the marginal cost of supplying coffee to the market is $Q=\frac{2000\,p}{3}$.
+
+
+
+```{r q_1_graphs, echo = FALSE, warning=FALSE,results = "hide",fig.retina=3,    fig.align = "center"}
+
+# start and make the basic demand curve
+
+
+#Use the market demand curve for coffee we derived in the problem sets from class of $Q=4000-\frac{2000p}{3}$ #and the initial supply function of $Q=\frac{2000\,p}{3}$. 
+
+#invert: $3Q/2000=6-p, p=6-3Q/2000
+#3Q/2000
+
+
+#set my parameters
+cases<-1
+
+
+d_int_set<-c(6)
+
+d_slope_set<-c(3/2000)
+
+s_slope_set<-c(3/2000)
+
+s_int_set<-c(0)
+
+demand_functions<-paste("$Q=",fractions(d_int_set/d_slope_set),"-",fractions(1/d_slope_set),"p$")
+
+inv_demand_functions<-paste("$p =",d_int_set,"-",fractions(d_slope_set),"Q$")
+
+
+inv_supply_functions<-paste("$p =",ifelse(s_int_set==0,"",paste(s_int_set,"+")),fractions(s_slope_set),"Q$")
+
+
+try(if((length(d_int_set)!=cases) | (length(d_slope_set)!=cases) | (length(s_int_set)!= cases) | (length(s_slope_set)!=cases))
+  stop("parameter vector size mismatch"))
+  
+#solve for x at price 100
+equil_q <- double(cases)
+equil_p <- double(cases)
+
+x_int_set <- double(cases)
+
+max_q<-max(d_int_set/d_slope_set)
+max_p<-max(d_int_set) #placeholders for intercepts
+
+case<-1
+for (case in seq(1,cases)) {
+#check the x intercept 
+print(case)
+  equil_q[case]<-uniroot(function(z) p_supply(z,s_int = s_int_set[case],s_slope =s_slope_set[case]) - p_demand(z,d_int = d_int_set[case],d_slope =d_slope_set[case]),c(0.1,max_q*1.1))[[1]]
+  print(equil_q)
+equil_p[case]<-p_supply(equil_q[case],s_int_set[case],s_slope=s_slope_set[case])
+print(equil_p)
+x_int_set[case]<-uniroot(function(z) p_demand(z,d_int = d_int_set[case],d_slope =d_slope_set[case]),c(0.1,max_q*1.1))[[1]]
+  print(equil_q)
+
+
+print(paste("max p is",max_p,"and equil p is",equil_p[case],"at quantity",equil_q[case]))
+
+
+}
+
+
+
+
+select<-1
+
+s_slope_new=3/1000
+
+#solve for new equil with demand at higher level
+new_equil_q<-uniroot(function(z) p_supply(z,s_int = s_int_set[select],s_slope =s_slope_new) - p_demand(z,d_int_set[select],d_slope =d_slope_set[select]),c(0.1,max_q*1.1))[[1]]
+
+new_equil_p<-p_supply(new_equil_q,s_int = s_int_set[select],s_slope =s_slope_new)
+
+
+map<-c(0,max_q)
+demand_1 <- Hmisc::bezier(x = map,y = p_demand(map,d_int = d_int_set[select],d_slope= d_slope_set[select])) %>% as_tibble()
+supply_1 <- Hmisc::bezier(x = map,y = p_supply(map,s_int = 0,s_slope =s_slope_set[select])) %>%  as_tibble()
+supply_2 <- Hmisc::bezier(x = map,y = p_supply(map,s_int = 0,s_slope =s_slope_new)) %>%  as_tibble()
+
+
+
+equil_base<-ggplot() + 
+  geom_path(data=demand_1,size = 2,aes(x = x, y = y,color="Demand")) +
+  geom_path(data=supply_2,size = 2,aes(x = x, y = y,color="Supply (New)"),linetype="dashed") +
+  geom_path(data=supply_1, aes(x = x, y = y,colour="Supply"),size = 2) +
+  #vertical segments
+  geom_segment(aes(x = equil_q[select], y =equil_p[select], xend = equil_q[select], yend = 0), lty = "dotted") +
+ geom_segment(aes(x = new_equil_q, y =new_equil_p, xend = new_equil_q, yend = 0), lty = "dotted") +
+  
+  #horizontal segments
+  geom_segment(aes(x = 0, y = equil_p[select], xend =equil_q[select], yend = equil_p[select]), lty = "dotted") +
+   geom_segment(aes(x = 0, y =new_equil_p, xend = new_equil_q, yend = new_equil_p), lty = "dotted") +
+ 
+    scale_color_manual(values = colors_ua10()[-2]) +
+  class_clean() + 
+  #coord_equal()+
+  scale_x_continuous(breaks=pretty_breaks(),expand=c(0,0),limits = c(0,max_q))+
+  scale_y_continuous(breaks=pretty_breaks(),expand=c(0,0),limits = c(0,max_p))+
+  
+  labs(x = "Quantity (q)",
+       y = "Price (p)")+
+  theme(legend.position = "blank")+
+   
+  #change arrows
+  geom_segment(aes(xend = new_equil_q, y = 0.5, x = equil_q, yend = 0.5),
+               arrow = arrow(length = unit(0.25,"cm")),size=.75,colour="black")+
+  geom_segment(aes(xend = 200, y = equil_p, x = 200, yend = new_equil_p),
+               arrow = arrow(length = unit(0.25,"cm")),size=.75,colour="black")+
+  
+  geom_point(aes(y = new_equil_p, x = new_equil_q),size=4,colour="black")+
+  geom_point(aes(y = equil_p, x = equil_q),size=4,colour="black")+
+  geom_label_repel(aes(y = equil_p, x = equil_q),label="Original\nequilibrium",
+                   nudge_y      = 0,
+                   nudge_x     = 1000,
+                   direction    = "x",
+                   angle        = 90,
+                   vjust        = 0,
+                   segment.size = 0.2,
+                   colour="black")+
+  
+  geom_label_repel(aes(y = new_equil_p, x = new_equil_q),label="New\nequilibrium",
+                   nudge_y      = 50,
+                   nudge_x     = 2,
+                   direction    = "x",
+                   angle        = 90,
+                   vjust        = 0,
+                   segment.size = 0.2,
+                   colour="black")+
+  
+  NULL
+equil_base
+
+```
+
+
+   a) Calculate the equilibrium price and quantity (a repeat from last week)
+   
+   p=`r equil_p`, q=`r equil_q`
+   
+   
+   b) Suppose that a drought reduces the coffee crop increasing the cost of supplying coffee leading to a reduction in the supply function to $Q=\frac{1000\,p}{3}$. Solve for the new equilibrium price and quantity in the market.
+   
+   
+   p=`r new_equil_p`, q=`r fractions(new_equil_q)` or 4000/3
+   
+   c) Show, on a graph, the changes in the inverse supply and demand functions, and label the original and new equilibrium prices and quantities.
+   
+   See above
+   
+   d) Is this a change in demand or a movement along the demand curve? Why?
+   
+   This change is a movement along the demand curve because both the new and original equilibria lie on the same (green) demand curve.
+
+
+
+
+
+\newpage 
+
+2. Use the market demand curve for coffee we derived in the last problem set of $Q=4000-\frac{2000p}{3}$ along with the supply function of $Q=\frac{2000\,p}{3}$. 
+   a) Suppose a coffee tax of \$0.50 per cup is levied by the university in an attempt to recover some revenues lost to COVID-19. What's the impact on the market if you assume that the tax is charged to the coffee vendor based on the number of cups of coffee sold?
+   
+   The equilibrium price will increase to \$3.25, up from \$3, and the equilibrium quantity drops from 2000 to 5500/3. The revenue to suppliers drops from $3 to 2.75.
+   
+```{r q_2_graphs, echo = FALSE, warning=FALSE,results = "hide",fig.retina=3,    fig.align = "center"}
+
+# start and make the basic demand curve
+
+
+#Use the market demand curve for coffee we derived in the problem sets from class of $Q=4000-\frac{2000p}{3}$ #and the initial supply function of $Q=\frac{2000\,p}{3}$. 
+
+#invert: $3Q/2000=6-p, p=6-3Q/2000
+#3Q/2000
+
+
+#set my parameters
+cases<-1
+
+
+d_int_set<-c(6)
+
+d_slope_set<-c(3/2000)
+
+s_slope_set<-c(3/2000)
+
+s_int_set<-c(0)
+
+demand_functions<-paste("$Q=",fractions(d_int_set/d_slope_set),"-",fractions(1/d_slope_set),"p$")
+
+inv_demand_functions<-paste("$p =",d_int_set,"-",fractions(d_slope_set),"Q$")
+
+
+inv_supply_functions<-paste("$p =",ifelse(s_int_set==0,"",paste(s_int_set,"+")),fractions(s_slope_set),"Q$")
+
+
+try(if((length(d_int_set)!=cases) | (length(d_slope_set)!=cases) | (length(s_int_set)!= cases) | (length(s_slope_set)!=cases))
+  stop("parameter vector size mismatch"))
+  
+#solve for x at price 100
+equil_q <- double(cases)
+equil_p <- double(cases)
+
+x_int_set <- double(cases)
+
+max_q<-max(d_int_set/d_slope_set)
+max_p<-max(d_int_set) #placeholders for intercepts
+
+case<-1
+for (case in seq(1,cases)) {
+#check the x intercept 
+print(case)
+  equil_q[case]<-uniroot(function(z) p_supply(z,s_int = s_int_set[case],s_slope =s_slope_set[case]) - p_demand(z,d_int = d_int_set[case],d_slope =d_slope_set[case]),c(0.1,max_q*1.1))[[1]]
+  print(equil_q)
+equil_p[case]<-p_supply(equil_q[case],s_int_set[case],s_slope=s_slope_set[case])
+print(equil_p)
+x_int_set[case]<-uniroot(function(z) p_demand(z,d_int = d_int_set[case],d_slope =d_slope_set[case]),c(0.1,max_q*1.1))[[1]]
+  print(equil_q)
+
+
+print(paste("max p is",max_p,"and equil p is",equil_p[case],"at quantity",equil_q[case]))
+
+
+}
+
+
+
+
+select<-1
+
+p_tax<-0.50
+c_tax<-0
+map<-c(0,max_q)
+demand_1 <- Hmisc::bezier(x = map,y = p_demand(map,d_int = d_int_set[select],d_slope= d_slope_set[select])) %>% as_tibble()
+
+demand_2 <- Hmisc::bezier(x = map,y = p_demand(map,d_int = d_int_set[select]+c_tax,d_slope= d_slope_set[select])) %>% as_tibble()
+
+
+supply_1 <- Hmisc::bezier(x = map,y = p_supply(map,s_int = 0,s_slope =s_slope_set[select])) %>%  as_tibble()
+supply_2 <- Hmisc::bezier(x = map,y = p_supply(map,s_int = 0+p_tax,s_slope =s_slope_set[select])) %>%  as_tibble()
+
+
+#solve for new equil with a tax on producers
+new_equil_q<-uniroot(function(z) p_supply(z,s_int = s_int_set[select]+p_tax,s_slope =s_slope_set[select]) - p_demand(z,d_int_set[select],d_slope =d_slope_set[select]),c(0.1,max_q*1.1))[[1]]
+
+new_equil_mc<-p_supply(new_equil_q,s_int = s_int_set[select],s_slope =s_slope_set[select])
+
+new_equil_mb<-p_demand(new_equil_q,d_int = d_int_set[select]+c_tax,d_slope= d_slope_set[select])
+
+equil_base<-ggplot() + 
+  geom_path(data=demand_1,size = 2,aes(x = x, y = y,color="Demand")) +
+  geom_path(data=supply_2,size = 2,aes(x = x, y = y,color="Supply (New)"),linetype="dashed") +
+  geom_path(data=supply_1, aes(x = x, y = y,colour="Supply"),size = 2) +
+  #vertical segments
+  geom_segment(aes(x = equil_q[select], y =equil_p[select], xend = equil_q[select], yend = 0), lty = "dotted") +
+ geom_segment(aes(x = new_equil_q, y =new_equil_mc, xend = new_equil_q, yend = 0), lty = "dotted") +
+ geom_segment(aes(x = new_equil_q, y =new_equil_mb, xend = new_equil_q, yend = 0), lty = "dotted") +
+  
+  #horizontal segments
+  geom_segment(aes(x = 0, y = equil_p[select], xend =equil_q[select], yend = equil_p[select]), lty = "dotted") +
+   geom_segment(aes(x = 0, y =new_equil_mc, xend = new_equil_q, yend = new_equil_mc), lty = "dotted") +
+   geom_segment(aes(x = 0, y =new_equil_mb, xend = new_equil_q, yend = new_equil_mb), lty = "dotted") +
+ 
+    scale_color_manual(values = colors_ua10()[-2]) +
+  class_clean() + 
+  #coord_equal()+
+  scale_x_continuous(breaks=pretty_breaks(),expand=c(0,0),limits = c(0,max_q))+
+  scale_y_continuous(breaks=pretty_breaks(),expand=c(0,0),limits = c(0,max_p))+
+  
+  labs(x = "Quantity (q)",
+       y = "Price (p)")+
+  theme(legend.position = "blank")+
+   
+  #change arrows
+  geom_segment(aes(xend = new_equil_q, y = 0.5, x = equil_q, yend = 0.5),
+               arrow = arrow(length = unit(0.25,"cm")),size=.75,colour="black")+
+  geom_segment(aes(xend = 200, y = equil_p, x = 200, yend = new_equil_mc),
+               arrow = arrow(length = unit(0.25,"cm")),size=.75,colour="black")+
+   geom_segment(aes(xend = 200, y = equil_p, x = 200, yend = new_equil_mb),
+               arrow = arrow(length = unit(0.25,"cm")),size=.75,colour="black")+
+  
+  geom_point(aes(y = new_equil_mb, x = new_equil_q),size=4,colour="black")+
+  geom_point(aes(y = equil_p, x = equil_q),size=4,colour="black")+
+  geom_label_repel(aes(y = equil_p, x = equil_q),label="Original\nequilibrium",
+                   nudge_y      = 0,
+                   nudge_x     = 1000,
+                   direction    = "x",
+                   angle        = 90,
+                   vjust        = 0,
+                   segment.size = 0.2,
+                   colour="black")+
+  
+  geom_label_repel(aes(y = max(new_equil_mb,new_equil_mc), x = new_equil_q),label="New\nequilibrium",
+                   nudge_y      = 50,
+                   nudge_x     = 2,
+                   direction    = "x",
+                   angle        = 90,
+                   vjust        = 0,
+                   segment.size = 0.2,
+                   colour="black")+
+  
+  NULL
+equil_base
+
+```
+
+   b) What happens if the same tax is added at the cash register and charged to patrons directly, with the proceeds of the tax remitted to the university?
+   
+   Nothing changes in this case from a tax applied on the vendor. Whether it's effectively an extra charge that the consumer will pay, or an extra input cost, we end up with the same economic outcome of p=\$3.25 and Q=5500/3, and the before-tax revenue to suppliers is \$2.75.
+   
+```{r q_2_b_graphs, echo = FALSE, warning=FALSE,results = "hide",fig.retina=3,    fig.align = "center"}
+
+# start and make the basic demand curve
+
+
+#Use the market demand curve for coffee we derived in the problem sets from class of $Q=4000-\frac{2000p}{3}$ #and the initial supply function of $Q=\frac{2000\,p}{3}$. 
+
+#invert: $3Q/2000=6-p, p=6-3Q/2000
+#3Q/2000
+
+
+#set my parameters
+cases<-1
+
+
+d_int_set<-c(6)
+
+d_slope_set<-c(3/2000)
+
+s_slope_set<-c(3/2000)
+
+s_int_set<-c(0)
+
+demand_functions<-paste("$Q=",fractions(d_int_set/d_slope_set),"-",fractions(1/d_slope_set),"p$")
+
+inv_demand_functions<-paste("$p =",d_int_set,"-",fractions(d_slope_set),"Q$")
+
+
+inv_supply_functions<-paste("$p =",ifelse(s_int_set==0,"",paste(s_int_set,"+")),fractions(s_slope_set),"Q$")
+
+
+try(if((length(d_int_set)!=cases) | (length(d_slope_set)!=cases) | (length(s_int_set)!= cases) | (length(s_slope_set)!=cases))
+  stop("parameter vector size mismatch"))
+  
+#solve for x at price 100
+equil_q <- double(cases)
+equil_p <- double(cases)
+
+x_int_set <- double(cases)
+
+max_q<-max(d_int_set/d_slope_set)
+max_p<-max(d_int_set) #placeholders for intercepts
+
+case<-1
+for (case in seq(1,cases)) {
+#check the x intercept 
+print(case)
+  equil_q[case]<-uniroot(function(z) p_supply(z,s_int = s_int_set[case],s_slope =s_slope_set[case]) - p_demand(z,d_int = d_int_set[case],d_slope =d_slope_set[case]),c(0.1,max_q*1.1))[[1]]
+  print(equil_q)
+equil_p[case]<-p_supply(equil_q[case],s_int_set[case],s_slope=s_slope_set[case])
+print(equil_p)
+x_int_set[case]<-uniroot(function(z) p_demand(z,d_int = d_int_set[case],d_slope =d_slope_set[case]),c(0.1,max_q*1.1))[[1]]
+  print(equil_q)
+
+
+print(paste("max p is",max_p,"and equil p is",equil_p[case],"at quantity",equil_q[case]))
+
+
+}
+
+
+
+
+select<-1
+
+p_tax<-0
+c_tax<-0.5
+map<-c(0,max_q)
+demand_1 <- Hmisc::bezier(x = map,y = p_demand(map,d_int = d_int_set[select],d_slope= d_slope_set[select])) %>% as_tibble()
+
+demand_2 <- Hmisc::bezier(x = map,y = p_demand(map,d_int = d_int_set[select]-c_tax,d_slope= d_slope_set[select])) %>% as_tibble()
+
+
+supply_1 <- Hmisc::bezier(x = map,y = p_supply(map,s_int = 0,s_slope =s_slope_set[select])) %>%  as_tibble()
+supply_2 <- Hmisc::bezier(x = map,y = p_supply(map,s_int = 0+p_tax,s_slope =s_slope_set[select])) %>%  as_tibble()
+
+
+#solve for new equil with a tax on producers
+new_equil_q<-uniroot(function(z) p_supply(z,s_int = s_int_set[select]+p_tax,s_slope =s_slope_set[select]) - p_demand(z,d_int_set[select]-c_tax,d_slope =d_slope_set[select]),c(0.1,max_q*1.1))[[1]]
+
+new_equil_mc<-p_supply(new_equil_q,s_int = s_int_set[select],s_slope =s_slope_set[select])
+
+new_equil_mb<-p_demand(new_equil_q,d_int = d_int_set[select],d_slope= d_slope_set[select])
+
+equil_base<-ggplot() + 
+  geom_path(data=demand_1,size = 2,aes(x = x, y = y,color="Demand")) +
+  geom_path(data=demand_2,size = 2,aes(x = x, y = y,color="Demand (New)"),linetype="dashed") +
+  geom_path(data=supply_1, aes(x = x, y = y,colour="Supply"),size = 2) +
+  #vertical segments
+  geom_segment(aes(x = equil_q[select], y =equil_p[select], xend = equil_q[select], yend = 0), lty = "dotted") +
+ geom_segment(aes(x = new_equil_q, y =new_equil_mc, xend = new_equil_q, yend = 0), lty = "dotted") +
+ geom_segment(aes(x = new_equil_q, y =new_equil_mb, xend = new_equil_q, yend = 0), lty = "dotted") +
+  
+  #horizontal segments
+  geom_segment(aes(x = 0, y = equil_p[select], xend =equil_q[select], yend = equil_p[select]), lty = "dotted") +
+   geom_segment(aes(x = 0, y =new_equil_mc, xend = new_equil_q, yend = new_equil_mc), lty = "dotted") +
+   geom_segment(aes(x = 0, y =new_equil_mb, xend = new_equil_q, yend = new_equil_mb), lty = "dotted") +
+ 
+    scale_color_manual(values = colors_ua10()[-2]) +
+  class_clean() + 
+  #coord_equal()+
+  scale_x_continuous(breaks=pretty_breaks(),expand=c(0,0),limits = c(0,max_q))+
+  scale_y_continuous(breaks=pretty_breaks(),expand=c(0,0),limits = c(0,max_p))+
+  
+  labs(x = "Quantity (q)",
+       y = "Price (p)")+
+  theme(legend.position = "blank")+
+   
+  #change arrows
+  geom_segment(aes(xend = new_equil_q, y = 0.5, x = equil_q, yend = 0.5),
+               arrow = arrow(length = unit(0.25,"cm")),size=.75,colour="black")+
+  geom_segment(aes(xend = 200, y = equil_p, x = 200, yend = new_equil_mc),
+               arrow = arrow(length = unit(0.25,"cm")),size=.75,colour="black")+
+   geom_segment(aes(xend = 200, y = equil_p, x = 200, yend = new_equil_mb),
+               arrow = arrow(length = unit(0.25,"cm")),size=.75,colour="black")+
+  
+  geom_point(aes(y = new_equil_mb, x = new_equil_q),size=4,colour="black")+
+  geom_point(aes(y = equil_p, x = equil_q),size=4,colour="black")+
+  geom_label_repel(aes(y = equil_p, x = equil_q),label="Original\nequilibrium",
+                   nudge_y      = 0,
+                   nudge_x     = 1000,
+                   direction    = "x",
+                   angle        = 90,
+                   vjust        = 0,
+                   segment.size = 0.2,
+                   colour="black")+
+  
+  geom_label_repel(aes(y = max(new_equil_mb,new_equil_mc), x = new_equil_q),label="New\nequilibrium",
+                   nudge_y      = 50,
+                   nudge_x     = 2,
+                   direction    = "x",
+                   angle        = 90,
+                   vjust        = 0,
+                   segment.size = 0.2,
+                   colour="black")+
+  
+  NULL
+equil_base
+
+```
+   
+   
+   
+   c) Why does the equilibrium price of coffee not increase by the same amount as the tax?
+   
+   The tax is paid for in part by producers and in part by consumers. Only if the demand curve were perfectly inelastic or if the supply curve was perfectly elastic would the entire cost of the tax be reflected in the change in price.
+      
+   
+
+\newpage
+
+3. On slide 81 of the full supply and demand deck, I give you a graph of a concurrent shift in supply and demand due to a change in crude oil prices affecting both the input costs to produce gasoline and the income of consumers. Based on the remainder of the information in the deck:
+
+
+```{r q_3_graphs, echo = FALSE, warning=FALSE,results = "hide",fig.retina=3,    fig.align = "center"}
+
+map<-c(0,10,20,50)
+demand_1 <- Hmisc::bezier(x = map,
+                          y = p_demand(map,d_int = 200,d_slope =5 )) %>%
+  as_tibble()
+
+demand_2 <- Hmisc::bezier(x = map,
+                          y = p_demand(map,d_int = 220,d_slope =5 )) %>%
+  as_tibble()
+
+
+all_demand_curves <- bind_rows(demand_1, .id = "id")
+
+map<-c(0,10,20,50)
+supply_1 <- Hmisc::bezier(x = map,
+                          y = p_supply(map,s_int = 30,s_slope =3)) %>%
+  as_tibble()
+
+
+uniroot(function(z) 200-5*z-30-3*z,c(0,100) )[[1]]
+
+uniroot(function(z) 10+z/3-20,c(0,100) )[[1]]
+
+
+#solve for new x at price 100
+equil_q<-uniroot(function(z) p_supply(z,s_int = 30,s_slope =3) - p_demand(z,d_int = 200,d_slope =5),c(0,50))[[1]]
+
+equil_p<-p_supply(equil_q,s_int = 30,s_slope =3)
+equil_base<-ggplot() + 
+  geom_path(data=demand_1,size = 2,aes(x = x, y = y,color="Demand")) +
+  geom_path(data=supply_1, aes(x = x, y = y,colour="Supply"),size = 2) +
+  scale_color_manual(values = colors_ua10()[-2]) +
+  class_clean() + 
+  #coord_equal()+
+  scale_x_continuous(breaks=pretty_breaks(),expand=c(0,0),limits=c(0,45))+
+  scale_y_continuous(breaks=pretty_breaks(),expand=c(0,0),limits=c(0,220))+
+  
+  
+  #function labels
+  geom_segment(aes(colour="Supply",xend = 30, y = p_supply(30,s_int = 30,s_slope =3)-20, x = 35, yend = p_supply(30,s_int = 30,s_slope =3)),
+               arrow = arrow(length = unit(0.5,"cm")),size=1)+
+  geom_text(aes(y = p_supply(30,s_int = 30,s_slope =3)-20, x = 35.5),
+            label= "Supply~curve~S[1]",parse = TRUE, hjust=0, size = rel(3.5))+
+  
+  geom_segment(aes(colour="Demand",xend = 30, y = p_demand(30,d_int = 200,d_slope =5 )+20, x = 35, yend = p_demand(30,d_int = 200,d_slope =5 )),
+               arrow = arrow(length = unit(0.5,"cm")),size=1.25)+
+  geom_text(aes(y = p_demand(30,d_int = 200,d_slope =5 )+20, x = 35.5),
+            label= "Demand~curve~D[1]",parse = TRUE, hjust=0, size = rel(3.5))+
+  
+  labs(x = "Quantity (q)",
+       y = "Price (p)")+
+  theme(legend.position = "blank")+
+  NULL
+
+  
+demand_2 <- Hmisc::bezier(x = map,
+                          y = p_demand(map,d_int = 210,d_slope =5 )) %>%
+  as_tibble()
+supply_2 <- Hmisc::bezier(x = map,
+                          y = p_supply(map,s_int = 60,s_slope =3)) %>%
+  as_tibble()
+new_equil_q<-uniroot(function(z) p_supply(z,s_int = 60,s_slope =3) - p_demand(z,d_int = 210,d_slope =5),c(0,50))[[1]]
+
+new_equil_p<-p_supply(new_equil_q,s_int = 60,s_slope =3)
+
+
+
+equil_base+
+  #vertical segments
+  geom_segment(aes(x = equil_q, y =equil_p, xend = equil_q, yend = 0), lty = "dotted") +
+  
+  #horizontal segments
+  geom_segment(aes(x = 0, y = equil_p, xend =equil_q, yend = equil_p), lty = "dotted") +
+  
+  
+  geom_path(data=supply_2,size = 2,aes(x = x, y = y,color="Supply"),linetype="dashed") +
+  geom_path(data=demand_2,size = 2,aes(x = x, y = y,color="Demand"),linetype="dashed") +
+  #curve labels
+  geom_segment(aes(colour="Demand",xend = 32, y = p_demand(30,d_int = 210,d_slope =5 ), x = 35, yend = p_demand(32,d_int = 210,d_slope =5 )),
+               arrow = arrow(length = unit(0.5,"cm")),size=1.25)+
+  geom_text(aes(y = p_demand(30,d_int = 210,d_slope =5 ), x = 35.5),
+            label= "New~demand~curve~D[2]",parse = TRUE, hjust=0, size = rel(3.5))+
+  
+  geom_segment(aes(colour="Supply",xend = 25, y = p_supply(25,s_int = 60,s_slope =3)+70, x = 30, yend = p_supply(25,s_int = 60,s_slope =3)),
+               arrow = arrow(length = unit(0.5,"cm")),size=1.25)+
+  
+  geom_text(aes(y = p_supply(25,s_int = 60,s_slope =3)+70, x = 30.5),
+            label= "New~supply~curve~S[2]",parse = TRUE, hjust=0, size = rel(3.5))+
+  #new equil#
+  #vertical segments
+  geom_segment(aes(x = new_equil_q, y = new_equil_p, xend = new_equil_q, yend = 0), lty = "dotted",colour="blue") +
+  
+  #horizontal segments
+  geom_segment(aes(x = 0, y = new_equil_p, xend = new_equil_q, yend = new_equil_p), lty = "dotted",colour="blue") +
+  
+  #change arrows
+  geom_segment(aes(xend = new_equil_q, y = 10, x = equil_q, yend = 10),
+               arrow = arrow(length = unit(0.5,"cm")),size=1.25,colour="black")+
+  geom_segment(aes(xend = 5, y = equil_p, x = 5, yend = new_equil_p),
+               arrow = arrow(length = unit(0.5,"cm")),size=1.25,colour="black")+
+  
+  #movement along the curve arrow
+  geom_segment(aes(xend = new_equil_q, y = equil_p, x = equil_q, yend = new_equil_p),
+               arrow = arrow(length = unit(0.5,"cm")),size=1.25,colour="black")+
+  
+  geom_point(aes(colour="Demand", y = new_equil_p, x = new_equil_q),size=4)+
+  geom_point(aes(colour="Demand",y = equil_p, x = equil_q),size=4)+
+  geom_label_repel(aes(colour="Demand",y = equil_p, x = equil_q),label="Original\nequilibrium",
+                   nudge_y      = -20,
+                   nudge_x     = 10,
+                   direction    = "x",
+                   angle        = 90,
+                   vjust        = 0,
+                   segment.size = 0.2)+
+  
+  geom_label_repel(aes(colour="Demand",y = new_equil_p, x = new_equil_q),label="New\nequilibrium",
+                   nudge_y      = 20,
+                   nudge_x     = 0,
+                   direction    = "x",
+                   angle        = 90,
+                   vjust        = 0,
+                   segment.size = 0.2)+
+  
+  NULL
+
+```
+a) Write out the initial supply and demand functions and solve for the initial equilibrium price and quantity (this is a freebie, as this is all in the deck)
+
+   p=`r equil_p` Q=`r equil_q`
+
+   b) Solve for the price and quantity at the new equilibrium (not in the deck)
+   
+   p=`r new_equil_p` Q=`r new_equil_q`
+   
+   c) Now, assume the government levies a 20c/l tax (\$0.20/l in the units in the deck) on gasoline payable by suppliers. Calculate a new equlibrium price and quantity.
+   
+      
+```{r q_3d_graphs, echo = FALSE, warning=FALSE,results = "hide",fig.retina=3,    fig.align = "center"}
+   
+demand_2 <- Hmisc::bezier(x = map,
+                          y = p_demand(map,d_int = 210,d_slope =5 )) %>%
+  as_tibble()
+
+
+supply_inc <- Hmisc::bezier(x = map,
+                          y = p_supply(map,s_int = 60+20,s_slope =3)) %>%
+  as_tibble()
+
+supply_2 <- Hmisc::bezier(x = map,
+                          y = p_supply(map,s_int = 60,s_slope =3)) %>%
+  as_tibble()
+
+
+new_equil_q<-uniroot(function(z) p_supply(z,s_int = 60,s_slope =3) - p_demand(z,d_int = 210-20,d_slope =5),c(0,50))[[1]]
+
+new_equil_mc<-p_supply(new_equil_q,s_int = 60,s_slope =3)
+
+new_equil_mb<-p_demand(new_equil_q,d_int = 210,d_slope =5 )
+
+
+equil_base+
+  #vertical segments
+  geom_segment(aes(x = new_equil_q, y =new_equil_mb, xend = new_equil_q, yend = 0), lty = "dotted") +
+  
+  #horizontal segments
+  geom_segment(aes(x = 0, y = new_equil_mb, xend =new_equil_q, yend = new_equil_mb), lty = "dotted") +
+  
+  
+  geom_path(data=supply_2,size = 2,aes(x = x, y = y,color="Supply"),linetype="dashed") +
+  geom_path(data=demand_2,size = 2,aes(x = x, y = y,color="Demand"),linetype="dashed") +
+  geom_path(data=supply_inc,size = 2,aes(x = x, y = y,color="Supply"),linetype="dotted") +
+  #curve labels
+  geom_segment(aes(colour="Demand",xend = 32, y = p_demand(30,d_int = 210,d_slope =5 ), x = 35, yend = p_demand(32,d_int = 210,d_slope =5 )),
+               arrow = arrow(length = unit(0.5,"cm")),size=1.25)+
+  geom_text(aes(y = p_demand(30,d_int = 210,d_slope =5 ), x = 35.5),
+            label= "New~demand~D[2]",parse = TRUE, hjust=0, size = rel(3.5))+
+  
+  geom_segment(aes(colour="Supply",xend = 22, y = p_supply(28,s_int = 60,s_slope =3)+60, x = 27.5, yend = p_supply(22,s_int = 60,s_slope =3)),
+               arrow = arrow(length = unit(0.5,"cm")),size=1.25)+
+  
+  geom_text(aes(y = p_supply(28,s_int = 60,s_slope =3)+60, x = 28),
+            label= "New~supply~curve~S[2]",parse = TRUE, hjust=0, size = rel(3.5))+
+  
+  
+  geom_segment(aes(colour="Supply",xend = 20, y = p_supply(20,s_int = 60+20,s_slope =3)+70, x = 25, yend = p_supply(25,s_int = 60+10,s_slope =3)),
+               arrow = arrow(length = unit(0.5,"cm")),size=1.25)+
+  
+  geom_text(aes(y = p_supply(25,s_int = 60+20,s_slope =3)+60, x = 25.5),
+            label= "New~supply~curve~S[2]~plus~tax",parse = TRUE, hjust=0, size = rel(3.5))+
+  
+  
+  #new equil#
+  #vertical segments
+  geom_segment(aes(x = new_equil_q, y = new_equil_mb, xend = new_equil_q, yend = 0), lty = "dotted",colour="blue") +
+  
+   #horizontal segments
+  geom_segment(aes(x = 0, y = new_equil_mb, xend = new_equil_q, yend = new_equil_mb), lty = "dotted",colour="blue") +
+  
+  #horizontal segments
+  geom_segment(aes(x = 0, y = new_equil_mc, xend = new_equil_q, yend = new_equil_mc), lty = "dotted",colour="blue") +
+  
+  geom_point(aes(colour="Demand", y = new_equil_mb, x = new_equil_q),size=4)+
+  geom_point(aes(colour="Demand",y = equil_p, x = equil_q),size=4)+
+  geom_label_repel(aes(colour="Demand",y = equil_p, x = equil_q),label="Original\nequilibrium",
+                   nudge_y      = -20,
+                   nudge_x     = 10,
+                   direction    = "x",
+                   angle        = 90,
+                   vjust        = 0,
+                   segment.size = 0.2)+
+  
+  geom_label_repel(aes(colour="Demand",y = new_equil_mb, x = new_equil_q),label="New\nequilibrium",
+                   nudge_y      = 50,
+                   nudge_x     = 0,
+                   direction    = "x",
+                   angle        = 90,
+                   vjust        = 0,
+                   segment.size = 0.2)+
+  
+  NULL
+
+```
+
+   
+   Here, the question was a bit ambiguous, but let's assume that this is an additional add-on to the double shift from above. So, since the question specifies that consumers pay the tax, you want to do demand net of taxes (the dotted demand curve) and then use that to calculate the supply and then the market price is the unshifted demand at that calculated quantity. So, p=`r new_equil_mb` Q=`r new_equil_q`.
+   
+ 
+   
+   d) Has the price increased by the cost of the tax? If not, why did the producers not simply \textit{pass the cost on} to consumers?
+
+The price has increased, from p=`r new_equil_p` to p=`r new_equil_mb`, but that's less than the value of the tax. Had the suppliers attempted to pass all of the cost of the tax into market prices, equilibrium quantities would have dropped more than they did, leading to lower value for suppliers.
+
+   e) Now, assume the government levies a 20c/l tax (\$0.20/l in the units in the deck) on gasoline payable at the cash register by consumers. Calculate the new equlibrium price and quantity.
+   
+```{r q_3c_graphs, echo = FALSE, warning=FALSE,results = "hide",fig.retina=3,    fig.align = "center"}
+   
+demand_2 <- Hmisc::bezier(x = map,
+                          y = p_demand(map,d_int = 210-20,d_slope =5 )) %>%
+  as_tibble()
+
+demand_inc <- Hmisc::bezier(x = map,
+                          y = p_demand(map,d_int = 210,d_slope =5 )) %>%
+  as_tibble()
+
+supply_2 <- Hmisc::bezier(x = map,
+                          y = p_supply(map,s_int = 60,s_slope =3)) %>%
+  as_tibble()
+
+
+new_equil_q<-uniroot(function(z) p_supply(z,s_int = 60,s_slope =3) - p_demand(z,d_int = 210-20,d_slope =5),c(0,50))[[1]]
+
+new_equil_mc<-p_supply(new_equil_q,s_int = 60,s_slope =3)
+
+new_equil_mb<-p_demand(new_equil_q,d_int = 210,d_slope =5 )
+
+
+equil_base+
+  #vertical segments
+  geom_segment(aes(x = new_equil_q, y =new_equil_mb, xend = new_equil_q, yend = 0), lty = "dotted") +
+  
+  #horizontal segments
+  geom_segment(aes(x = 0, y = new_equil_mb, xend =new_equil_q, yend = new_equil_mb), lty = "dotted") +
+  
+  
+  geom_path(data=supply_2,size = 2,aes(x = x, y = y,color="Supply"),linetype="dashed") +
+  geom_path(data=demand_2,size = 2,aes(x = x, y = y,color="Demand"),linetype="dotted") +
+  geom_path(data=demand_inc,size = 2,aes(x = x, y = y,color="Demand"),linetype="dashed") +
+  #curve labels
+  geom_segment(aes(colour="Demand",xend = 32, y = p_demand(30,d_int = 210-20,d_slope =5 ), x = 35, yend = p_demand(32,d_int = 210-20,d_slope =5 )),
+               arrow = arrow(length = unit(0.5,"cm")),size=1.25)+
+  geom_text(aes(y = p_demand(30,d_int = 210-20,d_slope =5 ), x = 35.5),
+            label= "Demand~D[2]~net~tax",parse = TRUE, hjust=0, size = rel(3.5))+
+  
+  geom_segment(aes(colour="Supply",xend = 25, y = p_supply(25,s_int = 60,s_slope =3)+70, x = 30, yend = p_supply(25,s_int = 60,s_slope =3)),
+               arrow = arrow(length = unit(0.5,"cm")),size=1.25)+
+  
+  geom_text(aes(y = p_supply(25,s_int = 60,s_slope =3)+70, x = 30.5),
+            label= "New~supply~curve~S[2]",parse = TRUE, hjust=0, size = rel(3.5))+
+  #new equil#
+  #vertical segments
+  geom_segment(aes(x = new_equil_q, y = new_equil_mb, xend = new_equil_q, yend = 0), lty = "dotted",colour="blue") +
+  
+   #horizontal segments
+  geom_segment(aes(x = 0, y = new_equil_mb, xend = new_equil_q, yend = new_equil_mb), lty = "dotted",colour="blue") +
+  
+  #horizontal segments
+  geom_segment(aes(x = 0, y = new_equil_mc, xend = new_equil_q, yend = new_equil_mc), lty = "dotted",colour="blue") +
+  
+  geom_point(aes(colour="Demand", y = new_equil_mb, x = new_equil_q),size=4)+
+  geom_point(aes(colour="Demand",y = equil_p, x = equil_q),size=4)+
+  geom_label_repel(aes(colour="Demand",y = equil_p, x = equil_q),label="Original\nequilibrium",
+                   nudge_y      = -20,
+                   nudge_x     = 10,
+                   direction    = "x",
+                   angle        = 90,
+                   vjust        = 0,
+                   segment.size = 0.2)+
+  
+  geom_label_repel(aes(colour="Demand",y = new_equil_mb, x = new_equil_q),label="New\nequilibrium",
+                   nudge_y      = 50,
+                   nudge_x     = 0,
+                   direction    = "x",
+                   angle        = 90,
+                   vjust        = 0,
+                   segment.size = 0.2)+
+  
+  NULL
+
+```
+ 
+   There is no change in the equilibrium when the tax is added to supply instead of taken away from demand. It doesn't matter whether you model it as an additional input cost or as a consumer payment. The price has increased, from p=`r new_equil_p` to p=`r new_equil_mb`, but that's less than the value of the tax. Quantity has decreased from 18.75 to 16.25 as a result of the tax.
+   
+   
+   f) In the new equilibrium, what's the revenue per litre earned by producers and what is the price paid by consumers?  
+
+In equilibrium, producers receive `r new_equil_mc`, consumers pay `r new_equil_mb`, and the difference (t=20) goes to the government as tax revenue.
+\newpage
+   
+   
+   
+   
+4. In your own words and graphs (using the supply and demand functions from the class deck), describe the impact of a price ceiling on gasoline applied at a cost of \$0.80/l. What is likely to result from this price ceiling? (For now, assume the market is competitive. We'll abandon this in due course.)
+
+
+
+
+
+```{r q_4_graphs, echo = FALSE, warning=FALSE,results = "hide",fig.retina=3,    fig.align = "center"}
+   
+demand_2 <- Hmisc::bezier(x = map,
+                          y = p_demand(map,d_int = 210,d_slope =5 )) %>%
+  as_tibble()
+
+
+supply_inc <- Hmisc::bezier(x = map,
+                          y = p_supply(map,s_int = 60+20,s_slope =3)) %>%
+  as_tibble()
+
+supply_2 <- Hmisc::bezier(x = map,
+                          y = p_supply(map,s_int = 60,s_slope =3)) %>%
+  as_tibble()
+
+
+new_equil_q<-uniroot(function(z) p_supply(z,s_int = 60,s_slope =3) - p_demand(z,d_int = 210,d_slope =5),c(0,50))[[1]]
+
+new_equil_p<-p_supply(new_equil_q,s_int = 60,s_slope =3)
+
+
+new_equil_qs<-uniroot(function(z) p_supply(z,s_int = 60,s_slope =3) -80,c(0,50))[[1]]
+                     
+new_equil_qd<-uniroot(function(z) p_demand(z,d_int = 210,d_slope =5)-80,c(0,50))[[1]]
+
+new_equil_mc<-80
+
+new_equil_mb<-80
+
+
+equil_base+
+  #vertical segments
+  geom_segment(aes(x = new_equil_qs, y =80, xend = new_equil_qs, yend = 0), lty = "dotted") +
+  geom_segment(aes(x = new_equil_qd, y =80, xend = new_equil_qd, yend = 0), lty = "dotted") +
+
+  geom_path(data=supply_2,size = 2,aes(x = x, y = y,color="Supply"),linetype="dashed") +
+  geom_path(data=demand_2,size = 2,aes(x = x, y = y,color="Demand"),linetype="dashed") +
+  geom_path(data=supply_inc,size = 1,aes(x = x, y = 80,color="Price Ceiling"),linetype="solid") +
+  #curve labels
+  geom_segment(aes(colour="Demand",xend = 35, y = p_demand(30,d_int = 210,d_slope =5 ), x = 35, yend = p_demand(35,d_int = 210,d_slope =5 )),
+               arrow = arrow(length = unit(0.5,"cm")),size=1.25)+
+  geom_text(aes(y = p_demand(30,d_int = 210,d_slope =5 ), x = 35.5),
+            label= "New~demand~D[2]",parse = TRUE, hjust=0, size = rel(3.5))+
+  
+  geom_segment(aes(colour="Price Ceiling",xend = 20, y = 30, x = 20, yend = 80),
+               arrow = arrow(length = unit(0.5,"cm")),size=1.25)+
+  
+  geom_text(aes(y = 30, x = 19),
+            label= "Price~ceiling",parse = TRUE, hjust=1, size = rel(3.5))+
+  
+  
+  geom_segment(aes(colour="Supply",xend = 20, y = p_supply(20,s_int = 60,s_slope =3)+70, x = 25, yend = p_supply(20,s_int = 60,s_slope =3)),
+               arrow = arrow(length = unit(0.5,"cm")),size=1.25)+
+  
+  geom_text(aes(y = p_supply(25,s_int = 60,s_slope =3)+60, x = 25.5),
+            label= "New~supply~curve~S[2]",parse = TRUE, hjust=0, size = rel(3.5))+
+  
+  geom_point(aes(colour="Demand", y = new_equil_p, x = new_equil_q),size=4)+
+  geom_point(aes(colour="Demand",y = equil_p, x = equil_q),size=4)+
+  geom_label_repel(aes(colour="Demand",y = equil_p, x = equil_q),label="Original\nequilibrium",
+                   nudge_y      = 19,
+                   nudge_x     = 20,
+                   direction    = "x",
+                   angle        = 90,
+                   vjust        = 0,
+                   segment.size = 0.2)+
+  
+  geom_label_repel(aes(colour="Demand",y = new_equil_p, x = new_equil_q),label="New\nequilibrium",
+                   nudge_y      = 40,
+                   nudge_x     = -2,
+                   direction    = "x",
+                   angle        = 90,
+                   vjust        = 0,
+                   segment.size = 0.2)+
+  
+    geom_point(aes(colour="Price Ceiling", y = 80, x = new_equil_qs),size=4)+
+  geom_point(aes(colour="Price Ceiling",y = 80, x = new_equil_qd),size=4)+
+  geom_label_repel(aes(colour="Price Ceiling",y = 80, x = new_equil_qd),label="Demand at\nprice ceiling",
+                   nudge_y      = -70,
+                   nudge_x     = 0,
+                   direction    = "x",
+                   angle        = 90,
+                   vjust        = 0,
+                   segment.size = 0.2)+
+  
+  geom_label_repel(aes(colour="Price Ceiling",y = 80, x = new_equil_qs),label="Supply at\nprice ceiling",
+                   nudge_y      = 20,
+                   nudge_x     = 0,
+                   direction    = "x",
+                   angle        = 90,
+                   vjust        = 0,
+                   segment.size = 0.2)+
+  NULL
+
+```
+
+There is a lot going on in this graph. The grey points indicate, respectively, the quantities supplied and demanded at the price ceiling. As you can see, the Quantity is far lower than the quantity consumers would demand at \$0.80 per litre for gasoline. This will imply a shortage and the shortage will lead to line-ups, and potentially to the development of black markets for gasoline, since the willingness to pay for the last unit of supply at the price ceiling is much higher than \$0.80 per litre.

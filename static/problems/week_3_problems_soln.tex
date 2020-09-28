@@ -1,0 +1,397 @@
+\documentclass[11pt,]{article}
+\usepackage[margin=1in]{geometry}
+\newcommand*{\authorfont}{\fontfamily{phv}\selectfont}
+\usepackage[]{mathpazo}
+
+\usepackage{amssymb,amsmath}
+\usepackage{xcolor}
+
+%TIKZ and Flow chart material
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows}
+\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm,text centered, draw=black, fill=red!30]
+\tikzstyle{io} = [trapezium, trapezium left angle=70, trapezium right angle=110, minimum width=3cm, minimum height=1cm, text centered, draw=black,fill=white]
+\tikzstyle{process} = [rectangle, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=white]
+\tikzstyle{decision} = [diamond, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=white]
+\tikzstyle{smalldecision} = [diamond, minimum width=1cm, minimum height=1cm, text centered, draw=black, fill=white]
+\tikzstyle{arrow} = [thick,->,>=stealth]
+\tikzstyle{line} = [thick,-]
+\tikzstyle{dot} = [circle,inner sep=0.5pt,draw=black, fill=black]
+
+
+%\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm,text centered, %draw=black, fill=red!30]
+%\tikzstyle{io} = [trapezium, trapezium left angle=70, trapezium right angle=110, minimum width=3cm, %minimum height=1cm, text centered, draw=black,fill=white]
+%\tikzstyle{process} = [rectangle, minimum width=3cm, minimum height=1cm, text centered, draw=black, %fill=white]
+%\tikzstyle{decision} = [diamond, minimum width=3cm, minimum height=1cm, text centered, draw=black, %fill=green!30]
+%\tikzstyle{arrow} = [thick,->,>=stealth]
+
+
+
+
+\usepackage{abstract}
+\renewcommand{\abstractname}{}    % clear the title
+\renewcommand{\absnamepos}{empty} % originally center
+\newcommand{\blankline}{\quad\pagebreak[2]}
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{longtable,booktabs}
+
+\usepackage{parskip}
+\usepackage{titlesec}
+\titlespacing\section{0pt}{12pt plus 4pt minus 2pt}{6pt plus 2pt minus 2pt}
+\titlespacing\subsection{0pt}{12pt plus 4pt minus 2pt}{6pt plus 2pt minus 2pt}
+
+\titleformat*{\subsubsection}{\normalsize\itshape}
+
+\usepackage{titling}
+\setlength{\droptitle}{-.25cm}
+
+%\setlength{\parindent}{0pt}
+%\setlength{\parskip}{6pt plus 2pt minus 1pt}
+%\setlength{\emergencystretch}{3em}  % prevent overfull lines
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage{lastpage}
+\renewcommand{\headrulewidth}{0.3pt}
+\renewcommand{\footrulewidth}{0.0pt}
+%\lhead{\footnotesize Problem Set \#3 }
+\lhead{\footnotesize BUEC 311: Problem Set \#3, Shifting equilibria}
+\rhead{\footnotesize \today}
+\lfoot{\small \copyright }
+\cfoot{}
+\rfoot{\small \thepage/\pageref*{LastPage}}
+
+\fancypagestyle{firststyle}
+{
+\renewcommand{\headrulewidth}{0pt}%
+   \fancyhf{}
+   \fancyfoot[C]{\thepage/\pageref*{LastPage}}
+}
+
+%\def\labelitemi{--}
+%\usepackage{enumitem}
+%\setitemize[0]{leftmargin=25pt}
+%\setenumerate[0]{leftmargin=25pt}
+
+
+
+
+\makeatletter
+\@ifpackageloaded{hyperref}{}{%
+\ifxetex
+  \usepackage[setpagesize=false, % page size defined by xetex
+              unicode=false, % unicode breaks when used with xetex
+              xetex]{hyperref}
+\else
+  \usepackage[unicode=true]{hyperref}
+\fi
+}
+\@ifpackageloaded{color}{
+    \PassOptionsToPackage{usenames,dvipsnames}{color}
+}{%
+    \usepackage[usenames,dvipsnames]{color}
+}
+\makeatother
+\hypersetup{breaklinks=true,
+            bookmarks=true,
+            pdfauthor={},
+             pdfkeywords = {},
+            pdftitle={Problem Set \#3: Shifting equilibria},
+            colorlinks=true,
+            citecolor=blue,
+            urlcolor=blue,
+            linkcolor=magenta,
+            pdfborder={0 0 0}}
+\urlstyle{same}  % don't use monospace font for urls
+
+
+\setcounter{secnumdepth}{0}
+
+
+%
+
+
+
+\usepackage{setspace}
+
+\title{\vspace{-1.5cm}\Large{BUEC 311: Business Economics, Organization
+and Management}\medskip\\\Large{Problem Set \#3}
+\medskip\\\Large{Shifting equilibria}
+}
+\date{\vspace{-.75cm}\Large{\today}}
+
+\definecolor{light-gray}{gray}{0.8}
+
+
+\begin{document}
+
+\vspace{-5cm}\maketitle
+ \tikz [remember picture,overlay]
+    %\node[yshift=-1.65cm,xshift=0cm] at (current page.north)
+    %\node[yshift=-1.65cm,xshift=0cm] at (current page.north)
+        %or: (current page.center)
+        \node[yshift=-1cm,xshift=6.5cm] at (current page.north west)
+        %{\includegraphics[width=3in]{UA-ASB-COLOUR.png}};
+        {\includegraphics[width=.5\paperwidth]{../images/UA-ASB-COLOUR.png}};
+\vspace{-.75cm}		
+		\thispagestyle{firststyle}
+
+
+
+This week's problems are meant to give you more practice on the basic
+tricks you'll need to manipulate supply and demand curves and calculate
+equilibrium conditions, but these also involve shifts in equilibria. Be
+methodical about your calculations and your analysis. In these
+questions, I've again given you multiple steps intentionally to build
+habits like checks and double-checks that you'll want to use. I won't
+always give these to you on exam questions.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Let's use the market demand curve for coffee we derived in the last
+  problem set of \(Q=4000-\frac{2000p}{3}\). Let's also assume that the
+  marginal cost of supplying coffee to the market is
+  \(Q=\frac{2000\,p}{3}\).
+\end{enumerate}
+
+\begin{center}\includegraphics[width=468px]{week_3_problems_soln_files/figure-latex/q_1_graphs-1} \end{center}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  Calculate the equilibrium price and quantity (a repeat from last week)
+\end{enumerate}
+
+p=3, q=2000
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Suppose that a drought reduces the coffee crop increasing the cost of
+  supplying coffee leading to a reduction in the supply function to
+  \(Q=\frac{1000\,p}{3}\). Solve for the new equilibrium price and
+  quantity in the market.
+\end{enumerate}
+
+p=4, q=1333.3333333 or 4000/3
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Show, on a graph, the changes in the inverse supply and demand
+  functions, and label the original and new equilibrium prices and
+  quantities.
+\end{enumerate}
+
+See above
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  Is this a change in demand or a movement along the demand curve? Why?
+\end{enumerate}
+
+This change is a movement along the demand curve because both the new
+and original equilibria lie on the same (green) demand curve.
+
+\newpage
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Use the market demand curve for coffee we derived in the last problem
+  set of \(Q=4000-\frac{2000p}{3}\) along with the supply function of
+  \(Q=\frac{2000\,p}{3}\).
+
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii})}
+  \tightlist
+  \item
+    Suppose a coffee tax of \$0.50 per cup is levied by the university
+    in an attempt to recover some revenues lost to COVID-19. What's the
+    impact on the market if you assume that the tax is charged to the
+    coffee vendor based on the number of cups of coffee sold?
+  \end{enumerate}
+
+  The equilibrium price will increase to \$3.25, up from \$3, and the
+  equilibrium quantity drops from 2000 to 5500/3. The revenue to
+  suppliers drops from \$3 to 2.75.
+\end{enumerate}
+
+\begin{center}\includegraphics[width=468px]{week_3_problems_soln_files/figure-latex/q_2_graphs-1} \end{center}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  What happens if the same tax is added at the cash register and charged
+  to patrons directly, with the proceeds of the tax remitted to the
+  university?
+\end{enumerate}
+
+Nothing changes in this case from a tax applied on the vendor. Whether
+it's effectively an extra charge that the consumer will pay, or an extra
+input cost, we end up with the same economic outcome of p=\$3.25 and
+Q=5500/3, and the before-tax revenue to suppliers is \$2.75.
+
+\begin{center}\includegraphics[width=468px]{week_3_problems_soln_files/figure-latex/q_2_b_graphs-1} \end{center}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Why does the equilibrium price of coffee not increase by the same
+  amount as the tax?
+\end{enumerate}
+
+The tax is paid for in part by producers and in part by consumers. Only
+if the demand curve were perfectly inelastic or if the supply curve was
+perfectly elastic would the entire cost of the tax be reflected in the
+change in price.
+
+\newpage
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  On slide 81 of the full supply and demand deck, I give you a graph of
+  a concurrent shift in supply and demand due to a change in crude oil
+  prices affecting both the input costs to produce gasoline and the
+  income of consumers. Based on the remainder of the information in the
+  deck:
+\end{enumerate}
+
+\begin{center}\includegraphics[width=468px]{week_3_problems_soln_files/figure-latex/q_3_graphs-1} \end{center}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  Write out the initial supply and demand functions and solve for the
+  initial equilibrium price and quantity (this is a freebie, as this is
+  all in the deck)
+
+  p=93.75 Q=21.25
+
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii})}
+  \setcounter{enumii}{1}
+  \tightlist
+  \item
+    Solve for the price and quantity at the new equilibrium (not in the
+    deck)
+  \end{enumerate}
+
+  p=116.25 Q=18.75
+
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii})}
+  \setcounter{enumii}{2}
+  \tightlist
+  \item
+    Now, assume the government levies a 20c/l tax (\$0.20/l in the units
+    in the deck) on gasoline payable by suppliers. Calculate a new
+    equlibrium price and quantity.
+  \end{enumerate}
+\end{enumerate}
+
+\begin{center}\includegraphics[width=468px]{week_3_problems_soln_files/figure-latex/q_3d_graphs-1} \end{center}
+
+Here, the question was a bit ambiguous, but let's assume that this is an
+additional add-on to the double shift from above. So, since the question
+specifies that consumers pay the tax, you want to do demand net of taxes
+(the dotted demand curve) and then use that to calculate the supply and
+then the market price is the unshifted demand at that calculated
+quantity. So, p=128.75 Q=16.25.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  Has the price increased by the cost of the tax? If not, why did the
+  producers not simply \textit{pass the cost on} to consumers?
+\end{enumerate}
+
+The price has increased, from p=116.25 to p=128.75, but that's less than
+the value of the tax. Had the suppliers attempted to pass all of the
+cost of the tax into market prices, equilibrium quantities would have
+dropped more than they did, leading to lower value for suppliers.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  Now, assume the government levies a 20c/l tax (\$0.20/l in the units
+  in the deck) on gasoline payable at the cash register by consumers.
+  Calculate the new equlibrium price and quantity.
+\end{enumerate}
+
+\begin{center}\includegraphics[width=468px]{week_3_problems_soln_files/figure-latex/q_3c_graphs-1} \end{center}
+
+There is no change in the equilibrium when the tax is added to supply
+instead of taken away from demand. It doesn't matter whether you model
+it as an additional input cost or as a consumer payment. The price has
+increased, from p=116.25 to p=128.75, but that's less than the value of
+the tax. Quantity has decreased from 18.75 to 16.25 as a result of the
+tax.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{5}
+\tightlist
+\item
+  In the new equilibrium, what's the revenue per litre earned by
+  producers and what is the price paid by consumers?
+\end{enumerate}
+
+In equilibrium, producers receive 108.75, consumers pay 128.75, and the
+difference (t=20) goes to the government as tax revenue. \newpage
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  In your own words and graphs (using the supply and demand functions
+  from the class deck), describe the impact of a price ceiling on
+  gasoline applied at a cost of \$0.80/l. What is likely to result from
+  this price ceiling? (For now, assume the market is competitive. We'll
+  abandon this in due course.)
+\end{enumerate}
+
+\begin{center}\includegraphics[width=468px]{week_3_problems_soln_files/figure-latex/q_4_graphs-1} \end{center}
+
+There is a lot going on in this graph. The grey points indicate,
+respectively, the quantities supplied and demanded at the price ceiling.
+As you can see, the Quantity is far lower than the quantity consumers
+would demand at \$0.80 per litre for gasoline. This will imply a
+shortage and the shortage will lead to line-ups, and potentially to the
+development of black markets for gasoline, since the willingness to pay
+for the last unit of supply at the price ceiling is much higher than
+\$0.80 per litre.
+
+
+
+
+\end{document}

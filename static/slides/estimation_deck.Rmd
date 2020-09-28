@@ -1,0 +1,610 @@
+---
+title: Estimating Demand and Supply
+subtitle: Week 5 Slide Pack
+author: 
+  - Andrew Leach 
+institution: 
+- Alberta School of Business and CABREE
+class_name: Business Economics, Organization and Management
+class_number: BUEC 311
+fontsize: 10pt
+output:
+ beamer_presentation:
+   #template: "C:/Users/aleach/Google Drive/default_beamer.tex"
+   #Mac
+   template: "../ajl-latex-beamer.tex"
+    #PC
+   #template: "C:/Users/aleach/Google Drive/ajl-latex-beamer.tex"
+
+   
+   theme: "Darmstadt"  
+   incremental: false
+   slide_level: 2
+   keep_tex: true
+    
+    
+    
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(cache=TRUE)
+
+library(tidyverse)
+library(lubridate)
+library(viridis)
+library(zoo)
+library(janitor)
+library(broom)
+library(ggthemes)
+library(directlabels)
+library(kableExtra)
+library(stargazer)
+library(scales)
+library(ggrepel)
+
+
+colors_tableau10<-function()
+{
+  return(c("#1F77B4", "#FF7F0E", "#2CA02C", "#D62728", "#9467BD", "#8C564B",
+           "#E377C2", "#7F7F7F", "#BCBD22", "#17BECF"))
+}
+
+class_clean<-function(){
+  theme_classic()+
+    theme(
+      plot.subtitle = element_text(color="grey10",size=rel(.7)),
+      plot.title = element_text(face="bold",size=rel(.8)),
+      plot.caption = element_text(color="grey50",size=rel(.5),hjust=0),
+      legend.title = element_text(color="grey10",size=rel(.5)),
+      legend.text = element_text(color="grey10",size=rel(.5)),
+      axis.text = element_text(size=rel(1.5)),
+      axis.title = element_text(size=rel(1.5)),
+      #panel.grid.major = element_line(size=0,colour = "black"), 
+      #plot.margin = margin(t = .1, r = .1, b = .1, l = .1,unit= "cm"),
+      plot.margin = margin(t = .5, r = 1, b = .25, l = 1,unit= "cm"),
+      #axis.text.x = element_text(margin = margin(t = 10, r = 0, b = 0, l = 0)),
+      NULL)
+}
+
+
+
+star = stargazer(attitude, header = F)
+star = sub('^.+\\caption.+$','', star)
+```
+ 
+# Introduction
+
+## Outline
+ 
+```{=latex}
+	\begin{enumerate}
+	\item Elasticity Refresher
+		\begin{itemize}
+		\item Own Price
+		\item Cross-Price
+		\item Income
+        \item Elasticities along the demand curve
+        \item Arc elasticity
+		\end{itemize}
+	\item Using regression analysis to estimate market behaviour
+		\begin{itemize}
+		\item Choosing explanatory variables
+		\item Sample selection
+        \item Bias, identification, causality
+        \item Using regressions to forecast
+		\end{itemize}
+	\item The identification problem in practice
+	\end{enumerate}
+\vfill
+```
+
+# Elasticity
+
+## Elasticity of Demand
+
+```{=latex}
+\begin{itemize}
+\item Recall that the price elasticity of demand is the percentage change in quantity demanded for a given percentage change in price;
+\begin{align*}
+  \epsilon=\frac{\text{percentage change in quantity demanded}}{\text{percentage change in price}}=\frac{\Delta Q/Q}{\Delta p/p}=\frac{\Delta Q}{\Delta p}\frac{p}{Q}
+\end{align*}
+	\item The elasticity of supply is calculated similarly as the percentage change in quantity supplied for a given percentage change in price;
+  	\item Hint: more \textit{elastic} is more responsive:
+\small{\begin{itemize}\item \textit{inelastic} demand or supply means an elasticity less than one (i.e. the relative magnitude of the quantity response is smaller than the price change)
+\item \textit{perfectly inelastic} demand has an elasticity of zero
+\item \textit{perfectly elastic} demand has undefined elasticity
+\end{itemize}}
+\end{itemize}
+```
+
+
+## Elasticity along the demand curve
+
+- Elasticity varies as we move along the demand curve
+
+- Why? Because (in our case), the demand curve is linear while elasticity measures percentage changes
+
+- We will, later in the class, look at constant elasticity relationships
+
+- for a given change in price, the change in quantity you observe gives you the arc elasticity, but may not be representative of elasticity at other (price,quantity) pairs
+
+   - what does this mean for empirical estimates?
+
+```{r demand_curves,echo=FALSE,warning=FALSE,include=FALSE,,cache=FALSE}
+
+
+p_demand<-function(q,d_int=20,d_slope=1){
+  ## Demand = Y - d_slope q
+  d_int-(d_slope*q)
+}
+
+map<-c(0,10,20,50)
+demand_1 <- Hmisc::bezier(x = map,
+                          y = p_demand(map,d_int = 20,d_slope =.5 )) %>%
+  as_tibble()
+
+demand_2 <- Hmisc::bezier(x = map,
+                          y = p_demand(map,d_int = 22,d_slope =.5 )) %>%
+  as_tibble()
+
+
+#demand graphs
+
+gas_1<-ggplot(demand_1, aes(x = x, y = y)) + 
+  #geom_path(data=demand_2,size = 2,color="dodgerblue") +
+  geom_path(size = 2,color="dodgerblue",linetype="dashed") +
+  geom_path(size = 2,color="dodgerblue") + 
+  scale_color_manual(values = c("#0073D9", "#001F40", "#80DBFF")) +
+  class_clean() + 
+  #coord_equal()+
+  
+  #function labels
+  geom_segment(aes(xend = 30, y = p_demand(30,d_int = 20,d_slope =.5)+20, x = 35, yend = p_demand(30,d_int = 20,d_slope =.5)),
+               arrow = arrow(length = unit(0.5,"cm")),color="dodgerblue",size=1.5)+
+  geom_text(aes(y = p_demand(30,d_int = 20,d_slope =.5)+20, x = 35.5),
+            label= "Demand~curve~D[1]",parse = TRUE, hjust=0, size = rel(3.5))+
+  
+  scale_x_continuous(breaks=pretty_breaks(),expand=c(0,0),limits=c(0,45))+
+  scale_y_continuous(breaks=pretty_breaks(),expand=c(0,0),limits=c(0,22))+
+ 
+  labs(x = "Consumption (q)",
+       y = "Price (p)")+
+  theme(legend.position = "blank")
+
+demand_1$elasticity<- -5*demand_1$y/demand_1$x
+
+```
+
+## Graph comparison
+
+```{r demand_graph_1,fig.width=12,fig.height=7,echo=FALSE,warning=FALSE}
+gas_1
+```
+
+
+
+## Graph comparison
+
+```{r demand_graph_2,fig.width=12,fig.height=7,echo=FALSE,warning=FALSE}
+gas_1+
+  geom_label(aes(x=3,y=20-.5*3),label=paste("q=3\nElasticity =",round(-.5*(20-.5*3)/3,2)),nudge_x = 1)+
+
+    geom_label(aes(x=10,y=20-.5*10),label=paste("q=10\nElasticity =",-.5*(20-.5*10)/10))+
+geom_label(aes(x=20,y=20-.5*20),label=paste("q=20\nElasticity =",-.5*(20-.5*20)/20))+
+geom_label(aes(x=30,y=20-.5*30),label=paste("q=30\nElasticity =",round(-.5*(20-.5*30)/30,2)))
+```
+
+
+## Estimation of elasticities
+
+- We can use real world data to estimate elasticities
+- Examples:
+   - Do emissions respond to carbon pricing? (BC carbon tax)
+   - Do wages affect labour supply? (Alberta's minimum wage changes)
+   - Do the prices of complements affect labour supply? (Quebec child care)
+   - Do changes in production technology or regulation affect supply (US light tight oil)
+- Beware:
+  - Correlation vs causation
+  - Omitted variables bias
+  - Sample selection bias
+  
+
+## Estimation of demand
+
+What is a general manager paying for when they sign a hockey player?
+
+- goals?
+- assists?
+- points?
+
+What other attributes might matter the an orginization's willingness to pay for a player?
+
+\vfill
+
+## You might have a sense of where this is going...
+
+https://www.nytimes.com/video/movies/100000001341145/clip-moneyball.html
+
+
+## Economic Moneyball
+
+
+Much of the estimation of demand is trying to determine, with statistical tolls, the marginal willingness to pay for just one more:
+
+- run
+- year of education
+- year of experience
+- goal 
+- square footage of floor space
+- tenth of a point of GPA
+- horsepower
+- kWh
+- hour of work
+
+ 
+## Economic Moneyball
+
+Much of the estimation of demand is trying to determine, with statistical tolls, the marginal willingness to pay for just one more:
+
+- run (SABR-metrics)
+- year of education (human capital)
+- year of experience (human capital)
+- goal (hockey analytics)
+- square footage of floor space (real estate)
+- tenth of a point of GPA (labour markets)
+- horsepower (vehicle pricing)
+- kWh (vehicle pricing)
+- hour of work (labour markets)
+
+
+## Let's try a couple out
+
+```{r nhl_salaries,echo=FALSE,warnings=FALSE,include=FALSE,,cache=FALSE}
+nhl_data<-read_csv("../../nhl_millionaires.csv") %>% clean_names()%>%filter(!is.na(team),team!="-",pos!="G")%>%
+  separate(pos,into=c("pos1","pos2","pos3"))%>% separate(toi,into=c("mins","secs"))%>%
+  mutate(salary=gsub("\\$","",salary),
+         salary=gsub(",","",salary),
+         cap_hit=gsub("\\$","",cap_hit),
+         cap_hit=gsub(",","",cap_hit),
+         salary=as.numeric(salary),
+         cap_hit=as.numeric(cap_hit),
+         position=factor(pos1),
+         handed=factor(handed),
+         g=as.numeric(g),
+         a=as.numeric(a),
+         p=as.numeric(p),
+         p_gp=as.numeric(p_gp),
+         x=as.numeric(x),
+         sh=as.numeric(sh),
+         sh_percent=as.numeric(sh_percent),
+         toi=as.numeric(mins)+as.numeric(secs)/60
+         )%>% rename(pm=x,points=p,goals=g,assists=a)%>%
+        mutate(position=fct_collapse(position,
+                                     "D" = c("LD", "RD","D"),
+                                     "FWD" = c("C","LW", "RW")),
+               g60=goals/toi*60,p60=points/toi*60,
+               salary=salary/10^6)%>%
+  filter(toi>0)
+
+
+by_position <-nhl_data %>%# mutate(sample=runif(n(),0, 1))%>% filter(sample<=.1) %>% #10% subsample
+  nest(-position) %>% 
+  mutate(
+    fit = map(data, ~ lm(salary ~ goals + assists, data = .x)),
+    tidied = map(fit, tidy),
+    glanced = map(fit, glance)
+  ) %>% 
+  unnest(tidied) 
+proc<-by_position %>% select(-data,-fit,-glanced)
+
+fit <- lm(salary ~ points, data =nhl_data)
+fit_sum<-summary(fit)
+fit_toi <- lm(salary ~ points+toi, data =nhl_data)
+
+fit_toi_sum<-summary(fit_toi)
+fit_toi_pos <- lm(salary ~ points+toi+position+position*toi+position*points, data =nhl_data)
+
+
+fit_2m <- lm(salary ~ points+toi, data =nhl_data%>%filter(salary>=2))
+fit_4m <- lm(salary ~ points+toi, data =nhl_data%>%filter(salary>=4))
+
+
+#fit_toi_p60 <- lm(salary ~ points+toi+p60, data =nhl_data)
+
+
+```
+ 
+- Start with NHL hockey salaries and performance statistics from the 2018-2019 season https://www.capfriendly.com/
+- Choose only players making more than \$1 million per year
+- Build a model for the willingness to pay based on salaries as a function of performance
+
+
+## A basic, univariate regression
+\vspace{-.5cm}
+```{r nhl_salary_sum,title="NHL Salary Regression Models\vspace{-1cm}",results='asis',echo=FALSE,cache=FALSE}
+stargazer(fit,align=TRUE,font.size="tiny",header=FALSE,intercept.bottom = FALSE,single.row = TRUE,omit.stat = c("rsq", "f"),title="NHL Salary Regression Models")
+```
+- The regression tells us that the average salary is \$`r format(round(fit$coefficients[1],3),nsmall=3,big.mark=",")` million with \textit{one more point} being worth \$`r format(round(fit$coefficients[2]*10^6,2),nsmall=3,big.mark=",")`, the precise value of the reported coefficient on points, `r format(round(fit$coefficients[2],3),nsmall=3)`, converted to thousands of dollars.
+\vfill
+
+## A basic, univariate regression
+\vspace{-.5cm}
+```{r nhl_salary_sum_2,title="NHL Salary Regression Models\vspace{-1cm}",results='asis',echo=FALSE,cache=FALSE}
+stargazer(fit,align=TRUE,font.size="tiny",header=FALSE,intercept.bottom = FALSE,single.row = TRUE,omit.stat = c("rsq", "f"),title="NHL Salary Regression Models")
+```
+- The standard errors tell us how precisely the coefficients are estimated. A consistent relationship or a larger sample size will give you smaller standard errors.
+- The regression tells us that \textit{one more point} is worth \$`r format(round(fit$coefficients[2]*10^6,3),nsmall=3,big.mark=",")` $\pm$ \$`r format(round(fit_sum$coefficients[2,2]*1.96*10^6,3),nsmall=3,big.mark=",")`, 19 times out of 20.
+
+
+\vfill
+
+
+
+## Graph comparison
+```{r nhl_salary_graph,fig.width=12,fig.height=7,echo=FALSE}
+
+ggplot(nhl_data)+
+  geom_point(aes(points,salary,colour="Data"),size=1,stroke=1)+
+  geom_line(aes(fit$model$points,fit$fitted.values,colour="Model"),size=1)+
+  scale_color_manual("",values = colors_tableau10())+
+  scale_x_continuous(expand = c(0,0),breaks=pretty_breaks())+
+  scale_y_continuous(expand = c(0,0),breaks=pretty_breaks())+
+    #theme(legend.position = "right")+
+    labs(y="2018-2019 Salary",x="2018-2019 Point Production",
+         caption="Source: CapFriendly Data, author's calculations.",
+         title="NHL Hockey Salaries and Point Production",
+         NULL)
+
+```
+
+
+## Goodness of fit
+
+- R-squared ($R^2$) statistic measures the goodness of fit, or the share of the variation in the dependent variable (salary) that is explained by the regression. 
+- The statistic must lie between 0 and 1.
+   - 1 indicates that 100% of the variation is explained by the regression.
+- Adjusted R-squared is a modified version of R-squared
+   - Adjusted for the number of predictors in the model. 
+   - The adjusted R-squared increases only if the new term improves the model more than would be expected by chance. 
+- $R^2=1-\frac{SS_{Res}}{SS_{Total}}$, where $SS_{Res}$ and $SS_{Total}$ are the sum of squared residuals and total dependent variable sum of squares.
+- $Adj\,R^2=1- \frac{(1-R^2)(n-1)}{n-k-1}$, where k is the number of parameters.
+
+
+## Residuals and what they can tell us
+
+```{r nhl_residuals_comp,include=FALSE,echo=FALSE,warning=FALSE}
+fit_data<-tibble(fit$residuals,fit$model$salary,fit$model$points)
+names(fit_data)<-c("residuals","salary","points")
+fit_data<-fit_data %>% left_join(nhl_data)
+labels<- fit_data %>% arrange(residuals) %>% head(10) %>% select(player)%>%mutate(label=paste("#",row_number(),": ",player,sep=""))
+```
+
+```{r nhl_residuals_graph,fig.width=12,fig.height=7,echo=FALSE,warning=FALSE}
+
+ggplot(nhl_data)+
+  geom_point(aes(points,salary,colour="Data"),size=1,stroke=1)+
+geom_label_repel(data=nhl_data %>% filter(player %in% labels$player),aes(points,salary,label=player),
+    arrow = arrow(length = unit(0.03, "npc"), type = "closed", ends = "last"),
+    force = 10
+  ) +
+  scale_color_manual("",values = colors_tableau10())+
+  scale_x_continuous(expand = c(0,0),breaks=pretty_breaks())+
+  scale_y_continuous(expand = c(0,0),breaks=pretty_breaks())+
+    #theme(legend.position = "right")+
+    labs(y="2018-2019 Salary",x="2018-2019 Point Production",
+         caption="Source: CapFriendly Data, author's calculations.",
+         title="NHL Hockey Salaries and Point Production",
+         subtitle="Labelled players are top-10 points produced per dollar of salary",
+         NULL)
+```
+
+## Now who are the most underpaid players?
+
+```{r nhl_residuals_table_1,results='asis',echo=FALSE,cache=FALSE}
+stargazer(labels[2], summary=FALSE, rownames=FALSE,no.space = TRUE,font.size = "small",header=FALSE)
+
+```
+\vfill
+
+
+## What are we missing
+- Multivariate regression
+- Sample selection bias
+- Omitted variables bias
+- Causality vs correlation
+
+## Multivariate regression
+- Multivariate Regression uses two or more explanatory variables.
+   - e.g. $s = a + b X_1 + cX_2 + \epsilon$.
+- We can estimate (in our case) NHL salaries as a function of point production but also other explanatory variables
+   - a, b, and c are \textbf{coefficients} to be estimated
+   - $\epsilon$ is a random error or residual.
+- When we use least squares regression to estimate a, b, and c, we get a prediction of the salary for combination of measurable outputs.
+- Least squares regression minimizes the sum of squared residuals.
+   - We can also learn from residuals
+- With multivariate regression, we can isolate the individual \textbf{marginal effects} of each explanatory variable \textbf{holding the other explanatory variables constant}.
+
+## A slightly better regression
+\vspace{-.5cm}
+```{r nhl_salary_better,title="NHL Salary Regression Models\vspace{-1cm}",results='asis',echo=FALSE,cache=FALSE}
+stargazer(fit,fit_toi,align=TRUE,font.size="tiny",header=FALSE,intercept.bottom = FALSE,single.row = TRUE,omit.stat = c("rsq", "f"),title="NHL Salary Regression Models",column.sep.width = "-15pt")
+```
+- The second regression tells us that the unadjusted salary is \$`r format(round(fit_toi$coefficients[1],3),nsmall=3,big.mark=",")` million with \textit{one more point} being worth \$`r format(round(fit_toi$coefficients[2]*10^6,2),nsmall=3,big.mark=",")`, and \textit{one more minute of ice time} being worth \$`r format(round(fit_toi$coefficients[3]*10^6,2),nsmall=3,big.mark=",")`.
+- How can a negative unadjusted salary value possibly make sense? Have I done something wrong?
+\vfill
+
+
+```{r nhl_residuals_2,include=FALSE,echo=FALSE,warning=FALSE}
+fit_data<-tibble(fit_toi$residuals,fit_toi$model$salary,fit_toi$model$points)
+names(fit_data)<-c("residuals","salary","points")
+fit_data<-fit_data %>% left_join(nhl_data)
+labels_toi<- fit_data %>% arrange(residuals) %>% head(10) %>% select(player,salary,points)%>%mutate(label=paste("#",row_number(),": ",player,sep=""))
+```
+
+## Now who are the most underpaid players?
+
+```{r nhl_residuals_table_2,results='asis',echo=FALSE,cache=FALSE}
+stargazer(labels_toi[4], summary=FALSE, rownames=FALSE,no.space = TRUE,font.size = "small",header=FALSE)
+
+```
+\vfill
+
+## Now who are the most underpaid players?
+
+```{r nhl_residuals_graph_2,fig.width=12,fig.height=7,echo=FALSE,warning=FALSE}
+
+ggplot(nhl_data)+
+  geom_point(aes(points,salary,colour="Data"),size=1,stroke=1)+
+geom_label_repel(data=nhl_data %>% filter(player %in% labels_toi$player),aes(points,salary,label=player),
+    arrow = arrow(length = unit(0.03, "npc"), type = "closed", ends = "last"),
+    force = 10
+  ) +
+  scale_color_manual("",values = colors_tableau10())+
+  scale_x_continuous(expand = c(0,0),breaks=pretty_breaks())+
+  scale_y_continuous(expand = c(0,0),breaks=pretty_breaks())+
+    #theme(legend.position = "right")+
+    labs(y="2018-2019 Salary",x="2018-2019 Point Production",
+         caption="Source: CapFriendly Data, author's calculations.",
+         title="NHL Hockey Salaries and Point Production",
+         subtitle="Labelled players are most underpaid per model results",
+         NULL)
+
+```
+
+
+
+
+## Adjust for position
+\vspace{-.5cm}
+```{r nhl_salary_pos,results='asis',echo=FALSE,cache=FALSE}
+stargazer(fit,fit_toi,fit_toi_pos,align=TRUE,font.size="tiny",header=FALSE,intercept.bottom = FALSE,single.row = TRUE,title="NHL Salary Regression Models",omit.stat = c("rsq", "f"),column.sep.width = "-15pt")
+```
+- The third regression tells us that the unadjusted salary is \$`r format(round(fit_toi_pos$coefficients[1],3),nsmall=3,big.mark=",")` million with \textit{one more point} being worth \$`r format(round(fit_toi_pos$coefficients[2]*10^6,2),nsmall=3,big.mark=",")`, and \textit{one more minute of ice time} being worth \$`r format(round(fit_toi_pos$coefficients[2]*10^6,2),nsmall=3,big.mark=",")`.
+- We also adjust for differential values for each for defence vs forwards.
+
+## Adjust for position
+\vspace{-.5cm}
+```{r nhl_salary_2,results='asis',echo=FALSE,cache=FALSE}
+stargazer(fit,fit_toi,fit_toi_pos,align=TRUE,font.size="tiny",header=FALSE,intercept.bottom = FALSE,single.row = TRUE,title="NHL Salary Regression Models",omit.stat = c("rsq", "f"),column.sep.width = "-15pt")
+```
+- Note here that, as we add variables to the regression which help explain the salary levels, we're seeing the other coefficient values change. Why?
+
+\vfill
+
+```{r nhl_residuals_3,include=FALSE,echo=FALSE,warning=FALSE}
+fit_data<-tibble(fit_toi_pos$residuals,fit_toi_pos$model$salary,fit_toi_pos$model$points)
+names(fit_data)<-c("residuals","salary","points")
+fit_data<-fit_data %>% left_join(nhl_data)
+labels_toi_pos<- fit_data %>% arrange(residuals) %>% head(10) %>% select(player)%>%mutate(label=paste("#",row_number(),": ",player,sep=""))
+```
+## Now who are the most underpaid players?
+
+```{r nhl_residuals_graph_3,fig.width=12,fig.height=7,echo=FALSE,warning=FALSE}
+
+ggplot(nhl_data)+
+  geom_point(aes(points,salary,colour="Data"),size=1,stroke=1)+
+geom_label_repel(data=nhl_data %>% filter(player %in% labels_toi_pos$player),aes(points,salary,label=player),
+    arrow = arrow(length = unit(0.03, "npc"), type = "closed", ends = "last"),
+    force = 10
+  ) +
+  scale_color_manual("",values = colors_tableau10())+
+  scale_x_continuous(expand = c(0,0),breaks=pretty_breaks())+
+  scale_y_continuous(expand = c(0,0),breaks=pretty_breaks())+
+    #theme(legend.position = "right")+
+    labs(y="2018-2019 Salary",x="2018-2019 Point Production",
+         caption="Source: CapFriendly Data, author's calculations.",
+         title="NHL Hockey Salaries and Point Production",
+         subtitle="Labelled players are most underpaid per model results",
+         NULL)
+
+```
+\vfill
+
+## Now who are the most underpaid players?
+
+```{r nhl_residuals_table_3,results='asis',echo=FALSE,cache=FALSE}
+stargazer(labels_toi_pos[2], summary=FALSE, rownames=FALSE,no.space = TRUE,font.size = "small",header=FALSE)
+
+```
+\vfill
+
+
+## Omitted variables bias
+\vspace{-.5cm}
+```{r nhl_salary_3,results='asis',echo=FALSE,cache=FALSE}
+stargazer(fit,fit_toi,fit_toi_pos,align=TRUE,font.size="tiny",header=FALSE,intercept.bottom = FALSE,single.row = TRUE,title="NHL Salary Regression Models",omit.stat = c("rsq", "f"),column.sep.width = "-15pt")
+```
+- In regression (1), I tried to explain salaries using only points. What variables did I omit?
+- TOI is obviously important, and so by omitting it, I'd been forcing points to explain other things that are correlated with it
+
+\vfill
+
+
+## Omitted variables bias
+\vspace{-.5cm}
+```{r nhl_salary_4,results='asis',echo=FALSE,cache=FALSE}
+stargazer(fit,fit_toi,fit_toi_pos,align=TRUE,font.size="tiny",header=FALSE,intercept.bottom = FALSE,single.row = TRUE,title="NHL Salary Regression Models",omit.stat = c("rsq", "f"),column.sep.width = "-15pt")
+```
+- TOI is obviously important, and so by omitting it, I'd been forcing points to explain other things that are correlated with it like TOI
+- TOI, all else equal, correlates with points, so I was forcing points to explain both the direct (points) effect and the TOI (omitted) effect
+
+\vfill
+
+
+
+
+## Sample selection bias
+\vspace{-.5cm}
+```{r nhl_salary_select,results='asis',echo=FALSE,cache=FALSE}
+stargazer(fit_toi,fit_2m,fit_4m,align=TRUE,font.size="tiny",header=FALSE,intercept.bottom = FALSE,single.row = TRUE,title="NHL Salary Regression Models",omit.stat = c("rsq", "f"),column.sep.width = "-15pt")
+```
+- Regression (1) is players earning more than \$1 million, Regression (1) is players earning more than \$2 million, Regression (3) is players earning more than \$4 million.
+- The estimated values of one more point and one more minute of TOI are different in the different samples
+\vfill
+
+
+
+## Causation and correlation
+\vspace{-.5cm}
+```{r nhl_salary_cause,results='asis',echo=FALSE,cache=FALSE}
+stargazer(fit_toi,fit_2m,fit_4m,align=TRUE,font.size="tiny",header=FALSE,intercept.bottom = FALSE,single.row = TRUE,title="NHL Salary Regression Models",omit.stat = c("rsq", "f"),column.sep.width = "-15pt")
+```
+- None of these results can possibly explain base salaries in 2018-2019. Any idea why?
+\vfill
+
+## Causation and correlation
+\vspace{-.5cm}
+```{r nhl_salary_cause2,results='asis',echo=FALSE,cache=FALSE}
+stargazer(fit_toi,fit_2m,fit_4m,align=TRUE,font.size="tiny",header=FALSE,intercept.bottom = FALSE,single.row = TRUE,title="NHL Salary Regression Models",omit.stat = c("rsq", "f"),column.sep.width = "-15pt")
+```
+- It's temporally impossible for 2018-2019 points to explain base salaries paid in that season since the salaries are negotiated before the season starts
+- How could I rectify this problem with my data?
+\vfill
+
+
+
+## Another example - the demand for electricity in COVID Times
+
+Andrew Leach, Nic Rivers, and Blake Shaffer. 2020. Canadian Electricity Markets during the COVID-19 Pandemic: An Initial Assessment. \textit{Canadian Public Policy} 46:S2, S145-S159
+
+- apologies for the self-citation, but it's new work that I can talk about pretty easily
+
+- we were interested in how the electricity market in 4 provinces had changed after the COVID-19 pandemic started
+
+- we were mostly interested in this as a real-time proxy for economic activity for which we often get data with a lag
+
+- our technique used (basically) the same approach as the NHL hockey salaries, asking how much lower is demand today than it would be expected to be adjusting for day, weekday, month, temperatures, and other factors
+
+## Demand for electricity in COVID Times
+
+![](../images/Fig1.pdf)
+
+
+## Alberta's demand for electricity in COVID Times
+
+![](../images/covid_aeso_fuel.png)
+
+
+## Ontario Industrial demand for electricity in COVID Times
+
+![](../images/Fig3.pdf)
