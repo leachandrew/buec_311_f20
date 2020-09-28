@@ -1,0 +1,115 @@
+---
+title: Quiz Data
+output: html_document
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(cache=TRUE)
+
+library(tidyverse)
+library(lubridate)
+library(viridis)
+library(zoo)
+library(janitor)
+library(broom)
+library(ggthemes)
+library(directlabels)
+library(kableExtra)
+library(stargazer)
+library(scales)
+library(ggrepel)
+library(readxl)
+
+
+colors_tableau10<-function()
+{
+  return(c("#1F77B4", "#FF7F0E", "#2CA02C", "#D62728", "#9467BD", "#8C564B",
+           "#E377C2", "#7F7F7F", "#BCBD22", "#17BECF"))
+}
+
+class_clean<-function(){
+  theme_classic()+
+    theme(
+      plot.subtitle = element_text(color="grey10",size=rel(.7)),
+      plot.title = element_text(face="bold",size=rel(.8)),
+      plot.caption = element_text(color="grey50",size=rel(.5),hjust=0),
+      legend.title = element_text(color="grey10",size=rel(.5)),
+      legend.text = element_text(color="grey10",size=rel(.5)),
+      axis.text = element_text(size=rel(1.5)),
+      axis.title = element_text(size=rel(1.5)),
+      #panel.grid.major = element_line(size=0,colour = "black"), 
+      #plot.margin = margin(t = .1, r = .1, b = .1, l = .1,unit= "cm"),
+      plot.margin = margin(t = .5, r = 1, b = .25, l = 1,unit= "cm"),
+      #axis.text.x = element_text(margin = margin(t = 10, r = 0, b = 0, l = 0)),
+      NULL)
+}
+
+
+```
+
+```{r quiz_data,echo=FALSE,warnings=FALSE,include=FALSE,,cache=FALSE}
+sections<- read_csv("../private/eclass_import.csv") %>% select(student_id,sec)
+
+
+quiz_data<-read_excel("../private/quizzes.xlsx") %>% clean_names()%>%select(quiz_grade,samples_completed,student_id) %>% left_join(sections)
+
+quiz_A1<-quiz_data %>% filter(sec=="A1")
+quiz_A2<-quiz_data %>% filter(sec=="A2")
+quiz_A3<-quiz_data %>% filter(sec=="A3")
+
+```
+The quiz average over all three sections was `r round(mean(quiz_data$quiz_grade/10*100,na.rm=T),2)`%.
+
+The quiz averages for the individual sections were `r round(mean(quiz_A1$quiz_grade/10*100,na.rm=T),2)`% for section A1, `r round(mean(quiz_A2$quiz_grade/10*100,na.rm=T),2)`% for section A2 and `r round(mean(quiz_A3$quiz_grade/10*100,na.rm=T),2)`% for section A3.
+
+```{r quiz_graphs,echo=FALSE,warnings=FALSE,include=FALSE,,cache=FALSE}
+
+all<-ggplot(quiz_data%>%filter(!is.na(quiz_grade)),aes(quiz_grade))+
+  geom_density(aes(),alpha=0.5,fill="dodgerblue")+
+  labs(x="Range of Scores",y="Probability Density",
+       title="Distribution of Quiz Scores",
+       caption="Kernel-smoothed so you won't necessarily find your actual grade",
+       fill=guide_legend(title="Section"),color=guide_legend(title="Section"))
+
+
+sec<-ggplot(quiz_data%>%filter(!is.na(quiz_grade)),aes(quiz_grade,group=sec))+
+  geom_density(aes(fill=sec,colour=sec),alpha=0.5)+
+  labs(x="Range of Scores",y="Probability Density",
+       title="Distribution of Quiz Scores by Section",
+       caption="Kernel-smoothed so you won't necessarily find your actual grade",
+       fill=guide_legend(title="Section"),color=guide_legend(title="Section"))
+
+samples<-ggplot(quiz_data%>%filter(!is.na(quiz_grade)),aes(quiz_grade,group=factor(samples_completed)))+
+  geom_density(aes(fill=factor(samples_completed),colour=factor(samples_completed)),alpha=0.5)+
+  labs(x="Range of Scores",y="Probability Density",
+       title="Distribution of Quiz Scores by Number of Sample Quizes Completed",
+       caption="Kernel-smoothed so you won't necessarily find your actual grade",
+       fill=guide_legend(title="Sample\nQuizzes\nCompleted"),color=guide_legend(title="Sample\nQuizzes\nCompleted"))
+
+
+
+
+```
+
+## Grade Distribution
+```{r dist_graph,fig.width=12,fig.height=7,echo=FALSE}
+all
+```
+
+
+
+## Grade Distribution By Section
+```{r dist_graph_sec,fig.width=12,fig.height=7,echo=FALSE}
+sec
+```
+
+
+
+## Grade Distribution By Preparation
+```{r dist_graph_prep,fig.width=12,fig.height=7,echo=FALSE}
+samples
+```
+
+
+
