@@ -1,0 +1,542 @@
+{
+  "title" : "",
+  "description" : "",
+  "author" : "",
+  "targetLoudness" : -18.0,
+  "shouldApplyLoudnessNormalization" : true,
+  "videoFormatFrameRate" : 30,
+  "audioFormatSampleRate" : 44100,
+  "width" : 1620.0,
+  "height" : 1080.0,
+  "version" : "4.0",
+  "editRate" : 30,
+  "authoringClientName" :  {
+    "name" : "Camtasia",
+    "platform" : "Windows",
+    "version" : "20.0"
+  },
+  "sourceBin" : [
+    {
+      "id" : 1,
+      "src" : "C:\\Users\\aleach\\Documents\\zoom\\2020-09-30 12.08.23 buec 311 fa20 - bus econ, org and mgmnt combined lec fa20 office hour 94827898267\\quiz_long_1.mp4",
+      "rect" : [0, 0, 2736, 1824],
+      "lastMod" : "20200930T201521",
+      "sourceTracks" : [
+        {
+          "range" : [0, 27776400],
+          "type" : 0,
+          "editRate" : 30000,
+          "trackRect" : [0, 0, 2736, 1824],
+          "sampleRate" : 25,
+          "bitDepth" : 24,
+          "numChannels" : 0,
+          "integratedLUFS" : 100.0,
+          "peakLevel" : -1.0,
+          "metaData" : ""
+        },
+        {
+          "range" : [0, 29622272],
+          "type" : 2,
+          "editRate" : 32000,
+          "trackRect" : [0, 0, 0, 0],
+          "sampleRate" : 32000,
+          "bitDepth" : 16,
+          "numChannels" : 1,
+          "integratedLUFS" : -20.9816521078071,
+          "peakLevel" : 0.677413403987885,
+          "metaData" : ""
+        }
+      ],
+      "metadata" : {
+        "timeAdded" : "20200930T202658.581220"
+      }
+    },
+    {
+      "id" : 2,
+      "src" : "C:\\Users\\aleach\\Documents\\zoom\\2020-09-30 12.08.23 buec 311 fa20 - bus econ, org and mgmnt combined lec fa20 office hour 94827898267\\quiz_long_2.mp4",
+      "rect" : [0, 0, 2736, 1824],
+      "lastMod" : "20200930T202052",
+      "sourceTracks" : [
+        {
+          "range" : [0, 22455600],
+          "type" : 0,
+          "editRate" : 30000,
+          "trackRect" : [0, 0, 2736, 1824],
+          "sampleRate" : 25,
+          "bitDepth" : 24,
+          "numChannels" : 0,
+          "integratedLUFS" : 100.0,
+          "peakLevel" : -1.0,
+          "metaData" : ""
+        },
+        {
+          "range" : [0, 23947264],
+          "type" : 2,
+          "editRate" : 32000,
+          "trackRect" : [0, 0, 0, 0],
+          "sampleRate" : 32000,
+          "bitDepth" : 16,
+          "numChannels" : 1,
+          "integratedLUFS" : -21.5761582706492,
+          "peakLevel" : 0.62382185459137,
+          "metaData" : ""
+        }
+      ],
+      "metadata" : {
+        "timeAdded" : "20200930T202703.453191"
+      }
+    }
+  ],
+  "timeline" : {
+    "id" : 3,
+    "sceneTrack" : {
+      "scenes" : [
+        {
+          "duration" : 1651.63333333333,
+          "title" : "",
+          "type" : "",
+          "csml" : {
+            "tracks" : [
+              {
+                "trackIndex" : 0,
+                "medias" : [
+                  {
+                    "id" : 4,
+                    "_type" : "StitchedMedia",
+                    "minMediaStart" : 0,
+                    "attributes" : {
+                      "ident" : "quiz_long_1",
+                      "gain" : 1.0,
+                      "mixToMono" : false
+                    },
+                    "parameters" : {
+                      "scale0" : 0.592105263157895,
+                      "scale1" : 0.592105263157895,
+                      "sourceCrop0" : 0.0,
+                      "sourceCrop1" : 0.0,
+                      "sourceCrop2" : 0.0,
+                      "sourceCrop3" : 0.0,
+                      "geometryCrop0" : 0.0,
+                      "geometryCrop1" : 0.0,
+                      "geometryCrop2" : 0.0,
+                      "geometryCrop3" : 0.0,
+                      "volume" : 1.0,
+                      "cursorOpacity" : 1.0,
+                      "cursorScale" : 1.0
+                    },
+                    "medias" : [
+                        {
+                          "id" : 5,
+                          "_type" : "UnifiedMedia",
+                          "video" : 
+                              {
+                                "id" : 6,
+                                "_type" : "VMFile",
+                                "src" : 1,
+                                "trackNumber" : 0,
+                                "attributes" : {
+                                  "ident" : "quiz_long_1"
+                                },
+                                "parameters" : {
+                                  "sourceCrop0" : {
+                                    "type" : "double",
+                                    "defaultValue" : 0.0,
+                                    "interp" : "eioe"
+                                  },
+                                  "sourceCrop1" : {
+                                    "type" : "double",
+                                    "defaultValue" : 0.0,
+                                    "interp" : "eioe"
+                                  },
+                                  "sourceCrop2" : {
+                                    "type" : "double",
+                                    "defaultValue" : 0.0,
+                                    "interp" : "eioe"
+                                  },
+                                  "sourceCrop3" : {
+                                    "type" : "double",
+                                    "defaultValue" : 0.0,
+                                    "interp" : "eioe"
+                                  },
+                                  "geometryCrop0" : {
+                                    "type" : "double",
+                                    "defaultValue" : 0.0,
+                                    "interp" : "eioe"
+                                  },
+                                  "geometryCrop1" : {
+                                    "type" : "double",
+                                    "defaultValue" : 0.0,
+                                    "interp" : "eioe"
+                                  },
+                                  "geometryCrop2" : {
+                                    "type" : "double",
+                                    "defaultValue" : 0.0,
+                                    "interp" : "eioe"
+                                  },
+                                  "geometryCrop3" : {
+                                    "type" : "double",
+                                    "defaultValue" : 0.0,
+                                    "interp" : "eioe"
+                                  }
+                                },
+                                "effects" : [
+
+                                ],
+                                "start" : 0,
+                                "duration" : 5691,
+                                "mediaStart" : 0,
+                                "mediaDuration" : 5691,
+                                "scalar" : 1,
+                                "animationTracks" : {
+
+                                }
+                              },
+                          "audio" : 
+                              {
+                                "id" : 7,
+                                "_type" : "AMFile",
+                                "src" : 1,
+                                "trackNumber" : 1,
+                                "attributes" : {
+                                  "ident" : "",
+                                  "gain" : 1.0,
+                                  "mixToMono" : false
+                                },
+                                  "channelNumber" : "0",
+                                "effects" : [
+
+                                ],
+                                "start" : 0,
+                                "duration" : 5691,
+                                "mediaStart" : 0,
+                                "mediaDuration" : 5691,
+                                "scalar" : 1,
+                                "animationTracks" : {
+
+                                }
+                              }
+,
+                          "start" : 0,
+                          "duration" : 5691,
+                          "mediaStart" : 0,
+                          "mediaDuration" : 27771,
+                          "scalar" : 1,
+                          "metadata" : {
+                            "clipSpeedAttribute" : false
+                          }
+                        },
+                        {
+                          "id" : 8,
+                          "_type" : "UnifiedMedia",
+                          "video" : 
+                              {
+                                "id" : 9,
+                                "_type" : "VMFile",
+                                "src" : 1,
+                                "trackNumber" : 0,
+                                "attributes" : {
+                                  "ident" : "quiz_long_1"
+                                },
+                                "parameters" : {
+                                  "sourceCrop0" : {
+                                    "type" : "double",
+                                    "defaultValue" : 0.0,
+                                    "interp" : "eioe"
+                                  },
+                                  "sourceCrop1" : {
+                                    "type" : "double",
+                                    "defaultValue" : 0.0,
+                                    "interp" : "eioe"
+                                  },
+                                  "sourceCrop2" : {
+                                    "type" : "double",
+                                    "defaultValue" : 0.0,
+                                    "interp" : "eioe"
+                                  },
+                                  "sourceCrop3" : {
+                                    "type" : "double",
+                                    "defaultValue" : 0.0,
+                                    "interp" : "eioe"
+                                  },
+                                  "geometryCrop0" : {
+                                    "type" : "double",
+                                    "defaultValue" : 0.0,
+                                    "interp" : "eioe"
+                                  },
+                                  "geometryCrop1" : {
+                                    "type" : "double",
+                                    "defaultValue" : 0.0,
+                                    "interp" : "eioe"
+                                  },
+                                  "geometryCrop2" : {
+                                    "type" : "double",
+                                    "defaultValue" : 0.0,
+                                    "interp" : "eioe"
+                                  },
+                                  "geometryCrop3" : {
+                                    "type" : "double",
+                                    "defaultValue" : 0.0,
+                                    "interp" : "eioe"
+                                  }
+                                },
+                                "effects" : [
+
+                                ],
+                                "start" : 5691,
+                                "duration" : 21408,
+                                "mediaStart" : 6363,
+                                "mediaDuration" : 21408,
+                                "scalar" : 1,
+                                "animationTracks" : {
+
+                                }
+                              },
+                          "audio" : 
+                              {
+                                "id" : 10,
+                                "_type" : "AMFile",
+                                "src" : 1,
+                                "trackNumber" : 1,
+                                "attributes" : {
+                                  "ident" : "",
+                                  "gain" : 1.0,
+                                  "mixToMono" : false
+                                },
+                                  "channelNumber" : "0",
+                                "effects" : [
+
+                                ],
+                                "start" : 5691,
+                                "duration" : 21408,
+                                "mediaStart" : 6363,
+                                "mediaDuration" : 21408,
+                                "scalar" : 1,
+                                "animationTracks" : {
+
+                                }
+                              }
+,
+                          "start" : 5691,
+                          "duration" : 21408,
+                          "mediaStart" : 0,
+                          "mediaDuration" : 27771,
+                          "scalar" : 1,
+                          "metadata" : {
+                            "clipSpeedAttribute" : false
+                          }
+                        }
+                    ],
+                    "effects" : [
+
+                    ],
+                    "start" : 0,
+                    "duration" : 27099,
+                    "mediaStart" : 0,
+                    "mediaDuration" : 27099,
+                    "scalar" : 1,
+                    "metadata" : {
+                      "clipSpeedAttribute" : false
+                    },
+                    "animationTracks" : {
+
+                    }
+                  },
+                  {
+                    "id" : 11,
+                    "_type" : "UnifiedMedia",
+                    "video" : 
+                        {
+                          "id" : 12,
+                          "_type" : "VMFile",
+                          "src" : 2,
+                          "trackNumber" : 0,
+                          "attributes" : {
+                            "ident" : "quiz_long_2"
+                          },
+                          "parameters" : {
+                            "scale0" : {
+                              "type" : "double",
+                              "defaultValue" : 0.592105263157895,
+                              "interp" : "eioe"
+                            },
+                            "scale1" : {
+                              "type" : "double",
+                              "defaultValue" : 0.592105263157895,
+                              "interp" : "eioe"
+                            },
+                            "sourceCrop0" : {
+                              "type" : "double",
+                              "defaultValue" : 0.0,
+                              "interp" : "eioe"
+                            },
+                            "sourceCrop1" : {
+                              "type" : "double",
+                              "defaultValue" : 0.0,
+                              "interp" : "eioe"
+                            },
+                            "sourceCrop2" : {
+                              "type" : "double",
+                              "defaultValue" : 0.0,
+                              "interp" : "eioe"
+                            },
+                            "sourceCrop3" : {
+                              "type" : "double",
+                              "defaultValue" : 0.0,
+                              "interp" : "eioe"
+                            },
+                            "geometryCrop0" : {
+                              "type" : "double",
+                              "defaultValue" : 0.0,
+                              "interp" : "eioe"
+                            },
+                            "geometryCrop1" : {
+                              "type" : "double",
+                              "defaultValue" : 0.0,
+                              "interp" : "eioe"
+                            },
+                            "geometryCrop2" : {
+                              "type" : "double",
+                              "defaultValue" : 0.0,
+                              "interp" : "eioe"
+                            },
+                            "geometryCrop3" : {
+                              "type" : "double",
+                              "defaultValue" : 0.0,
+                              "interp" : "eioe"
+                            }
+                          },
+                          "effects" : [
+
+                          ],
+                          "start" : 27099,
+                          "duration" : 22450,
+                          "mediaStart" : 0,
+                          "mediaDuration" : 22450,
+                          "scalar" : 1,
+                          "animationTracks" : {
+
+                          }
+                        },
+                    "audio" : 
+                        {
+                          "id" : 13,
+                          "_type" : "AMFile",
+                          "src" : 2,
+                          "trackNumber" : 1,
+                          "attributes" : {
+                            "ident" : "",
+                            "gain" : 1.0,
+                            "mixToMono" : false
+                          },
+                            "channelNumber" : "0",
+                          "effects" : [
+
+                          ],
+                          "start" : 27099,
+                          "duration" : 22450,
+                          "mediaStart" : 0,
+                          "mediaDuration" : 22450,
+                          "scalar" : 1,
+                          "animationTracks" : {
+
+                          }
+                        }
+,
+                    "start" : 27099,
+                    "duration" : 22450,
+                    "mediaStart" : 0,
+                    "mediaDuration" : 22450,
+                    "scalar" : 1,
+                    "metadata" : {
+                      "clipSpeedAttribute" : false
+                    }
+                  }
+                ]
+              },
+              {
+                "trackIndex" : 1,
+                "medias" : [
+                ]
+              },
+              {
+                "trackIndex" : 2,
+                "medias" : [
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "trackAttributes" : [
+      {
+        "ident" : "",
+        "audioMuted" : false,
+        "videoHidden" : false,
+        "magnetic" : false,
+        "matte" : 0,
+        "solo" : false,
+        "metadata" : {
+          "IsLocked" : "False",
+          "WinTrackHeight" : "56"
+        }
+      },
+      {
+        "ident" : "",
+        "audioMuted" : false,
+        "videoHidden" : false,
+        "magnetic" : false,
+        "matte" : 0,
+        "solo" : false,
+        "metadata" : {
+          "IsLocked" : "False",
+          "WinTrackHeight" : "56"
+        }
+      },
+      {
+        "ident" : "",
+        "audioMuted" : false,
+        "videoHidden" : false,
+        "magnetic" : false,
+        "matte" : 0,
+        "solo" : false,
+        "metadata" : {
+          "IsLocked" : "False",
+          "WinTrackHeight" : "56"
+        }
+      }
+    ],
+    "captionAttributes" : {
+      "enabled" : true,
+      "fontName" : "Arial",
+      "fontSize" : 59,
+      "backgroundColor" : [ 0, 0, 0, 191],
+      "foregroundColor" : [ 255, 255, 255, 255],
+      "lang" : "en",
+      "alignment" : 0,
+      "defaultFontSize" : true,
+      "opacity" : 0.5,
+      "backgroundEnabled" : true,
+      "backgroundOnlyAroundText" : true
+    },
+    "backgroundColor" : [ 0, 0, 0, 255]
+  },
+  "metadata" : {
+    "AutoSaveFile" : "C:\\Users\\aleach\\AppData\\Local\\TechSmith\\Camtasia Studio\\20.0\\Auto-Saves\\quiz_project317b4e81.autosave.tscproj",
+    "CanvasZoom" : 26,
+    "Date" : "2020-09-30 02:26:46 PM",
+    "IsAutoSave" : "0",
+    "Language" : "ENU",
+    "ProfileName" : "",
+    "ProjectDimensionsChanged" : "1",
+    "ShouldHardlinkProjectMedia" : "0",
+    "Title" : "quiz_project",
+    "audioNarrationNotes" : "",
+    "calloutStyle" : "Basic",
+    "canvasDetached" : "False",
+    "canvasPositionHeight" : "0",
+    "canvasPositionLeft" : "0",
+    "canvasPositionTop" : "0",
+    "canvasPositionWidth" : "0"
+  }
+}

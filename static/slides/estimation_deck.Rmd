@@ -311,6 +311,7 @@ fit_4m <- lm(salary ~ points+toi, data =nhl_data%>%filter(salary>=4))
 
 #fit_toi_p60 <- lm(salary ~ points+toi+p60, data =nhl_data)
 
+fit_toi2 <- lm(salary ~ points+points^2+toi+toi^2, data =nhl_data)
 
 ```
  
@@ -497,6 +498,7 @@ names(fit_data)<-c("residuals","salary","points")
 fit_data<-fit_data %>% left_join(nhl_data)
 labels_toi_pos<- fit_data %>% arrange(residuals) %>% head(10) %>% select(player)%>%mutate(label=paste("#",row_number(),": ",player,sep=""))
 ```
+
 ## Now who are the most underpaid players?
 
 ```{r nhl_residuals_graph_3,fig.width=12,fig.height=7,echo=FALSE,warning=FALSE}
@@ -536,6 +538,19 @@ stargazer(fit,fit_toi,fit_toi_pos,align=TRUE,font.size="tiny",header=FALSE,inter
 ```
 - In regression (1), I tried to explain salaries using only points. What variables did I omit?
 - TOI is obviously important, and so by omitting it, I'd been forcing points to explain other things that are correlated with it
+
+\vfill
+
+
+
+## Non-linear effects
+
+\vspace{-.5cm}
+
+```{r nhl_salary_SQ,results='asis',echo=FALSE,cache=FALSE}
+stargazer(fit,fit_toi,fit_toi_2,align=TRUE,font.size="tiny",header=FALSE,intercept.bottom = FALSE,single.row = TRUE,title="NHL Salary Regression Models",omit.stat = c("rsq", "f"),column.sep.width = "-15pt")
+```
+- Note here that, as we add variables to the regression which help explain the salary levels, we're allowing for non-linear effects of points or toi. Why?
 
 \vfill
 
