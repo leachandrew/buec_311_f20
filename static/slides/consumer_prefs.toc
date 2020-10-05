@@ -1,4 +1,8 @@
 \beamer@sectionintoc {1}{Outline}{2}{0}{1}
-\beamer@sectionintoc {2}{Consumer Choice Theory}{4}{0}{2}
-\beamer@sectionintoc {3}{Applying the Theory}{61}{0}{3}
-\beamer@sectionintoc {4}{Deviations from the Theory}{73}{0}{4}
+\beamer@sectionintoc {2}{Introduction}{4}{0}{2}
+\beamer@sectionintoc {3}{Preferences}{6}{0}{3}
+\beamer@sectionintoc {4}{Utility}{33}{0}{4}
+\beamer@sectionintoc {5}{Budget Constraints}{44}{0}{5}
+\beamer@sectionintoc {6}{Optimal Choices}{53}{0}{6}
+\beamer@sectionintoc {7}{Applying the Theory}{61}{0}{7}
+\beamer@sectionintoc {8}{Deviations from the Theory}{73}{0}{8}
