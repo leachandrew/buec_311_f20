@@ -1,0 +1,230 @@
+---
+output: 
+  pdf_document:
+    keep_tex: true
+    fig_caption: yes
+    latex_engine: pdflatex
+    template: ../ajl_note_pack.tex
+    #template: ../svm-latex-syllabus.tex
+geometry: margin=1in
+
+course: "BUEC 311: Business Economics, Organization and Management"
+course_number: "BUEC 311"
+title: "Problem Set #4"
+subtitle: "Consumer Preferences"
+date: \today
+
+
+
+email: "aleach@ualberta.ca"
+web: "www.andrewleach.ca"
+officehours: "By appointment"
+office: "3-20D Business Building"
+classroom: "BUS 4-13 "
+classhours: "B2 TR 9:30-10:50, B1 TR 11:00-12:20"
+
+fontfamily: mathpazo
+fontsize: 11pt
+header-includes:
+   - \linespread{1.05}
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(echo=F,
+                      message=F,
+                      warning=F)
+
+knitr::opts_knit$set(dev.args = list(type = "cairo"))
+library(tidyverse)
+library(ggthemes)
+library(ggrepel)
+library(patchwork)
+
+blake_theme<-function(){
+  theme_hc(20)+
+    theme(plot.subtitle = element_text(color="grey10",size=rel(.7)),
+          plot.title = element_text(face="bold",size=rel(.8)),
+          plot.caption = element_text(color="grey50",size=rel(.5),hjust=0),
+          legend.title = element_text(color="grey10",size=rel(.5)),
+          legend.text = element_text(color="grey10",size=rel(.5)),
+          axis.title = element_text(size=rel(.8)),
+          axis.ticks = element_blank(),
+          panel.spacing = unit(2,"lines"),
+          #legend.position = "none",
+          plot.margin = margin(t = .5, r = 1, b = .25, l = 1,unit= "cm"),
+          axis.text.x = element_text(margin = margin(t = 10, r = 0, b = 0, l = 0))
+          
+    )
+}
+```
+This week's problems are more conceptual in nature, meant to ensure that you have the definitions down first.
+
+1) Consumers allocate their budgets among bundles because
+   A) more is not always better.
+   B) bundles are the most efficient way to package goods and services.
+   C) consumers face choices and trade-offs.
+   D) they want to minimize trips to the store.
+
+Answer:  C. This is the core of why we maximize, but will get here in week 7.
+
+2) The assumption of completeness means that
+   A) the consumer can rank all possible consumption bundles.
+   B) more of a good is always better.
+   C) the consumers can rank all affordable consumption bundles.
+   D) all preferences conditions are met.
+
+Answer:  A. The rest might be true, but are not the answer to this question.
+
+3) If a consumer prefers apples to bananas and prefers bananas to citrus fruit, in order to satisfy assumptions about preferences she has to prefer
+   A) bananas to apples.
+   B) citrus fruit to bananas.
+   C) apples to citrus fruit.
+   D) citrus fruit to apples.
+
+Answer:  C, by transitivity.
+
+4) If a consumer weakly prefers pizza to hot dogs, and weakly prefers hot dogs to chicken, then he ________ pizza ________ chicken.
+   A) likes; less than
+   B) likes; at least as much as
+   C) dislikes; more than
+   D) dislikes; and is indifferent about
+
+Answer:  B. Note the "weak" statement here.
+
+
+5) The principle that "More is better" results in indifference curves
+   A) sloping down.
+   B) not intersecting.
+   C) reflecting greater preferences the further they are from the origin.
+   D) All of the above.
+
+Answer:  D
+\newpage
+6) An indifference curve represents bundles of goods that a consumer
+   A) views as equally desirable.
+   B) ranks from most preferred to least preferred.
+   C) prefers to any other bundle of goods.
+   D) All of the above.
+
+Answer:  A
+
+
+7) There is an indifference curve through every bundle because of the assumption of
+   A) transitivity.
+   B) completeness.
+   C) rationality.
+   D) nonsatiation.
+
+Answer:  B
+
+8) Indifference curves are downward sloping because of the assumption of
+   A) completeness.
+   B) transitivity.
+   C) more is better.
+   D) All of the above.
+
+Answer:  C. Completeness tells you that I can rank all bundles, and transitivity means they can't cross, loop, etc.
+
+
+9) If two indifference curves were to intersect at a point, this would violate the assumption of
+   A) transitivity.
+   B) completeness.
+   C) Both A and B above.
+   D) None of the above.
+
+Answer:  A. See above. Completeness isn't relevant here.
+
+10) Indifference curves close to the origin are ________ those farther from the origin because of ________.
+
+   A) better than; transitivity
+   B) worse than; nonsatiation
+   C) better than; completeness
+   D) worse than; transitivity
+
+Answer:  B. More is better, so up and to the right are better bundles.
+
+11) The indifference curves for left shoes and right shoes would most likely be
+   A) upward sloping and concave to the origin.
+   B) downward sloping and convex to the origin.
+   C) downward sloping and straight lines.
+   D) L-shaped.
+
+Answer:  D. These are perfect complements (assuming you don't have two left feet.)
+\newpage
+
+12) If two bundles are on the same indifference curve, then
+   A) the consumer derives the same level of utility from each.
+   B) the consumer derives the same level of ordinal utility from each but not the same level of cardinal utility.
+   C) no comparison can be made between the two bundles since utility cannot really be measured.
+   D) the MRS between the two bundles equals one.
+
+Answer:  A. 
+
+13) Adrian's utilities of two consumption bundles are 50 and 100 respectively. This implies that
+   A) Adrian prefers the first bundle.
+   B) Adrian prefers the second bundle.
+   C) Adrian likes the second bundle twice as much.
+   D) Adrian likes the first bundle twice as much.
+
+Answer:  B. Higher utility is better, but the ranking might not be cardinal.
+
+
+14) Joe's income is $500, the price of food (F, y-axis) is $2 per unit, and the price of shelter (S, x-axis) is $100. Which of the following represents his budget constraint?
+   A) 500 = 2F + 100S
+   B) F = 250 - 50S
+   C) S = 5 - .02F
+   D) All of the above.
+
+Answer:  D. They are just transformations of the same relationship.
+
+15) Joe's income is $500, the price of food (F, y-axis) is $2 per unit, and the price of shelter (S, x-axis) is $100. Which of the following represents his marginal rate of transformation of food for shelter?
+   A) -5
+   B) -50
+   C) -.02
+   D) None of the above.
+
+Answer:  B. -100/2. Income doesn't matter for calculating the MRT.
+
+16) With respect to consuming food and shelter, two consumers face the same prices and both claim to be in equilibrium. We therefore know that
+   A) they both have the same marginal utility for food.
+   B) they both have the same marginal utility for shelter.
+   C) they both have the same MRS of food for shelter.
+   D) All of the above.
+
+Answer:  C. If pprices are the same, then MRT is the same for both consumers. Since they are at the optimal point, MRS=MRT for both, so it must be the case that MRS is the same both of them. Since utility isn't cardinal, it need not be the case that they have the same marginal utilities for either individual good.
+
+17) An individual's demand curve for a good can be derived by measuring the quantities selected as
+   A) the price of the good changes.
+   B) the prices of substitute goods change.
+   C) income changes.
+   D) All of the above.
+
+Answer:  A. You'd calculate shifts in the demand curve using B and C. 
+
+18) Behavioral economics extends traditional economic models by
+   A) including insights from psychology and human cognition models.
+   B) modeling behavior rather than prices.
+   C) admitting that individuals are irrational.
+   D) admitting that incentives are very important.
+
+Answer:  A. 
+
+
+19) In Spain, people are considered organ donors unless they explicitly indicate they do not want to be. In the United States, people are only considered organ donors if they explicitly indicate they wish to be. Behavioral economics would suggest that everything else equal,
+   A) the opt-in system of Spain would generate more organ donors. as a percentage of the adult population.
+   B) the opt-in system of the United States would generate more organ donors as a percentage of the adult population.
+   C) the opt-out system of Spain would generate more organ donors. as a percentage of the adult population.
+   D) the opt-out system of the United States would generate more organ donors as a percentage of the adult population.
+
+Answer:  C. People tend to be less likely to opt-out.
+
+
+
+20) In behavioral economics, salience is best exemplified by
+   A) consumers responding differently when posted prices increase rather than when prices increase because of sales tax increases.
+   B) consumers responding the same regardless of how prices change.
+   C) the end of a controlled experiment.
+   D) consumers responding differently when income increases permanently rather than temporarily.
+
+Answer:  A

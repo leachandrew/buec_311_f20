@@ -1,0 +1,115 @@
+---
+title: "User Interaction in WebGL"
+author: "Duncan Murdoch"
+date: "`r format(Sys.time(), '%B %d, %Y')`"
+output:
+  rmarkdown::html_vignette:
+    toc: yes
+    fig_width: 5
+    fig_height: 5
+vignette: >
+  %\VignetteIndexEntry{User Interaction in WebGL} 
+  %\VignetteEngine{knitr::rmarkdown}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(cache=TRUE)
+knitr::opts_chunk$set(warning = FALSE)
+
+library(tidyverse)
+library(lubridate)
+library(viridis)
+library(zoo)
+library(janitor)
+library(broom)
+library(ggthemes)
+library(directlabels)
+library(kableExtra)
+library(stargazer)
+library(scales)
+library(ggrepel)
+
+
+colors_tableau10<-function()
+{
+  return(c("#1F77B4", "#FF7F0E", "#2CA02C", "#D62728", "#9467BD", "#8C564B",
+           "#E377C2", "#7F7F7F", "#BCBD22", "#17BECF"))
+}
+
+class_clean<-function(){
+  theme_classic()+
+    theme(
+      plot.subtitle = element_text(color="grey10",size=rel(.7)),
+      plot.title = element_text(face="bold",size=rel(.8)),
+      plot.caption = element_text(color="grey50",size=rel(.5),hjust=0),
+      legend.title = element_text(color="grey10",size=rel(.5)),
+      legend.text = element_text(color="grey10",size=rel(.5)),
+      axis.text = element_text(size=rel(1.5)),
+      axis.title = element_text(size=rel(1.5)),
+      #panel.grid.major = element_line(size=0,colour = "black"), 
+      #plot.margin = margin(t = .1, r = .1, b = .1, l = .1,unit= "cm"),
+      plot.margin = margin(t = .5, r = 1, b = .25, l = 1,unit= "cm"),
+      #axis.text.x = element_text(margin = margin(t = 10, r = 0, b = 0, l = 0)),
+      NULL)
+}
+
+```
+
+
+## Introduction
+
+This document describes how to use embedded Javascript to 
+control a WebGL display in an HTML document.  For more 
+general information, see [rgl Overview](rgl.html).
+
+We start with two simple examples.  The next section gives 
+reference information.
+
+Consider the simple plot of the iris data.  We
+insert a code chunk with label `plot3d` (which will be used below).
+
+```{r plot3d, rgl=TRUE}
+with(iris, plot3d(Sepal.Length, Sepal.Width, Petal.Length, 
+                  type="s", col=as.numeric(Species)))
+#subid <- currentSubscene3d()
+```
+The `rotate()` function makes use of the global `<prefix>rgl`
+object.  The `knitr` WebGL support sets the prefix to the 
+code chunk label, so the global is called `plot3drgl`:
+
+    <script type="text/javascript">
+    var rotate = function(angle) {
+      plot3drgl.userMatrix[`r rinline("subid",
+                           script=TRUE)`].rotate(angle, 0,1,0);
+      plot3drgl.drawScene();
+    }
+    </script>
+
+
+
+# Introduction
+
+```{r, making_graphs,echo=FALSE,include=TRUE}
+U <- function(x,y) (x*y)
+utility_map(5,5,U,u_vals = c(2,4,6,8,10),x_shift = -.35,y_shift = .25)
+
+```
+---
+# Introduction 2
+
+```{r testgl,echo=FALSE,include=TRUE}
+library(rgl)
+x <- sort(rnorm(1000))
+y <- rnorm(1000)
+z <- rnorm(1000) + atan2(x,y)
+plot3d(x, y, z, col=rainbow(1000))
+rglwidget()
+```
+---
+
+# test
+
+```{r testrgl,rgl=TRUE}
+with(iris, plot3d(Sepal.Length, Sepal.Width, Petal.Length, 
+                  type="s", col=as.numeric(Species)))
+```

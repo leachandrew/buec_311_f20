@@ -1,0 +1,629 @@
+\documentclass[11pt,]{article}
+\usepackage[margin=1in]{geometry}
+\newcommand*{\authorfont}{\fontfamily{phv}\selectfont}
+\usepackage[]{mathpazo}
+
+\usepackage{amssymb,amsmath}
+\usepackage{xcolor}
+
+%TIKZ and Flow chart material
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows}
+\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm,text centered, draw=black, fill=red!30]
+\tikzstyle{io} = [trapezium, trapezium left angle=70, trapezium right angle=110, minimum width=3cm, minimum height=1cm, text centered, draw=black,fill=white]
+\tikzstyle{process} = [rectangle, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=white]
+\tikzstyle{decision} = [diamond, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=white]
+\tikzstyle{smalldecision} = [diamond, minimum width=1cm, minimum height=1cm, text centered, draw=black, fill=white]
+\tikzstyle{arrow} = [thick,->,>=stealth]
+\tikzstyle{line} = [thick,-]
+\tikzstyle{dot} = [circle,inner sep=0.5pt,draw=black, fill=black]
+
+
+%\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm,text centered, %draw=black, fill=red!30]
+%\tikzstyle{io} = [trapezium, trapezium left angle=70, trapezium right angle=110, minimum width=3cm, %minimum height=1cm, text centered, draw=black,fill=white]
+%\tikzstyle{process} = [rectangle, minimum width=3cm, minimum height=1cm, text centered, draw=black, %fill=white]
+%\tikzstyle{decision} = [diamond, minimum width=3cm, minimum height=1cm, text centered, draw=black, %fill=green!30]
+%\tikzstyle{arrow} = [thick,->,>=stealth]
+
+
+
+
+\usepackage{abstract}
+\renewcommand{\abstractname}{}    % clear the title
+\renewcommand{\absnamepos}{empty} % originally center
+\newcommand{\blankline}{\quad\pagebreak[2]}
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{longtable,booktabs}
+
+\usepackage{parskip}
+\usepackage{titlesec}
+\titlespacing\section{0pt}{12pt plus 4pt minus 2pt}{6pt plus 2pt minus 2pt}
+\titlespacing\subsection{0pt}{12pt plus 4pt minus 2pt}{6pt plus 2pt minus 2pt}
+
+\titleformat*{\subsubsection}{\normalsize\itshape}
+
+\usepackage{titling}
+\setlength{\droptitle}{-.25cm}
+
+%\setlength{\parindent}{0pt}
+%\setlength{\parskip}{6pt plus 2pt minus 1pt}
+%\setlength{\emergencystretch}{3em}  % prevent overfull lines
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage{lastpage}
+\renewcommand{\headrulewidth}{0.3pt}
+\renewcommand{\footrulewidth}{0.0pt}
+%\lhead{\footnotesize Problem Set \#4 }
+\lhead{\footnotesize BUEC 311: Problem Set \#4, Consumer Preferences}
+\rhead{\footnotesize \today}
+\lfoot{\small \copyright }
+\cfoot{}
+\rfoot{\small \thepage/\pageref*{LastPage}}
+
+\fancypagestyle{firststyle}
+{
+\renewcommand{\headrulewidth}{0pt}%
+   \fancyhf{}
+   \fancyfoot[C]{\thepage/\pageref*{LastPage}}
+}
+
+%\def\labelitemi{--}
+%\usepackage{enumitem}
+%\setitemize[0]{leftmargin=25pt}
+%\setenumerate[0]{leftmargin=25pt}
+
+
+
+
+\makeatletter
+\@ifpackageloaded{hyperref}{}{%
+\ifxetex
+  \usepackage[setpagesize=false, % page size defined by xetex
+              unicode=false, % unicode breaks when used with xetex
+              xetex]{hyperref}
+\else
+  \usepackage[unicode=true]{hyperref}
+\fi
+}
+\@ifpackageloaded{color}{
+    \PassOptionsToPackage{usenames,dvipsnames}{color}
+}{%
+    \usepackage[usenames,dvipsnames]{color}
+}
+\makeatother
+\hypersetup{breaklinks=true,
+            bookmarks=true,
+            pdfauthor={},
+             pdfkeywords = {},
+            pdftitle={Problem Set \#4: Consumer Preferences},
+            colorlinks=true,
+            citecolor=blue,
+            urlcolor=blue,
+            linkcolor=magenta,
+            pdfborder={0 0 0}}
+\urlstyle{same}  % don't use monospace font for urls
+
+
+\setcounter{secnumdepth}{0}
+
+
+%
+
+
+
+\usepackage{setspace}
+
+\title{\vspace{-1.5cm}\Large{BUEC 311: Business Economics, Organization
+and Management}\medskip\\\Large{Problem Set \#4}
+\medskip\\\Large{Consumer Preferences}
+}
+\date{\vspace{-.75cm}\Large{\today}}
+
+\definecolor{light-gray}{gray}{0.8}
+
+
+\begin{document}
+
+\vspace{-5cm}\maketitle
+ \tikz [remember picture,overlay]
+    %\node[yshift=-1.65cm,xshift=0cm] at (current page.north)
+    %\node[yshift=-1.65cm,xshift=0cm] at (current page.north)
+        %or: (current page.center)
+        \node[yshift=-1cm,xshift=6.5cm] at (current page.north west)
+        %{\includegraphics[width=3in]{UA-ASB-COLOUR.png}};
+        {\includegraphics[width=.5\paperwidth]{../images/UA-ASB-COLOUR.png}};
+\vspace{-.75cm}		
+		\thispagestyle{firststyle}
+
+
+
+This week's problems are more conceptual in nature, meant to ensure that
+you have the definitions down first.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\tightlist
+\item
+  Consumers allocate their budgets among bundles because
+
+  \begin{enumerate}
+  \def\labelenumii{\Alph{enumii})}
+  \tightlist
+  \item
+    more is not always better.
+  \item
+    bundles are the most efficient way to package goods and services.
+  \item
+    consumers face choices and trade-offs.
+  \item
+    they want to minimize trips to the store.
+  \end{enumerate}
+\end{enumerate}
+
+Answer: C. This is the core of why we maximize, but will get here in
+week 7.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  The assumption of completeness means that
+
+  \begin{enumerate}
+  \def\labelenumii{\Alph{enumii})}
+  \tightlist
+  \item
+    the consumer can rank all possible consumption bundles.
+  \item
+    more of a good is always better.
+  \item
+    the consumers can rank all affordable consumption bundles.
+  \item
+    all preferences conditions are met.
+  \end{enumerate}
+\end{enumerate}
+
+Answer: A. The rest might be true, but are not the answer to this
+question.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  If a consumer prefers apples to bananas and prefers bananas to citrus
+  fruit, in order to satisfy assumptions about preferences she has to
+  prefer
+
+  \begin{enumerate}
+  \def\labelenumii{\Alph{enumii})}
+  \tightlist
+  \item
+    bananas to apples.
+  \item
+    citrus fruit to bananas.
+  \item
+    apples to citrus fruit.
+  \item
+    citrus fruit to apples.
+  \end{enumerate}
+\end{enumerate}
+
+Answer: C, by transitivity.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  If a consumer weakly prefers pizza to hot dogs, and weakly prefers hot
+  dogs to chicken, then he \_\_\_\_\_\_\_\_ pizza \_\_\_\_\_\_\_\_
+  chicken.
+
+  \begin{enumerate}
+  \def\labelenumii{\Alph{enumii})}
+  \tightlist
+  \item
+    likes; less than
+  \item
+    likes; at least as much as
+  \item
+    dislikes; more than
+  \item
+    dislikes; and is indifferent about
+  \end{enumerate}
+\end{enumerate}
+
+Answer: B. Note the ``weak'' statement here.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  The principle that ``More is better'' results in indifference curves
+
+  \begin{enumerate}
+  \def\labelenumii{\Alph{enumii})}
+  \tightlist
+  \item
+    sloping down.
+  \item
+    not intersecting.
+  \item
+    reflecting greater preferences the further they are from the origin.
+  \item
+    All of the above.
+  \end{enumerate}
+\end{enumerate}
+
+Answer: D \newpage
+6) An indifference curve represents bundles of goods that a consumer A)
+views as equally desirable. B) ranks from most preferred to least
+preferred. C) prefers to any other bundle of goods. D) All of the above.
+
+Answer: A
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{6}
+\tightlist
+\item
+  There is an indifference curve through every bundle because of the
+  assumption of
+
+  \begin{enumerate}
+  \def\labelenumii{\Alph{enumii})}
+  \tightlist
+  \item
+    transitivity.
+  \item
+    completeness.
+  \item
+    rationality.
+  \item
+    nonsatiation.
+  \end{enumerate}
+\end{enumerate}
+
+Answer: B
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{7}
+\tightlist
+\item
+  Indifference curves are downward sloping because of the assumption of
+
+  \begin{enumerate}
+  \def\labelenumii{\Alph{enumii})}
+  \tightlist
+  \item
+    completeness.
+  \item
+    transitivity.
+  \item
+    more is better.
+  \item
+    All of the above.
+  \end{enumerate}
+\end{enumerate}
+
+Answer: C. Completeness tells you that I can rank all bundles, and
+transitivity means they can't cross, loop, etc.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{8}
+\tightlist
+\item
+  If two indifference curves were to intersect at a point, this would
+  violate the assumption of
+
+  \begin{enumerate}
+  \def\labelenumii{\Alph{enumii})}
+  \tightlist
+  \item
+    transitivity.
+  \item
+    completeness.
+  \item
+    Both A and B above.
+  \item
+    None of the above.
+  \end{enumerate}
+\end{enumerate}
+
+Answer: A. See above. Completeness isn't relevant here.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{9}
+\tightlist
+\item
+  Indifference curves close to the origin are \_\_\_\_\_\_\_\_ those
+  farther from the origin because of \_\_\_\_\_\_\_\_.
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\Alph{enumi})}
+\tightlist
+\item
+  better than; transitivity
+\item
+  worse than; nonsatiation
+\item
+  better than; completeness
+\item
+  worse than; transitivity
+\end{enumerate}
+
+Answer: B. More is better, so up and to the right are better bundles.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{10}
+\tightlist
+\item
+  The indifference curves for left shoes and right shoes would most
+  likely be
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\Alph{enumi})}
+\tightlist
+\item
+  upward sloping and concave to the origin.
+\item
+  downward sloping and convex to the origin.
+\item
+  downward sloping and straight lines.
+\item
+  L-shaped.
+\end{enumerate}
+
+Answer: D. These are perfect complements (assuming you don't have two
+left feet.) \newpage
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{11}
+\tightlist
+\item
+  If two bundles are on the same indifference curve, then
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\Alph{enumi})}
+\tightlist
+\item
+  the consumer derives the same level of utility from each.
+\item
+  the consumer derives the same level of ordinal utility from each but
+  not the same level of cardinal utility.
+\item
+  no comparison can be made between the two bundles since utility cannot
+  really be measured.
+\item
+  the MRS between the two bundles equals one.
+\end{enumerate}
+
+Answer: A.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{12}
+\tightlist
+\item
+  Adrian's utilities of two consumption bundles are 50 and 100
+  respectively. This implies that
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\Alph{enumi})}
+\tightlist
+\item
+  Adrian prefers the first bundle.
+\item
+  Adrian prefers the second bundle.
+\item
+  Adrian likes the second bundle twice as much.
+\item
+  Adrian likes the first bundle twice as much.
+\end{enumerate}
+
+Answer: B. Higher utility is better, but the ranking might not be
+cardinal.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{13}
+\tightlist
+\item
+  Joe's income is \$500, the price of food (F, y-axis) is \$2 per unit,
+  and the price of shelter (S, x-axis) is \$100. Which of the following
+  represents his budget constraint?
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\Alph{enumi})}
+\tightlist
+\item
+  500 = 2F + 100S
+\item
+  F = 250 - 50S
+\item
+  S = 5 - .02F
+\item
+  All of the above.
+\end{enumerate}
+
+Answer: D. They are just transformations of the same relationship.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{14}
+\tightlist
+\item
+  Joe's income is \$500, the price of food (F, y-axis) is \$2 per unit,
+  and the price of shelter (S, x-axis) is \$100. Which of the following
+  represents his marginal rate of transformation of food for shelter?
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\Alph{enumi})}
+\tightlist
+\item
+  -5
+\item
+  -50
+\item
+  -.02
+\item
+  None of the above.
+\end{enumerate}
+
+Answer: B. -100/2. Income doesn't matter for calculating the MRT.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{15}
+\tightlist
+\item
+  With respect to consuming food and shelter, two consumers face the
+  same prices and both claim to be in equilibrium. We therefore know
+  that
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\Alph{enumi})}
+\tightlist
+\item
+  they both have the same marginal utility for food.
+\item
+  they both have the same marginal utility for shelter.
+\item
+  they both have the same MRS of food for shelter.
+\item
+  All of the above.
+\end{enumerate}
+
+Answer: C. If pprices are the same, then MRT is the same for both
+consumers. Since they are at the optimal point, MRS=MRT for both, so it
+must be the case that MRS is the same both of them. Since utility isn't
+cardinal, it need not be the case that they have the same marginal
+utilities for either individual good.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{16}
+\tightlist
+\item
+  An individual's demand curve for a good can be derived by measuring
+  the quantities selected as
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\Alph{enumi})}
+\tightlist
+\item
+  the price of the good changes.
+\item
+  the prices of substitute goods change.
+\item
+  income changes.
+\item
+  All of the above.
+\end{enumerate}
+
+Answer: A. You'd calculate shifts in the demand curve using B and C.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{17}
+\tightlist
+\item
+  Behavioral economics extends traditional economic models by
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\Alph{enumi})}
+\tightlist
+\item
+  including insights from psychology and human cognition models.
+\item
+  modeling behavior rather than prices.
+\item
+  admitting that individuals are irrational.
+\item
+  admitting that incentives are very important.
+\end{enumerate}
+
+Answer: A.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{18}
+\tightlist
+\item
+  In Spain, people are considered organ donors unless they explicitly
+  indicate they do not want to be. In the United States, people are only
+  considered organ donors if they explicitly indicate they wish to be.
+  Behavioral economics would suggest that everything else equal,
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\Alph{enumi})}
+\tightlist
+\item
+  the opt-in system of Spain would generate more organ donors. as a
+  percentage of the adult population.
+\item
+  the opt-in system of the United States would generate more organ
+  donors as a percentage of the adult population.
+\item
+  the opt-out system of Spain would generate more organ donors. as a
+  percentage of the adult population.
+\item
+  the opt-out system of the United States would generate more organ
+  donors as a percentage of the adult population.
+\end{enumerate}
+
+Answer: C. People tend to be less likely to opt-out.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{19}
+\tightlist
+\item
+  In behavioral economics, salience is best exemplified by
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\Alph{enumi})}
+\tightlist
+\item
+  consumers responding differently when posted prices increase rather
+  than when prices increase because of sales tax increases.
+\item
+  consumers responding the same regardless of how prices change.
+\item
+  the end of a controlled experiment.
+\item
+  consumers responding differently when income increases permanently
+  rather than temporarily.
+\end{enumerate}
+
+Answer: A
+
+
+
+
+\end{document}
