@@ -1,0 +1,6 @@
+\beamer@sectionintoc {1}{Motivation}{3}{0}{1}
+\beamer@sectionintoc {2}{Modeling Production}{5}{0}{2}
+\beamer@sectionintoc {3}{Short Run vs. Long Run}{11}{0}{3}
+\beamer@sectionintoc {4}{Returns to Scale}{32}{0}{4}
+\beamer@sectionintoc {5}{Innovation}{40}{0}{5}
+\beamer@sectionintoc {6}{Key takeaways}{45}{0}{6}

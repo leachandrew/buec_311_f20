@@ -1,0 +1,6 @@
+\beamer@sectionintoc {1}{Outline}{1}{0}{1}
+\beamer@sectionintoc {2}{Conceptualizing Costs}{3}{0}{2}
+\beamer@sectionintoc {3}{Measuring Costs}{13}{0}{3}
+\beamer@sectionintoc {4}{Long and short run costs}{21}{0}{4}
+\beamer@sectionintoc {5}{The Learning Curve}{46}{0}{5}
+\beamer@sectionintoc {6}{Multiple goods and returns to scope}{51}{0}{6}

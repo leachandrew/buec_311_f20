@@ -1,0 +1,1087 @@
+\documentclass[12pt,xcolor=table,aspectratio=169]{beamer}
+\usetheme{Frankfurt}
+\usecolortheme{rose}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{bbm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[flushleft]{threeparttable}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{siunitx}
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathreplacing,angles,quotes}
+%\usepackage{enumitem}% http://ctan.org/pkg/enumitem
+
+%set up course and number
+
+\newcommand{\ClassName}{TBD}
+\newcommand{\ClassNumber}{TBD}
+\newcommand{\Topic}{TBD}
+
+% Some optional colors. Change or add as you see fit.
+%---------------------------------------------------
+ \definecolor{ualbertagreen}{HTML}{007C41}
+\definecolor{ualbertagold}{HTML}{FFDB05}
+
+\definecolor{calloutgrey}{HTML}{D9D9D9}
+
+
+%set fonts
+\setbeamerfont{subtitle}{size=\large,shape=\scshape,series=\bfseries}
+\setbeamerfont{title}{size=\Large,shape=\scshape,series=\bfseries}
+\setbeamerfont{author}{size=\large}
+\setbeamerfont{date}{size=\large}
+\setbeamerfont{caption}{size=\scriptsize}
+
+
+% Some optional color adjustments to Beamer. Change as you see fit.
+%------------------------------------------------------------------
+\setbeamercolor{frametitle}{fg=ualbertagreen,bg=white}
+\setbeamercolor{title}{fg=ualbertagreen,bg=white}
+\setbeamercolor{author}{fg=ualbertagreen,bg=white}
+\setbeamercolor{date}{fg=ualbertagreen,bg=white}
+\setbeamercolor{local structure}{fg=ualbertagreen}
+\setbeamercolor{section in toc}{fg=ualbertagreen,bg=white}
+% \setbeamercolor{subsection in toc}{fg=ualbertagreen,bg=white}
+\setbeamercolor{footline}{fg=ualbertagreen!50, bg=white}
+
+% definition boxes
+\setbeamercolor{block title}{bg=ualbertagreen,fg=white}
+\setbeamercolor{block body}{parent=normal text,use=block title,bg=calloutgrey}
+%\setbeamercolor{block body}{parent=normal text,use=block title,bg=block title.bg!30!bg}
+
+
+\setbeamercolor{upper separation line head}{bg=ualbertagreen}
+\setbeamercolor{lower separation line head}{bg=ualbertagold}
+\setbeamercolor{middle separation line head}{bg=ualbertagold}
+\setbeamercolor{frametitle}{fg=ualbertagreen,bg=white}
+
+
+
+\setbeamercolor{section in head/foot}{bg=white,fg=ualbertagreen}
+\setbeamercolor{author in head/foot}{bg=white,fg=ualbertagreen}
+\setbeamercolor{date in head/foot}{bg=white,,fg=ualbertagreen}
+\setbeamercolor{title in head/foot}{bg=white,fg=ualbertagreen}
+
+\setbeamercolor{headline}{bg=white,fg=ualbertagreen}
+
+
+
+
+\setbeamercolor*{middle separation line head}{bg=ualbertagreen}
+\setbeamercolor*{alerted text}{fg=ualbertagreen}
+\setbeamercolor*{example text}{fg=black}
+\setbeamercolor*{structure}{fg=black}
+
+
+\let\Tiny=\tiny
+
+
+
+\logo{
+   %\ifnum\insertpagenumber>1
+   \tikz [remember picture,overlay]
+    \node[yshift=.3cm,xshift=1.5cm] at (current page.south west)
+        %or: (current page.center)
+        {\includegraphics[width=1in]{../images/UA-ASB-COLOUR.png}};
+    %\fi
+%\includegraphics[height=0.8cm]{../images/UA-ASB-COLOUR.png}\vspace{220pt}
+}
+
+
+\setbeamertemplate{title page}{%
+  \vbox{}
+    \vspace{.5cm}% NEW
+  \begingroup
+    \centering
+    \begin{beamercolorbox}[sep=8pt,center]{title}
+      \usebeamerfont{title}\ClassNumber: \ClassName\par%
+      \usebeamerfont{title}\inserttitle\par%
+     \ifx\insertsubtitle\@empty%
+      \else%
+        \vskip0.05em%
+        {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
+      \fi%
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[sep=8pt,center]{author}
+      \usebeamerfont{author}\insertauthor
+    \end{beamercolorbox}
+    \begin{beamercolorbox}[sep=8pt,center]{institute}
+      \usebeamerfont{institute}\insertinstitute
+    \end{beamercolorbox}
+
+    \vspace{0.5cm}% NEW
+    \begin{beamercolorbox}[sep=8pt,center]{date}
+      \usebeamerfont{date}\insertdate
+    \end{beamercolorbox}\vskip0.05em
+
+      \endgroup
+  %\vfill
+}
+
+
+\setbeamertemplate{frametitle}{%
+    \insertframetitle\par\vskip-10pt
+}
+
+
+
+\renewcommand{\ClassName}{Business Economics, Organization and Management}
+\renewcommand{\ClassNumber}{BUEC 311}
+
+\setbeamertemplate{headline}{%
+\leavevmode%
+ \hbox{%
+    \begin{beamercolorbox}[wd=\paperwidth,ht=5ex,dp=0ex]{white}%
+    \usebeamerfont{headline}\hskip6pt\ClassNumber: \inserttitle\par%
+    \insertsectionnavigationhorizontal{\paperwidth}{}{\hskip0pt plus1filll}
+    \end{beamercolorbox}%
+  }
+}
+
+\defbeamertemplate*{footline}{my footline}{%
+    \ifnum\insertpagenumber=1
+        \Tiny{%
+            \hfill%
+		\vspace*{1pt}%
+            %\insertframenumber/\inserttotalframenumber \hspace*{0.1cm}%
+            \newline%
+            \color{ualbertagold}{\rule{\paperwidth}{0.4mm}}\newline%
+            \color{ualbertagold}{\rule{\paperwidth}{.4mm}}%
+        }
+  \else%
+        \Tiny{%
+            \hspace{.66\paperwidth}
+            %\vspace{25pt}
+            \insertframenumber/\inserttotalframenumber
+            \newline%
+            \color{ualbertagold}{\rule{\paperwidth}{0.4mm}}\newline%
+            \color{ualbertagold}{\rule{\paperwidth}{.4mm}}%
+        }%
+    \fi%
+}
+
+
+\newenvironment{itemize*}%
+  {\begin{itemize}%
+    \setlength{\itemsep}{0pt}%
+    \setlength{\parskip}{0pt}}%
+  {\end{itemize}}
+
+
+\title{
+	Producer Behaviour, Part 1
+}
+
+\date{Fall 2020}
+
+\begin{document}
+
+
+
+\frame{
+	\titlepage
+}
+
+
+\frame{
+	\frametitle{Outline}
+	\begin{enumerate}
+	\item Motivation: Employment decisions
+	\item[]
+	\item The production function.
+	\item[]
+	\item Production: short-run vs. long-run
+	\item[]
+	\item Returns to scale.
+	\item[]
+	\item Innovation
+	\end{enumerate}
+}
+
+
+\section{Motivation}
+
+\frame{
+	\frametitle{Outline}
+	\begin{enumerate}
+	\item \alert{Motivation: Employment decisions}
+	\item[]
+	\item The production function.
+	\item[]
+	\item Production: short-run vs. long-run
+	\item[]
+	\item Returns to scale.
+	\item[]
+	\item Innovation
+	\end{enumerate}
+}
+
+
+\frame{
+	\frametitle{Employment decisions.}
+	\begin{itemize}
+	\item How do businesses decide how many workers to hire (or fire)?
+	\end{itemize}
+}
+
+\section{Modeling Production}
+
+\frame{
+	\frametitle{The Production Process}
+	\begin{itemize}
+	\item To understand how firms make input decisions, we first need a framework that helps us understand the \textit{production process} of the firm.
+	\item[]
+	\end{itemize}
+	\begin{definition}[Production process]
+	The production process (or \textit{technology}) of the firm describes how firms transform \textit{inputs} into \textit{outputs}.
+	\end{definition}
+}	
+
+\frame{
+	\frametitle{Inputs}
+	\begin{itemize}
+	\item Inputs are the resources used in production.
+		\begin{itemize}
+		\item Capital ($K$): Land, buildings, machinery/equipment.
+		\item Labor ($L$): Skilled and unskilled (or less-skilled) workers.
+		\item Materials ($M$): Natural resources, raw materials, processed products.
+		\end{itemize}
+	\item[]
+	\item Outputs are the result of the production process.
+		\begin{itemize}
+		\item Physical product: Car/computer chip/gasoline.
+		\item Service: Haircut/consulting services/automobile tune-up.
+		\end{itemize}
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{The Production Function}	
+	\begin{itemize}
+	\item We can summarize a firm's production process using a \textit{production function.}
+	\item[]
+	\end{itemize}
+		\begin{definition}[Production Function]
+		The production function summarizes the maximum quantity of output that can be produced with different combinations of inputs, \textit{given current knowledge about technology and organization}.
+		\end{definition}
+	\begin{itemize}
+	\item[]
+	\item Note: because it displays the maximum level of output that can be produced, the production function only reports efficient production processes.
+		\begin{itemize}
+		\item What are we assuming about how firms use inputs?
+		\end{itemize}
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{The Production Function}
+	\begin{itemize}
+	\item As an example, suppose a firm only uses capital and labor to produce output. Then its production function is given by:
+		\begin{align*}
+		q = f (L,K)
+		\end{align*}
+	where $q$ units of output are produced by combining $L$ units of labor services and $K$ units of capital via production function $f(-)$.
+    \item What other inputs might we consider?
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{The Production Function}
+	\begin{itemize}
+	\item Typically, we determine $f(-)$ by looking at data.
+	\item[]
+	\item Empirical evidence suggests that the \textit{Cobb-Douglas production function} fits the data well for many industries.
+	\item[]
+	\item The Cobb-Douglas production function is given by:
+		\begin{align*}
+		q = A L^{\alpha} K^{\beta}
+		\end{align*}
+		where $A$, $\alpha$ and $\beta$ are all positive constants.
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{The Production Function}
+	\begin{itemize}
+	\item The production function contains useful information: it tells us how the output of a firm changes is it changes its inputs ($K$, $L$, and $M$).
+	\item[]
+	\item Often, what inputs a firm can change depends on the time horizon:
+		\begin{itemize}
+		\item In the \textit{short run}, at least one factor of production cannot be changed. As such, inputs can be \textit{fixed} or \textit{variable}.
+		\item In the \textit{long run}, all factors of production can be changed, meaning all inputs are variable.
+		\end{itemize}
+	\end{itemize}
+}
+
+\section{Short Run vs. Long Run}
+
+\frame{
+	\frametitle{Production in the Short Run}
+	\begin{itemize}
+	\item In the short run, at least one input is fixed.
+		\begin{itemize}
+		\item Typically, fixed input is capital.
+		\end{itemize}
+	\item[]
+	\item Consider a production process with capital and labor as inputs. In the short run, total product (total output) is given by:
+		\begin{align*}
+		q = f(L,\bar{K})
+		\end{align*}
+	\item[]
+	\item In this case, output can only change if the firm changes $L$.
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{Production in the Short Run}
+	\begin{itemize}
+	\item Two key questions for management in the short run:
+		\begin{enumerate}
+		\item How much does output change if we hire an additional worker?
+		\item[]
+		\item What happens to the average productivity of our workforce if we hire an additional worker?
+		\end{enumerate}
+	\item[]
+	\item Aside: Why focus on the effects of hiring an additional worker?
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{Production in the Short Run}
+	\begin{itemize}
+	\item To answer question 1, we need to know the \textit{marginal product of labor}.
+	\item[]
+	\end{itemize}
+	\begin{definition}[Marginal Product of Labor]
+	The marginal product of labor is the change in total output that results from employing an extra unit of labor, holding other factors (capital, materials) constant. That is:
+		\begin{align*}
+		MP_{L} = \frac{\Delta q}{\Delta L}
+		\end{align*}
+	\end{definition}
+}
+
+\frame{
+	\frametitle{Production in the Short Run}
+	\begin{itemize}
+	\item To answer question 2, we need to know the \textit{average product of labor}.
+	\item[]
+	\end{itemize}
+	\begin{definition}[Average Product of Labor]
+	The average product of labor is the amount of output produced per worker on average. That is:
+		\begin{align*}
+		AP_{L} = \frac{q}{L}
+		\end{align*}
+	\end{definition}
+}
+
+\frame{
+	\frametitle{Short Run Example: Selling Ice Cream}
+	\begin{itemize}
+	\item As an example, consider Axel's ice cream shop.
+	\item[]
+	\item Axel's capital stock is fixed; he currently has 6 ice cream machines and is unable to add more due to space constraints.
+	\item[]
+	\item Axel is interested in understanding how changing his workforce affects output and productivity.
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{Short Run Example: Selling Ice Cream}
+	\begin{table}
+	\centering
+	\resizebox{.5\linewidth}{!}{% Resize table to fit within \linewidth horizontally
+	\begin{tabular}{l | l | l | l | l}
+	\underline{Capital ($K$)}  & \underline{Labor ($L$)} & \underline{Output ($q$)} & \underline{$MP_{L}$} & \underline{$AP_{L}$} \\
+	6 & 0 & 0 & - & - \\
+	6 & 1 & 4 & 4 & 4.0 \\
+	6 & 2 & 11 & 7 & 5.5 \\
+	6 & 3 & 21 & 10 & 7.0 \\
+	6 & 4 & 33 & 12 & 8.3 \\
+	6 & 5 & 46 & 13 & 9.2 \\
+	6 & 6 & 60 & 14 & 10.0 \\
+	6 & 7 & 72 & 12 & 10.3 \\
+	6 & 8 & 81 & 9 & 10.1 \\
+	6 & 9 & 88 & 7 & 9.8 \\
+	6 & 10 & 93 & 5 & 9.3 \\
+	6 & 11 & 95 & 2 & 8.6 \\
+	6 & 12 & 95 & 0 & 7.9 \\
+	6 & 13 & 94 & -1 & 7.2 \\
+	6 & 14 & 92 & -2 & 6.6 \\
+	\end{tabular}
+	}
+	\end{table}
+}
+
+\frame{
+	\frametitle{Short Run Example: Selling Ice Cream}
+
+	\begin{figure}[t!]
+	\center
+	\resizebox{!}{.375\linewidth}{
+
+	\begin{tikzpicture}
+	% Draw axes
+	%Y
+	\draw[->] (0,0) -- (0,12) ;
+	\draw[] (0,8) -- node[rotate=90, above=30pt] {\textbf{Output, $q$, Units per hour}} (0,10);
+	%X
+	\draw[->] (0,0) -- (15,0);
+	\draw[] (14,0) -- node[below=30pt] {\textbf{$L$, Workers per hour}} (14,0);
+
+	%Plot Total Output
+	\draw[very thick, black] plot[smooth, tension=.7] coordinates {(0,0) (1,.4) (2,1.1) (3,2.1) (4,3.3) (5,4.6) (6,6) (7,7.2) (8,8.1) (9,8.8) (10,9.3) (11,9.5) (12,9.5) (13,9.4) (14,9.2)} node[right] {{Total Product}};
+
+	%5
+%	\draw[fill] (11,5) circle [radius =0.1];
+%	\node at (11,5.1) [above] {{f}};
+
+	%Plot illustrative lines
+	\draw[dashed] (6,0) node[below] {{6}} -- (6,6) -- (0,6) node [left] {{60}};
+	\draw[dashed] (11,0) node[below] {{11}} -- (11,9.5) -- (0,9.5) node [left] {{95}};
+
+	%Add axes labels
+	%Origin%
+	\node at (0,0) [left] {{0}};
+
+	\end{tikzpicture}
+	\begin{tikzpicture}
+	% Draw axes
+	%Y
+	\draw[->] (0,0) -- (0,12) ;
+	\draw[] (0,8) -- node[rotate=90, above=10pt] {\textbf{$MP_{L}$, $AP_{L}$}} (0,10);
+	%X
+	\draw[->] (0,0) -- (15,0);
+	\draw[] (14,0) -- node[below=30pt] {\textbf{$L$, Workers per hour}} (14,0);
+
+	%Plot Total Output
+	\draw[very thick, blue] plot[smooth, tension=.7] coordinates {(1,2) (6,8) (12,0)} node[above right] {{$MP_{L}$}};
+	\draw[dashed] (5.75,0) node [below] {{6}} -- (5.75,8) -- (0,8) node [left] {{14}} ;
+	\draw[very thick, green] plot[smooth, tension=.7] coordinates {(1.5,2) (7,7) (12,4)} node [right] {{$AP_{L}$}};
+	\draw[dashed] (7.5,0) node [below] {{7}} -- (7.5,7) -- (0,7) node [left] {{10.3}} ;
+
+
+	%Add axes labels
+	%Origin%
+	\node at (0,0) [left] {{0}};
+
+\end{tikzpicture}
+}
+
+%\caption{Taylor's Possible Choices}
+\end{figure}
+}
+
+\frame{
+	\frametitle{Production in the Short Run}
+	\begin{itemize}
+	\item The total, average, and marginal product curves are all geometrically related.
+	\item[]
+	\item The $AP_{L}$ and $MP_{L}$ curves:
+		\begin{itemize}
+		\item If the $MP_{L}$ curve is above the $AP_{L}$ curve, the $AP_{L}$ curve must rise with extra workers.
+		\item If the $MP_{L}$ curve is below the $AP_{L}$ curve, the $AP_{L}$ curve must fall with extra workers.
+		\item As a result, the $AP_{L}$ curve peaks where $MP_{L} =AP_{L}$.
+		\end{itemize}
+	\item[]
+	\item The $AP_{L}$ and $MP_{L}$ curves can be derived from the total product curve. For $L$ workers:
+		\begin{itemize}
+		\item The $AP_{L}$ is equal to the slope of a straight line from the origin to the total product curve with $L$ workers.
+		\item The $MP_{L}$ is the slope of the total product curve with $L$ workers.
+		\end{itemize}
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{Production in the Short Run}
+	\begin{itemize}
+	\item $MP_{L}$ and $AP_{L}$ are determined by the shape of the total product curve.
+	\item[]
+	\item Empirical evidence suggests the shape of the total product curve is determined by the \textit{Law of Diminishing Marginal Returns}.
+	\item[]
+	\end{itemize}
+	\begin{definition}[Law of Diminishing Marginal Returns]
+	If a firm keeps increasing the usage of an input, holding all other inputs and technology constant, then the corresponding increases in output will eventually become smaller (diminish).
+	\end{definition}
+	\begin{itemize}
+	\item How fast diminishing returns kick in depends on the firms technology.
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{Production in the Long Run}
+	\begin{itemize}
+	\item In the long run, all inputs are variable.
+	\item[]
+	\item This means that firms can choose to produce a single level of output in a variety of ways.
+		\begin{itemize}
+		\item Firms can substitute inputs for each other while continuing to produce a given level of output $\bar{q}$.
+		\end{itemize}
+	\item[]
+	\item We can depict all of the efficient input combinations that produce a given level of output $\bar{q}$ using an \textit{isoquant}.
+	\item[]
+	\item For a firm that uses capital and labor to produce, an isoquant is given by:
+		\begin{align*}
+		\bar{q} = f (L,K)
+		\end{align*}
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{Production in the Long Run}
+	\begin{itemize}
+	\item As an example, let's again consider the case of Axel who is planning on opening another ice cream shop.
+	\item[]
+	\item Now both capital and labor are variable; Axel can choose from many different possible combinations of inputs to produce the same level of output.
+	\end{itemize}
+}
+\frame{
+	% Note: Production function is q = 4 K^.5 L^.5
+	\frametitle{Production in the Long Run}
+	\begin{table}
+	\centering
+	\resizebox{.85\linewidth}{!}{% Resize table to fit within \linewidth horizontally
+	\begin{tabular}{c c c c c c c c c}
+		& \multicolumn{8}{c}{\underline{Labor ($L$)}} \\
+	Capital ($K$) & 1 & 2 & 3 & 4 & 5 & 6 & 7  & 8 \\	
+	\hline
+	1 &	4.0 & 5.7 & 6.9 & \color{orange}{8.0} & 8.9 & 9.8 & 10.6 &	\color{blue}{11.3} \\
+	2 &	5.7 &	 \color{orange}{8.0} & 9.8	& \color{blue}{11.3} & 12.6 &	 13.9 & 15.0 & 16.0 \\
+	3 &	6.9 &	 9.8 & 12.0 & 13.9 & 15.5 & 17.0 & 18.3 &	\color{red}{19.6} \\
+	4 &	\color{orange}{8.0} &	 \color{blue}{11.3}	 & 13.9 & 16.0 & 17.9 & \color{red}{19.6} &	21.2 & 22.6 \\
+	5 &	8.9 &	 12.6	 & 15.5 & 17.9 & 20.0 & 21.9 & 23.7 & 25.3 \\
+	6 &	9.8 &	 13.9	 & 17.0 & \color{red}{19.6} & 21.9 & 24.0 &	25.9 & 27.7 \\
+	7 &	10.6 & 15.0 & 18.3 & 21.2 & 23.7 & 25.9 & 28.0 & 29.9 \\
+	8 & 	\color{blue}{11.3} & 16.0 & \color{red}{19.6} & 22.6 & 25.3 & 27.7 &  29.9 & 32.0 \\
+	\hline
+	\end{tabular}
+	}
+	\end{table}
+	}
+
+\frame{
+	\frametitle{Production in the Long Run}
+\begin{figure}[t!]
+	\center
+	\resizebox{!}{.5\linewidth}{
+
+	\begin{tikzpicture}
+	% Draw axes
+	%Y
+	\draw[->] (0,0) -- (0,12) ;
+	\draw[] (0,8) -- node[rotate=90, above=30pt] {\textbf{$K$, Units of capital per day}} (0,10);
+	%X
+	\draw[->] (0,0) -- (15,0);
+	\draw[] (14,0) -- node[below=30pt] {\textbf{$L$, Workers per day}} (14,0);
+
+	% Plot Isoquants
+	\draw[color=blue, very thick, domain=0.75:12] plot (\x,{(1/\x)*(11.3/4)^(2)}) node [right] {{$q=11.3$}};
+	\draw[color=orange, very thick, domain=0.45:12] plot (\x,{(1/\x)*(8/4)^(2)}) node [right] {{$q=8$}};
+	\draw[color=red, very thick, domain=2:12] plot (\x,{(1/\x)*(19.6/4)^(2)}) node [right] {{$q=19.6$}};
+
+
+
+%	\draw[fill] (11,5) circle [radius =0.1];
+%	\node at (11,5.1) [above] {{f}};
+
+	%Plot illustrative lines
+	\draw[dashed] (8,0) node[below] {{8}} -- (8,1) -- (0,1) node [left] {{1}};
+	\draw[fill] (8,1) circle [radius =0.1];
+	\draw[dashed] (4,0) node[below] {{4}} -- (4,2) -- (0,2) node [left] {{2}};
+	\draw[fill] (4,2) circle [radius =0.1];
+	\draw[dashed] (2,0) node[below] {{2}} -- (2,4) -- (0,4) node [left] {{4}};
+	\draw[fill] (2,4) circle [radius =0.1];
+	\draw[dashed] (1,0) node[below] {{1}} -- (1,8) -- (0,8) node [left] {{8}};
+	\draw[fill] (1,8) circle [radius =0.1];
+
+	%Add axes labels
+	%Origin%
+	\node at (0,0) [left] {{0}};
+
+	\end{tikzpicture}
+}
+
+%\caption{Taylor's Possible Choices}
+\end{figure}
+}
+
+\frame{
+	\frametitle{Production in the Long Run}
+	\begin{itemize}
+	\item Isoquants have three key properties:
+		\begin{enumerate}
+		\item Isoquants farther from the origin represent a higher level of output.
+		\item[]
+		\item Isoquants do not cross.
+		\item[]
+		\item Isoquants slope downward.
+		\end{enumerate}
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{Production in the Long Run}
+	\begin{itemize}
+	\item The shape of an isoquant is informative for understanding how easily a firm can substitute between inputs to produce a given level of output.
+		\begin{itemize}
+		\item If inputs are perfect substitutes, isoquants are straight lines.
+		\item[]
+		\item If inputs can not be substituted at all and must be used in fixed proportions, isoquants are right angles.
+		\item[]
+		\item If inputs can be substituted imperfectly for each other, isoquants are convex to the origin.
+		\end{itemize}
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{Production in the Long Run}
+	\begin{figure}
+		\center
+	\resizebox{!}{.275\linewidth}{
+
+	\begin{tikzpicture}
+	% Draw axes
+	%Y
+	\draw[->] (0,0) -- (0,13) ;
+	\draw[] (0,8) -- node[rotate=90, above=15pt] {\large{\textbf{Australian Beef, tons per day}}} (0,10);
+	%X
+	\draw[->] (0,0) -- (15,0);
+	\draw[] (12,0) -- node[below=15pt] {\large{\textbf{Brazilian Beef, tons per day}}} (14,0);
+
+	%Plot Indifference Curves
+	\draw[very thick, black] plot[smooth, tension=.7] coordinates {(0,3) (3,0)};
+	\node at (3,0) [above right] {{$q=1$}};
+	\draw[very thick, black] plot[smooth, tension=.7] coordinates {(0,6) (6,0)};
+	\node at (6,0) [above right] {{$q=2$}};
+	\draw[very thick, black] plot[smooth, tension=.7] coordinates {(0,9) (9,0)};
+	\node at (9,0) [above right] {{$q=3$}};
+	\draw[very thick, black] plot[smooth, tension=.7] coordinates {(0,12) (12,0)};
+	\node at (12,0) [above right] {{$q=4$}};
+	
+	%Add axes labels
+	%Origin%
+	\node at (0,0) [left] {{0}};
+\end{tikzpicture}
+	\begin{tikzpicture}
+	% Draw axes
+	%Y
+	\draw[->] (0,0) -- (0,13) ;
+	\draw[] (0,8) -- node[rotate=90, above=15pt] {\large{\textbf{Boxes per day}}} (0,10);
+	%X
+	\draw[->] (0,0) -- (15,0);
+	\draw[] (12,0) -- node[below=15pt] {\large{\textbf{Cereal per day}}} (14,0);
+
+	%Plot Indifference Curves
+	\draw[very thick, dashed, black] (3,12) -- (3,3) -- (12,3) node [right] {{$q=1$}};
+	\draw[fill] (3,3) circle [radius =0.1];
+	\draw[very thick,  dashed, black] (6,12) -- (6,6) -- (12,6) node [right] {{$q=2$}};
+	\draw[fill] (6,6) circle [radius =0.1];
+	\draw[very thick,  dashed, black] (9,12) -- (9,9) -- (12,9) node [right] {{$q=3$}};
+	\draw[fill] (9,9) circle [radius =0.1];
+	
+	%Add axes labels
+	%Origin%
+	\node at (0,0) [left] {{0}};
+
+\end{tikzpicture}
+	\begin{tikzpicture}
+	% Draw axes
+	%Y
+	\draw[->] (0,0) -- (0,12) ;
+	\draw[] (0,8) -- node[rotate=90, above=15pt] {\large{\textbf{$K$, Capital per unit time}}} (0,10);
+	%X
+	\draw[->] (0,0) -- (15,0);
+	\draw[] (12,0) -- node[below=15pt] {\large{\textbf{$L$, Labor per unit time}}} (14,0);
+
+	%Plot Indifference Curves
+	\draw[very thick, black] plot[smooth, tension=.7] coordinates {(2,10) (4,4) (10,2)} node [right] {{$q=1$}};
+	\draw[dashed, black] (0,8) -- (8,0) ;
+	\draw[dashed, black] (4,12) -- (4,4) -- (12,4) ;
+
+	%Add axes labels
+	%Origin%
+	\node at (0,0) [left] {{0}};
+	%Y Axis
+%	\node at (0,3) [left] {{1}};
+%	\node at (0,6) [left] {{2}};
+%	\node at (0,9) [left] {{3}};
+%	\node at (0,12) [left] {{4}};
+
+	%X Axis
+%	\node at (3,0) [below] {{1}};
+%	\node at (6,0) [below] {{2}};
+%	\node at (9,0) [below] {{3}};
+%	\node at (12,0) [below] {{4}};
+
+\end{tikzpicture}
+}
+
+	\end{figure}
+}
+
+\frame{
+	\frametitle{The Marginal Rate of Technical Substitution}
+	\begin{itemize}
+	\item The slope of an isoquant is also informative.
+		\begin{itemize}
+		\item The slope tells us how easy it is for a firm to replace one input with another, holding output constant.
+		\item[]
+		\item The slope of the isoquant reflects the \textit{marginal rate of technical substitution} (MRTS):
+			\begin{align*}
+			MRTS = \frac{\text{change in capital}}{\text{change in labor}} = \frac{\Delta K}{\Delta L}
+			\end{align*}
+		\item[]
+		\item The MRTS tells us how many units of one input can be replaced by one unit of another input, holding output levels constant.
+		\item[]
+		\item This rate typically varies along an isoquant.
+		\end{itemize}
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{The Marginal Rate of Technical Substitution}
+	\begin{figure}
+	\center
+	\resizebox{!}{.45\linewidth}{
+		\begin{tikzpicture}
+	% Draw axes
+	%Y
+	\draw[->] (0,0) -- (0,12) ;
+	\draw[] (0,8) -- node[rotate=90, above=15pt] {\large{\textbf{$K$, Capital per unit time}}} (0,10);
+	%X
+	\draw[->] (0,0) -- (15,0);
+	\draw[] (12,0) -- node[below=15pt] {\large{\textbf{$L$, Labor per unit time}}} (14,0);
+
+	%Plot Isoquant Curves
+	\draw[color=blue, very thick, domain=0.75:12] plot (\x,{(1/\x)*(11.3/4)^(2)}) node [right] {{$q=11.3$}};
+
+%	\draw[very thick, black] plot[smooth, tension=.7] coordinates {(2,10) (4,4) (10,2)} node [right] {{$q=1$}};
+%	\draw[dashed, black] (0,8) -- (8,0) ;
+%	\draw[dashed, black] (4,12) -- (4,4) -- (12,4) ;
+
+	\draw[fill] (1,8) circle [radius =0.1];
+
+	\draw[dashed] (1,8) -- (1,4) -- (2,4);
+	\draw[fill] (2,4) circle [radius =0.1];
+	\node at (1,6) [left] {{\tiny{$\Delta K=- 4$}}};
+	\node at (1.5,4) [above] {{\tiny{$\Delta L = 1$}}};
+
+	\draw[dashed] (2,4) -- (2,2.75) -- (3,2.75);
+	\draw[fill] (3,2.75) circle [radius =0.1];
+	\node at (2,3.25) [left] {{\tiny{$\Delta K=-1.75$}}};
+	\node at (2.5,2.75) [above] {{\tiny{$\Delta L = 1$}}};
+
+	\draw[dashed] (3,2.75) -- (3,2) -- (4,2);
+	\draw[fill] (4,2) circle [radius =0.1];
+	\node at (3,2.375) [left] {{\tiny{$\Delta K= - 0.75$}}};
+	\node at (3.5,2) [above] {{\tiny{$\Delta L = 1$}}};
+
+%	\draw[dashed] (8,0) node[below] {{8}} -- (8,1) -- (0,1) node [left] {{1}};
+%	\draw[fill] (8,1) circle [radius =0.1];
+%	\draw[dashed] (4,0) node[below] {{4}} -- (4,2) -- (0,2) node [left] {{2}};
+%	\draw[fill] (4,2) circle [radius =0.1];
+%	\draw[dashed] (2,0) node[below] {{2}} -- (2,4) -- (0,4) node [left] {{4}};
+%	\draw[fill] (2,4) circle [radius =0.1];
+%	\draw[dashed] (1,0) node[below] {{1}} -- (1,8) -- (0,8) node [left] {{8}};
+%	\draw[fill] (1,8) circle [radius =0.1];
+
+	%Add axes labels
+	%Origin%
+	\node at (0,0) [left] {{0}};
+	%Y Axis
+	\node at (0,8) [left] {{8}};
+	\node at (0,4) [left] {{4}};
+	\node at (0,2.75) [left] {{2.75}};
+	\node at (0,2) [left] {{2}};
+
+	%X Axis
+	\node at (1,0) [below] {{1}};
+	\node at (2,0) [below] {{2}};
+	\node at (3,0) [below] {{3}};
+	\node at (4,0) [below] {{4}};
+
+\end{tikzpicture}
+}
+	\end{figure}
+}
+
+\frame{
+	\frametitle{The Marginal Rate of Technical Substitution}
+	\begin{itemize}
+	\item We can also express the MRTS in terms of the marginal products of labor ($MP_{L} = \Delta q / \Delta L$) and capital ($MP_{K} = \Delta q / \Delta K$):
+		\begin{align*}
+		MRTS = - \frac{MP_{L}}{MP_{K}}
+		\end{align*}
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{Marginal and Average Products and the MRTS}
+	\begin{itemize}
+	\item Recall that the Cobb-Douglas production function is given by:
+		\begin{align*}
+		q = A L^{\alpha} K^{\beta}
+		\end{align*}
+	\item[]
+	\item For this production function, the constants $\alpha$ and $\beta$ determine the relationships between the average and marginal products of labor and capital.
+		\begin{itemize}
+		\item $MP_{L} = \alpha q /L = \alpha AP_{L}$, so $\alpha = MP_{L}/AP_{L}$.
+		\item $MP_{K} = \beta q /K = \beta AP_{K}$, so $\beta = MP_{K}/AP_{K}$.
+		\end{itemize}
+	\item[]
+	\item Hence, for a Cobb-Douglas production function, the MRTS is given by:
+		\begin{align*}
+		MRTS = - \frac{\alpha}{\beta} \frac{K}{L}
+		\end{align*}
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{Outline}
+	\begin{enumerate}
+	\item Motivation: Employment decisions
+	\item[]
+	\item The production function.
+	\item[]
+	\item Production: short-run vs. long-run
+	\item[]
+	\item \alert{Returns to scale.}
+	\item[]
+	\item Innovation
+	\end{enumerate}
+}
+
+\section{Returns to Scale}
+
+\frame{
+	\frametitle{Returns to Scale}
+	\begin{itemize}
+	\item So far, we have thought about the effects of changing one input holding the other constant, and how we can change inputs holding output constant.
+	\item[]
+	\item An important related question: How does output change if a firm increases all of its inputs proportionately?
+	\item[]
+	\item The answer is important because it helps a firm determine its \textit{scale} (size) in the long run.
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{Returns to Scale}
+	\begin{itemize}
+	\item There are three possible outcomes if a firm increases all of its inputs proportionally.
+		\begin{enumerate}
+		\item Constant Returns to Scale (CRS)
+		\item[]
+		\item Increasing Returns to Scale (IRS)
+		\item[]
+		\item Decreasing Returns to Scale (DRS)
+		\end{enumerate}
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{Constant Returns to Scale: CRS}
+	\begin{definition}[Constant Returns to Scale]
+	A production technology exhibits constant returns to scale if doubling inputs exactly doubles output. That is, if:
+		\begin{align*}
+		f(2L,2K) = 2f(L,K) = 2q
+		\end{align*}
+	\end{definition}
+	\begin{itemize}
+	\item Implication: If a firm wants to double its output, it can build a second plant that uses the same amount of labor and equipment as the first plant.
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{Increasing Returns to Scale: IRS}
+	\begin{definition}[Increasing Returns to Scale]
+	A production technology exhibits increasing returns to scale if doubling inputs more than doubles output. That is, if:
+		\begin{align*}
+		f(2L,2K) > 2f(L,K) = 2q
+		\end{align*}
+	\end{definition}
+	\begin{itemize}
+	\item Implication: If a firm wants to increase output, it may better off building a single larger plant or expanding an existing facility instead of building two small plants.
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{Decreasing Returns to Scale: DRS}
+	\begin{definition}[Decreasing Returns to Scale]
+	A production technology exhibits decreasing returns to scale if doubling inputs less than doubles output. That is, if:
+		\begin{align*}
+		f(2L,2K) < 2 f(L,K)  = 2 q
+		\end{align*}
+	\end{definition}
+	\begin{itemize}
+	\item Implication: If a firm wants to increase output, it may be better off building two small plants rather than expanding an existing facility.
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{4. Returns to Scale: A Cobb-Douglas Example}
+	\begin{itemize}
+	\item Which of the following Cobb-Douglas production functions exhibit CRS? DRS? IRS?
+		\begin{enumerate}
+		\item $q = 5 L^{0.25} K^{0.25}$
+		\item[]
+		\item $q = 5  L^{1.25} K^{0.25}$
+		\item[]
+		\item $q= 5 L^{0.25} K^{0.75}$
+		\end{enumerate}
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{Varying Returns to Scale}
+	\begin{itemize}
+	\item Many production functions exhibit \textit{varying returns to scale}.
+	\item[]
+	\end{itemize}
+	\begin{definition}[Varying Returns to Scale]
+	A production function exhibits varying returns to scale if it exhibits increasing returns to scale for low input levels, constant returns to scale for moderate input levels, and decreasing returns for large input levels.
+	\end{definition}
+}
+
+\frame{
+	\frametitle{Varying Returns to Scale}
+	\begin{figure}
+	\center
+	\resizebox{!}{.475\linewidth}{
+		\begin{tikzpicture}
+	% Draw axes
+	%Y
+	\draw[->] (0,0) -- (0,12) ;
+	\draw[] (0,8) -- node[rotate=90, above=15pt] {\large{\textbf{$K$, Capital per unit time}}} (0,10);
+	%X
+	\draw[->] (0,0) -- (15,0);
+	\draw[] (12,0) -- node[below=15pt] {\large{\textbf{$L$, Labor per unit time}}} (14,0);
+
+	%Plot Isoquant Curves
+	\draw[color=black, dashed, domain=0:10] plot (\x, \x);
+	
+	\draw[color=blue, very thick, domain=0.25:4] plot (\x,{(1/\x)}) node [right] {{$q=10$}};
+	\draw[color=blue, very thick, domain=0.75:5] plot (\x,{(4/\x)}) node [right] {{$q=30$}};
+	\draw[color=blue, very thick, domain=1.75:8.5] plot (\x,{(16/\x)}) node [right] {{$q=60$}};
+	\draw[color=blue, very thick, domain=5:12] plot (\x,{(64/\x)}) node [right] {{$q=80$}};
+
+	\draw[dashed] (1,0) -- (1,1) -- (0,1);
+	\draw[fill] (1,1) circle [radius =0.1];
+	\draw[dashed] (2,0) -- (2,2) -- (0,2);
+	\draw[fill] (2,2) circle [radius =0.1];
+	\draw[dashed] (4,0) -- (4,4) -- (0,4);
+	\draw[fill] (4,4) circle [radius =0.1];
+	\draw[dashed] (8,0) -- (8,8) -- (0,8);
+	\draw[fill] (8,8) circle [radius =0.1];
+			
+	%Add axes labels
+	%Origin%
+	\node at (0,0) [left] {{0}};
+	%Y Axis
+	\node at (0,8) [left] {{8}};
+	\node at (0,4) [left] {{4}};
+	\node at (0,2) [left] {{2}};
+	\node at (0,1) [left] {{1}};
+
+	%X Axis
+	\node at (1,0) [below] {{1}};
+	\node at (2,0) [below] {{2}};
+	\node at (4,0) [below] {{4}};
+	\node at (8,0) [below] {{8}};
+
+\end{tikzpicture}
+}
+	\end{figure}}
+
+\section{Innovation}
+
+\frame{
+	\frametitle{Outline}
+	\begin{enumerate}
+	\item Motivation: Employment decisions
+	\item[]
+	\item The production function.
+	\item[]
+	\item Production: short-run vs. long-run
+	\item[]
+	\item Returns to scale.
+	\item[]
+	\item \alert{Innovation}
+	\end{enumerate}
+}
+
+
+\frame{
+	\frametitle{Innovation}
+	\begin{itemize}
+	\item Recall: A production function represents a method for turning inputs into outputs.
+	\item[]
+	\item The underlying production process that the production function captures depends on the available technologies and the manner in which production is organized.
+	\item[]
+	\item Changes in these technologies or in the organization of production will also affect output.
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{Technological Progress}
+	\begin{itemize}
+	\item Changes in technology used in production are referred to as \textit{process innovations} or \textit{technological progress}.
+	\item[]
+	\end{itemize}
+	\begin{definition}[Process Innovation]
+	A process innovation is a new idea, device or method that allows more output to be produced with the same level of inputs.
+	\end{definition}
+}
+
+\frame{
+	\frametitle{Technological Progress}
+	\begin{itemize}
+	\item Technological progress can be \textit{neutral}, or \textit{non-neutral}.
+		\begin{itemize}
+		\item It is neutral if more output is produced using the same ratio of inputs, i.e an increase in total factor productivity
+		\item[]
+		\item It is non-neutral if it is \textit{capital saving} or \textit{labor saving}.
+			\begin{itemize}
+			\item Capital saving technological progress: produce same level of output using less capital.
+			\item Labor saving technological progress: produce same level of output using less labor.
+			\end{itemize}
+		\end{itemize}
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{Organizational Innovation}
+	\begin{itemize}
+	\item Changes in the organization of production are referred to as \textit{organizational innovation}.
+	\item[]
+	\end{itemize}
+	\begin{definition}[Organizational Innovation]
+	An organizational innovation is a new way of organizing a firm that allows more output to be produced with a given level of inputs.
+	\end{definition}
+	\begin{itemize}
+	\item[]
+	\item Example: Henry Ford
+		\begin{itemize}
+		\item Introduced interchangeable parts.
+		\item Introduced a conveyor belt and assembly line into his operations.
+		\end{itemize}
+	\end{itemize}
+}
+
+\section{Key takeaways}
+
+\frame{
+	\frametitle{Firm Theory Part 1: Key Takeaways}
+	\begin{enumerate}
+	\item The production function tells us how firms are able to turn inputs into output.
+	\item In the short run, firms alter production decisions by changing the use of variable inputs.
+	\item In the long run, firms alter production decisions by changing the use of all inputs.
+	\item In the long run, the effects of changing input levels depends on returns to scale.
+	\item The quantity of output obtained from a level of inputs can be increased by technological progress and through organizational innovation.
+	\end{enumerate}
+}
+
+\end{document}
