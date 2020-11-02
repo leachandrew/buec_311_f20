@@ -1,0 +1,6 @@
+\beamer@sectionintoc {1}{Outline}{1}{0}{1}
+\beamer@sectionintoc {2}{Ownership and Governance}{4}{0}{2}
+\beamer@sectionintoc {3}{Profit Maximization}{13}{0}{3}
+\beamer@sectionintoc {4}{Owners' vs. Managers' Objectives}{27}{0}{4}
+\beamer@sectionintoc {5}{Make or Buy?}{42}{0}{5}
+\beamer@sectionintoc {6}{Market Structure}{51}{0}{6}
