@@ -1,0 +1,7 @@
+\beamer@sectionintoc {1}{Overview}{1}{0}{1}
+\beamer@sectionintoc {2}{Repeated Games}{4}{0}{2}
+\beamer@sectionintoc {3}{Sequential Games}{19}{0}{3}
+\beamer@sectionintoc {4}{Deterring Entry}{30}{0}{4}
+\beamer@sectionintoc {5}{Innovation}{41}{0}{5}
+\beamer@sectionintoc {6}{First Mover Disadvantage}{48}{0}{6}
+\beamer@sectionintoc {7}{Behavioural Game Theory}{52}{0}{7}
