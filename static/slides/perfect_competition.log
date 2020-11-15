@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.3.16)  1 NOV 2020 20:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.3.16)  15 NOV 2020 13:22
 entering extended mode
 **./perfect_competition.tex
 (perfect_competition.tex
@@ -1464,7 +1464,7 @@ Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 348.
 ]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 367.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 364.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [15
 
@@ -1472,193 +1472,193 @@ Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 367.
 <../images/sr_profit.png, id=545, 293.898pt x 289.08pt>
 File: ../images/sr_profit.png Graphic file (type png)
 <use ../images/sr_profit.png>
-Package pdftex.def Info: ../images/sr_profit.png  used on input line 374.
+Package pdftex.def Info: ../images/sr_profit.png  used on input line 371.
 (pdftex.def)             Requested size: 193.97327pt x 190.79338pt.
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 374.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 371.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [16
 
  <../images/sr_profit.png>]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 393.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 387.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [17
 
 ]
-<../images/sr_shutdown.png, id=610, 424.4658pt x 292.9344pt>
+<../images/sr_shutdown.png, id=612, 424.4658pt x 292.9344pt>
 File: ../images/sr_shutdown.png Graphic file (type png)
 <use ../images/sr_shutdown.png>
-Package pdftex.def Info: ../images/sr_shutdown.png  used on input line 400.
+Package pdftex.def Info: ../images/sr_shutdown.png  used on input line 394.
 (pdftex.def)             Requested size: 280.14828pt x 193.3373pt.
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 400.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 394.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [18
 
  <../images/sr_shutdown.png>]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 415.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 409.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
 
 [19
 
 ]
-<../images/sr_supplycurve.png, id=675, 368.0952pt x 269.808pt>
+<../images/sr_supplycurve.png, id=677, 368.0952pt x 269.808pt>
 File: ../images/sr_supplycurve.png Graphic file (type png)
 <use ../images/sr_supplycurve.png>
-Package pdftex.def Info: ../images/sr_supplycurve.png  used on input line 422.
+Package pdftex.def Info: ../images/sr_supplycurve.png  used on input line 416.
 (pdftex.def)             Requested size: 242.94357pt x 178.07382pt.
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 422.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 416.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [20
 
  <../images/sr_supplycurve.png>]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 431.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 425.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [21
 
 ]
-<../images/sr_mktsupply_identical.png, id=739, 526.6074pt x 244.7544pt>
+<../images/sr_mktsupply_identical.png, id=741, 526.6074pt x 244.7544pt>
 File: ../images/sr_mktsupply_identical.png Graphic file (type png)
 <use ../images/sr_mktsupply_identical.png>
 Package pdftex.def Info: ../images/sr_mktsupply_identical.png  used on input li
-ne 439.
+ne 433.
 (pdftex.def)             Requested size: 347.56197pt x 161.53839pt.
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 439.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 433.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [22
 
  <../images/sr_mktsupply_identical.png>]
-<../images/sr_mktsupply_diff.png, id=772, 404.2302pt x 296.7888pt>
+<../images/sr_mktsupply_diff.png, id=774, 404.2302pt x 296.7888pt>
 File: ../images/sr_mktsupply_diff.png Graphic file (type png)
 <use ../images/sr_mktsupply_diff.png>
 Package pdftex.def Info: ../images/sr_mktsupply_diff.png  used on input line 44
-7.
+1.
 (pdftex.def)             Requested size: 242.53998pt x 178.07465pt.
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 447.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 441.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [23
 
  <../images/sr_mktsupply_diff.png>]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 456.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 450.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [24
 
 ]
-<../images/sr_eqm.png, id=836, 502.5174pt x 267.8808pt>
+<../images/sr_eqm.png, id=838, 502.5174pt x 267.8808pt>
 File: ../images/sr_eqm.png Graphic file (type png)
 <use ../images/sr_eqm.png>
-Package pdftex.def Info: ../images/sr_eqm.png  used on input line 463.
+Package pdftex.def Info: ../images/sr_eqm.png  used on input line 457.
 (pdftex.def)             Requested size: 301.51276pt x 160.7297pt.
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 463.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 457.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [25
 
  <../images/sr_eqm.png>]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 476.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 470.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [26
 
 ]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 492.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 486.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [27
 
 ]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 507.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 501.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [28
 
 ]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 518.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 512.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [29
 
 ]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 531.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 525.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [30
 
 ]
-Overfull \hbox (11.37047pt too wide) in paragraph at lines 544--544
+Overfull \hbox (11.37047pt too wide) in paragraph at lines 538--538
 []$\OT1/cmss/m/n/12 .  
  []
 
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 544.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 538.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
 [31
 
 ]
-<../images/lr_identical.png, id=1056, 492.3996pt x 261.6174pt>
+<../images/lr_identical.png, id=1058, 492.3996pt x 261.6174pt>
 File: ../images/lr_identical.png Graphic file (type png)
 <use ../images/lr_identical.png>
-Package pdftex.def Info: ../images/lr_identical.png  used on input line 551.
+Package pdftex.def Info: ../images/lr_identical.png  used on input line 545.
 (pdftex.def)             Requested size: 324.98474pt x 172.668pt.
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 551.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 545.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [32
 
  <../images/lr_identical.png>]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 567.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 561.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [33
 
 ]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 578.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 572.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [34
 
 ]
-<../images/lr_eqm.png, id=1151, 579.1236pt x 261.6174pt>
+<../images/lr_eqm.png, id=1153, 579.1236pt x 261.6174pt>
 File: ../images/lr_eqm.png Graphic file (type png)
 <use ../images/lr_eqm.png>
-Package pdftex.def Info: ../images/lr_eqm.png  used on input line 585.
+Package pdftex.def Info: ../images/lr_eqm.png  used on input line 579.
 (pdftex.def)             Requested size: 382.22275pt x 172.668pt.
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 585.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 579.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [35
 
  <../images/lr_eqm.png>]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 601.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 595.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
 
 [36
@@ -1666,97 +1666,97 @@ Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 601.
 ]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 614.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 608.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [37
 
 ]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 630.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 624.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [38
 
 ]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 646.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 640.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [39
 
 ]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 663.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 657.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [40
 
 ]
-<../images/cs_steps.png, id=1339, 526.6074pt x 261.6174pt>
+<../images/cs_steps.png, id=1341, 526.6074pt x 261.6174pt>
 File: ../images/cs_steps.png Graphic file (type png)
 <use ../images/cs_steps.png>
-Package pdftex.def Info: ../images/cs_steps.png  used on input line 670.
+Package pdftex.def Info: ../images/cs_steps.png  used on input line 664.
 (pdftex.def)             Requested size: 347.56197pt x 172.668pt.
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 670.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 664.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [41
 
  <../images/cs_steps.png>]
-<../images/cs_smooth.png, id=1372, 378.213pt x 261.6174pt>
+<../images/cs_smooth.png, id=1374, 378.213pt x 261.6174pt>
 File: ../images/cs_smooth.png Graphic file (type png)
 <use ../images/cs_smooth.png>
-Package pdftex.def Info: ../images/cs_smooth.png  used on input line 677.
+Package pdftex.def Info: ../images/cs_smooth.png  used on input line 671.
 (pdftex.def)             Requested size: 249.62134pt x 172.668pt.
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 677.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 671.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [42
 
  <../images/cs_smooth.png>]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 689.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 683.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [43
 
 ]
-<../images/ps_steps.png, id=1437, 414.348pt x 261.6174pt>
+<../images/ps_steps.png, id=1439, 414.348pt x 261.6174pt>
 File: ../images/ps_steps.png Graphic file (type png)
 <use ../images/ps_steps.png>
-Package pdftex.def Info: ../images/ps_steps.png  used on input line 696.
+Package pdftex.def Info: ../images/ps_steps.png  used on input line 690.
 (pdftex.def)             Requested size: 273.47052pt x 172.668pt.
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 696.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 690.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [44
 
  <../images/ps_steps.png>]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 705.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 699.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [45
 
 ]
-<../images/ts_eqm.png, id=1501, 368.0952pt x 309.7974pt>
+<../images/ts_eqm.png, id=1503, 368.0952pt x 309.7974pt>
 File: ../images/ts_eqm.png Graphic file (type png)
 <use ../images/ts_eqm.png>
-Package pdftex.def Info: ../images/ts_eqm.png  used on input line 712.
+Package pdftex.def Info: ../images/ts_eqm.png  used on input line 706.
 (pdftex.def)             Requested size: 242.94357pt x 204.4669pt.
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 712.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 706.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [46
 
  <../images/ts_eqm.png>]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 719.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 713.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
 
 [47
@@ -1764,21 +1764,21 @@ Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 719.
 ]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 730.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 724.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [48
 
 ]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 739.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 733.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [49
 
 ]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 756.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 750.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [50
 
@@ -1792,11 +1792,11 @@ Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 756.
 \tf@snm=\write8
 \openout8 = `perfect_competition.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 758.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 758.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 752.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 752.
  (perfect_competition.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 758.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 758.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 752.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 752.
 Package rerunfilecheck Info: File `perfect_competition.out' has not changed.
 (rerunfilecheck)             Checksum: CB8F639A74FB36570103645623FBE4FA;347.
 
@@ -1805,25 +1805,26 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 33170 strings out of 492946
- 685068 string characters out of 3135524
- 699023 words of memory out of 3000000
- 36413 multiletter control sequences out of 15000+200000
- 547918 words of font info for 82 fonts, out of 3000000 for 9000
+ 33124 strings out of 492946
+ 683869 string characters out of 3135524
+ 698023 words of memory out of 3000000
+ 36369 multiletter control sequences out of 15000+200000
+ 543620 words of font info for 65 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  56i,17n,70p,808b,973s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Pr
-ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Program Fi
-les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Program Files/MiKT
-eX 2.9/fonts/type1/public/amsfonts/cm/cmss17.pfb><C:/Program Files/MiKTeX 2.9/f
-onts/type1/public/amsfonts/cm/cmss8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
-1/public/amsfonts/cm/cmssbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publ
-ic/amsfonts/cm/cmssi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsf
-onts/cm/cmssi12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
-/cmsy10.pfb>
-Output written on perfect_competition.pdf (50 pages, 1874266 bytes).
+ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Fi
+les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Program Files/MiKT
+eX 2.9/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Program Files/MiKTeX 2.9/f
+onts/type1/public/amsfonts/cm/cmss17.pfb><C:/Program Files/MiKTeX 2.9/fonts/typ
+e1/public/amsfonts/cm/cmss8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public
+/amsfonts/cm/cmssbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfo
+nts/cm/cmssi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
+cmssi12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.
+pfb>
+Output written on perfect_competition.pdf (50 pages, 1882985 bytes).
 PDF statistics:
- 1712 PDF objects out of 1728 (max. 8388607)
+ 1718 PDF objects out of 1728 (max. 8388607)
  107 named destinations out of 1000 (max. 500000)
  210 words of extra memory for PDF output out of 10000 (max. 10000000)
 

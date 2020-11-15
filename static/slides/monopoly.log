@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.3.16)  14 NOV 2020 17:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.3.16)  15 NOV 2020 13:26
 entering extended mode
 **./monopoly.tex
 (monopoly.tex
@@ -1466,7 +1466,7 @@ Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 340.
  [12
 
 ]
-<../images/monopoly/m_pi_max.png, id=471, 265.9536pt x 327.1422pt>
+<../images/monopoly/m_pi_max.png, id=470, 265.9536pt x 327.1422pt>
 File: ../images/monopoly/m_pi_max.png Graphic file (type png)
 <use ../images/monopoly/m_pi_max.png>
 Package pdftex.def Info: ../images/monopoly/m_pi_max.png  used on input line 34
@@ -1485,51 +1485,26 @@ Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 347.
  <../images/monopoly/m_pi_max.png>]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 359.
-(pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
- [14
-
-]
-<../images/monopoly/no_supply.png, id=537, 622.9674pt x 244.7544pt>
-File: ../images/monopoly/no_supply.png Graphic file (type png)
-<use ../images/monopoly/no_supply.png>
-Package pdftex.def Info: ../images/monopoly/no_supply.png  used on input line 3
-66.
-(pdftex.def)             Requested size: 411.15976pt x 161.53839pt.
-
-Overfull \hbox (12.82117pt too wide) in paragraph at lines 366--366
- [] 
- []
-
-File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
-<use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 366.
-(pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
-[15
-
- <../images/monopoly/no_supply.png>]
-File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
-<use ../images/UA-ASB-COLOUR.png>
 Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 384.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
- [16
+ [14
 
 ]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
 Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 400.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
- [17
+ [15
 
 ]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
 Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 417.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
- [18
+ [16
 
 ]
-<../images/monopoly/mkt_power.png, id=667, 621.0402pt x 261.6174pt>
+<../images/monopoly/mkt_power.png, id=601, 621.0402pt x 261.6174pt>
 File: ../images/monopoly/mkt_power.png Graphic file (type png)
 <use ../images/monopoly/mkt_power.png>
 Package pdftex.def Info: ../images/monopoly/mkt_power.png  used on input line 4
@@ -1544,38 +1519,38 @@ File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
 Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 424.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
-[19
+[17
 
  <../images/monopoly/mkt_power.png>]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
 Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 438.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
- [20
+ [18
 
 ]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
 Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 455.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
- [21
+ [19
 
 ]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
 Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 474.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
- [22
+ [20
 
 ]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
 Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 496.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
- [23
+ [21
 
 ]
-<../images/monopoly/dwl_monopoly.png, id=829, 362.3136pt x 303.0522pt>
+<../images/monopoly/dwl_monopoly.png, id=763, 362.3136pt x 303.0522pt>
 File: ../images/monopoly/dwl_monopoly.png Graphic file (type png)
 <use ../images/monopoly/dwl_monopoly.png>
 Package pdftex.def Info: ../images/monopoly/dwl_monopoly.png  used on input lin
@@ -1589,31 +1564,31 @@ File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
 Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 504.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
-[24
+[22
 
  <../images/monopoly/dwl_monopoly.png>]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
 Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 522.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
- [25
+ [23
 
 ]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
 Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 536.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
- [26
+ [24
 
 ]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
 Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 557.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
- [27
+ [25
 
 ]
-<../images/monopoly/natural_m.png, id=961, 333.8874pt x 261.6174pt>
+<../images/monopoly/natural_m.png, id=895, 333.8874pt x 261.6174pt>
 File: ../images/monopoly/natural_m.png Graphic file (type png)
 <use ../images/monopoly/natural_m.png>
 Package pdftex.def Info: ../images/monopoly/natural_m.png  used on input line 5
@@ -1623,31 +1598,31 @@ File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
 Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 565.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
- [28
+ [26
 
  <../images/monopoly/natural_m.png>]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
 Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 586.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
- [29
+ [27
 
 ]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
 Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 604.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
- [30
+ [28
 
 ]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
 Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 621.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
- [31
+ [29
 
 ]
-<../images/monopoly/advertising.png, id=1090, 328.1058pt x 262.581pt>
+<../images/monopoly/advertising.png, id=1023, 328.1058pt x 262.581pt>
 File: ../images/monopoly/advertising.png Graphic file (type png)
 <use ../images/monopoly/advertising.png>
 Package pdftex.def Info: ../images/monopoly/advertising.png  used on input line
@@ -1657,7 +1632,7 @@ File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
 Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 628.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
- [32
+ [30
 
  <../images/monopoly/advertising.png>]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
@@ -1665,42 +1640,42 @@ File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 648.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
 
-[33
+[31
 
 ]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
 Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 667.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
- [34
+ [32
 
 ]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
 Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 682.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
- [35
+ [33
 
 ]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
 Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 699.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
- [36
+ [34
 
 ]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
 Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 716.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
- [37
+ [35
 
 ]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
 Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 731.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
- [38
+ [36
 
 ]
 \tf@nav=\write6
@@ -1725,10 +1700,10 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 33091 strings out of 492946
- 684001 string characters out of 3135524
- 699296 words of memory out of 3000000
- 36360 multiletter control sequences out of 15000+200000
+ 33074 strings out of 492946
+ 683678 string characters out of 3135524
+ 699206 words of memory out of 3000000
+ 36348 multiletter control sequences out of 15000+200000
  547268 words of font info for 80 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  56i,17n,70p,797b,973s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1743,9 +1718,9 @@ s/cm/cmssbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
 mssi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmssi12.
 pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmssi8.pfb><C:/
 Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on monopoly.pdf (38 pages, 1355316 bytes).
+Output written on monopoly.pdf (36 pages, 1173661 bytes).
 PDF statistics:
- 1383 PDF objects out of 1440 (max. 8388607)
- 84 named destinations out of 1000 (max. 500000)
- 203 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1314 PDF objects out of 1440 (max. 8388607)
+ 80 named destinations out of 1000 (max. 500000)
+ 198 words of extra memory for PDF output out of 10000 (max. 10000000)
 
