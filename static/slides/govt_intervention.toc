@@ -1,0 +1,6 @@
+\beamer@sectionintoc {1}{Overview}{2}{0}{1}
+\beamer@sectionintoc {2}{Market Failure}{4}{0}{2}
+\beamer@sectionintoc {3}{Competition}{7}{0}{3}
+\beamer@sectionintoc {4}{Anti-Trust Law}{14}{0}{4}
+\beamer@sectionintoc {5}{Externalities}{18}{0}{5}
+\beamer@sectionintoc {6}{Intellectual Property}{35}{0}{6}
