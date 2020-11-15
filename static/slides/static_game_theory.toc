@@ -1,0 +1,5 @@
+\beamer@sectionintoc {1}{Overview}{1}{0}{1}
+\beamer@sectionintoc {2}{Oligopoly Games}{5}{0}{2}
+\beamer@sectionintoc {3}{Nash Equilibrium}{18}{0}{3}
+\beamer@sectionintoc {4}{Information and Rationality}{35}{0}{4}
+\beamer@sectionintoc {5}{Strategic Decision Making}{44}{0}{5}

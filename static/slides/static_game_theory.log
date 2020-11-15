@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.3.16)  14 NOV 2020 16:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.3.16)  15 NOV 2020 11:48
 entering extended mode
 **./static_game_theory.tex
 (static_game_theory.tex
@@ -1356,152 +1356,152 @@ thkerncmss.
 )
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/sc' in size <17.28> not available
-(Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 186.
+(Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 189.
 
 
 LaTeX Font Warning: Font shape `OT1/cmss/bx/sc' undefined
-(Font)              using `OT1/cmss/bx/n' instead on input line 186.
+(Font)              using `OT1/cmss/bx/n' instead on input line 189.
 
-<../images/UA-ASB-COLOUR.png, id=18, 410.9754pt x 49.3845pt>
+<../images/UA-ASB-COLOUR.png, id=43, 410.9754pt x 49.3845pt>
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 186.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 189.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
 [1{C:/Users/aleach/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}
 
  <../images/UA-ASB-COLOUR.png>]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 205.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 206.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [2
 
 ]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 224.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 227.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [3
 
 ]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 246.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 244.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [4
 
 ]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 265.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 269.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [5
 
 ]
-File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
-<use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 288.
-(pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
- [6
-
-]
-<../images/game_theory/au1.png, id=183, 784.9325pt x 377.41pt>
+<../images/game_theory/au1.png, id=212, 784.9325pt x 377.41pt>
 File: ../images/game_theory/au1.png Graphic file (type png)
 <use ../images/game_theory/au1.png>
-Package pdftex.def Info: ../images/game_theory/au1.png  used on input line 296.
+Package pdftex.def Info: ../images/game_theory/au1.png  used on input line 277.
 
 (pdftex.def)             Requested size: 313.96744pt x 150.96132pt.
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 296.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 277.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
- [7
+ [6
 
  <../images/game_theory/au1.png>]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 313.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 294.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
 
-[8
+[7
 
 ]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 332.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 313.
+(pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
+ [8
+
+]
+File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
+<use ../images/UA-ASB-COLOUR.png>
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 320.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [9
 
 ]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 339.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 335.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [10
 
 ]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 354.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 357.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [11
 
 ]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 376.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 377.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [12
 
 ]
-File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
-<use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 396.
-(pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
- [13
-
-]
-<../images/game_theory/au2.png, id=373, 895.345pt x 377.41pt>
+<../images/game_theory/au2.png, id=436, 895.345pt x 377.41pt>
 File: ../images/game_theory/au2.png Graphic file (type png)
 <use ../images/game_theory/au2.png>
-Package pdftex.def Info: ../images/game_theory/au2.png  used on input line 403.
+Package pdftex.def Info: ../images/game_theory/au2.png  used on input line 384.
 
 (pdftex.def)             Requested size: 358.13165pt x 150.96132pt.
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 403.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 384.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
- [14
+ [13
 
  <../images/game_theory/au2.png>]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 431.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 412.
+(pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
+ [14
+
+]
+File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
+<use ../images/UA-ASB-COLOUR.png>
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 423.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [15
 
 ]
-File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
-<use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 442.
-(pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
- [16
-
-]
-<../images/game_theory/advertising.png, id=450, 767.86874pt x 644.4075pt>
+<../images/game_theory/advertising.png, id=529, 767.86874pt x 644.4075pt>
 File: ../images/game_theory/advertising.png Graphic file (type png)
 <use ../images/game_theory/advertising.png>
 Package pdftex.def Info: ../images/game_theory/advertising.png  used on input l
-ine 449.
+ine 430.
 (pdftex.def)             Requested size: 230.3624pt x 193.32373pt.
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 449.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 430.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
 
-[17
+[16
 
  <../images/game_theory/advertising.png>]
+File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
+<use ../images/UA-ASB-COLOUR.png>
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 455.
+(pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
+ [17
+
+]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
 Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 474.
@@ -1511,141 +1511,141 @@ Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 474.
 ]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 493.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 489.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [19
 
 ]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 508.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 502.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [20
 
 ]
-File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
-<use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 521.
-(pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
- [21
-
-]
-<../images/game_theory/networks.png, id=578, 787.94376pt x 293.095pt>
+<../images/game_theory/networks.png, id=681, 787.94376pt x 293.095pt>
 File: ../images/game_theory/networks.png Graphic file (type png)
 <use ../images/game_theory/networks.png>
 Package pdftex.def Info: ../images/game_theory/networks.png  used on input line
- 528.
+ 509.
 (pdftex.def)             Requested size: 315.17192pt x 117.23592pt.
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 528.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 509.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
- [22
+ [21
 
  <../images/game_theory/networks.png>]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 545.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 526.
+(pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
+ [22
+
+]
+File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
+<use ../images/UA-ASB-COLOUR.png>
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 540.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [23
 
 ]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 559.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 555.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [24
 
 ]
-File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
-<use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 574.
-(pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
- [25
-
-]
-<../images/game_theory/networks2.png, id=681, 788.9475pt x 292.09125pt>
+<../images/game_theory/networks2.png, id=803, 788.9475pt x 292.09125pt>
 File: ../images/game_theory/networks2.png Graphic file (type png)
 <use ../images/game_theory/networks2.png>
 Package pdftex.def Info: ../images/game_theory/networks2.png  used on input lin
-e 581.
+e 562.
 (pdftex.def)             Requested size: 315.5734pt x 116.83441pt.
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 581.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 562.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
- [26
+ [25
 
  <../images/game_theory/networks2.png>]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 594.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 575.
+(pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
+ [26
+
+]
+File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
+<use ../images/UA-ASB-COLOUR.png>
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 588.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [27
 
 ]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 607.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 597.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [28
 
 ]
-File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
-<use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 616.
-(pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
- [29
-
-]
-<../images/game_theory/design.png, id=784, 770.88pt x 293.095pt>
+<../images/game_theory/design.png, id=927, 770.88pt x 293.095pt>
 File: ../images/game_theory/design.png Graphic file (type png)
 <use ../images/game_theory/design.png>
 Package pdftex.def Info: ../images/game_theory/design.png  used on input line 6
-23.
+04.
 (pdftex.def)             Requested size: 308.34654pt x 117.23592pt.
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 623.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 604.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
- [30
+ [29
 
  <../images/game_theory/design.png>]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 643.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 624.
+(pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
+ [30
+
+]
+File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
+<use ../images/UA-ASB-COLOUR.png>
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 640.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [31
 
 ]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 659.
-(pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
- [32
-
-]
-File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
-<use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 668.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 649.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
 
-[33
+[32
 
 ]
-<../images/game_theory/entry_static.png, id=889, 768.8725pt x 286.06876pt>
+<../images/game_theory/entry_static.png, id=1052, 768.8725pt x 286.06876pt>
 File: ../images/game_theory/entry_static.png Graphic file (type png)
 <use ../images/game_theory/entry_static.png>
 Package pdftex.def Info: ../images/game_theory/entry_static.png  used on input 
-line 675.
+line 656.
 (pdftex.def)             Requested size: 307.54355pt x 114.42546pt.
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 675.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 656.
+(pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
+ [33
+
+ <../images/game_theory/entry_static.png>]
+File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
+<use ../images/UA-ASB-COLOUR.png>
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 678.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [34
 
- <../images/game_theory/entry_static.png>]
+]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
 Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 697.
@@ -1655,110 +1655,110 @@ Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 697.
 ]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 716.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 722.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [36
 
 ]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 741.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 740.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [37
 
 ]
-File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
-<use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 759.
-(pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
- [38
-
-]
-<../images/game_theory/invest.png, id=1017, 765.86125pt x 292.09125pt>
+<../images/game_theory/invest.png, id=1204, 765.86125pt x 292.09125pt>
 File: ../images/game_theory/invest.png Graphic file (type png)
 <use ../images/game_theory/invest.png>
 Package pdftex.def Info: ../images/game_theory/invest.png  used on input line 7
-66.
+47.
 (pdftex.def)             Requested size: 306.33907pt x 116.83441pt.
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 766.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 747.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
- [39
+ [38
 
  <../images/game_theory/invest.png>]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 779.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 760.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
- [40
+ [39
 
 ]
 File: ../images/game_theory/invest.png Graphic file (type png)
 <use ../images/game_theory/invest.png>
 Package pdftex.def Info: ../images/game_theory/invest.png  used on input line 7
-86.
+67.
 (pdftex.def)             Requested size: 306.33907pt x 116.83441pt.
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 786.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 767.
+(pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
+ [40
+
+]
+File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
+<use ../images/UA-ASB-COLOUR.png>
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 780.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [41
 
 ]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 799.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 791.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [42
 
 ]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 810.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 807.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [43
 
 ]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 826.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 827.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [44
 
 ]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 845.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 844.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [45
 
 ]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 862.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 855.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [46
 
 ]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 873.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 864.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
- [47
+
+[47
 
 ]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 882.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 881.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
-
-[48
+ [48
 
 ]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 901.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 903.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [49
 
@@ -1770,127 +1770,117 @@ Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 923.
  [50
 
 ]
-File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
-<use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 943.
-(pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
- [51
-
-]
 File: ../images/game_theory/au1.png Graphic file (type png)
 <use ../images/game_theory/au1.png>
-Package pdftex.def Info: ../images/game_theory/au1.png  used on input line 950.
+Package pdftex.def Info: ../images/game_theory/au1.png  used on input line 930.
 
 (pdftex.def)             Requested size: 313.96744pt x 150.96132pt.
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 950.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 930.
+(pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
+ [51
+
+]
+File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
+<use ../images/UA-ASB-COLOUR.png>
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 949.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [52
 
 ]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 969.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 964.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [53
 
 ]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 984.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 977.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [54
 
 ]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 997.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 993.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [55
 
 ]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 1013.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 1011.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [56
 
 ]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 1033.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 1031.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [57
 
 ]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 1053.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 1049.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [58
 
 ]
-File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
-<use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 1071.
-(pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
- [59
-
-]
-Overfull \vbox (27.2166pt too high) detected at line 1097
+Overfull \vbox (1.1014pt too high) detected at line 1067
  []
 
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 1097.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 1067.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
-[60
+[59
 
 ]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 1117.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 1085.
+(pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
+ [60
+
+]
+File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
+<use ../images/UA-ASB-COLOUR.png>
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 1102.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [61
 
 ]
-Overfull \vbox (7.16248pt too high) detected at line 1136
- []
-
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 1136.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 1118.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
-[62
+ [62
 
 ]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 1154.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 1130.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [63
 
 ]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 1166.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 1152.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [64
 
 ]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 1190.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 1163.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [65
-
-]
-File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
-<use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 1201.
-(pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
- [66
 
 ]
 \tf@nav=\write6
@@ -1902,24 +1892,24 @@ Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 1201.
 \tf@snm=\write8
 \openout8 = `static_game_theory.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1203.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1203.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1165.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1165.
  (static_game_theory.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1203.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1203.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1165.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1165.
 
 Package rerunfilecheck Info: File `static_game_theory.out' has not changed.
-(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+(rerunfilecheck)             Checksum: 1B365D3BE636B146B4607A0770DE4B7D;271.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 33232 strings out of 492946
- 686388 string characters out of 3135524
- 700895 words of memory out of 3000000
- 36452 multiletter control sequences out of 15000+200000
+ 33254 strings out of 492946
+ 686581 string characters out of 3135524
+ 701855 words of memory out of 3000000
+ 36471 multiletter control sequences out of 15000+200000
  547980 words of font info for 82 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  56i,17n,70p,807b,973s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1933,9 +1923,9 @@ e1/public/amsfonts/cm/cmss8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public
 nts/cm/cmssi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
 cmssi12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmssi8.
 pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on static_game_theory.pdf (66 pages, 885371 bytes).
+Output written on static_game_theory.pdf (65 pages, 949690 bytes).
 PDF statistics:
- 1791 PDF objects out of 2073 (max. 8388607)
- 133 named destinations out of 1000 (max. 500000)
- 142 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2117 PDF objects out of 2487 (max. 8388607)
+ 136 named destinations out of 1000 (max. 500000)
+ 182 words of extra memory for PDF output out of 10000 (max. 10000000)
 

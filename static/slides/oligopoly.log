@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.3.16)  14 NOV 2020 16:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.3.16)  15 NOV 2020 11:25
 entering extended mode
 **./oligopoly.tex
 (oligopoly.tex
@@ -1356,357 +1356,357 @@ thkerncmss.
 )
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/sc' in size <17.28> not available
-(Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 186.
+(Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 188.
 
 
 LaTeX Font Warning: Font shape `OT1/cmss/bx/sc' undefined
-(Font)              using `OT1/cmss/bx/n' instead on input line 186.
+(Font)              using `OT1/cmss/bx/n' instead on input line 188.
 
-<../images/UA-ASB-COLOUR.png, id=18, 410.9754pt x 49.3845pt>
+<../images/UA-ASB-COLOUR.png, id=48, 410.9754pt x 49.3845pt>
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 186.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 188.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
 [1{C:/Users/aleach/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}
 
  <../images/UA-ASB-COLOUR.png>]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 201.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 203.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [2
 
 ]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 216.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 220.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [3
 
 ]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 230.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 234.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [4
 
 ]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 245.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 251.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [5
 
 ]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 264.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 270.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [6
 
 ]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 275.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 281.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [7
 
 ]
-<../images/oligopoly/cartel.png, id=209, 458.6736pt x 261.6174pt>
+<../images/oligopoly/cartel.png, id=285, 458.6736pt x 261.6174pt>
 File: ../images/oligopoly/cartel.png Graphic file (type png)
 <use ../images/oligopoly/cartel.png>
-Package pdftex.def Info: ../images/oligopoly/cartel.png  used on input line 282
+Package pdftex.def Info: ../images/oligopoly/cartel.png  used on input line 288
 .
 (pdftex.def)             Requested size: 275.20627pt x 156.97163pt.
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 282.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 288.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [8
 
  <../images/oligopoly/cartel.png>]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 301.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 307.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [9
 
 ]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 320.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 326.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [10
 
 ]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 335.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 341.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [11
 
 ]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 350.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 358.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [12
 
 ]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 363.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 371.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [13
 
 ]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 384.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 392.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [14
 
 ]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 403.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 411.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [15
 
 ]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 418.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 426.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [16
 
 ]
-<../images/oligopoly/cournot.png, id=443, 843.15pt x 440.64626pt>
+<../images/oligopoly/cournot.png, id=572, 843.15pt x 440.64626pt>
 File: ../images/oligopoly/cournot.png Graphic file (type png)
 <use ../images/oligopoly/cournot.png>
-Package pdftex.def Info: ../images/oligopoly/cournot.png  used on input line 42
-5.
+Package pdftex.def Info: ../images/oligopoly/cournot.png  used on input line 43
+3.
 (pdftex.def)             Requested size: 337.25401pt x 176.25537pt.
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 425.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 433.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [17
 
  <../images/oligopoly/cournot.png>]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 438.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 446.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [18
 
 ]
-<../images/oligopoly/best_response.png, id=495, 587.19376pt x 482.80376pt>
+<../images/oligopoly/best_response.png, id=636, 587.19376pt x 482.80376pt>
 File: ../images/oligopoly/best_response.png Graphic file (type png)
 <use ../images/oligopoly/best_response.png>
 Package pdftex.def Info: ../images/oligopoly/best_response.png  used on input l
-ine 445.
+ine 453.
 (pdftex.def)             Requested size: 234.87334pt x 193.11807pt.
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 445.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 453.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [19
 
  <../images/oligopoly/best_response.png>]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 456.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 464.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [20
 
 ]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 472.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 480.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [21
 
 ]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 492.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 500.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [22
 
 ]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 504.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 512.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [23
 
 ]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 519.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 527.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
 
 [24
 
 ]
-<../images/oligopoly/table.png, id=657, 817.0525pt x 387.4475pt>
+<../images/oligopoly/table.png, id=834, 817.0525pt x 387.4475pt>
 File: ../images/oligopoly/table.png Graphic file (type png)
 <use ../images/oligopoly/table.png>
-Package pdftex.def Info: ../images/oligopoly/table.png  used on input line 526.
+Package pdftex.def Info: ../images/oligopoly/table.png  used on input line 534.
 
 (pdftex.def)             Requested size: 326.81522pt x 154.97624pt.
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 526.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 534.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [25
 
  <../images/oligopoly/table.png>]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 540.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 548.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [26
 
 ]
-<../images/oligopoly/mc_drop.png, id=710, 1003.75pt x 475.7775pt>
+<../images/oligopoly/mc_drop.png, id=899, 1003.75pt x 475.7775pt>
 File: ../images/oligopoly/mc_drop.png Graphic file (type png)
 <use ../images/oligopoly/mc_drop.png>
-Package pdftex.def Info: ../images/oligopoly/mc_drop.png  used on input line 54
-7.
+Package pdftex.def Info: ../images/oligopoly/mc_drop.png  used on input line 55
+5.
 (pdftex.def)             Requested size: 401.49289pt x 190.30762pt.
 
-Overfull \hbox (3.1543pt too wide) in paragraph at lines 547--547
+Overfull \hbox (3.1543pt too wide) in paragraph at lines 555--555
  [] 
  []
 
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 547.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 555.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
 [27
 
  <../images/oligopoly/mc_drop.png>]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 566.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 574.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [28
 
 ]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 581.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 589.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [29
 
 ]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 596.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 606.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [30
 
 ]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 614.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 624.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [31
 
 ]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 625.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 635.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [32
 
 ]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 636.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 646.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [33
 
 ]
-<../images/oligopoly/identical.png, id=888, 695.59875pt x 510.90875pt>
+<../images/oligopoly/identical.png, id=1118, 695.59875pt x 510.90875pt>
 File: ../images/oligopoly/identical.png Graphic file (type png)
 <use ../images/oligopoly/identical.png>
 Package pdftex.def Info: ../images/oligopoly/identical.png  used on input line 
-643.
+653.
 (pdftex.def)             Requested size: 278.23457pt x 204.35988pt.
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 643.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 653.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [34
 
  <../images/oligopoly/identical.png>]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 658.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 668.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [35
 
 ]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 677.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 687.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [36
 
 ]
-<../images/oligopoly/different.png, id=965, 611.28375pt x 431.6125pt>
+<../images/oligopoly/different.png, id=1212, 611.28375pt x 431.6125pt>
 File: ../images/oligopoly/different.png Graphic file (type png)
 <use ../images/oligopoly/different.png>
 Package pdftex.def Info: ../images/oligopoly/different.png  used on input line 
-684.
+694.
 (pdftex.def)             Requested size: 244.50917pt x 172.64194pt.
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 684.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 694.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [37
 
  <../images/oligopoly/different.png>]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 699.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 711.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [38
 
 ]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 725.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 737.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [39
 
 ]
-<../images/oligopoly/mon_comp.png, id=1043, 590.205pt x 451.6875pt>
+<../images/oligopoly/mon_comp.png, id=1307, 590.205pt x 451.6875pt>
 File: ../images/oligopoly/mon_comp.png Graphic file (type png)
 <use ../images/oligopoly/mon_comp.png>
 Package pdftex.def Info: ../images/oligopoly/mon_comp.png  used on input line 7
-32.
+44.
 (pdftex.def)             Requested size: 236.0778pt x 180.67178pt.
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 732.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 744.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [40
 
  <../images/oligopoly/mon_comp.png>]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 744.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 756.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [41
 
 ]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
-Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 755.
+Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 767.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
  [42
 
@@ -1720,24 +1720,24 @@ Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 755.
 \tf@snm=\write8
 \openout8 = `oligopoly.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 758.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 758.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 770.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 770.
  (oligopoly.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 758.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 758.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 770.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 770.
 Package rerunfilecheck Info: File `oligopoly.out' has not changed.
-(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+(rerunfilecheck)             Checksum: 65906A799B74CBF7260C20ABD3121748;297.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 33052 strings out of 492946
- 683273 string characters out of 3135524
- 698604 words of memory out of 3000000
- 36321 multiletter control sequences out of 15000+200000
- 547624 words of font info for 81 fonts, out of 3000000 for 9000
+ 33087 strings out of 492946
+ 683622 string characters out of 3135524
+ 698609 words of memory out of 3000000
+ 36350 multiletter control sequences out of 15000+200000
+ 548212 words of font info for 83 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  56i,17n,70p,798b,973s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Pr
@@ -1750,9 +1750,9 @@ ic/amsfonts/cm/cmssi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsf
 onts/cm/cmssi12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
 /cmssi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.
 pfb>
-Output written on oligopoly.pdf (42 pages, 933976 bytes).
+Output written on oligopoly.pdf (42 pages, 987521 bytes).
 PDF statistics:
- 1174 PDF objects out of 1200 (max. 8388607)
- 85 named destinations out of 1000 (max. 500000)
- 142 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1458 PDF objects out of 1728 (max. 8388607)
+ 91 named destinations out of 1000 (max. 500000)
+ 190 words of extra memory for PDF output out of 10000 (max. 10000000)
 
