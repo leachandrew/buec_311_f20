@@ -1,6 +1,6 @@
 \beamer@sectionintoc {1}{Outline}{1}{0}{1}
 \beamer@sectionintoc {2}{Introduction to Perfect Competition}{4}{0}{2}
 \beamer@sectionintoc {3}{Competition in the Short Run}{14}{0}{3}
-\beamer@sectionintoc {4}{Competition in the Long Run}{27}{0}{4}
-\beamer@sectionintoc {5}{Competition and Wellbeing}{38}{0}{5}
-\beamer@sectionintoc {6}{Takeaways}{50}{0}{6}
+\beamer@sectionintoc {4}{Competition in the Long Run}{28}{0}{4}
+\beamer@sectionintoc {5}{Competition and Wellbeing}{40}{0}{5}
+\beamer@sectionintoc {6}{Takeaways}{52}{0}{6}
