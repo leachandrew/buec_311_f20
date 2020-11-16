@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.3.16)  16 NOV 2020 09:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.3.16)  16 NOV 2020 09:34
 entering extended mode
 **./perfect_competition.tex
 (perfect_competition.tex
@@ -1650,26 +1650,17 @@ Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 572.
  [34
 
 ]
-<../images/perfect_comp/rystad.png, id=1155, 718.685pt x 561.09625pt>
+<../images/perfect_comp/rystad.png, id=1155, 1063.8316pt x 572.56767pt>
 File: ../images/perfect_comp/rystad.png Graphic file (type png)
 <use ../images/perfect_comp/rystad.png>
 Package pdftex.def Info: ../images/perfect_comp/rystad.png  used on input line 
 580.
-(pdftex.def)             Requested size: 474.33356pt x 370.32466pt.
-
-Overfull \hbox (75.99496pt too wide) in paragraph at lines 580--580
- [] 
- []
-
-
-Overfull \vbox (176.6579pt too high) detected at line 580
- []
-
+(pdftex.def)             Requested size: 372.34663pt x 200.40169pt.
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
 Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 580.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
-[35
+ [35
 
  <../images/perfect_comp/rystad.png>]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
@@ -1695,8 +1686,7 @@ File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
 Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 615.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
-
-[38
+ [38
 
 ]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
@@ -1793,8 +1783,7 @@ File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
 Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 733.
 (pdftex.def)             Requested size: 72.26999pt x 8.68385pt.
-
-[49
+ [49
 
 ]
 File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
@@ -1857,7 +1846,7 @@ e1/public/amsfonts/cm/cmss8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public
 nts/cm/cmssi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
 cmssi12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.
 pfb>
-Output written on perfect_competition.pdf (52 pages, 2287453 bytes).
+Output written on perfect_competition.pdf (52 pages, 3270698 bytes).
 PDF statistics:
  1786 PDF objects out of 2073 (max. 8388607)
  111 named destinations out of 1000 (max. 500000)
