@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.3.16)  16 NOV 2020 18:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.3.16)  16 NOV 2020 20:41
 entering extended mode
 **./week_11_problems.tex
 (week_11_problems.tex
@@ -812,61 +812,59 @@ File: ../images/UA-ASB-COLOUR.png Graphic file (type png)
 <use ../images/UA-ASB-COLOUR.png>
 Package pdftex.def Info: ../images/UA-ASB-COLOUR.png  used on input line 142.
 (pdftex.def)             Requested size: 307.14749pt x 36.90791pt.
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 11.40997pt on input line 179.
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 8.33606pt on input line 179.
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 6.25204pt on input line 179.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 11.40997pt on input line 179.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 8.33606pt on input line 179.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 6.25204pt on input line 179.
+<week_11.jpg, id=8, 536.0025pt x 517.18219pt>
+File: week_11.jpg Graphic file (type jpg)
+<use week_11.jpg>
+Package pdftex.def Info: week_11.jpg  used on input line 261.
+(pdftex.def)             Requested size: 305.33789pt x 294.6154pt.
 [1
 
 {C:/Users/aleach/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <../images/
 UA-ASB-COLOUR.png>]
-<../images/utils_costco.png, id=26, 433.62pt x 433.62pt>
-File: ../images/utils_costco.png Graphic file (type png)
-<use ../images/utils_costco.png>
-Package pdftex.def Info: ../images/utils_costco.png  used on input line 216.
-(pdftex.def)             Requested size: 305.33789pt x 305.35147pt.
-
-AED: lastpage setting LastPage
-LaTeX Font Info:    Try loading font information for OMS+ppl on input line 222.
+LaTeX Font Info:    Font shape `U/msa/m/n' will be
+(Font)              scaled to size 11.40997pt on input line 327.
+LaTeX Font Info:    Font shape `U/msa/m/n' will be
+(Font)              scaled to size 8.33606pt on input line 327.
+LaTeX Font Info:    Font shape `U/msa/m/n' will be
+(Font)              scaled to size 6.25204pt on input line 327.
+LaTeX Font Info:    Font shape `U/msb/m/n' will be
+(Font)              scaled to size 11.40997pt on input line 327.
+LaTeX Font Info:    Font shape `U/msb/m/n' will be
+(Font)              scaled to size 8.33606pt on input line 327.
+LaTeX Font Info:    Font shape `U/msb/m/n' will be
+(Font)              scaled to size 6.25204pt on input line 327.
+LaTeX Font Info:    Try loading font information for OMS+ppl on input line 352.
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/psnfss\omsppl.fd"
 File: omsppl.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ppl/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 222.
-[2 <../images/utils_costco.png>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 222.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 222.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 352.
+[2 <./week_11.jpg>] [3] 
+AED: lastpage setting LastPage
+[4]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 601.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 601.
 (week_11_problems.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 222.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 222.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 601.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 601.
 Package rerunfilecheck Info: File `week_11_problems.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 22047 strings out of 492946
- 396148 string characters out of 3135524
- 455244 words of memory out of 3000000
+ 22136 strings out of 492946
+ 396711 string characters out of 3135524
+ 460244 words of memory out of 3000000
  25556 multiletter control sequences out of 15000+200000
- 30569 words of font info for 77 fonts, out of 3000000 for 9000
+ 27281 words of font info for 70 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,15n,56p,1207b,590s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Program Files/Mi
-KTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/
-fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/ty
-pe1/urw/palatino/uplr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/palati
-no/uplri8a.pfb>
-Output written on week_11_problems.pdf (2 pages, 147218 bytes).
+KTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9
+/fonts/type1/urw/palatino/uplr8a.pfb>
+Output written on week_11_problems.pdf (4 pages, 119898 bytes).
 PDF statistics:
- 53 PDF objects out of 1000 (max. 8388607)
- 13 named destinations out of 1000 (max. 500000)
+ 163 PDF objects out of 1000 (max. 8388607)
+ 108 named destinations out of 1000 (max. 500000)
  23 words of extra memory for PDF output out of 10000 (max. 10000000)
 
