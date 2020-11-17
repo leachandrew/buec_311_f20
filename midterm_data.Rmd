@@ -89,6 +89,14 @@ all
 
 
 
+
+
+
+
+
+
+
+
 ## Grade Distribution By Section
 ```{r dist_graph_sec,fig.width=12,fig.height=7,echo=FALSE}
 sec
