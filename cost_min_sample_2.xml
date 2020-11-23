@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+
+
+<question type="category">
+<category>
+<text>$course$/cost_min_sample_2/Exercise 1</text>
+</category>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> Q1 : private_fall_quiz_2_q4 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>
+<p>Looking at the following plot of a firm’s production function, represented by isoquants for production levels and isocost lines for different total costs of production. Which of the following are true?</p>
+<div class="figure">
+<img src="../isocost_quiz.png" style="width:35.0%" alt="" />
+<p class="caption">Cost Minimization Problem</p>
+</div>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<ol type = "a">
+<li> True. At both points, the isocost lines are tangent to the isoquant so they minimize cost for that level of output </li>
+<li> True. Costs and output each increase to the right. </li>
+<li> True. They have the same production since they are on the same isoquant, but the cost for e is higher because it’s on a higher isocost line. </li>
+<li> False. The production function exhibits constant returns to scale </li>
+<li> False. Point b is, in fact, the cost minimising combination of inputs to produce 3 units of output </li>
+</ol>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>false</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="33.33333" format="html">
+<text><![CDATA[<p>
+Points a and c are each cost minimizing points for the firm at different levels of output.
+</p>]]></text>
+<feedback format="html">
+<text><![CDATA[<p>
+True. At both points, the isocost lines are tangent to the isoquant so they minimize cost for that level of output
+</p>]]></text>
+</feedback>
+</answer>
+<answer fraction="33.33333" format="html">
+<text><![CDATA[<p>
+Point d will have higher output and higher cost than point c
+</p>]]></text>
+<feedback format="html">
+<text><![CDATA[<p>
+True. Costs and output each increase to the right.
+</p>]]></text>
+</feedback>
+</answer>
+<answer fraction="33.33333" format="html">
+<text><![CDATA[<p>
+Point e has the same output as point a, but a higher average cost.
+</p>]]></text>
+<feedback format="html">
+<text><![CDATA[<p>
+True. They have the same production since they are on the same isoquant, but the cost for e is higher because it’s on a higher isocost line.
+</p>]]></text>
+</feedback>
+</answer>
+<answer fraction="-50" format="html">
+<text><![CDATA[<p>
+The production function exhibits increasing returns to scale.
+</p>]]></text>
+<feedback format="html">
+<text><![CDATA[<p>
+False. The production function exhibits constant returns to scale
+</p>]]></text>
+</feedback>
+</answer>
+<answer fraction="-50" format="html">
+<text><![CDATA[<p>
+It’s clear that Point b does not correspond to a cost-minimizing bundle of inputs.
+</p>]]></text>
+<feedback format="html">
+<text><![CDATA[<p>
+False. Point b is, in fact, the cost minimising combination of inputs to produce 3 units of output
+</p>]]></text>
+</feedback>
+</answer>
+</question>
+
+</quiz>

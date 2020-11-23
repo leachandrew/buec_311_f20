@@ -1,0 +1,241 @@
+---
+output: 
+  pdf_document:
+    keep_tex: true
+    fig_caption: yes
+    latex_engine: pdflatex
+    template: ../ajl_note_pack.tex
+    #template: ../svm-latex-syllabus.tex
+geometry: margin=1in
+
+course: "BUEC 311: Business Economics, Organization and Management"
+course_number: "BUEC 311"
+title: "Problem Set #7"
+subtitle: "Firm Theory and Perfect Competition"
+date: \today
+
+
+
+email: "aleach@ualberta.ca"
+web: "www.andrewleach.ca"
+officehours: "By appointment"
+office: "3-20D Business Building"
+classroom: "BUS 4-13 "
+classhours: "B2 TR 9:30-10:50, B1 TR 11:00-12:20"
+
+fontfamily: mathpazo
+fontsize: 11pt
+header-includes:
+   - \linespread{1.05}
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(echo=F,
+                      message=F,
+                      warning=F)
+
+knitr::opts_knit$set(dev.args = list(type = "cairo"))
+library(tidyverse)
+library(ggthemes)
+library(ggrepel)
+library(patchwork)
+
+blake_theme<-function(){
+  theme_hc(20)+
+    theme(plot.subtitle = element_text(color="grey10",size=rel(.7)),
+          plot.title = element_text(face="bold",size=rel(.8)),
+          plot.caption = element_text(color="grey50",size=rel(.5),hjust=0),
+          legend.title = element_text(color="grey10",size=rel(.5)),
+          legend.text = element_text(color="grey10",size=rel(.5)),
+          axis.title = element_text(size=rel(.8)),
+          axis.ticks = element_blank(),
+          panel.spacing = unit(2,"lines"),
+          #legend.position = "none",
+          plot.margin = margin(t = .5, r = 1, b = .25, l = 1,unit= "cm"),
+          axis.text.x = element_text(margin = margin(t = 10, r = 0, b = 0, l = 0))
+          
+    )
+}
+```
+
+Single Answer
+
+1) A ________ is a governance structure where owners are not personally liable.
+A) sole proprietorship
+B) partnership
+C) mixed enterprise
+D) corporation
+
+Answer:  D
+
+
+2) Economists typically assume that the owners of firms wish to
+A) produce efficiently.
+B) maximize sales revenues.
+C) maximize profits.
+D) All of the above.
+
+Answer:  C
+
+
+3) A small business owner earns $50,000 in revenue annually. The explicit annual costs equal $30,000. The owner could work for someone else and earn $25,000 annually. The owner's accountant would likely measure profit as ________ but an economic assessment would estimate a profit of ________.
+A) $20,000, $20,000
+B) $20,000, -$5,000
+C) $25,000, -$5,000
+D) $25,000, $20,000
+
+Answer:  B
+
+
+
+4) A firm optimally sets its output where
+A) marginal profit is zero.
+B) marginal revenue is maximized.
+C) marginal profit equals marginal revenue.
+D) marginal profit is maximized.
+
+Answer:  A
+
+
+5) If marginal revenue equals marginal cost, the firm is maximizing profits as long as
+A) the resulting profits are positive.
+B) marginal cost exceeds marginal revenue for greater levels of output.
+C) the average cost curve lies above the demand curve.
+D) All of the above are required.
+
+Answer:  B
+
+
+
+\begin{center}
+\includegraphics[width=0.65\textwidth]{week_11.jpg}
+\end{center}
+
+6) The above figure shows the cost curves for a competitive firm. If the firm is to earn economic profit, price must exceed
+A) $0.
+B) $5.
+C) $10.
+D) $11.
+
+Answer:  C
+
+
+7) Using the above figure which shows the cost curves for a competitive firm, you can conclude that the firm should shut down in the short run if the price is equal to any number below:
+A) $15.
+B) $10.
+C) $11
+D) None of the above
+
+Answer:  D
+
+8) If a competitive firm maximizes short-run profits by producing some quantity of output, which of the following must be TRUE at that level of output?
+A) p = MC
+B) MR = MC
+C) p $\geq$ AVC
+D) All of the above.
+
+Answer:  D
+
+
+9) If a profit-maximizing firm finds that, at its current level of production, MR<MC, it will
+A) decrease output.
+B) increase output.
+C) shut down.
+D) operate at a loss.
+
+Answer:  A
+
+10) True or false: If a firm sets marginal revenue equal to marginal cost it will make an economic profit.
+
+Answer:  False. When a firm sets MR = MC it maximizes profits, but the profit-maximizing level of output might still be negative (the smallest loss possible).
+
+
+11) Economists define a market to be competitive when the firms
+A) spend large amounts of money on advertising to lure customers away from the competition.
+B) watch each other's behavior closely.
+C) are price takers.
+D) All of the above.
+
+Answer:  C
+
+12) Firms that exhibit price-taking behavior
+A) wait for other firms to set price, take it as given, and charge a higher price.
+B) have outputs that are too small to influence market price and thus take it as given.
+C) take pricing behavior in their own hands.
+D) are independently capable of setting price.
+
+Answer:  B
+
+
+13) In a perfectly competitive market
+A) firms can freely enter and exit.
+B) firms sell a differentiated product.
+C) transaction costs are high.
+D) All of the above.
+
+Answer:  A
+
+14) In a perfectly competitive market
+A) buyers are price-takers.
+B) buyers view products from different firms as differentiated.
+C) individual buyers have horizontal demand curves.
+D) firms' demand curves are vertical.
+
+Answer:  A
+
+
+15) The economist's definition of the short run is
+A) usually 3-6 months.
+B) when at least one of the firm's input choices are fixed
+C) when a firm has to decide whether or not to exit.
+D) identical to the long run for most firms.
+E) All of the above
+
+Answer:  B
+
+16) In the short run
+A) firms will shut down if operating at a loss.
+B) profit maximizing firms have identical short run supply curves.
+C) firms may choose to operate at a loss.
+D) most firms have short run supply curves that are the same as their long run supply curves.
+
+Answer:  C
+
+16) In the long run
+A) firms will shut down if operating at a loss.
+B) profit maximizing firms have identical supply curves.
+C) firms may choose to operate at a loss.
+D) most firms have supply curves that are the same as their long run average cost curves.
+E) all of the above
+Answer:  A
+
+17) If a competitive firm finds that it maximizes short-run profits by shutting down, which of the following must be TRUE?
+A) p < AVC for all levels of output.
+B) p < AVC only for the level of output at which p = MC.
+C) p < AVC only if the firm has no fixed costs.
+D) The firm will earn zero profit.
+Answer:  A
+
+
+18) The competitive firm's supply curve is equal to
+A) its marginal cost curve.
+B) the portion of its marginal cost curve that lies above AC.
+C) the portion of its marginal cost curve that lies above AVC.
+D) the portion of its marginal cost curve that lies above AFC.
+Answer:  C
+
+19) In the long run, profits will equal zero in a competitive market because of
+A) constant returns to scale.
+B) identical products being produced by all firms.
+C) the availability of information.
+D) free entry and exit.
+Answer:  D, although you'd win an argument if you said that this only holds with identical firms
+
+20) A firm will enter a competitive market when
+A) it can gather market share at the expense of incumbent firms.
+B) it would not be the last firm entering.
+C) it can earn a positive long-run profit.
+D) the long-run supply curve is upward sloping.
+Answer:  C
+

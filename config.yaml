@@ -7,9 +7,13 @@ ignoreFiles:
   - \.Rmd$
   - \.Rmarkdown$
   - \.yaml$
-  - _files$
   - _cache$
   - \.csl$
+  - \.knit
+  - \.md$
+  - \.utf8
+
+  
 buildFuture: true
 menu:
   main:

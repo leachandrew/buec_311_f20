@@ -1,0 +1,77 @@
+---
+output: 
+  pdf_document:
+    keep_tex: true
+    fig_caption: yes
+    latex_engine: pdflatex
+    template: ../ajl_note_pack.tex
+    #template: ../svm-latex-syllabus.tex
+geometry: margin=1in
+
+course: "BUEC 311: Business Economics, Organization and Management"
+course_number: "BUEC 311"
+title: "Problem Set #5"
+subtitle: "Consumer Preferences"
+date: \today
+
+
+
+email: "aleach@ualberta.ca"
+web: "www.andrewleach.ca"
+officehours: "By appointment"
+office: "3-20D Business Building"
+classroom: "BUS 4-13 "
+classhours: "B2 TR 9:30-10:50, B1 TR 11:00-12:20"
+
+fontfamily: mathpazo
+fontsize: 11pt
+header-includes:
+   - \linespread{1.05}
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(echo=F,
+                      message=F,
+                      warning=F)
+
+knitr::opts_knit$set(dev.args = list(type = "cairo"))
+library(tidyverse)
+library(ggthemes)
+library(ggrepel)
+library(patchwork)
+
+blake_theme<-function(){
+  theme_hc(20)+
+    theme(plot.subtitle = element_text(color="grey10",size=rel(.7)),
+          plot.title = element_text(face="bold",size=rel(.8)),
+          plot.caption = element_text(color="grey50",size=rel(.5),hjust=0),
+          legend.title = element_text(color="grey10",size=rel(.5)),
+          legend.text = element_text(color="grey10",size=rel(.5)),
+          axis.title = element_text(size=rel(.8)),
+          axis.ticks = element_blank(),
+          panel.spacing = unit(2,"lines"),
+          #legend.position = "none",
+          plot.margin = margin(t = .5, r = 1, b = .25, l = 1,unit= "cm"),
+          axis.text.x = element_text(margin = margin(t = 10, r = 0, b = 0, l = 0))
+          
+    )
+}
+```
+
+
+1. Suppose that Jim is contemplating whether to spend the money to buy a promotional ski card for this upcoming season.  His utility function for skiing and all other goods is given by U=x*s+x, such that his marginal utility for skiing is given by $U_s=x$ and his marginal utility for other consumption is $U_x=s+1$. Assume that he has \$300 of disposable income to allocate across these goods, and that the price of a daily lift ticket is \$100. Use a price of \$1 for the indexed other goods (i.e. the budget constraint has intercept at x=300 and s=3.)
+
+a) With no promotional discount, and assuming he can only ski full days, how many days should Jim ski this year?
+
+b) Now assume that a promotional card costs \$50 but offers half price lift tickets? Should Jim buy the card?
+
+c) How many days will he ski once he has purchased the card?
+
+\newpage
+
+2. Janine is considering buying a Costco membership. If she buys the Costco membership, it will mean giving up one night out per month with her friends, but she'll have a lower cost of groceries. Assuming that she's currently spending 2 nights out per month with her friends and buying 2 carts of groceries per month, and that her preferences and budget constraint are shown on the map below, do you think she should buy the Costco membership if it reduces her cost of groceries by 50\%?
+
+\begin{center}
+\includegraphics[width=0.65\textwidth]{../images/utils_costco.png}
+\end{center}
