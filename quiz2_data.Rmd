@@ -1,5 +1,5 @@
 ---
-title: Midterm Data
+title: Quiz 2 Data
 output: html_document
 ---
 
@@ -59,9 +59,9 @@ midterm_A2<-midterm_data %>% filter(sec=="A2")
 midterm_A3<-midterm_data %>% filter(sec=="A3")
 
 ```
-The quiz average over all three sections was `r round(mean(midterm_data$midterm,na.rm=T),2)`%.
+The quiz average over all three sections was `r round(mean(midterm_data$midterm,na.rm=T),2)`/10.
 
-The quiz averages for the individual sections were `r round(mean(midterm_A1$midterm,na.rm=T),2)`% for section A1, `r round(mean(midterm_A2$midterm,na.rm=T),2)`% for section A2 and `r round(mean(midterm_A3$midterm,na.rm=T),2)`% for section A3.
+The quiz averages for the individual sections were `r round(mean(midterm_A1$midterm,na.rm=T),2)`/10 for section A1, `r round(mean(midterm_A2$midterm,na.rm=T),2)`/10 for section A2 and `r round(mean(midterm_A3$midterm,na.rm=T),2)`/10 for section A3.
 
 ```{r quiz_graphs,echo=FALSE,warnings=FALSE,include=FALSE,,cache=FALSE}
 
