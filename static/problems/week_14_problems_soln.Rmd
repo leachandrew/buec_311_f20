@@ -1,0 +1,266 @@
+---
+output: 
+  pdf_document:
+    keep_tex: true
+    fig_caption: yes
+    latex_engine: pdflatex
+    template: ../ajl_note_pack.tex
+    #template: ../svm-latex-syllabus.tex
+geometry: margin=1in
+
+course: "BUEC 311: Business Economics, Organization and Management"
+course_number: "BUEC 311"
+title: "Pre-exam problem Set"
+subtitle: "Game Theory and Government Intervention"
+date: \today
+
+
+
+email: "aleach@ualberta.ca"
+web: "www.andrewleach.ca"
+officehours: "By appointment"
+office: "3-20D Business Building"
+classroom: "BUS 4-13 "
+classhours: "B2 TR 9:30-10:50, B1 TR 11:00-12:20"
+
+fontfamily: mathpazo
+fontsize: 11pt
+header-includes:
+   - \linespread{1.05}
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(echo=F,
+                      message=F,
+                      warning=F)
+
+knitr::opts_knit$set(dev.args = list(type = "cairo"))
+library(tidyverse)
+library(ggthemes)
+library(ggrepel)
+library(patchwork)
+
+blake_theme<-function(){
+  theme_hc(20)+
+    theme(plot.subtitle = element_text(color="grey10",size=rel(.7)),
+          plot.title = element_text(face="bold",size=rel(.8)),
+          plot.caption = element_text(color="grey50",size=rel(.5),hjust=0),
+          legend.title = element_text(color="grey10",size=rel(.5)),
+          legend.text = element_text(color="grey10",size=rel(.5)),
+          axis.title = element_text(size=rel(.8)),
+          axis.ticks = element_blank(),
+          panel.spacing = unit(2,"lines"),
+          #legend.position = "none",
+          plot.margin = margin(t = .5, r = 1, b = .25, l = 1,unit= "cm"),
+          axis.text.x = element_text(margin = margin(t = 10, r = 0, b = 0, l = 0))
+          
+    )
+}
+```
+
+1) Market failures ________ and generate ________.
+A) force governments to act; regulations
+B) create monopolies or oligopolies; deadweight loss
+C) reduce economic efficiency; deadweight loss
+D) create deadweight loss; externalities
+Answer:  C
+
+2) Which of the following is a dynamic game?
+A) Rock-paper-scissors
+B) Craps (bet on a roll of the dice)
+C) Chess
+D) Rock-paper-scissors-lizard-Spock
+Answer:  C
+
+3) In a repeated prisoners' dilemma type game where the static Nash equilibrium is worse than collaboration for both players
+A) the players act sequentially.
+B) the outcomes are the same as in a static prisoners' dilemma game.
+C) firms' choices are not influenced by their opponents' actions.
+D) cooperation may result if the game is played indefinitely.
+Answer:  D
+
+4) In an indefinitely repeated game, a firm might use a ________ to ________ a rival that defects from a cooperative strategy.
+A) trigger strategy; threaten
+B) trigger strategy; punish
+C) legal maneuver; sue
+D) tacit threat; dissuade
+Answer:  B
+
+5) If firms adopt a strategy that triggers a permanent punishment in a prisoner's dilemma game (the United vs American Airlines game we did in class, for example), the result in an indefinitely repeated game is
+A) undefined.
+B) the noncooperative Nash equilibrium.
+C) the collusive Nash equilibrium.
+D) economically inefficient.
+Answer:  C
+
+\newpage
+
+6) A model of oligopoly in which one firm moves first, and then the other rivals follow is a ________ game.
+A) Stackelberg model
+B) Cournot model
+C) finite move
+D) tit-for-tat
+Answer:  A
+
+7) The Cournot and Stackelberg models are similar, EXCEPT Cournot ________ and Stackelberg ________.
+A) sets price; sets output
+B) sets output; sets price
+C) is dynamic; is static
+D) is static; is dynamic
+Answer:  D
+
+
+8) Which of the following statements is TRUE?
+A) A government policy that eliminates a market failure, but only some people gain while others are kept the same, is not a Pareto improvement.
+B) A government policy that eliminates a market failure, but only some people gain while others are kept the same, is a Pareto improvement.
+C) A government policy that eliminates a market failure and some people gain and some lose only a little, is a Pareto improvement.
+D) A government policy that generates a Pareto improvement eliminates all deadweight loss.
+Answer:  B
+
+9) Governments can eliminate market failure due to an imperfectly competitive market by
+A) changing the market structure, for example by eliminating monopoly protection.
+B) having the government own the monopoly.
+C) imposing regulations that reduce prices.
+D) All of the above.
+Answer:  D
+
+10) Optimal price regulation sets price equal to
+A) marginal cost.
+B) average variable cost.
+C) average cost.
+D) minimum average cost.
+Answer:  A
+
+11) In order to regulate a monopoly's price, the government
+A) needs to hire former executives from the monopoly.
+B) should rely on industry experts for information.
+C) needs accurate information on the monopoly's demand and cost curves.
+D) needs to know the monopoly's supply curve.
+Answer:  C
+
+12) Government regulation in the market
+A) always increases consumer surplus.
+B) always passes the cost-benefit test.
+C) always solves market failures.
+D) None of the above.
+Answer:  D
+\newpage
+
+
+13) Regulation might NOT increase total surplus because
+A) the costs of the regulation might outweigh the benefits.
+B) it may not be possible to gather the information necessary to set prices correctly.
+C) regulators might get captured or influenced by the industry and set policies to benefit producers over consumers.
+D) All of the above.
+Answer:  D
+
+14) In general, an externality is created when
+A) people are affected (other than by changes in market prices) by a transaction which they were not part of.
+B) firms produce a product of low quality and consumers don't like it.
+C) firms have to pay for pollution the environment.
+D) the government subsidizes education.
+E) David Suzuki says so.
+Answer:  A
+
+
+15) Students who talk loudly with each other in class
+A) create an externality because other students cannot follow the lecture as well.
+B) disturb nobody.
+C) benefit the other students in class because they engage in conversation.
+D) only create an externality if they talk about something unrelated to class.
+Answer:  A
+
+16) A game includes
+A) a strategy.
+B) payoffs.
+C) rules.
+D) All of the above.
+Answer:  D
+
+17) A strategy is dominant if
+A) it yields a greater payoff than any other player receives.
+B) it yields a payoff at least as large as that from any other strategy, regardless of the actions of other players.
+C) the player cannot gain by changing strategy, assuming that no other player changes strategy.
+D) it is part of a Nash equilibrium.
+Answer:  B
+
+18) One interesting feature of a prisoner's dilemma game (the United vs American Airlines game we did in class, for example) is that
+A) non-cooperative behavior leads to lower payoffs than cooperative behavior.
+B) there is never a dominated strategy.
+C) individuals behave irrationally when they behave non-cooperatively.
+D) cooperative behavior leads to lower payoffs than non-cooperative behavior.
+Answer:  A
+
+19) An auction in which the price announced by the auctioneer DESCENDS is called a(n)
+A) Dutch Auction.
+B) English Auction.
+C) Sealed Bid Auction.
+D) Descending Option Auction.
+Answer:  A
+
+
+20) Assuming individuals follow their optimal bidding strategies, the individual with the highest valuation of the good will win in which of the following auctions?
+A) English Auction
+B) Dutch Auction
+C) First-price Sealed Bid Auction
+D) Second-price Sealed Bid Auction
+E) All of the above.
+Answer:  E
+
+21) In a second-price auction, the winner pays
+A) the second-to-last bid it made.
+B) the average of the top two bids.
+C) the amount bid by the runner-up.
+D) None of the above.
+Answer:  C
+
+
+22) The winner's curse occurs when
+A) bidders "shade" their bids.
+B) the winning bid is higher than the good's common value.
+C) the winner buys something he didn't need.
+D) the winning bid is higher than the private value of the good.
+Answer:  B
+
+
+23) It is unwise to bid more than your valuation of the good in a sealed bid second-price auction because
+A) you will have to pay more than twice your valuation
+B) you want to make sure you don't win
+C) you might end up winning and paying more than the item is worth to you
+D) you don't know what a second price auction is
+Answer:  C
+
+24) Repeated games are conducive to 
+A) explicit cooperation or collusion.
+B) tacit cooperation or collusion.
+C) corruption.
+D) failing to have a Nash equilibrium.
+Answer:  B
+
+25) In rock-paper-scissors, which of the following is a pure strategy Nash equilibrium:
+A) playing rock, because nothing beats rock
+B) playing scissors, because most people play paper
+C) playing paper, because your opponent likely thinks nothing beats rock
+D) none of the above
+
+Answer:  D
+
+
+25) In rock-paper-scissors-lizard-Spock (see next page), which of the following is a pure strategy Nash equilibrium:
+
+![Rock-Paper-Scissors-Lizard-Spock](Rock_paper_scissors_lizard_spock.png)
+
+A) playing rock, because nothing beats rock
+B) playing scissors, because most people play paper
+C) playing paper, because your opponent likely thinks nothing beats rock
+D) Logically, it has to be Spock.
+E) None of the above
+
+Answer:  E
+
+
+
+
+
+

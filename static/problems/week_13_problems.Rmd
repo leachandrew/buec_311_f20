@@ -1,0 +1,88 @@
+---
+output: 
+  pdf_document:
+    keep_tex: true
+    fig_caption: yes
+    latex_engine: pdflatex
+    template: ../ajl_note_pack.tex
+    #template: ../svm-latex-syllabus.tex
+geometry: margin=1in
+
+course: "BUEC 311: Business Economics, Organization and Management"
+course_number: "BUEC 311"
+title: "Problem Set #7"
+subtitle: "Firm Theory and Perfect Competition"
+date: \today
+
+
+
+email: "aleach@ualberta.ca"
+web: "www.andrewleach.ca"
+officehours: "By appointment"
+office: "3-20D Business Building"
+classroom: "BUS 4-13 "
+classhours: "B2 TR 9:30-10:50, B1 TR 11:00-12:20"
+
+fontfamily: mathpazo
+fontsize: 11pt
+header-includes:
+   - \linespread{1.05}
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(echo=F,
+                      message=F,
+                      warning=F)
+
+knitr::opts_knit$set(dev.args = list(type = "cairo"))
+library(tidyverse)
+library(ggthemes)
+library(ggrepel)
+library(patchwork)
+
+blake_theme<-function(){
+  theme_hc(20)+
+    theme(plot.subtitle = element_text(color="grey10",size=rel(.7)),
+          plot.title = element_text(face="bold",size=rel(.8)),
+          plot.caption = element_text(color="grey50",size=rel(.5),hjust=0),
+          legend.title = element_text(color="grey10",size=rel(.5)),
+          legend.text = element_text(color="grey10",size=rel(.5)),
+          axis.title = element_text(size=rel(.8)),
+          axis.ticks = element_blank(),
+          panel.spacing = unit(2,"lines"),
+          #legend.position = "none",
+          plot.margin = margin(t = .5, r = 1, b = .25, l = 1,unit= "cm"),
+          axis.text.x = element_text(margin = margin(t = 10, r = 0, b = 0, l = 0))
+          
+    )
+}
+```
+
+% Node styles
+\tikzset{
+% Two node styles for game trees: solid and hollow
+solid node/.style={circle,draw,inner sep=1.5,fill=black},
+hollow node/.style={circle,draw,inner sep=1.5}
+}
+\begin{tikzpicture}[scale=1.5,font=\footnotesize]
+% Specify spacing for each level of the tree
+\tikzstyle{level 1}=[level distance=15mm,sibling distance=35mm]
+\tikzstyle{level 2}=[level distance=15mm,sibling distance=15mm]
+% The Tree
+\node(0)[solid node,label=above:{$P1$}]{}
+child{node(1)[solid node]{}
+child{node[hollow node,label=below:{$(a,b)$}]{} edge from parent node[left]{$C$}}
+child{node[hollow node,label=below:{$(c,d)$}]{} edge from parent node[right]{$D$}}
+edge from parent node[left,xshift=-3]{$A$}
+}
+child{node(2)[solid node]{}
+child{node[hollow node,label=below:{$(e,f)$}]{} edge from parent node[left]{$C$}}
+child{node[hollow node,label=below:{$(g,h)$}]{} edge from parent node[right]{$D$}}
+edge from parent node[right,xshift=3]{$B$}
+};
+% information set
+\draw[dashed,rounded corners=10]($(1) + (-.2,.25)$)rectangle($(2) +(.2,-.25)$);
+% specify mover at 2nd information set
+\node at ($(1)!.5!(2)$) {$P2$};
+\end{tikzpicture}

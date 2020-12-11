@@ -1,7 +1,7 @@
-baseurl: ""
+baseurl: "https://microS20.classes.ryansafner.com/"
 languageCode: "en-us"
-title: "Managerial Economics"
-theme: "ath-tufte-hugo"
+title: "Microeconomic Analysis"
+theme: "ath-tufte-hugo_18-19"
 googleAnalytics: ""
 ignoreFiles:
   - \.Rmd$
@@ -12,13 +12,13 @@ ignoreFiles:
   - \.knit
   - \.md$
   - \.utf8
-
-  
+permalinks:
+  post: "/:year/:month/:day/:slug/"
 buildFuture: true
 menu:
   main:
     - name: Syllabus
-      url: /syllabus-311.pdf
+      url: /syllabus/
       weight: 1
     - name: Assignments
       url: /assignments/
@@ -29,47 +29,53 @@ menu:
     - name: Reference
       url: /reference/
       weight: 4
-    - name: Exams
-      url: /exams/
+    - name: Slack
+      url: "https://hood-micro-analysis.slack.com"
       weight: 6
- # Disable taxonomies
+# Disable taxonomies
 taxonomies:
   tag: ""
   group: ""
   category: ""
 params:
-  author: Andrew Leach
-  thumbnail: /images/UA-ASB-COLOUR.png
+  author: Ryan Safner
+  thumbnail: /images/micro_hex.png
   instructor: 
-    name: Professor Andrew Leach
-    email: aleach@ualberta.ca
-    url: "https://www.andrewleach.ca"
-    twitter: andrew_leach
-    github: leachandrew
-    office: 3-20D
+    name: Dr. Ryan Safner
+    email: safner@hood.edu
+    url: "https://www.ryansafner.com"
+    twitter: ryansafner
+    github: ryansafner
+    office: 118 Rosenstock
   course:
-    number: BUEC 311
-    semester: Fall 2020
-    twitter: andrew_leach
-    github: "leachandrew/buec_311_f20"
+    number: ECON 306
+    semester: Spring 2020
+    days: "TuTh"
+    time: "11:30 AM–12:45 PM"
+    location: "Rosenstock 218"
+    twitter: ryansafner
+    dates: >-
+      January 15–May 8, 2020
+    github: "ryansafner/microS20"
+    slack: "http://hood-micro-analysis.slack.com"
     copyrightYear: "2020"
     contactDetails: >-
       Office hours: MW 3:30–5:00PM
-  school: 
-    name: University of Alberta
-    url: "https://www.ualberta.ca"
-  university:
-    name: Alberta School of Business
-    url: "https://www.ualberta.ca/business/index.html"
-  description: ""
-  primaryColor: "#007C41"
-  secondaryColor: "#FFDB05"
+  university: 
+    name: Hood College
+    url: "https://www.hood.edu"
+  school:
+    name: George B. Delaplane, Jr. School of Business
+    url: "https://www.hood.edu/academics/departments/george-b-delaplaine-jr-school-business"
+  description: "Microeconomic analysis"
+  primaryColor: "#5E81AC"
+  secondaryColor: "#D08770"
   credits: >-
-    Course website based on those shared by [Ryan Safner](https://github.com/ryansafner) and [Andrew Heiss](https://econw19.classes.andrewheiss.com/).
-  logo:  
-    url: /images/UA-ASB-COLOUR.png
-    alt: Managerial Economics
+    Hex icon by Ryan Safner via [hexSticker](https://github.com/GuangchuangYu/hexSticker).<br> Course website based on [Andrew Heiss](https://econw19.classes.andrewheiss.com/). <br>[Nord color scheme](https://github.com/arcticicestudio/nord) from [Arctic Ice Studio](http://arcticicestudio.com/).
+  logo:
+    url: /images/micro_hex.png
+    alt: Microeconomics
   meta:
-    twitterSite: "@andrew_leach"
-    twitterCreator: "@andrew_leach"
-
+    twitterSite: "@ryansafner"
+    twitterCreator: "@ryansafner"
+    fbAuthor: "https://www.facebook.com/ryansafner"
