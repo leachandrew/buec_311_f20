@@ -1,0 +1,145 @@
+---
+title: Final Exam and Overall Standing Data
+output: html_document
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(cache=TRUE)
+
+library(tidyverse)
+library(lubridate)
+library(viridis)
+library(zoo)
+library(janitor)
+library(broom)
+library(ggthemes)
+library(directlabels)
+library(kableExtra)
+library(stargazer)
+library(scales)
+library(ggrepel)
+library(readxl)
+
+
+colors_tableau10<-function()
+{
+  return(c("#1F77B4", "#FF7F0E", "#2CA02C", "#D62728", "#9467BD", "#8C564B",
+           "#E377C2", "#7F7F7F", "#BCBD22", "#17BECF"))
+}
+
+class_clean<-function(){
+  theme_classic()+
+    theme(
+      plot.subtitle = element_text(color="grey10",size=rel(.7)),
+      plot.title = element_text(face="bold",size=rel(.8)),
+      plot.caption = element_text(color="grey50",size=rel(.5),hjust=0),
+      legend.title = element_text(color="grey10",size=rel(.5)),
+      legend.text = element_text(color="grey10",size=rel(.5)),
+      axis.text = element_text(size=rel(1.5)),
+      axis.title = element_text(size=rel(1.5)),
+      #panel.grid.major = element_line(size=0,colour = "black"), 
+      #plot.margin = margin(t = .1, r = .1, b = .1, l = .1,unit= "cm"),
+      plot.margin = margin(t = .5, r = 1, b = .25, l = 1,unit= "cm"),
+      #axis.text.x = element_text(margin = margin(t = 10, r = 0, b = 0, l = 0)),
+      NULL)
+}
+
+
+```
+
+```{r quiz_data,echo=FALSE,warnings=FALSE,include=FALSE,,cache=FALSE}
+sections<- read_csv("private/eclass_import.csv") %>% select(student_id,sec)
+
+
+final_data<-read_excel("private/BUEC_311_2020_final_grades.xlsx") %>% clean_names()%>%rename(student_id=id) %>% left_join(sections)
+
+final_A1<-final_data %>% filter(sec=="A1")
+final_A2<-final_data %>% filter(sec=="A2")
+final_A3<-final_data %>% filter(sec=="A3")
+
+
+A1_data<-read_excel("private/1730_70720.xls",skip = 1) %>%
+  mutate(ID=as.double(ID))%>% left_join(final_data,by=c("ID"="student_id"))%>%
+  mutate("Final Grade"=ifelse(is.na(`Final Grade`),letter_tentative,`Final Grade`))%>%
+  select(seq(1,10))
+write_csv(A1_data,"private/BUEC_311_A1_Grades.csv")
+
+
+A3_data<-read_excel("private/1730_80282.xls",skip = 1) %>%
+  mutate(ID=as.double(ID))%>% left_join(final_data,by=c("ID"="student_id"))%>%
+  mutate("Final Grade"=ifelse(is.na(`Final Grade`),letter_tentative,`Final Grade`))%>%
+  select(seq(1,10))
+write_csv(A3_data,"private/BUEC_311_A3_Grades.csv")
+
+
+A2_data<-read_excel("private/1730_70786.xls",skip = 1) %>%
+  mutate(ID=as.double(ID))%>% left_join(final_data,by=c("ID"="student_id"))%>%
+  mutate("Final Grade"=ifelse(is.na(`Final Grade`),letter_tentative,`Final Grade`))%>%
+  select(seq(1,10))
+write_csv(A2_data,"private/BUEC_311_A2_Grades.csv")
+
+
+```
+The final exam average over all three sections was `r round(mean(final_data$final_exam,na.rm=T),2)`%.
+
+```{r quiz_graphs,echo=FALSE,warnings=FALSE,include=FALSE,,cache=FALSE}
+
+all<-ggplot(final_data%>%filter(!is.na(final_exam)),aes(final_exam))+
+  geom_density(aes(),alpha=0.5,fill="dodgerblue")+
+  labs(x="Range of Scores",y="Probability Density",
+       title="Distribution of Final Exam Scores",
+       caption="Kernel-smoothed so you won't necessarily find your actual grade",
+       fill=guide_legend(title="Section"),color=guide_legend(title="Section"))
+
+
+sec<-ggplot(final_data%>%filter(!is.na(final_exam)),aes(final_exam,group=sec))+
+  geom_density(aes(fill=sec,colour=sec),alpha=0.5)+
+  labs(x="Range of Scores",y="Probability Density",
+       title="Distribution of Final Exam Scores by Section",
+       caption="Kernel-smoothed so you won't necessarily find your actual grade",
+       fill=guide_legend(title="Section"),color=guide_legend(title="Section"))
+
+```
+
+## Grade Distribution
+```{r dist_graph,fig.width=12,fig.height=7,echo=FALSE}
+all
+```
+
+## Grade Distribution By Section
+```{r dist_graph_sec,fig.width=12,fig.height=7,echo=FALSE}
+sec
+```
+
+The raw weighted average over all three sections was `r round(mean(final_data$overall_weighted_average,na.rm=T),2)`%.
+
+```{r overall_graphs,echo=FALSE,warnings=FALSE,include=FALSE,,cache=FALSE}
+
+all<-ggplot(final_data%>%filter(!is.na(overall_weighted_average)),aes(overall_weighted_average))+
+  geom_density(aes(),alpha=0.5,fill="dodgerblue")+
+  labs(x="Range of Scores",y="Probability Density",
+       title="Distribution of Final Raw Scores",
+       caption="Kernel-smoothed so you won't necessarily find your actual grade",
+       fill=guide_legend(title="Section"),color=guide_legend(title="Section"))
+
+
+sec<-ggplot(final_data%>%filter(!is.na(overall_weighted_average)),aes(overall_weighted_average,group=sec))+
+  geom_density(aes(fill=sec,colour=sec),alpha=0.5)+
+  labs(x="Range of Scores",y="Probability Density",
+       title="Distribution of Final Raw Scores by Section",
+       caption="Kernel-smoothed so you won't necessarily find your actual grade",
+       fill=guide_legend(title="Section"),color=guide_legend(title="Section"))
+
+```
+
+## Grade Distribution
+```{r dist_graph_1,fig.width=12,fig.height=7,echo=FALSE}
+all
+```
+
+## Grade Distribution By Section
+```{r dist_graph_sec_1,fig.width=12,fig.height=7,echo=FALSE}
+sec
+```
+
